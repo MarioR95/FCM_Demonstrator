@@ -1,0 +1,12 @@
+eclipse
+dir
+eclipse
+reload
+cls
+quit
+exit
+eclipse
+exit
+sbt eclipse
+eclipse
+compile
