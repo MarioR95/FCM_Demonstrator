@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/Mario/Desktop/git/FCM_Demonstrator/conf/routes
-// @DATE:Fri May 17 13:18:35 CEST 2019
+// @SOURCE:C:/Users/Mario/Desktop/FCM_Demonstrator/conf/routes
+// @DATE:Fri May 17 13:42:00 CEST 2019
 
 package controllers;
 
