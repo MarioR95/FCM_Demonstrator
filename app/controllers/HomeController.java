@@ -17,5 +17,12 @@ public class HomeController extends Controller {
     public Result index() {
         return ok(views.html.index.render());
     }
+    
+    
+    public Result buildDashboard(Http.Request request) {
+    	String username= request.session().getOptional("connected").get();
+    	System.out.println(username);
+    	return ok(views.html.tdashboard.render());
+    }
 
 }

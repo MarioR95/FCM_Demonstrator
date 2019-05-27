@@ -7,4 +7,8 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava)
 
 scalaVersion := "2.12.8"
 
+libraryDependencies += javaJdbc
+
 libraryDependencies += guice
+
+libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.21"

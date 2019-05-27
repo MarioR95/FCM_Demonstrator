@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<root>
+	<query name="">
+		<content delimiterParsingDisabled="true">
+			select from where
+		</content>
+	</query>
+	<query name="">
+		<content delimiterParsingDisabled="true">
+		
+		</content>
+	</query>
+	<query name="">
+		<content delimiterParsingDisabled="true">
+	
+		</content>
+	</query>
+	<query name="">
+		<content delimiterParsingDisabled="true">
+	
+		</content>
+	</query>
+	<query name="">
+		<content delimiterParsingDisabled="true">
+	
+		</content>
+	</query>
+	<query name="">
+		<content delimiterParsingDisabled="true">
+			SELECT   k_d_e_ipconfig AS id,
+			broker_addr AS brokerAdd,
+			client_id AS clientId,
+			topic
+			FROM
+			d_e_broker_config
+			WHERE k_d_e_ipconfig = ?
+		</content>
+	</query>
+	
+</root>

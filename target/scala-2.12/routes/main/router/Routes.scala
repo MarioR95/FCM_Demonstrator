@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Mario/Desktop/FCM_Demonstrator/conf/routes
-// @DATE:Fri May 17 13:42:00 CEST 2019
+// @DATE:Mon May 27 14:32:27 CEST 2019
 
 package router
 
@@ -14,25 +14,29 @@ import _root_.play.libs.F
 
 class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
-  // @LINE:6
-  HomeController_1: controllers.HomeController,
-  // @LINE:9
-  Assets_0: controllers.Assets,
+  // @LINE:5
+  HomeController_2: controllers.HomeController,
+  // @LINE:8
+  Application_0: controllers.Application,
+  // @LINE:13
+  Assets_1: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
 
    @javax.inject.Inject()
    def this(errorHandler: play.api.http.HttpErrorHandler,
-    // @LINE:6
-    HomeController_1: controllers.HomeController,
-    // @LINE:9
-    Assets_0: controllers.Assets
-  ) = this(errorHandler, HomeController_1, Assets_0, "/")
+    // @LINE:5
+    HomeController_2: controllers.HomeController,
+    // @LINE:8
+    Application_0: controllers.Application,
+    // @LINE:13
+    Assets_1: controllers.Assets
+  ) = this(errorHandler, HomeController_2, Application_0, Assets_1, "/")
 
   def withPrefix(addPrefix: String): Routes = {
     val prefix = play.api.routing.Router.concatPrefix(addPrefix, this.prefix)
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, HomeController_1, Assets_0, prefix)
+    new Routes(errorHandler, HomeController_2, Application_0, Assets_1, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -41,6 +45,8 @@ class Routes(
 
   def documentation = List(
     ("""GET""", this.prefix, """controllers.HomeController.index"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """authenticate""", """controllers.Application.authenticate(request:Request, email:String, password:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """dashboard""", """controllers.HomeController.buildDashboard(request:Request)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -49,12 +55,12 @@ class Routes(
   }}
 
 
-  // @LINE:6
+  // @LINE:5
   private[this] lazy val controllers_HomeController_index0_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix)))
   )
   private[this] lazy val controllers_HomeController_index0_invoker = createInvoker(
-    HomeController_1.index,
+    HomeController_2.index,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
@@ -62,17 +68,57 @@ class Routes(
       Nil,
       "GET",
       this.prefix + """""",
-      """ An example controller showing a sample home page""",
+      """""",
       Seq()
     )
   )
 
-  // @LINE:9
-  private[this] lazy val controllers_Assets_versioned1_route = Route("GET",
+  // @LINE:8
+  private[this] lazy val controllers_Application_authenticate1_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("authenticate")))
+  )
+  private[this] lazy val controllers_Application_authenticate1_invoker = createInvoker(
+    
+    (req:play.mvc.Http.Request) =>
+      Application_0.authenticate(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "authenticate",
+      Seq(classOf[play.mvc.Http.Request], classOf[String], classOf[String]),
+      "POST",
+      this.prefix + """authenticate""",
+      """""",
+      Seq("""nocsrf""")
+    )
+  )
+
+  // @LINE:10
+  private[this] lazy val controllers_HomeController_buildDashboard2_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("dashboard")))
+  )
+  private[this] lazy val controllers_HomeController_buildDashboard2_invoker = createInvoker(
+    
+    (req:play.mvc.Http.Request) =>
+      HomeController_2.buildDashboard(fakeValue[play.mvc.Http.Request]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "buildDashboard",
+      Seq(classOf[play.mvc.Http.Request]),
+      "GET",
+      this.prefix + """dashboard""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:13
+  private[this] lazy val controllers_Assets_versioned3_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned1_invoker = createInvoker(
-    Assets_0.versioned(fakeValue[String], fakeValue[Asset]),
+  private[this] lazy val controllers_Assets_versioned3_invoker = createInvoker(
+    Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Assets",
@@ -88,16 +134,30 @@ class Routes(
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
-    // @LINE:6
+    // @LINE:5
     case controllers_HomeController_index0_route(params@_) =>
       call { 
-        controllers_HomeController_index0_invoker.call(HomeController_1.index)
+        controllers_HomeController_index0_invoker.call(HomeController_2.index)
       }
   
-    // @LINE:9
-    case controllers_Assets_versioned1_route(params@_) =>
+    // @LINE:8
+    case controllers_Application_authenticate1_route(params@_) =>
+      call(params.fromQuery[String]("email", None), params.fromQuery[String]("password", None)) { (email, password) =>
+        controllers_Application_authenticate1_invoker.call(
+          req => Application_0.authenticate(req, email, password))
+      }
+  
+    // @LINE:10
+    case controllers_HomeController_buildDashboard2_route(params@_) =>
+      call { 
+        controllers_HomeController_buildDashboard2_invoker.call(
+          req => HomeController_2.buildDashboard(req))
+      }
+  
+    // @LINE:13
+    case controllers_Assets_versioned3_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned1_invoker.call(Assets_0.versioned(path, file))
+        controllers_Assets_versioned3_invoker.call(Assets_1.versioned(path, file))
       }
   }
 }
