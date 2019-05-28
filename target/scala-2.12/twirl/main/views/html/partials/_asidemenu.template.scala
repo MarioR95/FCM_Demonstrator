@@ -35,7 +35,7 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin:: Aside Menu -->
    <div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500">
       <ul class="kt-menu__nav ">
          <li class="kt-menu__item kt-menu__item--active" aria-haspopup="true">
-            <a href="?page=index" class="kt-menu__link ">
+            <a href="/dashboard?username=amenichino&#64;unisa.it" class="kt-menu__link ">
                <span class="kt-menu__link-icon">
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
@@ -170,9 +170,9 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin:: Aside Menu -->
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:28 CEST 2019
+                  DATE: Tue May 28 08:54:24 CEST 2019
                   SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_asidemenu.scala.html
-                  HASH: 1b78e9df9a7c7afd276de2fed3904e093b03e34c
+                  HASH: 61e768f11728e037e201de18730de17b8e063e83
                   MATRIX: 955->1|1051->4
                   LINES: 28->1|33->2
                   -- GENERATED --

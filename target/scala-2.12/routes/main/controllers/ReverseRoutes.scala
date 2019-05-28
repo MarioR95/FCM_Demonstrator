@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Mario/Desktop/FCM_Demonstrator/conf/routes
-// @DATE:Mon May 27 14:32:27 CEST 2019
+// @DATE:Tue May 28 09:24:06 CEST 2019
 
 import play.api.mvc.Call
 
@@ -32,14 +32,14 @@ package controllers {
   
   }
 
-  // @LINE:13
+  // @LINE:14
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:13
+    // @LINE:14
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))
@@ -58,6 +58,12 @@ package controllers {
     def authenticate(email:String, password:String): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "authenticate" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("email", email)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("password", password)))))
+    }
+  
+    // @LINE:12
+    def logout(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "logout")
     }
   
   }

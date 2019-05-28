@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Mario/Desktop/FCM_Demonstrator/conf/routes
-// @DATE:Mon May 27 14:32:27 CEST 2019
+// @DATE:Tue May 28 09:24:06 CEST 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -41,7 +41,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:13
+  // @LINE:14
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -49,7 +49,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:13
+    // @LINE:14
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -75,6 +75,16 @@ package controllers.javascript {
       """
         function(email0,password1) {
           return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "authenticate" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("email", email0), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("password", password1)])})
+        }
+      """
+    )
+  
+    // @LINE:12
+    def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Application.logout",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "logout"})
         }
       """
     )

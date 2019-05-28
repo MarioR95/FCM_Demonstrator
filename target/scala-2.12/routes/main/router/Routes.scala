@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Mario/Desktop/FCM_Demonstrator/conf/routes
-// @DATE:Mon May 27 14:32:27 CEST 2019
+// @DATE:Tue May 28 09:24:06 CEST 2019
 
 package router
 
@@ -18,7 +18,7 @@ class Routes(
   HomeController_2: controllers.HomeController,
   // @LINE:8
   Application_0: controllers.Application,
-  // @LINE:13
+  // @LINE:14
   Assets_1: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -29,7 +29,7 @@ class Routes(
     HomeController_2: controllers.HomeController,
     // @LINE:8
     Application_0: controllers.Application,
-    // @LINE:13
+    // @LINE:14
     Assets_1: controllers.Assets
   ) = this(errorHandler, HomeController_2, Application_0, Assets_1, "/")
 
@@ -47,6 +47,7 @@ class Routes(
     ("""GET""", this.prefix, """controllers.HomeController.index"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """authenticate""", """controllers.Application.authenticate(request:Request, email:String, password:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """dashboard""", """controllers.HomeController.buildDashboard(request:Request)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """logout""", """controllers.Application.logout(request:Request)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -113,11 +114,31 @@ class Routes(
     )
   )
 
-  // @LINE:13
-  private[this] lazy val controllers_Assets_versioned3_route = Route("GET",
+  // @LINE:12
+  private[this] lazy val controllers_Application_logout3_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("logout")))
+  )
+  private[this] lazy val controllers_Application_logout3_invoker = createInvoker(
+    
+    (req:play.mvc.Http.Request) =>
+      Application_0.logout(fakeValue[play.mvc.Http.Request]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "logout",
+      Seq(classOf[play.mvc.Http.Request]),
+      "GET",
+      this.prefix + """logout""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:14
+  private[this] lazy val controllers_Assets_versioned4_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned3_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned4_invoker = createInvoker(
     Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -154,10 +175,17 @@ class Routes(
           req => HomeController_2.buildDashboard(req))
       }
   
-    // @LINE:13
-    case controllers_Assets_versioned3_route(params@_) =>
+    // @LINE:12
+    case controllers_Application_logout3_route(params@_) =>
+      call { 
+        controllers_Application_logout3_invoker.call(
+          req => Application_0.logout(req))
+      }
+  
+    // @LINE:14
+    case controllers_Assets_versioned4_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned3_invoker.call(Assets_1.versioned(path, file))
+        controllers_Assets_versioned4_invoker.call(Assets_1.versioned(path, file))
       }
   }
 }

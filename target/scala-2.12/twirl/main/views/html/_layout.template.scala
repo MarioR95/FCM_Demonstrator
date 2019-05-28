@@ -22,10 +22,10 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object _layout extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
+object _layout extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[String,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/():play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(username: String):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
@@ -36,7 +36,7 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin:: Page -->
     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
        """),_display_(/*6.9*/views/*6.14*/.html.partials._asidebase()),format.raw/*6.41*/("""
         """),format.raw/*7.9*/("""<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
-           """),_display_(/*8.13*/views/*8.18*/.html.partials._headerbase()),format.raw/*8.46*/("""
+           """),_display_(/*8.13*/views/*8.18*/.html.partials._headerbase(username)),format.raw/*8.54*/("""
             """),format.raw/*9.13*/("""<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
 				"""),_display_(/*10.6*/views/*10.11*/.html.partials._contentbase()),format.raw/*10.40*/("""
             """),format.raw/*11.13*/("""</div>
@@ -52,9 +52,9 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin:: Page -->
     }
   }
 
-  def render(): play.twirl.api.HtmlFormat.Appendable = apply()
+  def render(username:String): play.twirl.api.HtmlFormat.Appendable = apply(username)
 
-  def f:(() => play.twirl.api.HtmlFormat.Appendable) = () => apply()
+  def f:((String) => play.twirl.api.HtmlFormat.Appendable) = (username) => apply(username)
 
   def ref: this.type = this
 
@@ -63,10 +63,10 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin:: Page -->
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:29 CEST 2019
+                  DATE: Tue May 28 09:18:32 CEST 2019
                   SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/_layout.scala.html
-                  HASH: 25ec83c660d6edaa0d86f8c0359aeec06aac76b7
-                  MATRIX: 943->1|1039->4|1087->27|1099->32|1153->66|1180->67|1344->206|1357->211|1404->238|1439->247|1574->356|1587->361|1635->389|1675->402|1776->477|1790->482|1840->511|1881->524|1918->535|1932->540|1981->568|2017->577|2089->623|2102->628|2156->661|2184->663|2197->668|2249->699|2277->701|2290->706
+                  HASH: 1c05a75fa8f1546c54c799f8badd0589c91c289d
+                  MATRIX: 950->1|1062->20|1110->43|1122->48|1176->82|1203->83|1367->222|1380->227|1427->254|1462->263|1597->372|1610->377|1666->413|1706->426|1807->501|1821->506|1871->535|1912->548|1949->559|1963->564|2012->592|2048->601|2120->647|2133->652|2187->685|2215->687|2228->692|2280->723|2308->725|2321->730
                   LINES: 28->1|33->2|34->3|34->3|34->3|35->4|37->6|37->6|37->6|38->7|39->8|39->8|39->8|40->9|41->10|41->10|41->10|42->11|43->12|43->12|43->12|44->13|48->17|48->17|48->17|49->18|49->18|49->18|50->19|50->19
                   -- GENERATED --
               */

@@ -22,10 +22,10 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object _dropdownuser extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
+object _dropdownuser extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[String,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/():play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(username: String):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
@@ -37,7 +37,7 @@ Seq[Any](format.raw/*2.1*/("""<!--begin: Head -->
         <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
         <span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">A</span> 
     </div>
-    <div class="kt-user-card__name"> Alfonso Menichino </div>
+    <div class="kt-user-card__name"> """),_display_(/*9.39*/username),format.raw/*9.47*/(""" """),format.raw/*9.48*/("""</div>
     <div class="kt-user-card__badge"> <span class="btn btn-success btn-sm btn-bold btn-font-md">23 messages</span> </div>
 </div>
 <!--end: Head -->
@@ -58,7 +58,7 @@ Seq[Any](format.raw/*2.1*/("""<!--begin: Head -->
         </div>
     </a>
     <div class="kt-notification__custom kt-space-between"> 
-    	<a href="?page=custom/user/login-v2" target="_blank" class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</a>
+    	<a href="/logout" class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</a>
     </div>
 </div>
 <!--end: Navigation -->"""))
@@ -66,9 +66,9 @@ Seq[Any](format.raw/*2.1*/("""<!--begin: Head -->
     }
   }
 
-  def render(): play.twirl.api.HtmlFormat.Appendable = apply()
+  def render(username:String): play.twirl.api.HtmlFormat.Appendable = apply(username)
 
-  def f:(() => play.twirl.api.HtmlFormat.Appendable) = () => apply()
+  def f:((String) => play.twirl.api.HtmlFormat.Appendable) = (username) => apply(username)
 
   def ref: this.type = this
 
@@ -77,11 +77,11 @@ Seq[Any](format.raw/*2.1*/("""<!--begin: Head -->
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:28 CEST 2019
+                  DATE: Tue May 28 09:29:39 CEST 2019
                   SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_dropdownuser.scala.html
-                  HASH: cf76f01dac2765800464e305495124244b0b7051
-                  MATRIX: 958->1|1054->4
-                  LINES: 28->1|33->2
+                  HASH: 034646f5a30819fc8c8730e9641cdc4ac1e5a2b7
+                  MATRIX: 965->1|1077->20|1675->592|1703->600|1731->601
+                  LINES: 28->1|33->2|40->9|40->9|40->9
                   -- GENERATED --
               */
           

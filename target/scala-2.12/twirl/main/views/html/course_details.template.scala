@@ -22,15 +22,16 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object course_details extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
+object course_details extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[String,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply():play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(username: String):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
+Seq[Any](format.raw/*1.20*/("""
+"""),format.raw/*2.1*/("""<!DOCTYPE html>
 <html lang="en">
 <!-- begin::Head -->
 <head>
@@ -43,15 +44,15 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
 <script>
-	WebFont.load("""),format.raw/*14.15*/("""{"""),format.raw/*14.16*/("""
-		"""),format.raw/*15.3*/("""google : """),format.raw/*15.12*/("""{"""),format.raw/*15.13*/("""
-			"""),format.raw/*16.4*/(""""families" : [ "Poppins:300,400,500,600,700",
+	WebFont.load("""),format.raw/*15.15*/("""{"""),format.raw/*15.16*/("""
+		"""),format.raw/*16.3*/("""google : """),format.raw/*16.12*/("""{"""),format.raw/*16.13*/("""
+			"""),format.raw/*17.4*/(""""families" : [ "Poppins:300,400,500,600,700",
 					"Roboto:300,400,500,600,700" ]
-		"""),format.raw/*18.3*/("""}"""),format.raw/*18.4*/(""",
-		active : function() """),format.raw/*19.23*/("""{"""),format.raw/*19.24*/("""
-			"""),format.raw/*20.4*/("""sessionStorage.fonts = true;
-		"""),format.raw/*21.3*/("""}"""),format.raw/*21.4*/("""
-	"""),format.raw/*22.2*/("""}"""),format.raw/*22.3*/(""");
+		"""),format.raw/*19.3*/("""}"""),format.raw/*19.4*/(""",
+		active : function() """),format.raw/*20.23*/("""{"""),format.raw/*20.24*/("""
+			"""),format.raw/*21.4*/("""sessionStorage.fonts = true;
+		"""),format.raw/*22.3*/("""}"""),format.raw/*22.4*/("""
+	"""),format.raw/*23.2*/("""}"""),format.raw/*23.3*/(""");
 </script>
 <!--end::Fonts -->
 <!--begin::Page Vendors Styles(used by this page) -->
@@ -81,13 +82,13 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 <!-- begin::Body -->
 <body
 	class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
-	"""),_display_(/*52.3*/views/*52.8*/.html._layout()),format.raw/*52.23*/("""
-	"""),format.raw/*53.2*/("""<!-- begin::Global Config(global config for global JS sciprts) -->
+	"""),_display_(/*53.3*/views/*53.8*/.html._layout(username)),format.raw/*53.31*/("""
+	"""),format.raw/*54.2*/("""<!-- begin::Global Config(global config for global JS sciprts) -->
 	<script>
-		var KTAppOptions = """),format.raw/*55.22*/("""{"""),format.raw/*55.23*/("""
-			"""),format.raw/*56.4*/(""""colors" : """),format.raw/*56.15*/("""{"""),format.raw/*56.16*/("""
-				"""),format.raw/*57.5*/(""""state" : """),format.raw/*57.15*/("""{"""),format.raw/*57.16*/("""
-					"""),format.raw/*58.6*/(""""brand" : "#5d78ff",
+		var KTAppOptions = """),format.raw/*56.22*/("""{"""),format.raw/*56.23*/("""
+			"""),format.raw/*57.4*/(""""colors" : """),format.raw/*57.15*/("""{"""),format.raw/*57.16*/("""
+				"""),format.raw/*58.5*/(""""state" : """),format.raw/*58.15*/("""{"""),format.raw/*58.16*/("""
+					"""),format.raw/*59.6*/(""""brand" : "#5d78ff",
 					"dark" : "#282a3c",
 					"light" : "#ffffff",
 					"primary" : "#5867dd",
@@ -95,13 +96,13 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 					"info" : "#36a3f7",
 					"warning" : "#ffb822",
 					"danger" : "#fd3995"
-				"""),format.raw/*66.5*/("""}"""),format.raw/*66.6*/(""",
-				"base" : """),format.raw/*67.14*/("""{"""),format.raw/*67.15*/("""
-					"""),format.raw/*68.6*/(""""label" : [ "#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466" ],
+				"""),format.raw/*67.5*/("""}"""),format.raw/*67.6*/(""",
+				"base" : """),format.raw/*68.14*/("""{"""),format.raw/*68.15*/("""
+					"""),format.raw/*69.6*/(""""label" : [ "#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466" ],
 					"shape" : [ "#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a" ]
-				"""),format.raw/*70.5*/("""}"""),format.raw/*70.6*/("""
-			"""),format.raw/*71.4*/("""}"""),format.raw/*71.5*/("""
-		"""),format.raw/*72.3*/("""}"""),format.raw/*72.4*/(""";
+				"""),format.raw/*71.5*/("""}"""),format.raw/*71.6*/("""
+			"""),format.raw/*72.4*/("""}"""),format.raw/*72.5*/("""
+		"""),format.raw/*73.3*/("""}"""),format.raw/*73.4*/(""";
 	</script>
 	<!-- end::Global Config -->
 	<!--begin::Global Theme Bundle(used by all pages) -->
@@ -131,9 +132,9 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
     }
   }
 
-  def render(): play.twirl.api.HtmlFormat.Appendable = apply()
+  def render(username:String): play.twirl.api.HtmlFormat.Appendable = apply(username)
 
-  def f:(() => play.twirl.api.HtmlFormat.Appendable) = () => apply()
+  def f:((String) => play.twirl.api.HtmlFormat.Appendable) = (username) => apply(username)
 
   def ref: this.type = this
 
@@ -142,11 +143,11 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:28 CEST 2019
+                  DATE: Tue May 28 09:21:11 CEST 2019
                   SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/course_details.scala.html
-                  HASH: 00c2f5b35fa4793108ca6efa5b5abfc11fd910c4
-                  MATRIX: 1039->0|1481->414|1510->415|1541->419|1578->428|1607->429|1639->434|1752->520|1780->521|1833->546|1862->547|1894->552|1953->584|1981->585|2011->588|2039->589|3392->1916|3405->1921|3441->1936|3471->1939|3599->2039|3628->2040|3660->2045|3699->2056|3728->2057|3761->2063|3799->2073|3828->2074|3862->2081|4108->2300|4136->2301|4180->2317|4209->2318|4243->2325|4396->2451|4424->2452|4456->2457|4484->2458|4515->2462|4543->2463
-                  LINES: 33->1|46->14|46->14|47->15|47->15|47->15|48->16|50->18|50->18|51->19|51->19|52->20|53->21|53->21|54->22|54->22|84->52|84->52|84->52|85->53|87->55|87->55|88->56|88->56|88->56|89->57|89->57|89->57|90->58|98->66|98->66|99->67|99->67|100->68|102->70|102->70|103->71|103->71|104->72|104->72
+                  HASH: cf0b7478261b443ad600862eb2a231c913e4dc68
+                  MATRIX: 957->1|1070->19|1098->21|1540->435|1569->436|1600->440|1637->449|1666->450|1698->455|1811->541|1839->542|1892->567|1921->568|1953->573|2012->605|2040->606|2070->609|2098->610|3451->1937|3464->1942|3508->1965|3538->1968|3666->2068|3695->2069|3727->2074|3766->2085|3795->2086|3828->2092|3866->2102|3895->2103|3929->2110|4175->2329|4203->2330|4247->2346|4276->2347|4310->2354|4463->2480|4491->2481|4523->2486|4551->2487|4582->2491|4610->2492
+                  LINES: 28->1|33->1|34->2|47->15|47->15|48->16|48->16|48->16|49->17|51->19|51->19|52->20|52->20|53->21|54->22|54->22|55->23|55->23|85->53|85->53|85->53|86->54|88->56|88->56|89->57|89->57|89->57|90->58|90->58|90->58|91->59|99->67|99->67|100->68|100->68|101->69|103->71|103->71|104->72|104->72|105->73|105->73
                   -- GENERATED --
               */
           

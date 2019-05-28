@@ -31,17 +31,8 @@ object _layouttoolbar extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl
 
 
 Seq[Any](format.raw/*2.1*/("""<!-- begin::Sticky Toolbar -->
-<ul class="kt-sticky-toolbar" style="margin-top: 30px;">
-    <li class="kt-sticky-toolbar__item kt-sticky-toolbar__item--success" id="kt_demo_panel_toggle" data-toggle="kt-tooltip" title="Check out more demos" data-placement="right">
-        <a href="#" class=""><i class="flaticon2-drop"></i></a>
-    </li>
-    <li class="kt-sticky-toolbar__item kt-sticky-toolbar__item--brand" data-toggle="kt-tooltip" title="Layout Builder" data-placement="left">
-        <a href="https://keenthemes.com/metronic/preview/demo1/builder.html" target="_blank"><i class="flaticon2-gear"></i></a>
-    </li>
-    <li class="kt-sticky-toolbar__item kt-sticky-toolbar__item--warning" data-toggle="kt-tooltip" title="Documentation" data-placement="left">
-        <a href="https://keenthemes.com/metronic/?page=docs" target="_blank"><i class="flaticon2-telegram-logo"></i></a>
-    </li>
-    <li class="kt-sticky-toolbar__item kt-sticky-toolbar__item--danger" id="kt_sticky_toolbar_chat_toggler" data-toggle="kt-tooltip" title="Chat Example" data-placement="left">
+<ul class="kt-sticky-toolbar" style="margin-top: 80px;">
+    <li class="kt-sticky-toolbar__item kt-sticky-toolbar__item--danger" id="kt_sticky_toolbar_chat_toggler" data-toggle="kt-tooltip" title="Chat" data-placement="left">
         <a href="#" data-toggle="modal" data-target="#kt_chat_modal"><i class="flaticon2-chat-1"></i></a>
     </li>
 </ul>
@@ -61,9 +52,9 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin::Sticky Toolbar -->
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:28 CEST 2019
+                  DATE: Tue May 28 08:51:22 CEST 2019
                   SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_layouttoolbar.scala.html
-                  HASH: 7fc934a731f567345844f29a68eeffff8a381518
+                  HASH: c390959d34aa3ed11d0c3238c349ea01d8c7619c
                   MATRIX: 959->1|1055->4
                   LINES: 28->1|33->2
                   -- GENERATED --

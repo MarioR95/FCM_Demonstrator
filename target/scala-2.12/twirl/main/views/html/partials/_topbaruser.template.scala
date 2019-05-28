@@ -22,10 +22,10 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object _topbaruser extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
+object _topbaruser extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[String,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/():play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(username: String):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
@@ -41,7 +41,7 @@ Seq[Any](format.raw/*2.1*/("""<!--begin: User Bar -->
         </div>
     </div>
     <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
-        """),_display_(/*13.10*/views/*13.15*/.html.partials._dropdownuser()),format.raw/*13.45*/("""
+        """),_display_(/*13.10*/views/*13.15*/.html.partials._dropdownuser(username)),format.raw/*13.53*/("""
     """),format.raw/*14.5*/("""</div>
 </div>
 <!--end: User Bar -->
@@ -50,9 +50,9 @@ Seq[Any](format.raw/*2.1*/("""<!--begin: User Bar -->
     }
   }
 
-  def render(): play.twirl.api.HtmlFormat.Appendable = apply()
+  def render(username:String): play.twirl.api.HtmlFormat.Appendable = apply(username)
 
-  def f:(() => play.twirl.api.HtmlFormat.Appendable) = () => apply()
+  def f:((String) => play.twirl.api.HtmlFormat.Appendable) = (username) => apply(username)
 
   def ref: this.type = this
 
@@ -61,10 +61,10 @@ Seq[Any](format.raw/*2.1*/("""<!--begin: User Bar -->
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:28 CEST 2019
+                  DATE: Tue May 28 09:20:18 CEST 2019
                   SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_topbaruser.scala.html
-                  HASH: 8690abd7fc6228c01c603e5708f4bc24ea06b708
-                  MATRIX: 956->1|1052->4|1986->911|2000->916|2051->946|2083->951
+                  HASH: 18a6090b126f2771982408f09db76cd535b02616
+                  MATRIX: 963->1|1075->20|2009->927|2023->932|2082->970|2114->975
                   LINES: 28->1|33->2|44->13|44->13|44->13|45->14
                   -- GENERATED --
               */
