@@ -61,7 +61,7 @@ Seq[Any](format.raw/*2.1*/("""<!--begin: User Bar -->
 
               /*
                   -- GENERATED --
-                  DATE: Tue May 28 09:20:18 CEST 2019
+                  DATE: Mon Jun 03 13:54:01 CEST 2019
                   SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_topbaruser.scala.html
                   HASH: 18a6090b126f2771982408f09db76cd535b02616
                   MATRIX: 963->1|1075->20|2009->927|2023->932|2082->970|2114->975

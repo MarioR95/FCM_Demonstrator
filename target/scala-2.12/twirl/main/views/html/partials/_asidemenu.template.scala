@@ -170,7 +170,7 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin:: Aside Menu -->
 
               /*
                   -- GENERATED --
-                  DATE: Tue May 28 08:54:24 CEST 2019
+                  DATE: Mon Jun 03 13:54:00 CEST 2019
                   SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_asidemenu.scala.html
                   HASH: 61e768f11728e037e201de18730de17b8e063e83
                   MATRIX: 955->1|1051->4

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Mario/Desktop/FCM_Demonstrator/conf/routes
-// @DATE:Tue May 28 09:24:06 CEST 2019
+// @DATE:Mon Jun 03 13:53:59 CEST 2019
 
 import play.api.routing.JavaScriptReverseRoute
 

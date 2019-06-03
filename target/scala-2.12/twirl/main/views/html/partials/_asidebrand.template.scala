@@ -77,7 +77,7 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin:: Aside -->
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:28 CEST 2019
+                  DATE: Mon Jun 03 13:54:00 CEST 2019
                   SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_asidebrand.scala.html
                   HASH: 509b27726dadcd3c492cf973e1770bf103270028
                   MATRIX: 956->1|1052->4

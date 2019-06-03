@@ -59,7 +59,7 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin:: Header Mobile -->
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:28 CEST 2019
+                  DATE: Mon Jun 03 13:54:00 CEST 2019
                   SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_headerbasemobile.scala.html
                   HASH: 59e9594af8a2a50eeb7872173a4bd17764c27d09
                   MATRIX: 962->1|1058->4

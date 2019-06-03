@@ -48,7 +48,7 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin:: Content -->
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:28 CEST 2019
+                  DATE: Mon Jun 03 13:54:00 CEST 2019
                   SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_contentbase.scala.html
                   HASH: d541c8a9798a0adebeeacc1456fa850ad5cd432b
                   MATRIX: 957->1|1053->4

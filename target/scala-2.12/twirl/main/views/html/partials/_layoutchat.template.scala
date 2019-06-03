@@ -248,7 +248,7 @@ Seq[Any](format.raw/*2.1*/("""<!--Begin:: Chat-->
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:28 CEST 2019
+                  DATE: Mon Jun 03 13:54:00 CEST 2019
                   SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_layoutchat.scala.html
                   HASH: f8c9aa992109eec30673e7b30290ca8550c6c531
                   MATRIX: 956->1|1052->4

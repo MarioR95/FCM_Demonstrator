@@ -51,7 +51,7 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin:: Footer -->
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:28 CEST 2019
+                  DATE: Mon Jun 03 13:54:00 CEST 2019
                   SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_footerbase.scala.html
                   HASH: c4b96df76cb5782873e296163ba8001232ba0ab3
                   MATRIX: 956->1|1052->4

@@ -67,7 +67,7 @@ Seq[Any](format.raw/*2.1*/("""<!--begin: Notifications -->
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:28 CEST 2019
+                  DATE: Mon Jun 03 13:54:00 CEST 2019
                   SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_topbarnotifications.scala.html
                   HASH: fd8bf04accb58ad4e26860602c58f30199a5ce46
                   MATRIX: 965->1|1061->4|3826->2742|3840->2747|3900->2786|3936->2795
