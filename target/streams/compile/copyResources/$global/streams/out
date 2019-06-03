@@ -1,6 +1,0 @@
-[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
-[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Mario\Desktop\FCM_Demonstrator\conf\application.conf,C:\Users\Mario\Desktop\FCM_Demonstrator\target\scala-2.12\classes\application.conf)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Mario\Desktop\FCM_Demonstrator\conf\db.xml,C:\Users\Mario\Desktop\FCM_Demonstrator\target\scala-2.12\classes\db.xml)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Mario\Desktop\FCM_Demonstrator\conf\logback.xml,C:\Users\Mario\Desktop\FCM_Demonstrator\target\scala-2.12\classes\logback.xml)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Mario\Desktop\FCM_Demonstrator\conf\query.xml,C:\Users\Mario\Desktop\FCM_Demonstrator\target\scala-2.12\classes\query.xml)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Mario\Desktop\FCM_Demonstrator\conf\routes,C:\Users\Mario\Desktop\FCM_Demonstrator\target\scala-2.12\classes\routes)[0m
