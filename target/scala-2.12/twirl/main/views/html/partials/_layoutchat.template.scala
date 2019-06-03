@@ -30,7 +30,8 @@ object _layoutchat extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.ap
       {
 
 
-Seq[Any](format.raw/*2.1*/("""<!--Begin:: Chat-->
+Seq[Any](format.raw/*1.4*/("""
+"""),format.raw/*2.1*/("""<!--Begin:: Chat-->
 <div class="modal fade- modal-sticky-bottom-right" id="kt_chat_modal" role="dialog" data-backdrop="false">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -248,11 +249,11 @@ Seq[Any](format.raw/*2.1*/("""<!--Begin:: Chat-->
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:28 CEST 2019
-                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_layoutchat.scala.html
-                  HASH: f8c9aa992109eec30673e7b30290ca8550c6c531
-                  MATRIX: 956->1|1052->4
-                  LINES: 28->1|33->2
+                  DATE: Tue May 28 10:53:53 CEST 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_layoutchat.scala.html
+                  HASH: 2ac9e310199b516f35f3c757d8bfa52e2f987d10
+                  MATRIX: 956->1|1052->3|1080->5
+                  LINES: 28->1|33->1|34->2
                   -- GENERATED --
               */
           

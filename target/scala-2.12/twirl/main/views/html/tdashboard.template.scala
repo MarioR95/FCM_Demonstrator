@@ -125,6 +125,12 @@ Seq[Any](format.raw/*1.20*/("""
 	<script src="assets/javascripts/pages/dashboard.js"
 		type="text/javascript"></script>
 	<!--end::Page Scripts -->
+	
+	<!--begin::Page Scripts(used by content) -->
+	<script src="assets/javascripts/pages//layout/aside/menu/contentView.js"
+		type="text/javascript"></script>
+	<!--end::Page Scripts -->
+	
 </body>
 <!-- end::Body -->
 </html>"""))
@@ -143,9 +149,9 @@ Seq[Any](format.raw/*1.20*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue May 28 09:18:32 CEST 2019
-                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/tdashboard.scala.html
-                  HASH: cf0b7478261b443ad600862eb2a231c913e4dc68
+                  DATE: Mon Jun 03 10:03:15 CEST 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/tdashboard.scala.html
+                  HASH: 13569cd029d164ae12791656a4f06730b1c3b1b1
                   MATRIX: 953->1|1066->19|1094->21|1536->435|1565->436|1596->440|1633->449|1662->450|1694->455|1807->541|1835->542|1888->567|1917->568|1949->573|2008->605|2036->606|2066->609|2094->610|3447->1937|3460->1942|3504->1965|3534->1968|3662->2068|3691->2069|3723->2074|3762->2085|3791->2086|3824->2092|3862->2102|3891->2103|3925->2110|4171->2329|4199->2330|4243->2346|4272->2347|4306->2354|4459->2480|4487->2481|4519->2486|4547->2487|4578->2491|4606->2492
                   LINES: 28->1|33->1|34->2|47->15|47->15|48->16|48->16|48->16|49->17|51->19|51->19|52->20|52->20|53->21|54->22|54->22|55->23|55->23|85->53|85->53|85->53|86->54|88->56|88->56|89->57|89->57|89->57|90->58|90->58|90->58|91->59|99->67|99->67|100->68|100->68|101->69|103->71|103->71|104->72|104->72|105->73|105->73
                   -- GENERATED --

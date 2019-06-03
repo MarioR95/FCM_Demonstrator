@@ -30,7 +30,8 @@ object _headerbasemobile extends _root_.play.twirl.api.BaseScalaTemplate[play.tw
       {
 
 
-Seq[Any](format.raw/*2.1*/("""<!-- begin:: Header Mobile -->
+Seq[Any](format.raw/*1.4*/("""
+"""),format.raw/*2.1*/("""<!-- begin:: Header Mobile -->
 <div id="kt_header_mobile" class="kt-header-mobile kt-header-mobile--fixed " >
     <div class="kt-header-mobile__logo">
         <a href="?page=index">
@@ -59,11 +60,11 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin:: Header Mobile -->
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:28 CEST 2019
-                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_headerbasemobile.scala.html
-                  HASH: 59e9594af8a2a50eeb7872173a4bd17764c27d09
-                  MATRIX: 962->1|1058->4
-                  LINES: 28->1|33->2
+                  DATE: Tue May 28 10:53:53 CEST 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_headerbasemobile.scala.html
+                  HASH: 2eb58e17b68bed1da6692609de53ab531f6f4e48
+                  MATRIX: 962->1|1058->3|1086->5
+                  LINES: 28->1|33->1|34->2
                   -- GENERATED --
               */
           

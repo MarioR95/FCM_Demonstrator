@@ -30,7 +30,8 @@ object _layouttoolbar extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl
       {
 
 
-Seq[Any](format.raw/*2.1*/("""<!-- begin::Sticky Toolbar -->
+Seq[Any](format.raw/*1.4*/("""
+"""),format.raw/*2.1*/("""<!-- begin::Sticky Toolbar -->
 <ul class="kt-sticky-toolbar" style="margin-top: 80px;">
     <li class="kt-sticky-toolbar__item kt-sticky-toolbar__item--danger" id="kt_sticky_toolbar_chat_toggler" data-toggle="kt-tooltip" title="Chat" data-placement="left">
         <a href="#" data-toggle="modal" data-target="#kt_chat_modal"><i class="flaticon2-chat-1"></i></a>
@@ -52,11 +53,11 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin::Sticky Toolbar -->
 
               /*
                   -- GENERATED --
-                  DATE: Tue May 28 08:51:22 CEST 2019
-                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_layouttoolbar.scala.html
-                  HASH: c390959d34aa3ed11d0c3238c349ea01d8c7619c
-                  MATRIX: 959->1|1055->4
-                  LINES: 28->1|33->2
+                  DATE: Tue May 28 10:53:53 CEST 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_layouttoolbar.scala.html
+                  HASH: fc5cfdfed2db0550d38a8aa207071e51fdfd4bc9
+                  MATRIX: 959->1|1055->3|1083->5
+                  LINES: 28->1|33->1|34->2
                   -- GENERATED --
               */
           

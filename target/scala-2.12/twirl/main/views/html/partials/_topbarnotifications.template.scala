@@ -30,7 +30,8 @@ object _topbarnotifications extends _root_.play.twirl.api.BaseScalaTemplate[play
       {
 
 
-Seq[Any](format.raw/*2.1*/("""<!--begin: Notifications -->
+Seq[Any](format.raw/*1.4*/("""
+"""),format.raw/*2.1*/("""<!--begin: Notifications -->
 <div class="kt-header__topbar-item dropdown">
     <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="30px,0px" aria-expanded="true">
         <span class="kt-header__topbar-icon kt-pulse kt-pulse--brand">
@@ -67,11 +68,11 @@ Seq[Any](format.raw/*2.1*/("""<!--begin: Notifications -->
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:28 CEST 2019
-                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_topbarnotifications.scala.html
-                  HASH: fd8bf04accb58ad4e26860602c58f30199a5ce46
-                  MATRIX: 965->1|1061->4|3826->2742|3840->2747|3900->2786|3936->2795
-                  LINES: 28->1|33->2|50->19|50->19|50->19|51->20
+                  DATE: Tue May 28 10:53:53 CEST 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_topbarnotifications.scala.html
+                  HASH: 1febce0d7f311b43f50c3c905227210c32857ab2
+                  MATRIX: 965->1|1061->3|1089->5|3871->2760|3885->2765|3945->2804|3982->2814
+                  LINES: 28->1|33->1|34->2|51->19|51->19|51->19|52->20
                   -- GENERATED --
               */
           

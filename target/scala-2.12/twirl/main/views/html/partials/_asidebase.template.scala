@@ -30,7 +30,8 @@ object _asidebase extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api
       {
 
 
-Seq[Any](format.raw/*2.1*/("""<!-- begin:: Aside -->
+Seq[Any](format.raw/*1.4*/("""
+"""),format.raw/*2.1*/("""<!-- begin:: Aside -->
 <button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
 <div class="kt-aside kt-aside--fixed kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop" id="kt_aside">
     """),_display_(/*5.6*/views/*5.11*/.html.partials._asidebrand()),format.raw/*5.39*/("""
@@ -52,11 +53,11 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin:: Aside -->
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:28 CEST 2019
-                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_asidebase.scala.html
-                  HASH: b5bb59f778bd1a8a44117d6e7b8d8b22abafae47
-                  MATRIX: 955->1|1051->4|1310->238|1323->243|1371->271|1402->277|1415->282|1462->309|1489->310
-                  LINES: 28->1|33->2|36->5|36->5|36->5|37->6|37->6|37->6|38->7
+                  DATE: Tue May 28 10:53:53 CEST 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_asidebase.scala.html
+                  HASH: 59f5afc7a0759e8408c4d38cceeb4c6df597ba26
+                  MATRIX: 955->1|1051->3|1079->5|1341->242|1354->247|1402->275|1434->282|1447->287|1494->314|1522->316
+                  LINES: 28->1|33->1|34->2|37->5|37->5|37->5|38->6|38->6|38->6|39->7
                   -- GENERATED --
               */
           

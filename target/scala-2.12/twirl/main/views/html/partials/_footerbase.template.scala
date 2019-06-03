@@ -30,7 +30,8 @@ object _footerbase extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.ap
       {
 
 
-Seq[Any](format.raw/*2.1*/("""<!-- begin:: Footer -->
+Seq[Any](format.raw/*1.4*/("""
+"""),format.raw/*2.1*/("""<!-- begin:: Footer -->
 <div class="kt-footer kt-grid__item kt-grid kt-grid--desktop kt-grid--ver-desktop" id="kt_footer">
     <div class="kt-footer__copyright">2019&nbsp;&copy;&nbsp;<a href="http://corisa.it" target="_blank" class="kt-link">MOLIERE</a></div>
     <div class="kt-footer__menu"><a href="#" target="_blank" class="kt-footer__menu-link kt-link">About</a><a href="#" target="_blank" class="kt-footer__menu-link kt-link">Team</a><a href="#" target="_blank" class="kt-footer__menu-link kt-link">Contact</a></div>
@@ -51,11 +52,11 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin:: Footer -->
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:28 CEST 2019
-                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_footerbase.scala.html
-                  HASH: c4b96df76cb5782873e296163ba8001232ba0ab3
-                  MATRIX: 956->1|1052->4
-                  LINES: 28->1|33->2
+                  DATE: Tue May 28 10:53:53 CEST 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_footerbase.scala.html
+                  HASH: d19444195f98aa6a126f2a33dfd53a8d170ccbaf
+                  MATRIX: 956->1|1052->3|1080->5
+                  LINES: 28->1|33->1|34->2
                   -- GENERATED --
               */
           

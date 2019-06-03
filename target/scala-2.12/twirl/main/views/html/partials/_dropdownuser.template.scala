@@ -30,7 +30,8 @@ object _dropdownuser extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.
       {
 
 
-Seq[Any](format.raw/*2.1*/("""<!--begin: Head -->
+Seq[Any](format.raw/*1.20*/("""
+"""),format.raw/*2.1*/("""<!--begin: Head -->
 <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url(./assets/media/misc/bg-1.jpg)">
     <div class="kt-user-card__avatar">
         <img class="kt-hidden" alt="Pic" src="./assets/media/users/300_25.jpg" />
@@ -77,11 +78,11 @@ Seq[Any](format.raw/*2.1*/("""<!--begin: Head -->
 
               /*
                   -- GENERATED --
-                  DATE: Tue May 28 09:29:39 CEST 2019
-                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_dropdownuser.scala.html
-                  HASH: 034646f5a30819fc8c8730e9641cdc4ac1e5a2b7
-                  MATRIX: 965->1|1077->20|1675->592|1703->600|1731->601
-                  LINES: 28->1|33->2|40->9|40->9|40->9
+                  DATE: Tue May 28 10:53:53 CEST 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_dropdownuser.scala.html
+                  HASH: d8a067e229b50552d334df49fc8aa9f271ddf711
+                  MATRIX: 965->1|1078->19|1106->21|1711->600|1739->608|1767->609
+                  LINES: 28->1|33->1|34->2|41->9|41->9|41->9
                   -- GENERATED --
               */
           

@@ -30,7 +30,8 @@ object _topbaruser extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.ap
       {
 
 
-Seq[Any](format.raw/*2.1*/("""<!--begin: User Bar -->
+Seq[Any](format.raw/*1.20*/("""
+"""),format.raw/*2.1*/("""<!--begin: User Bar -->
 <div class="kt-header__topbar-item kt-header__topbar-item--user">
     <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
         <div class="kt-header__topbar-user">
@@ -61,11 +62,11 @@ Seq[Any](format.raw/*2.1*/("""<!--begin: User Bar -->
 
               /*
                   -- GENERATED --
-                  DATE: Tue May 28 09:20:18 CEST 2019
-                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_topbaruser.scala.html
-                  HASH: 18a6090b126f2771982408f09db76cd535b02616
-                  MATRIX: 963->1|1075->20|2009->927|2023->932|2082->970|2114->975
-                  LINES: 28->1|33->2|44->13|44->13|44->13|45->14
+                  DATE: Tue May 28 10:53:53 CEST 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_topbaruser.scala.html
+                  HASH: 833a22f205e48a3dfa8b5e271a04006ac03b6fdb
+                  MATRIX: 963->1|1076->19|1104->21|2049->939|2063->944|2122->982|2155->988
+                  LINES: 28->1|33->1|34->2|45->13|45->13|45->13|46->14
                   -- GENERATED --
               */
           

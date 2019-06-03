@@ -30,7 +30,8 @@ object _asidebrand extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.ap
       {
 
 
-Seq[Any](format.raw/*2.1*/("""<!-- begin:: Aside -->
+Seq[Any](format.raw/*1.4*/("""
+"""),format.raw/*2.1*/("""<!-- begin:: Aside -->
 <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
     <div class="kt-aside__brand-logo">
         <a href="?page=index">
@@ -77,11 +78,11 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin:: Aside -->
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:28 CEST 2019
-                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_asidebrand.scala.html
-                  HASH: 509b27726dadcd3c492cf973e1770bf103270028
-                  MATRIX: 956->1|1052->4
-                  LINES: 28->1|33->2
+                  DATE: Tue May 28 10:53:53 CEST 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_asidebrand.scala.html
+                  HASH: 9aece4224ca9e1db0e4833bb283a96632dc669ba
+                  MATRIX: 956->1|1052->3|1080->5
+                  LINES: 28->1|33->1|34->2
                   -- GENERATED --
               */
           

@@ -30,7 +30,8 @@ object _dropdownsearchinline extends _root_.play.twirl.api.BaseScalaTemplate[pla
       {
 
 
-Seq[Any](format.raw/*2.1*/("""<div class="kt-quick-search kt-quick-search--inline" id="kt_quick_search_inline">
+Seq[Any](format.raw/*1.4*/("""
+"""),format.raw/*2.1*/("""<div class="kt-quick-search kt-quick-search--inline" id="kt_quick_search_inline">
     <form method="get" class="kt-quick-search__form">
         <div class="input-group">
             <div class="input-group-prepend">
@@ -59,11 +60,11 @@ Seq[Any](format.raw/*2.1*/("""<div class="kt-quick-search kt-quick-search--inlin
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:28 CEST 2019
-                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_dropdownsearchinline.scala.html
-                  HASH: 265f9fab02dd9269dca941bf51bcbd3d178a55a3
-                  MATRIX: 966->1|1062->4
-                  LINES: 28->1|33->2
+                  DATE: Tue May 28 10:53:53 CEST 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_dropdownsearchinline.scala.html
+                  HASH: aecb24debe0589902420b74b2e0d75a1a764a21a
+                  MATRIX: 966->1|1062->3|1090->5
+                  LINES: 28->1|33->1|34->2
                   -- GENERATED --
               */
           

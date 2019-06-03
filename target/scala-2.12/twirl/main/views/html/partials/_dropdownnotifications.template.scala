@@ -30,7 +30,8 @@ object _dropdownnotifications extends _root_.play.twirl.api.BaseScalaTemplate[pl
       {
 
 
-Seq[Any](format.raw/*2.1*/("""<!--begin: Head -->
+Seq[Any](format.raw/*1.4*/("""
+"""),format.raw/*2.1*/("""<!--begin: Head -->
 <div class="kt-head kt-head--skin-dark kt-head--fit-x kt-head--fit-b" style="background-image: url(assets/images/misc/bg-1.jpg)">
     <h3 class="kt-head__title">
         User Notifications &nbsp; <span class="btn btn-success btn-sm btn-bold btn-font-md">23 new</span> 
@@ -260,11 +261,11 @@ Seq[Any](format.raw/*2.1*/("""<!--begin: Head -->
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:28 CEST 2019
-                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_dropdownnotifications.scala.html
-                  HASH: 781097734ddaf984f45542c933cee8b935ccc9c5
-                  MATRIX: 967->1|1063->4
-                  LINES: 28->1|33->2
+                  DATE: Tue May 28 10:53:53 CEST 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_dropdownnotifications.scala.html
+                  HASH: 411e7aa632af2b74ad21c5bb67c43adba03abe14
+                  MATRIX: 967->1|1063->3|1091->5
+                  LINES: 28->1|33->1|34->2
                   -- GENERATED --
               */
           

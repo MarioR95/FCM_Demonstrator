@@ -1,4 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Mario\Desktop\FCM_Demonstrator\app\controllers\HomeController.java:24:3: `}' expected but eof found.[0m
-[0m[[0m[31merror[0m] [0m[0m}[0m
-[0m[[0m[31merror[0m] [0m[0m ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Arufonso\Desktop\FCM_Demonstrator\app\views\course_details_members.scala.html:29:20: not found: value jhon[0m
+[0m[[0m[31merror[0m] [0m[0m							      	<td>@jhon</td>[0m
+[0m[[0m[31merror[0m] [0m[0m							      	     ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Arufonso\Desktop\FCM_Demonstrator\app\views\course_details_members.scala.html:41:20: not found: value twitter[0m
+[0m[[0m[31merror[0m] [0m[0m						      		<td>@twitter</td>[0m
+[0m[[0m[31merror[0m] [0m[0m						      		     ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

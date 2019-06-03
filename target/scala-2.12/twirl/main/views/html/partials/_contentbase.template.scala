@@ -30,8 +30,14 @@ object _contentbase extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.a
       {
 
 
-Seq[Any](format.raw/*2.1*/("""<!-- begin:: Content -->
-<div class="kt-content kt-grid__item kt-grid__item--fluid" id="kt_content"></div>
+Seq[Any](format.raw/*1.4*/("""
+"""),format.raw/*2.1*/("""<!-- begin:: Content -->
+<div class="kt-content kt-grid__item kt-grid__item--fluid" id="kt_content" >
+
+"""),_display_(/*5.2*/views/*5.7*/.html.course_details()),format.raw/*5.29*/("""
+
+
+"""),format.raw/*8.1*/("""</div>
 <!-- end:: Content -->"""))
       }
     }
@@ -48,11 +54,11 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin:: Content -->
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:28 CEST 2019
-                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_contentbase.scala.html
-                  HASH: d541c8a9798a0adebeeacc1456fa850ad5cd432b
-                  MATRIX: 957->1|1053->4
-                  LINES: 28->1|33->2
+                  DATE: Thu May 30 11:57:40 CEST 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_contentbase.scala.html
+                  HASH: a50e1a03fa79a97f801069a703c21477f499dd45
+                  MATRIX: 957->1|1053->3|1081->5|1213->112|1225->117|1267->139|1299->145
+                  LINES: 28->1|33->1|34->2|37->5|37->5|37->5|40->8
                   -- GENERATED --
               */
           

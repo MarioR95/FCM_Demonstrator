@@ -30,7 +30,8 @@ object _asidemenu extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api
       {
 
 
-Seq[Any](format.raw/*2.1*/("""<!-- begin:: Aside Menu -->
+Seq[Any](format.raw/*1.4*/("""
+"""),format.raw/*2.1*/("""<!-- begin:: Aside Menu -->
 <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
    <div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500">
       <ul class="kt-menu__nav ">
@@ -85,7 +86,7 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin:: Aside Menu -->
                <span class="kt-menu__arrow"></span>
                <ul class="kt-menu__subnav">
                   <li class="kt-menu__item kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                     <a href="javascript:;" class="kt-menu__link kt-menu__toggle"> <i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i>
+                     <a href="javascript:;" id="algo" class="kt-menu__link kt-menu__toggle"> <i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i>
                      <span class="kt-menu__link-text">Algororithms</span><i class="kt-menu__ver-arrow la la-angle-right"></i>
                      </a>
                   </li>
@@ -170,11 +171,11 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin:: Aside Menu -->
 
               /*
                   -- GENERATED --
-                  DATE: Tue May 28 08:54:24 CEST 2019
-                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_asidemenu.scala.html
-                  HASH: 61e768f11728e037e201de18730de17b8e063e83
-                  MATRIX: 955->1|1051->4
-                  LINES: 28->1|33->2
+                  DATE: Wed May 29 11:17:03 CEST 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_asidemenu.scala.html
+                  HASH: 2a7195812abf1df3617f914e4365c121d7a7d9db
+                  MATRIX: 955->1|1051->3|1079->5
+                  LINES: 28->1|33->1|34->2
                   -- GENERATED --
               */
           

@@ -30,7 +30,8 @@ object _topbarsearch extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.
       {
 
 
-Seq[Any](format.raw/*2.1*/("""<!--begin: Search -->
+Seq[Any](format.raw/*1.4*/("""
+"""),format.raw/*2.1*/("""<!--begin: Search -->
 <!--begin: Search -->
 <div class="kt-header__topbar-item kt-header__topbar-item--search dropdown" id="kt_quick_search_toggle">
     <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
@@ -65,11 +66,11 @@ Seq[Any](format.raw/*2.1*/("""<!--begin: Search -->
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:28 CEST 2019
-                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_topbarsearch.scala.html
-                  HASH: 112309de4bef4e0ddcfcbabec3fce1575404b337
-                  MATRIX: 958->1|1054->4|2677->1600|2691->1605|2750->1643|2782->1648
-                  LINES: 28->1|33->2|48->17|48->17|48->17|49->18
+                  DATE: Tue May 28 10:53:53 CEST 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_topbarsearch.scala.html
+                  HASH: da95e487c3073ed857e2a2336de48f7207d9b029
+                  MATRIX: 958->1|1054->3|1082->5|2720->1616|2734->1621|2793->1659|2826->1665
+                  LINES: 28->1|33->1|34->2|49->17|49->17|49->17|50->18
                   -- GENERATED --
               */
           

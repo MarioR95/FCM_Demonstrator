@@ -30,7 +30,8 @@ object _layoutscrolltop extends _root_.play.twirl.api.BaseScalaTemplate[play.twi
       {
 
 
-Seq[Any](format.raw/*2.1*/("""<!-- begin::Scrolltop -->
+Seq[Any](format.raw/*1.4*/("""
+"""),format.raw/*2.1*/("""<!-- begin::Scrolltop -->
 <div id="kt_scrolltop" class="kt-scrolltop"><i class="fa fa-arrow-up"></i></div>
 <!-- end::Scrolltop -->"""))
       }
@@ -48,11 +49,11 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin::Scrolltop -->
 
               /*
                   -- GENERATED --
-                  DATE: Mon May 27 14:32:28 CEST 2019
-                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_layoutscrolltop.scala.html
-                  HASH: 72a4598af8b1ae357b5bf14a9f3348bf60fd1da0
-                  MATRIX: 961->1|1057->4
-                  LINES: 28->1|33->2
+                  DATE: Tue May 28 10:53:53 CEST 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_layoutscrolltop.scala.html
+                  HASH: e2d52fe979d5f806195f4f75aaf81347899eda0a
+                  MATRIX: 961->1|1057->3|1085->5
+                  LINES: 28->1|33->1|34->2
                   -- GENERATED --
               */
           

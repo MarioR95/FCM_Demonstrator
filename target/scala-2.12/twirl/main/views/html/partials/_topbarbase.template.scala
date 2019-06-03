@@ -30,7 +30,8 @@ object _topbarbase extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.ap
       {
 
 
-Seq[Any](format.raw/*2.1*/("""<!-- begin:: Header Topbar -->
+Seq[Any](format.raw/*1.20*/("""
+"""),format.raw/*2.1*/("""<!-- begin:: Header Topbar -->
 <div class="kt-header__topbar" style="position: absolute; right: 0">
     """),_display_(/*4.6*/views/*4.11*/.html.partials._topbarsearch()),format.raw/*4.41*/("""
     """),_display_(/*5.6*/views/*5.11*/.html.partials._topbarnotifications()),format.raw/*5.48*/("""
@@ -52,11 +53,11 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin:: Header Topbar -->
 
               /*
                   -- GENERATED --
-                  DATE: Tue May 28 09:19:54 CEST 2019
-                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_topbarbase.scala.html
-                  HASH: f90aac8811d3f386228cc0d35edfe92574d42295
-                  MATRIX: 963->1|1075->20|1205->125|1218->130|1268->160|1299->166|1312->171|1369->208|1400->214|1413->219|1469->255|1496->256
-                  LINES: 28->1|33->2|35->4|35->4|35->4|36->5|36->5|36->5|37->6|37->6|37->6|38->7
+                  DATE: Tue May 28 10:53:53 CEST 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_topbarbase.scala.html
+                  HASH: 5c0c65ef79e744525e59420cbda10382e3a37fcc
+                  MATRIX: 963->1|1076->19|1104->21|1236->128|1249->133|1299->163|1331->170|1344->175|1401->212|1433->219|1446->224|1502->260|1530->262
+                  LINES: 28->1|33->1|34->2|36->4|36->4|36->4|37->5|37->5|37->5|38->6|38->6|38->6|39->7
                   -- GENERATED --
               */
           
