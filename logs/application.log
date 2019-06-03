@@ -504,3 +504,13 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[not found: value
 
 2019-06-03 13:56:46,902 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-343 - Application started (Dev) (no global state)
 2019-06-03 13:57:48,956 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
+2019-06-03 13:57:55,368 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-352 - Database [default] initialized at jdbc:mysql://localhost:3306/dataset?characterEncoding=UTF-8
+2019-06-03 13:57:55,368 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-352 - Creating Pool for datasource 'default'
+2019-06-03 13:57:55,391 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-352 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    play.filters.csrf.CSRFFilter
+
+2019-06-03 13:57:55,393 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-352 - Application started (Dev) (no global state)
