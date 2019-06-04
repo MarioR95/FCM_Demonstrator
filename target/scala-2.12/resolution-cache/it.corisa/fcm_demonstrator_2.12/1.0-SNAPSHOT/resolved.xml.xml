@@ -4,7 +4,7 @@
 		module="fcm_demonstrator_2.12"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20190528105318"
+		publication="20190603141110"
 	>
 		<description>
 		FCM_Demonstrator
@@ -54,6 +54,5 @@
 		<dependency org="com.typesafe.play" name="filters-helpers_2.12" rev="2.7.2" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-jdbc_2.12" rev="2.7.2" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-guice_2.12" rev="2.7.2" conf="compile->default(compile)"/>
-		<dependency org="mysql" name="mysql-connector-java" rev="5.1.21" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>
