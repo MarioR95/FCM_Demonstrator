@@ -1,6 +1,8 @@
 package models.dto;
 
-public class UserDto {
+import java.io.Serializable;
+
+public class UserDto{
 
 	private String email;
 	private int role;
