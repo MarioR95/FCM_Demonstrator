@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/Arufonso/Desktop/FCM_Demonstrator/conf/routes
-// @DATE:Tue May 28 10:53:53 CEST 2019
+// @SOURCE:C:/Users/Mario/Desktop/FCM_Demonstrator/conf/routes
+// @DATE:Mon Jun 10 11:46:40 CEST 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -41,7 +41,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:14
+  // @LINE:16
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -49,7 +49,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:14
+    // @LINE:16
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -69,6 +69,16 @@ package controllers.javascript {
     }
 
   
+    // @LINE:12
+    def courseDetails: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Application.courseDetails",
+      """
+        function(courseName0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "course" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("courseName", courseName0)])})
+        }
+      """
+    )
+  
     // @LINE:8
     def authenticate: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.authenticate",
@@ -79,7 +89,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:12
+    // @LINE:14
     def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.logout",
       """

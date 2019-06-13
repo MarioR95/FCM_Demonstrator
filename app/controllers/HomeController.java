@@ -21,6 +21,11 @@ public class HomeController extends Controller {
     		
     		JsonNode node = Json.parse(request.session().getOptional("connected").get());
     		UserDto user = Json.fromJson(node, UserDto.class);
+    		if(user.getRole() == 1) { 	//TEACHER CASE
+    			
+    		}else {						//STUDENT CASE
+    			
+    		}
     		
         	return ok( views.html.tdashboard.render(user));
         }

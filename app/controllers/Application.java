@@ -1,5 +1,7 @@
 package controllers;
 
+import com.fasterxml.jackson.databind.JsonNode;
+
 import flexjson.JSONSerializer;
 import models.dao.UserDao;
 import models.dto.UserDto;
@@ -22,6 +24,14 @@ public class Application extends Controller {
         return ok().addingToSession(request, "connected",Json.toJson(user).toString());
 	}
 	
+	
+	public Result courseDetails(Http.Request request, String courseName) {
+		//Retrieve all the course's info 
+		JsonNode node= Json.parse(request.session().getOptional("connected").get());
+		UserDto user = Json.fromJson(node, UserDto.class);
+		return ok(views.html.course_details.render(user));
+		
+	}
 	
 	
 	public Result logout(Http.Request request) {

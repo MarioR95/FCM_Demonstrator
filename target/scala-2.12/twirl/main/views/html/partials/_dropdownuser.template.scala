@@ -22,23 +22,23 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object _dropdownuser extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[String,play.twirl.api.HtmlFormat.Appendable] {
+object _dropdownuser extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[models.dto.UserDto,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(username: String):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(user: models.dto.UserDto):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.20*/("""
+Seq[Any](format.raw/*1.28*/("""
 """),format.raw/*2.1*/("""<!--begin: Head -->
-<div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url(./assets/media/misc/bg-1.jpg)">
+<div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url(assets/images/misc/bg-1.jpg)">
     <div class="kt-user-card__avatar">
-        <img class="kt-hidden" alt="Pic" src="./assets/media/users/300_25.jpg" />
+        <img class="kt-hidden" alt="Pic" src="assets/images/users/300_25.jpg" />
         <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
-        <span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">A</span> 
+        <span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">"""),_display_(/*7.95*/user/*7.99*/.getName().charAt(0)),format.raw/*7.119*/("""</span> 
     </div>
-    <div class="kt-user-card__name"> """),_display_(/*9.39*/username),format.raw/*9.47*/(""" """),format.raw/*9.48*/("""</div>
+    <div class="kt-user-card__name"> """),_display_(/*9.39*/user/*9.43*/.getName()),format.raw/*9.53*/(""" """),_display_(/*9.55*/user/*9.59*/.getSurname()),format.raw/*9.72*/(""" """),format.raw/*9.73*/("""</div>
     <div class="kt-user-card__badge"> <span class="btn btn-success btn-sm btn-bold btn-font-md">23 messages</span> </div>
 </div>
 <!--end: Head -->
@@ -67,9 +67,9 @@ Seq[Any](format.raw/*1.20*/("""
     }
   }
 
-  def render(username:String): play.twirl.api.HtmlFormat.Appendable = apply(username)
+  def render(user:models.dto.UserDto): play.twirl.api.HtmlFormat.Appendable = apply(user)
 
-  def f:((String) => play.twirl.api.HtmlFormat.Appendable) = (username) => apply(username)
+  def f:((models.dto.UserDto) => play.twirl.api.HtmlFormat.Appendable) = (user) => apply(user)
 
   def ref: this.type = this
 
@@ -78,11 +78,11 @@ Seq[Any](format.raw/*1.20*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue May 28 10:53:53 CEST 2019
-                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_dropdownuser.scala.html
-                  HASH: d8a067e229b50552d334df49fc8aa9f271ddf711
-                  MATRIX: 965->1|1078->19|1106->21|1711->600|1739->608|1767->609
-                  LINES: 28->1|33->1|34->2|41->9|41->9|41->9
+                  DATE: Mon Jun 10 11:46:41 CEST 2019
+                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_dropdownuser.scala.html
+                  HASH: 81215a9e05326e03a78ab34e021db8b567af6e66
+                  MATRIX: 977->1|1098->27|1126->29|1669->546|1681->550|1722->570|1808->630|1820->634|1850->644|1878->646|1890->650|1923->663|1951->664
+                  LINES: 28->1|33->1|34->2|39->7|39->7|39->7|41->9|41->9|41->9|41->9|41->9|41->9|41->9
                   -- GENERATED --
               */
           

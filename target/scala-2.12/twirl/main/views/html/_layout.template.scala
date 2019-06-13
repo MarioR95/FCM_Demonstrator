@@ -22,40 +22,41 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object _layout extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[String,play.twirl.api.HtmlFormat.Appendable] {
+object _layout extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[models.dto.UserDto,String,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(username: String):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(user: models.dto.UserDto, contentType: String):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.20*/("""
+Seq[Any](format.raw/*1.49*/("""
 """),format.raw/*2.1*/("""<!-- begin:: Page -->
 """),_display_(/*3.2*/views/*3.7*/.html.partials._headerbasemobile()),format.raw/*3.41*/("""
 """),format.raw/*4.1*/("""<div class="kt-grid kt-grid--hor kt-grid--root">
     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
        """),_display_(/*6.9*/views/*6.14*/.html.partials._asidebase()),format.raw/*6.41*/("""
         """),format.raw/*7.9*/("""<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
-           """),_display_(/*8.13*/views/*8.18*/.html.partials._headerbase(username)),format.raw/*8.54*/("""
+           """),_display_(/*8.13*/views/*8.18*/.html.partials._headerbase(user)),format.raw/*8.50*/("""
             """),format.raw/*9.13*/("""<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
-				"""),_display_(/*10.6*/views/*10.11*/.html.partials._contentbase()),format.raw/*10.40*/("""
-            """),format.raw/*11.13*/("""</div>
-			"""),_display_(/*12.5*/views/*12.10*/.html.partials._footerbase()),format.raw/*12.38*/("""
-        """),format.raw/*13.9*/("""</div>
+            <!-- content -->
+           """),_display_(/*11.13*/views/*11.18*/.html.partials._contentbase(contentType)),format.raw/*11.58*/("""
+            """),format.raw/*12.13*/("""</div>
+			"""),_display_(/*13.5*/views/*13.10*/.html.partials._footerbase()),format.raw/*13.38*/("""
+        """),format.raw/*14.9*/("""</div>
     </div>
 </div>
 <!-- end:: Page -->
-"""),_display_(/*17.2*/views/*17.7*/.html.partials._layoutscrolltop()),format.raw/*17.40*/("""
-"""),_display_(/*18.2*/views/*18.7*/.html.partials._layouttoolbar()),format.raw/*18.38*/("""
-"""),_display_(/*19.2*/views/*19.7*/.html.partials._layoutchat()))
+"""),_display_(/*18.2*/views/*18.7*/.html.partials._layoutscrolltop()),format.raw/*18.40*/("""
+"""),_display_(/*19.2*/views/*19.7*/.html.partials._layouttoolbar()),format.raw/*19.38*/("""
+"""),_display_(/*20.2*/views/*20.7*/.html.partials._layoutchat()))
       }
     }
   }
 
-  def render(username:String): play.twirl.api.HtmlFormat.Appendable = apply(username)
+  def render(user:models.dto.UserDto,contentType:String): play.twirl.api.HtmlFormat.Appendable = apply(user,contentType)
 
-  def f:((String) => play.twirl.api.HtmlFormat.Appendable) = (username) => apply(username)
+  def f:((models.dto.UserDto,String) => play.twirl.api.HtmlFormat.Appendable) = (user,contentType) => apply(user,contentType)
 
   def ref: this.type = this
 
@@ -64,11 +65,11 @@ Seq[Any](format.raw/*1.20*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Thu May 30 10:18:31 CEST 2019
-                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/_layout.scala.html
-                  HASH: a706fdb4275dc4cbcf9402d7f4e48b486943f98b
-                  MATRIX: 950->1|1063->19|1091->21|1140->45|1152->50|1206->84|1234->86|1400->227|1413->232|1460->259|1496->269|1632->379|1645->384|1701->420|1742->434|1844->510|1858->515|1908->544|1950->558|1988->570|2002->575|2051->603|2088->613|2164->663|2177->668|2231->701|2260->704|2273->709|2325->740|2354->743|2367->748
-                  LINES: 28->1|33->1|34->2|35->3|35->3|35->3|36->4|38->6|38->6|38->6|39->7|40->8|40->8|40->8|41->9|42->10|42->10|42->10|43->11|44->12|44->12|44->12|45->13|49->17|49->17|49->17|50->18|50->18|50->18|51->19|51->19
+                  DATE: Mon Jun 10 11:59:31 CEST 2019
+                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/_layout.scala.html
+                  HASH: 59abf576c313ad8dab85f325f63e20e254eed04f
+                  MATRIX: 969->1|1111->48|1139->50|1188->74|1200->79|1254->113|1282->115|1448->256|1461->261|1508->288|1544->298|1680->408|1693->413|1745->445|1786->459|1926->572|1940->577|2001->617|2043->631|2081->643|2095->648|2144->676|2181->686|2257->736|2270->741|2324->774|2353->777|2366->782|2418->813|2447->816|2460->821
+                  LINES: 28->1|33->1|34->2|35->3|35->3|35->3|36->4|38->6|38->6|38->6|39->7|40->8|40->8|40->8|41->9|43->11|43->11|43->11|44->12|45->13|45->13|45->13|46->14|50->18|50->18|50->18|51->19|51->19|51->19|52->20|52->20
                   -- GENERATED --
               */
           

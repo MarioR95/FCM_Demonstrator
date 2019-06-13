@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/Arufonso/Desktop/FCM_Demonstrator/conf/routes
-// @DATE:Tue May 28 10:53:53 CEST 2019
+// @SOURCE:C:/Users/Mario/Desktop/FCM_Demonstrator/conf/routes
+// @DATE:Mon Jun 10 11:46:40 CEST 2019
 
 import play.api.mvc.Call
 
@@ -32,14 +32,14 @@ package controllers {
   
   }
 
-  // @LINE:14
+  // @LINE:16
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:14
+    // @LINE:16
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))
@@ -54,13 +54,19 @@ package controllers {
     }
 
   
+    // @LINE:12
+    def courseDetails(courseName:String): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "course" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("courseName", courseName)))))
+    }
+  
     // @LINE:8
     def authenticate(email:String, password:String): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "authenticate" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("email", email)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("password", password)))))
     }
   
-    // @LINE:12
+    // @LINE:14
     def logout(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "logout")

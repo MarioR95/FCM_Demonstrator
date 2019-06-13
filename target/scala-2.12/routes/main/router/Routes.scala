@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/Arufonso/Desktop/FCM_Demonstrator/conf/routes
-// @DATE:Tue May 28 10:53:53 CEST 2019
+// @SOURCE:C:/Users/Mario/Desktop/FCM_Demonstrator/conf/routes
+// @DATE:Mon Jun 10 11:46:40 CEST 2019
 
 package router
 
@@ -18,7 +18,7 @@ class Routes(
   HomeController_2: controllers.HomeController,
   // @LINE:8
   Application_0: controllers.Application,
-  // @LINE:14
+  // @LINE:16
   Assets_1: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -29,7 +29,7 @@ class Routes(
     HomeController_2: controllers.HomeController,
     // @LINE:8
     Application_0: controllers.Application,
-    // @LINE:14
+    // @LINE:16
     Assets_1: controllers.Assets
   ) = this(errorHandler, HomeController_2, Application_0, Assets_1, "/")
 
@@ -47,6 +47,7 @@ class Routes(
     ("""GET""", this.prefix, """controllers.HomeController.index"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """authenticate""", """controllers.Application.authenticate(request:Request, email:String, password:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """dashboard""", """controllers.HomeController.buildDashboard(request:Request)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """course""", """controllers.Application.courseDetails(request:Request, courseName:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """logout""", """controllers.Application.logout(request:Request)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
@@ -115,10 +116,30 @@ class Routes(
   )
 
   // @LINE:12
-  private[this] lazy val controllers_Application_logout3_route = Route("GET",
+  private[this] lazy val controllers_Application_courseDetails3_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("course")))
+  )
+  private[this] lazy val controllers_Application_courseDetails3_invoker = createInvoker(
+    
+    (req:play.mvc.Http.Request) =>
+      Application_0.courseDetails(fakeValue[play.mvc.Http.Request], fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "courseDetails",
+      Seq(classOf[play.mvc.Http.Request], classOf[String]),
+      "GET",
+      this.prefix + """course""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:14
+  private[this] lazy val controllers_Application_logout4_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("logout")))
   )
-  private[this] lazy val controllers_Application_logout3_invoker = createInvoker(
+  private[this] lazy val controllers_Application_logout4_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.logout(fakeValue[play.mvc.Http.Request]),
@@ -134,11 +155,11 @@ class Routes(
     )
   )
 
-  // @LINE:14
-  private[this] lazy val controllers_Assets_versioned4_route = Route("GET",
+  // @LINE:16
+  private[this] lazy val controllers_Assets_versioned5_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned4_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned5_invoker = createInvoker(
     Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -176,16 +197,23 @@ class Routes(
       }
   
     // @LINE:12
-    case controllers_Application_logout3_route(params@_) =>
-      call { 
-        controllers_Application_logout3_invoker.call(
-          req => Application_0.logout(req))
+    case controllers_Application_courseDetails3_route(params@_) =>
+      call(params.fromQuery[String]("courseName", None)) { (courseName) =>
+        controllers_Application_courseDetails3_invoker.call(
+          req => Application_0.courseDetails(req, courseName))
       }
   
     // @LINE:14
-    case controllers_Assets_versioned4_route(params@_) =>
+    case controllers_Application_logout4_route(params@_) =>
+      call { 
+        controllers_Application_logout4_invoker.call(
+          req => Application_0.logout(req))
+      }
+  
+    // @LINE:16
+    case controllers_Assets_versioned5_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned4_invoker.call(Assets_1.versioned(path, file))
+        controllers_Assets_versioned5_invoker.call(Assets_1.versioned(path, file))
       }
   }
 }

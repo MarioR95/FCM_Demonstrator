@@ -1,13 +1,14 @@
-@(username: String)
+@(user: models.dto.UserDto, contentType: String)
 <!-- begin:: Page -->
 @views.html.partials._headerbasemobile()
 <div class="kt-grid kt-grid--hor kt-grid--root">
     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
        @views.html.partials._asidebase()
         <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
-           @views.html.partials._headerbase(username)
+           @views.html.partials._headerbase(user)
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
-				@views.html.partials._contentbase()
+            <!-- content -->
+           @views.html.partials._contentbase(contentType)
             </div>
 			@views.html.partials._footerbase()
         </div>

@@ -272,7 +272,12 @@ Seq[Any](format.raw/*1.1*/("""<!-- begin: student details -->
 </div>
 <!-- end: Student table -->
 
+<!-- begin: FCM Representation -->
+<div class="row">
+	Rappresentaizone della mappa FCM
 
+</div>
+<!-- end: FCM Representation -->
 <!-- end: Content -->"""))
       }
     }
@@ -289,9 +294,9 @@ Seq[Any](format.raw/*1.1*/("""<!-- begin: student details -->
 
               /*
                   -- GENERATED --
-                  DATE: Thu Jun 06 12:13:25 CEST 2019
-                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/studentStats.scala.html
-                  HASH: 616b3134bd7a892e1253a7ee6a7196512dea1caa
+                  DATE: Mon Jun 10 11:46:41 CEST 2019
+                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/studentStats.scala.html
+                  HASH: af35c7442302881e5d94d3ffe0ec720e017f4960
                   MATRIX: 1037->0
                   LINES: 33->1
                   -- GENERATED --

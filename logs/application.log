@@ -1,853 +1,169 @@
-2019-06-06 10:40:31,254 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-4 - Configuration not found for database: No configuration setting found for key 'db'
-2019-06-06 10:40:33,121 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-4 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-06-10 11:54:05,763 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-7 - Configuration not found for database: No configuration setting found for key 'db'
+2019-06-10 11:54:07,070 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-7 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     play.filters.csrf.CSRFFilter
 
-2019-06-06 10:40:33,219 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-4 - Application started (Dev) (no global state)
-2019-06-06 10:40:41,114 [ERROR] from application in application-akka.actor.default-dispatcher-3 - 
+2019-06-10 11:54:07,123 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-7 - Application started (Dev) (no global state)
+2019-06-10 11:57:51,695 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-8 - 
 
-! @7c57p593b - Internal server error, for (GET) [/dashboard?username=amenichino@unisa.it] ->
+! @7c6bbfpd3 - Internal server error, for (GET) [/course?courseName=Algorithms] ->
  
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[JSONException: [  ]:  Could not load models.dto.UserDto]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:351)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:267)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:448)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:446)
-	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:417)
-	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:41)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:92)
-	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:85)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:49)
+play.sbt.PlayExceptions$CompilationException: Compilation error[not enough arguments for method apply: (user: models.dto.UserDto, contentType: String)play.twirl.api.HtmlFormat.Appendable in object _layout.
+Unspecified value parameter contentType.]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:37)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:37)
+	at scala.Option.map(Option.scala:146)
+	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:41)
+	at scala.Option.map(Option.scala:146)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:36)
+	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:29)
+	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:64)
+	at scala.util.Either$LeftProjection.map(Either.scala:569)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:64)
+	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:80)
+	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:501)
+	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:58)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:64)
+	at play.runsupport.Reloader.reload(Reloader.scala:501)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:143)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:304)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:189)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1262)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:523)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:409)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:599)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:480)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:574)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:742)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:757)
+	at akka.actor.Actor.aroundReceive(Actor.scala:539)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:537)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:664)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:610)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:579)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:268)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:229)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:241)
 	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
 	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
 	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: flexjson.JSONException: [  ]:  Could not load models.dto.UserDto
-	at flexjson.ObjectBinder.findClassInMap(ObjectBinder.java:235)
-	at flexjson.ObjectBinder.findClassName(ObjectBinder.java:202)
-	at flexjson.ObjectBinder.bind(ObjectBinder.java:83)
-	at flexjson.ObjectBinder.bind(ObjectBinder.java:65)
-	at flexjson.JSONDeserializer.deserialize(JSONDeserializer.java:158)
-	at controllers.HomeController.buildDashboard(HomeController.java:17)
-	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$8(Routes.scala:175)
-	at play.core.routing.HandlerInvokerFactory$$anon$8.resultCall(HandlerInvoker.scala:151)
-	at play.core.routing.HandlerInvokerFactory$$anon$8.resultCall(HandlerInvoker.scala:150)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$3$$anon$4$$anon$5.invocation(HandlerInvoker.scala:116)
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:131)
-	at play.mvc.Action.lambda$call$0(Action.java:89)
-	at java.base/java.util.Optional.map(Unknown Source)
-	at play.mvc.Action.call(Action.java:81)
-	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:33)
-	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:191)
-	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:658)
-	at scala.util.Success.$anonfun$map$1(Try.scala:255)
-	at scala.util.Success.map(Try.scala:213)
-	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
-	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
-	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:79)
-	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:72)
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:71)
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:72)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete(Promise.scala:372)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete$(Promise.scala:371)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.onComplete(Promise.scala:379)
-	at scala.concurrent.impl.Promise.transform(Promise.scala:33)
-	at scala.concurrent.impl.Promise.transform$(Promise.scala:31)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.transform(Promise.scala:379)
-	at scala.concurrent.Future.map(Future.scala:292)
-	at scala.concurrent.Future.map$(Future.scala:292)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.map(Promise.scala:379)
-	at scala.concurrent.Future$.apply(Future.scala:658)
-	at play.core.j.JavaAction.apply(JavaAction.scala:192)
-	at play.api.mvc.Action.$anonfun$apply$2(Action.scala:98)
-	at play.api.libs.streams.StrictAccumulator.$anonfun$mapFuture$4(Accumulator.scala:184)
-	at scala.util.Try$.apply(Try.scala:213)
-	at play.api.libs.streams.StrictAccumulator.$anonfun$mapFuture$3(Accumulator.scala:184)
-	at scala.Function1.$anonfun$andThen$1(Function1.scala:57)
-	at scala.Function1.$anonfun$andThen$1(Function1.scala:57)
-	at play.api.libs.streams.StrictAccumulator.run(Accumulator.scala:219)
-	at play.core.server.AkkaHttpServer.$anonfun$runAction$4(AkkaHttpServer.scala:441)
-	at akka.http.scaladsl.util.FastFuture$.strictTransform$1(FastFuture.scala:41)
-	at akka.http.scaladsl.util.FastFuture$.$anonfun$transformWith$3(FastFuture.scala:51)
-	... 12 common frames omitted
-Caused by: java.lang.ClassNotFoundException: models.dto.UserDto
-	at java.base/java.net.URLClassLoader.findClass(Unknown Source)
-	at java.base/java.lang.ClassLoader.loadClass(Unknown Source)
-	at java.base/java.lang.ClassLoader.loadClass(Unknown Source)
-	at java.base/java.lang.Class.forName0(Native Method)
-	at java.base/java.lang.Class.forName(Unknown Source)
-	at flexjson.ObjectBinder.findClassInMap(ObjectBinder.java:230)
-	... 59 common frames omitted
-2019-06-06 10:42:24,498 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-14 - Configuration not found for database: No configuration setting found for key 'db'
-2019-06-06 10:42:24,755 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-14 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-06-10 11:58:33,728 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-47 - Configuration not found for database: No configuration setting found for key 'db'
+2019-06-10 11:58:33,986 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-47 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     play.filters.csrf.CSRFFilter
 
-2019-06-06 10:42:24,773 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-14 - Application started (Dev) (no global state)
-2019-06-06 10:42:32,087 [ERROR] from application in application-akka.actor.default-dispatcher-10 - 
+2019-06-10 11:58:34,000 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-47 - Application started (Dev) (no global state)
+2019-06-10 11:59:36,079 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-46 - Configuration not found for database: No configuration setting found for key 'db'
+2019-06-10 11:59:36,309 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-46 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
-! @7c57pbh7l - Internal server error, for (GET) [/dashboard?username=amenichino@unisa.it] ->
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    play.filters.csrf.CSRFFilter
+
+2019-06-10 11:59:36,323 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-46 - Application started (Dev) (no global state)
+2019-06-10 12:01:00,792 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-50 - 
+
+! @7c6bc0j9e - Internal server error, for (GET) [/] ->
  
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[JSONException: [  ]:  Could not load models.dto.UserDto]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:351)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:267)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:448)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:446)
-	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:417)
-	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:41)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:92)
-	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:85)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:49)
+play.sbt.PlayExceptions$CompilationException: Compilation error[illegal start of simple expression]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:37)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:37)
+	at scala.Option.map(Option.scala:146)
+	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:41)
+	at scala.Option.map(Option.scala:146)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:36)
+	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:29)
+	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:64)
+	at scala.util.Either$LeftProjection.map(Either.scala:569)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:64)
+	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:80)
+	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:501)
+	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:58)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:64)
+	at play.runsupport.Reloader.reload(Reloader.scala:501)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:143)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:304)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:189)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1262)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:523)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:409)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:599)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:480)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:574)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:742)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:757)
+	at akka.actor.Actor.aroundReceive(Actor.scala:539)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:537)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:664)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:610)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:579)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:268)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:229)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:241)
 	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
 	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
 	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: flexjson.JSONException: [  ]:  Could not load models.dto.UserDto
-	at flexjson.ObjectBinder.findClassInMap(ObjectBinder.java:235)
-	at flexjson.ObjectBinder.findClassName(ObjectBinder.java:202)
-	at flexjson.ObjectBinder.bind(ObjectBinder.java:83)
-	at flexjson.ObjectBinder.bind(ObjectBinder.java:65)
-	at flexjson.JSONDeserializer.deserialize(JSONDeserializer.java:158)
-	at controllers.HomeController.buildDashboard(HomeController.java:17)
-	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$8(Routes.scala:175)
-	at play.core.routing.HandlerInvokerFactory$$anon$8.resultCall(HandlerInvoker.scala:151)
-	at play.core.routing.HandlerInvokerFactory$$anon$8.resultCall(HandlerInvoker.scala:150)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$3$$anon$4$$anon$5.invocation(HandlerInvoker.scala:116)
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:131)
-	at play.mvc.Action.lambda$call$0(Action.java:89)
-	at java.base/java.util.Optional.map(Unknown Source)
-	at play.mvc.Action.call(Action.java:81)
-	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:33)
-	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:191)
-	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:658)
-	at scala.util.Success.$anonfun$map$1(Try.scala:255)
-	at scala.util.Success.map(Try.scala:213)
-	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
-	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
-	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:79)
-	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:72)
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:71)
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:72)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete(Promise.scala:372)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete$(Promise.scala:371)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.onComplete(Promise.scala:379)
-	at scala.concurrent.impl.Promise.transform(Promise.scala:33)
-	at scala.concurrent.impl.Promise.transform$(Promise.scala:31)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.transform(Promise.scala:379)
-	at scala.concurrent.Future.map(Future.scala:292)
-	at scala.concurrent.Future.map$(Future.scala:292)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.map(Promise.scala:379)
-	at scala.concurrent.Future$.apply(Future.scala:658)
-	at play.core.j.JavaAction.apply(JavaAction.scala:192)
-	at play.api.mvc.Action.$anonfun$apply$2(Action.scala:98)
-	at play.api.libs.streams.StrictAccumulator.$anonfun$mapFuture$4(Accumulator.scala:184)
-	at scala.util.Try$.apply(Try.scala:213)
-	at play.api.libs.streams.StrictAccumulator.$anonfun$mapFuture$3(Accumulator.scala:184)
-	at scala.Function1.$anonfun$andThen$1(Function1.scala:57)
-	at scala.Function1.$anonfun$andThen$1(Function1.scala:57)
-	at play.api.libs.streams.StrictAccumulator.run(Accumulator.scala:219)
-	at play.core.server.AkkaHttpServer.$anonfun$runAction$4(AkkaHttpServer.scala:441)
-	at akka.http.scaladsl.util.FastFuture$.strictTransform$1(FastFuture.scala:41)
-	at akka.http.scaladsl.util.FastFuture$.$anonfun$transformWith$3(FastFuture.scala:51)
-	... 12 common frames omitted
-Caused by: java.lang.ClassNotFoundException: models.dto.UserDto
-	at java.base/java.net.URLClassLoader.findClass(Unknown Source)
-	at java.base/java.lang.ClassLoader.loadClass(Unknown Source)
-	at java.base/java.lang.ClassLoader.loadClass(Unknown Source)
-	at java.base/java.lang.Class.forName0(Native Method)
-	at java.base/java.lang.Class.forName(Unknown Source)
-	at flexjson.ObjectBinder.findClassInMap(ObjectBinder.java:230)
-	... 59 common frames omitted
-2019-06-06 10:43:12,902 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-10 - Configuration not found for database: No configuration setting found for key 'db'
-2019-06-06 10:43:13,121 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-10 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-06-10 12:03:44,505 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-51 - 
 
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-    play.filters.csrf.CSRFFilter
-
-2019-06-06 10:43:13,138 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-10 - Application started (Dev) (no global state)
-2019-06-06 10:43:17,589 [ERROR] from application in application-akka.actor.default-dispatcher-3 - 
-
-! @7c57pe6fn - Internal server error, for (GET) [/dashboard?username=amenichino@unisa.it] ->
+! @7c6bca1g5 - Internal server error, for (GET) [/] ->
  
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[JSONException: [  ]:  Could not load models.dto.UserDto]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:351)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:267)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:448)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:446)
-	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:417)
-	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:41)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:92)
-	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:85)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:49)
+play.sbt.PlayExceptions$CompilationException: Compilation error[illegal start of simple expression]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:37)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:37)
+	at scala.Option.map(Option.scala:146)
+	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:41)
+	at scala.Option.map(Option.scala:146)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:36)
+	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:29)
+	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:64)
+	at scala.util.Either$LeftProjection.map(Either.scala:569)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:64)
+	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:80)
+	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:501)
+	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:58)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:64)
+	at play.runsupport.Reloader.reload(Reloader.scala:501)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:143)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:304)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:189)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1262)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:523)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:409)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:599)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:480)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:574)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:742)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:757)
+	at akka.actor.Actor.aroundReceive(Actor.scala:539)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:537)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:664)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:610)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:579)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:268)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:229)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:241)
 	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
 	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
 	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: flexjson.JSONException: [  ]:  Could not load models.dto.UserDto
-	at flexjson.ObjectBinder.findClassInMap(ObjectBinder.java:235)
-	at flexjson.ObjectBinder.findClassName(ObjectBinder.java:202)
-	at flexjson.ObjectBinder.bind(ObjectBinder.java:83)
-	at flexjson.ObjectBinder.bind(ObjectBinder.java:65)
-	at flexjson.JSONDeserializer.deserialize(JSONDeserializer.java:158)
-	at controllers.HomeController.buildDashboard(HomeController.java:17)
-	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$8(Routes.scala:175)
-	at play.core.routing.HandlerInvokerFactory$$anon$8.resultCall(HandlerInvoker.scala:151)
-	at play.core.routing.HandlerInvokerFactory$$anon$8.resultCall(HandlerInvoker.scala:150)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$3$$anon$4$$anon$5.invocation(HandlerInvoker.scala:116)
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:131)
-	at play.mvc.Action.lambda$call$0(Action.java:89)
-	at java.base/java.util.Optional.map(Unknown Source)
-	at play.mvc.Action.call(Action.java:81)
-	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:33)
-	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:191)
-	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:658)
-	at scala.util.Success.$anonfun$map$1(Try.scala:255)
-	at scala.util.Success.map(Try.scala:213)
-	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
-	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
-	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:79)
-	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:72)
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:71)
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:72)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete(Promise.scala:372)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete$(Promise.scala:371)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.onComplete(Promise.scala:379)
-	at scala.concurrent.impl.Promise.transform(Promise.scala:33)
-	at scala.concurrent.impl.Promise.transform$(Promise.scala:31)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.transform(Promise.scala:379)
-	at scala.concurrent.Future.map(Future.scala:292)
-	at scala.concurrent.Future.map$(Future.scala:292)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.map(Promise.scala:379)
-	at scala.concurrent.Future$.apply(Future.scala:658)
-	at play.core.j.JavaAction.apply(JavaAction.scala:192)
-	at play.api.mvc.Action.$anonfun$apply$2(Action.scala:98)
-	at play.api.libs.streams.StrictAccumulator.$anonfun$mapFuture$4(Accumulator.scala:184)
-	at scala.util.Try$.apply(Try.scala:213)
-	at play.api.libs.streams.StrictAccumulator.$anonfun$mapFuture$3(Accumulator.scala:184)
-	at scala.Function1.$anonfun$andThen$1(Function1.scala:57)
-	at scala.Function1.$anonfun$andThen$1(Function1.scala:57)
-	at play.api.libs.streams.StrictAccumulator.run(Accumulator.scala:219)
-	at play.core.server.AkkaHttpServer.$anonfun$runAction$4(AkkaHttpServer.scala:441)
-	at akka.http.scaladsl.util.FastFuture$.strictTransform$1(FastFuture.scala:41)
-	at akka.http.scaladsl.util.FastFuture$.$anonfun$transformWith$3(FastFuture.scala:51)
-	... 12 common frames omitted
-Caused by: java.lang.ClassNotFoundException: models.dto.UserDto
-	at java.base/java.net.URLClassLoader.findClass(Unknown Source)
-	at java.base/java.lang.ClassLoader.loadClass(Unknown Source)
-	at java.base/java.lang.ClassLoader.loadClass(Unknown Source)
-	at java.base/java.lang.Class.forName0(Native Method)
-	at java.base/java.lang.Class.forName(Unknown Source)
-	at flexjson.ObjectBinder.findClassInMap(ObjectBinder.java:230)
-	... 59 common frames omitted
-2019-06-06 10:45:01,827 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-4 - Configuration not found for database: No configuration setting found for key 'db'
-2019-06-06 10:45:02,011 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-4 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-06-10 12:04:13,216 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-53 - Configuration not found for database: No configuration setting found for key 'db'
+2019-06-10 12:04:13,460 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-53 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     play.filters.csrf.CSRFFilter
 
-2019-06-06 10:45:02,025 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-4 - Application started (Dev) (no global state)
-2019-06-06 10:45:06,458 [ERROR] from application in application-akka.actor.default-dispatcher-7 - 
-
-! @7c57pkbh4 - Internal server error, for (GET) [/dashboard?username=amenichino@unisa.it] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[JSONException: [  ]:  Could not load models.dto.UserDto]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:351)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:267)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:448)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:446)
-	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:417)
-	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:41)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:92)
-	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:85)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:49)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: flexjson.JSONException: [  ]:  Could not load models.dto.UserDto
-	at flexjson.ObjectBinder.findClassInMap(ObjectBinder.java:235)
-	at flexjson.ObjectBinder.findClassName(ObjectBinder.java:202)
-	at flexjson.ObjectBinder.bind(ObjectBinder.java:83)
-	at flexjson.ObjectBinder.bind(ObjectBinder.java:65)
-	at flexjson.JSONDeserializer.deserialize(JSONDeserializer.java:158)
-	at controllers.HomeController.buildDashboard(HomeController.java:16)
-	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$8(Routes.scala:175)
-	at play.core.routing.HandlerInvokerFactory$$anon$8.resultCall(HandlerInvoker.scala:151)
-	at play.core.routing.HandlerInvokerFactory$$anon$8.resultCall(HandlerInvoker.scala:150)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$3$$anon$4$$anon$5.invocation(HandlerInvoker.scala:116)
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:131)
-	at play.mvc.Action.lambda$call$0(Action.java:89)
-	at java.base/java.util.Optional.map(Unknown Source)
-	at play.mvc.Action.call(Action.java:81)
-	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:33)
-	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:191)
-	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:658)
-	at scala.util.Success.$anonfun$map$1(Try.scala:255)
-	at scala.util.Success.map(Try.scala:213)
-	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
-	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
-	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:79)
-	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:72)
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:71)
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:72)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete(Promise.scala:372)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete$(Promise.scala:371)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.onComplete(Promise.scala:379)
-	at scala.concurrent.impl.Promise.transform(Promise.scala:33)
-	at scala.concurrent.impl.Promise.transform$(Promise.scala:31)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.transform(Promise.scala:379)
-	at scala.concurrent.Future.map(Future.scala:292)
-	at scala.concurrent.Future.map$(Future.scala:292)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.map(Promise.scala:379)
-	at scala.concurrent.Future$.apply(Future.scala:658)
-	at play.core.j.JavaAction.apply(JavaAction.scala:192)
-	at play.api.mvc.Action.$anonfun$apply$2(Action.scala:98)
-	at play.api.libs.streams.StrictAccumulator.$anonfun$mapFuture$4(Accumulator.scala:184)
-	at scala.util.Try$.apply(Try.scala:213)
-	at play.api.libs.streams.StrictAccumulator.$anonfun$mapFuture$3(Accumulator.scala:184)
-	at scala.Function1.$anonfun$andThen$1(Function1.scala:57)
-	at scala.Function1.$anonfun$andThen$1(Function1.scala:57)
-	at play.api.libs.streams.StrictAccumulator.run(Accumulator.scala:219)
-	at play.core.server.AkkaHttpServer.$anonfun$runAction$4(AkkaHttpServer.scala:441)
-	at akka.http.scaladsl.util.FastFuture$.strictTransform$1(FastFuture.scala:41)
-	at akka.http.scaladsl.util.FastFuture$.$anonfun$transformWith$3(FastFuture.scala:51)
-	... 12 common frames omitted
-Caused by: java.lang.ClassNotFoundException: models.dto.UserDto
-	at java.base/java.net.URLClassLoader.findClass(Unknown Source)
-	at java.base/java.lang.ClassLoader.loadClass(Unknown Source)
-	at java.base/java.lang.ClassLoader.loadClass(Unknown Source)
-	at java.base/java.lang.Class.forName0(Native Method)
-	at java.base/java.lang.Class.forName(Unknown Source)
-	at flexjson.ObjectBinder.findClassInMap(ObjectBinder.java:230)
-	... 59 common frames omitted
-2019-06-06 11:07:39,229 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-28 - Configuration not found for database: No configuration setting found for key 'db'
-2019-06-06 11:07:39,323 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-28 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-    play.filters.csrf.CSRFFilter
-
-2019-06-06 11:07:39,330 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-28 - Application started (Dev) (no global state)
-2019-06-06 11:07:51,183 [ERROR] from application in application-akka.actor.default-dispatcher-10 - 
-
-! @7c582k2cf - Internal server error, for (GET) [/dashboard?username=amenichino@unisa.it] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[RuntimeException: java.lang.NullPointerException]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:351)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:267)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:448)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:446)
-	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:417)
-	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:41)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:92)
-	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:85)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:49)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: java.lang.RuntimeException: java.lang.NullPointerException
-	at play.libs.Json.fromJson(Json.java:89)
-	at controllers.HomeController.buildDashboard(HomeController.java:21)
-	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$8(Routes.scala:175)
-	at play.core.routing.HandlerInvokerFactory$$anon$8.resultCall(HandlerInvoker.scala:151)
-	at play.core.routing.HandlerInvokerFactory$$anon$8.resultCall(HandlerInvoker.scala:150)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$3$$anon$4$$anon$5.invocation(HandlerInvoker.scala:116)
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:131)
-	at play.mvc.Action.lambda$call$0(Action.java:89)
-	at java.base/java.util.Optional.map(Unknown Source)
-	at play.mvc.Action.call(Action.java:81)
-	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:33)
-	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:191)
-	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:658)
-	at scala.util.Success.$anonfun$map$1(Try.scala:255)
-	at scala.util.Success.map(Try.scala:213)
-	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
-	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
-	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:79)
-	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:72)
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:71)
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:72)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete(Promise.scala:372)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete$(Promise.scala:371)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.onComplete(Promise.scala:379)
-	at scala.concurrent.impl.Promise.transform(Promise.scala:33)
-	at scala.concurrent.impl.Promise.transform$(Promise.scala:31)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.transform(Promise.scala:379)
-	at scala.concurrent.Future.map(Future.scala:292)
-	at scala.concurrent.Future.map$(Future.scala:292)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.map(Promise.scala:379)
-	at scala.concurrent.Future$.apply(Future.scala:658)
-	at play.core.j.JavaAction.apply(JavaAction.scala:192)
-	at play.api.mvc.Action.$anonfun$apply$2(Action.scala:98)
-	at play.api.libs.streams.StrictAccumulator.$anonfun$mapFuture$4(Accumulator.scala:184)
-	at scala.util.Try$.apply(Try.scala:213)
-	at play.api.libs.streams.StrictAccumulator.$anonfun$mapFuture$3(Accumulator.scala:184)
-	at scala.Function1.$anonfun$andThen$1(Function1.scala:57)
-	at scala.Function1.$anonfun$andThen$1(Function1.scala:57)
-	at play.api.libs.streams.StrictAccumulator.run(Accumulator.scala:219)
-	at play.core.server.AkkaHttpServer.$anonfun$runAction$4(AkkaHttpServer.scala:441)
-	at akka.http.scaladsl.util.FastFuture$.strictTransform$1(FastFuture.scala:41)
-	at akka.http.scaladsl.util.FastFuture$.$anonfun$transformWith$3(FastFuture.scala:51)
-	... 12 common frames omitted
-Caused by: java.lang.NullPointerException: null
-	at com.fasterxml.jackson.databind.ObjectMapper.treeToValue(ObjectMapper.java:2745)
-	at play.libs.Json.fromJson(Json.java:87)
-	... 55 common frames omitted
-2019-06-06 11:08:41,757 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-31 - Configuration not found for database: No configuration setting found for key 'db'
-2019-06-06 11:08:41,821 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-31 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-    play.filters.csrf.CSRFFilter
-
-2019-06-06 11:08:41,826 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-31 - Application started (Dev) (no global state)
-2019-06-06 11:08:45,999 [ERROR] from application in application-akka.actor.default-dispatcher-6 - 
-
-! @7c582n5eo - Internal server error, for (GET) [/dashboard?username=amenichino@unisa.it] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[RuntimeException: java.lang.NullPointerException]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:351)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:267)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:448)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:446)
-	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:417)
-	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:41)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:92)
-	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:85)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:49)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: java.lang.RuntimeException: java.lang.NullPointerException
-	at play.libs.Json.fromJson(Json.java:89)
-	at controllers.HomeController.buildDashboard(HomeController.java:22)
-	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$8(Routes.scala:175)
-	at play.core.routing.HandlerInvokerFactory$$anon$8.resultCall(HandlerInvoker.scala:151)
-	at play.core.routing.HandlerInvokerFactory$$anon$8.resultCall(HandlerInvoker.scala:150)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$3$$anon$4$$anon$5.invocation(HandlerInvoker.scala:116)
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:131)
-	at play.mvc.Action.lambda$call$0(Action.java:89)
-	at java.base/java.util.Optional.map(Unknown Source)
-	at play.mvc.Action.call(Action.java:81)
-	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:33)
-	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:191)
-	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:658)
-	at scala.util.Success.$anonfun$map$1(Try.scala:255)
-	at scala.util.Success.map(Try.scala:213)
-	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
-	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
-	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:79)
-	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:72)
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:71)
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:72)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete(Promise.scala:372)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete$(Promise.scala:371)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.onComplete(Promise.scala:379)
-	at scala.concurrent.impl.Promise.transform(Promise.scala:33)
-	at scala.concurrent.impl.Promise.transform$(Promise.scala:31)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.transform(Promise.scala:379)
-	at scala.concurrent.Future.map(Future.scala:292)
-	at scala.concurrent.Future.map$(Future.scala:292)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.map(Promise.scala:379)
-	at scala.concurrent.Future$.apply(Future.scala:658)
-	at play.core.j.JavaAction.apply(JavaAction.scala:192)
-	at play.api.mvc.Action.$anonfun$apply$2(Action.scala:98)
-	at play.api.libs.streams.StrictAccumulator.$anonfun$mapFuture$4(Accumulator.scala:184)
-	at scala.util.Try$.apply(Try.scala:213)
-	at play.api.libs.streams.StrictAccumulator.$anonfun$mapFuture$3(Accumulator.scala:184)
-	at scala.Function1.$anonfun$andThen$1(Function1.scala:57)
-	at scala.Function1.$anonfun$andThen$1(Function1.scala:57)
-	at play.api.libs.streams.StrictAccumulator.run(Accumulator.scala:219)
-	at play.core.server.AkkaHttpServer.$anonfun$runAction$4(AkkaHttpServer.scala:441)
-	at akka.http.scaladsl.util.FastFuture$.strictTransform$1(FastFuture.scala:41)
-	at akka.http.scaladsl.util.FastFuture$.$anonfun$transformWith$3(FastFuture.scala:51)
-	... 12 common frames omitted
-Caused by: java.lang.NullPointerException: null
-	at com.fasterxml.jackson.databind.ObjectMapper.treeToValue(ObjectMapper.java:2745)
-	at play.libs.Json.fromJson(Json.java:87)
-	... 55 common frames omitted
-2019-06-06 11:11:56,955 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-25 - Configuration not found for database: No configuration setting found for key 'db'
-2019-06-06 11:11:57,027 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-25 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-    play.filters.csrf.CSRFFilter
-
-2019-06-06 11:11:57,031 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-25 - Application started (Dev) (no global state)
-2019-06-06 11:12:00,508 [ERROR] from application in application-akka.actor.default-dispatcher-7 - 
-
-! @7c5838781 - Internal server error, for (POST) [/authenticate?email=amenichino@unisa.it&password=123123123] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[IllegalArgumentException: requirement failed: Session value for connected cannot be null]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:351)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:267)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:448)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:446)
-	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:417)
-	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:41)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:92)
-	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:85)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:49)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: java.lang.IllegalArgumentException: requirement failed: Session value for connected cannot be null
-	at scala.Predef$.require(Predef.scala:281)
-	at play.api.mvc.Session.$anonfun$$plus$plus$2(Session.scala:64)
-	at play.api.mvc.Session.$anonfun$$plus$plus$2$adapted(Session.scala:64)
-	at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:792)
-	at scala.collection.immutable.Map$Map1.foreach(Map.scala:128)
-	at scala.collection.TraversableLike$WithFilter.foreach(TraversableLike.scala:791)
-	at play.api.mvc.Session.$plus$plus(Session.scala:64)
-	at play.mvc.Http$Session.adding(Http.java:2582)
-	at play.mvc.Result.addingToSession(Result.java:363)
-	at play.mvc.Result.addingToSession(Result.java:376)
-	at controllers.Application.authenticate(Application.java:22)
-	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$5(Routes.scala:168)
-	at play.core.routing.HandlerInvokerFactory$$anon$8.resultCall(HandlerInvoker.scala:151)
-	at play.core.routing.HandlerInvokerFactory$$anon$8.resultCall(HandlerInvoker.scala:150)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$3$$anon$4$$anon$5.invocation(HandlerInvoker.scala:116)
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:131)
-	at play.mvc.Action.lambda$call$0(Action.java:89)
-	at java.base/java.util.Optional.map(Unknown Source)
-	at play.mvc.Action.call(Action.java:81)
-	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:33)
-	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:191)
-	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:658)
-	at scala.util.Success.$anonfun$map$1(Try.scala:255)
-	at scala.util.Success.map(Try.scala:213)
-	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
-	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
-	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:79)
-	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:72)
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:71)
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:72)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete(Promise.scala:372)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete$(Promise.scala:371)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.onComplete(Promise.scala:379)
-	at scala.concurrent.impl.Promise.transform(Promise.scala:33)
-	at scala.concurrent.impl.Promise.transform$(Promise.scala:31)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.transform(Promise.scala:379)
-	at scala.concurrent.Future.map(Future.scala:292)
-	at scala.concurrent.Future.map$(Future.scala:292)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.map(Promise.scala:379)
-	at scala.concurrent.Future$.apply(Future.scala:658)
-	at play.core.j.JavaAction.apply(JavaAction.scala:192)
-	at play.api.mvc.Action.$anonfun$apply$2(Action.scala:98)
-	at scala.concurrent.Future.$anonfun$flatMap$1(Future.scala:307)
-	... 13 common frames omitted
-2019-06-06 11:12:41,425 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-39 - Configuration not found for database: No configuration setting found for key 'db'
-2019-06-06 11:12:41,502 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-39 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-    play.filters.csrf.CSRFFilter
-
-2019-06-06 11:12:41,507 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-39 - Application started (Dev) (no global state)
-2019-06-06 11:12:43,074 [ERROR] from application in application-akka.actor.default-dispatcher-8 - 
-
-! @7c583ai75 - Internal server error, for (POST) [/authenticate?email=amenichino@unisa.it&password=123123123] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[IllegalArgumentException: requirement failed: Session value for connected cannot be null]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:351)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:267)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:448)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:446)
-	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:417)
-	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:41)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:92)
-	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:85)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:49)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: java.lang.IllegalArgumentException: requirement failed: Session value for connected cannot be null
-	at scala.Predef$.require(Predef.scala:281)
-	at play.api.mvc.Session.$anonfun$$plus$plus$2(Session.scala:64)
-	at play.api.mvc.Session.$anonfun$$plus$plus$2$adapted(Session.scala:64)
-	at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:792)
-	at scala.collection.immutable.Map$Map1.foreach(Map.scala:128)
-	at scala.collection.TraversableLike$WithFilter.foreach(TraversableLike.scala:791)
-	at play.api.mvc.Session.$plus$plus(Session.scala:64)
-	at play.mvc.Http$Session.adding(Http.java:2582)
-	at play.mvc.Result.addingToSession(Result.java:363)
-	at play.mvc.Result.addingToSession(Result.java:376)
-	at controllers.Application.authenticate(Application.java:22)
-	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$5(Routes.scala:168)
-	at play.core.routing.HandlerInvokerFactory$$anon$8.resultCall(HandlerInvoker.scala:151)
-	at play.core.routing.HandlerInvokerFactory$$anon$8.resultCall(HandlerInvoker.scala:150)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$3$$anon$4$$anon$5.invocation(HandlerInvoker.scala:116)
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:131)
-	at play.mvc.Action.lambda$call$0(Action.java:89)
-	at java.base/java.util.Optional.map(Unknown Source)
-	at play.mvc.Action.call(Action.java:81)
-	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:33)
-	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:191)
-	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:658)
-	at scala.util.Success.$anonfun$map$1(Try.scala:255)
-	at scala.util.Success.map(Try.scala:213)
-	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
-	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
-	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:79)
-	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:72)
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:71)
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:72)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete(Promise.scala:372)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete$(Promise.scala:371)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.onComplete(Promise.scala:379)
-	at scala.concurrent.impl.Promise.transform(Promise.scala:33)
-	at scala.concurrent.impl.Promise.transform$(Promise.scala:31)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.transform(Promise.scala:379)
-	at scala.concurrent.Future.map(Future.scala:292)
-	at scala.concurrent.Future.map$(Future.scala:292)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.map(Promise.scala:379)
-	at scala.concurrent.Future$.apply(Future.scala:658)
-	at play.core.j.JavaAction.apply(JavaAction.scala:192)
-	at play.api.mvc.Action.$anonfun$apply$2(Action.scala:98)
-	at scala.concurrent.Future.$anonfun$flatMap$1(Future.scala:307)
-	... 13 common frames omitted
-2019-06-06 11:13:13,351 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-40 - Configuration not found for database: No configuration setting found for key 'db'
-2019-06-06 11:13:13,423 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-40 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-    play.filters.csrf.CSRFFilter
-
-2019-06-06 11:13:13,426 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-40 - Application started (Dev) (no global state)
-2019-06-06 11:13:16,995 [ERROR] from application in application-akka.actor.default-dispatcher-2 - 
-
-! @7c583cgbm - Internal server error, for (POST) [/authenticate?email=amenichino@unisa.it&password=123123123] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[IllegalArgumentException: requirement failed: Session value for connected cannot be null]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:351)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:267)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:448)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:446)
-	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:417)
-	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:41)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:92)
-	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:85)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:49)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: java.lang.IllegalArgumentException: requirement failed: Session value for connected cannot be null
-	at scala.Predef$.require(Predef.scala:281)
-	at play.api.mvc.Session.$anonfun$$plus$plus$2(Session.scala:64)
-	at play.api.mvc.Session.$anonfun$$plus$plus$2$adapted(Session.scala:64)
-	at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:792)
-	at scala.collection.immutable.Map$Map1.foreach(Map.scala:128)
-	at scala.collection.TraversableLike$WithFilter.foreach(TraversableLike.scala:791)
-	at play.api.mvc.Session.$plus$plus(Session.scala:64)
-	at play.mvc.Http$Session.adding(Http.java:2582)
-	at play.mvc.Result.addingToSession(Result.java:363)
-	at play.mvc.Result.addingToSession(Result.java:376)
-	at controllers.Application.authenticate(Application.java:22)
-	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$5(Routes.scala:168)
-	at play.core.routing.HandlerInvokerFactory$$anon$8.resultCall(HandlerInvoker.scala:151)
-	at play.core.routing.HandlerInvokerFactory$$anon$8.resultCall(HandlerInvoker.scala:150)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$3$$anon$4$$anon$5.invocation(HandlerInvoker.scala:116)
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:131)
-	at play.mvc.Action.lambda$call$0(Action.java:89)
-	at java.base/java.util.Optional.map(Unknown Source)
-	at play.mvc.Action.call(Action.java:81)
-	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:33)
-	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:191)
-	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:658)
-	at scala.util.Success.$anonfun$map$1(Try.scala:255)
-	at scala.util.Success.map(Try.scala:213)
-	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
-	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
-	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:79)
-	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:72)
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:71)
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:72)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete(Promise.scala:372)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete$(Promise.scala:371)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.onComplete(Promise.scala:379)
-	at scala.concurrent.impl.Promise.transform(Promise.scala:33)
-	at scala.concurrent.impl.Promise.transform$(Promise.scala:31)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.transform(Promise.scala:379)
-	at scala.concurrent.Future.map(Future.scala:292)
-	at scala.concurrent.Future.map$(Future.scala:292)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.map(Promise.scala:379)
-	at scala.concurrent.Future$.apply(Future.scala:658)
-	at play.core.j.JavaAction.apply(JavaAction.scala:192)
-	at play.api.mvc.Action.$anonfun$apply$2(Action.scala:98)
-	at scala.concurrent.Future.$anonfun$flatMap$1(Future.scala:307)
-	... 13 common frames omitted
-2019-06-06 11:13:51,753 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-36 - Configuration not found for database: No configuration setting found for key 'db'
-2019-06-06 11:13:51,824 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-36 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-    play.filters.csrf.CSRFFilter
-
-2019-06-06 11:13:51,828 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-36 - Application started (Dev) (no global state)
-2019-06-06 11:14:03,348 [ERROR] from application in application-akka.actor.default-dispatcher-9 - 
-
-! @7c583f70h - Internal server error, for (POST) [/authenticate?email=amenichino@unisa.it&password=123123123] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[IllegalArgumentException: requirement failed: Session value for connected cannot be null]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:351)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:267)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:448)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:446)
-	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:417)
-	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:41)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:92)
-	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:85)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:49)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: java.lang.IllegalArgumentException: requirement failed: Session value for connected cannot be null
-	at scala.Predef$.require(Predef.scala:281)
-	at play.api.mvc.Session.$anonfun$$plus$plus$2(Session.scala:64)
-	at play.api.mvc.Session.$anonfun$$plus$plus$2$adapted(Session.scala:64)
-	at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:792)
-	at scala.collection.immutable.Map$Map1.foreach(Map.scala:128)
-	at scala.collection.TraversableLike$WithFilter.foreach(TraversableLike.scala:791)
-	at play.api.mvc.Session.$plus$plus(Session.scala:64)
-	at play.mvc.Http$Session.adding(Http.java:2582)
-	at play.mvc.Result.addingToSession(Result.java:363)
-	at play.mvc.Result.addingToSession(Result.java:376)
-	at controllers.Application.authenticate(Application.java:22)
-	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$5(Routes.scala:168)
-	at play.core.routing.HandlerInvokerFactory$$anon$8.resultCall(HandlerInvoker.scala:151)
-	at play.core.routing.HandlerInvokerFactory$$anon$8.resultCall(HandlerInvoker.scala:150)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$3$$anon$4$$anon$5.invocation(HandlerInvoker.scala:116)
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:131)
-	at play.mvc.Action.lambda$call$0(Action.java:89)
-	at java.base/java.util.Optional.map(Unknown Source)
-	at play.mvc.Action.call(Action.java:81)
-	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:33)
-	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:191)
-	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:658)
-	at scala.util.Success.$anonfun$map$1(Try.scala:255)
-	at scala.util.Success.map(Try.scala:213)
-	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
-	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
-	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:79)
-	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:72)
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:71)
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:72)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete(Promise.scala:372)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete$(Promise.scala:371)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.onComplete(Promise.scala:379)
-	at scala.concurrent.impl.Promise.transform(Promise.scala:33)
-	at scala.concurrent.impl.Promise.transform$(Promise.scala:31)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.transform(Promise.scala:379)
-	at scala.concurrent.Future.map(Future.scala:292)
-	at scala.concurrent.Future.map$(Future.scala:292)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.map(Promise.scala:379)
-	at scala.concurrent.Future$.apply(Future.scala:658)
-	at play.core.j.JavaAction.apply(JavaAction.scala:192)
-	at play.api.mvc.Action.$anonfun$apply$2(Action.scala:98)
-	at scala.concurrent.Future.$anonfun$flatMap$1(Future.scala:307)
-	... 13 common frames omitted
-2019-06-06 11:14:47,925 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-36 - Configuration not found for database: No configuration setting found for key 'db'
-2019-06-06 11:14:47,990 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-36 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-    play.filters.csrf.CSRFFilter
-
-2019-06-06 11:14:47,994 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-36 - Application started (Dev) (no global state)
-2019-06-06 12:13:24,950 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-shutdown-hook-1 - Stopping server...
-2019-06-06 12:13:28,923 [WARN] from akka.actor.CoordinatedShutdown in play-dev-mode-akka.actor.default-dispatcher-61 - Task [shutdown-application-dev-mode] failed in phase [service-stop]: Compilation error[type mismatch;
- found   : models.dto.UserDto
- required: String]
+2019-06-10 12:04:13,470 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-53 - Application started (Dev) (no global state)

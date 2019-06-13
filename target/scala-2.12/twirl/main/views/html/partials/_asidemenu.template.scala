@@ -86,7 +86,7 @@ Seq[Any](format.raw/*1.4*/("""
                <span class="kt-menu__arrow"></span>
                <ul class="kt-menu__subnav">
                   <li class="kt-menu__item kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                     <a href="javascript:;" id="algo" class="kt-menu__link kt-menu__toggle"> <i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i>
+                     <a href="/course?courseName=Algorithms" id="algo" class="kt-menu__link kt-menu__toggle"> <i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i>
                      <span class="kt-menu__link-text">Algororithms</span><i class="kt-menu__ver-arrow la la-angle-right"></i>
                      </a>
                   </li>
@@ -171,9 +171,9 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed May 29 11:17:03 CEST 2019
-                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_asidemenu.scala.html
-                  HASH: 2a7195812abf1df3617f914e4365c121d7a7d9db
+                  DATE: Mon Jun 10 11:46:41 CEST 2019
+                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_asidemenu.scala.html
+                  HASH: cd507944cda0a64be93f79ec0e79e10786c1a631
                   MATRIX: 955->1|1051->3|1079->5
                   LINES: 28->1|33->1|34->2
                   -- GENERATED --
