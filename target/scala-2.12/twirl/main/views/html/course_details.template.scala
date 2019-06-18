@@ -44,22 +44,18 @@ Seq[Any](format.raw/*1.28*/("""
 <!--begin::Fonts -->
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
-
 <script
 	src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
 <script>
-	WebFont.load("""),format.raw/*22.15*/("""{"""),format.raw/*22.16*/("""
-		"""),format.raw/*23.3*/("""google : """),format.raw/*23.12*/("""{"""),format.raw/*23.13*/("""
-			"""),format.raw/*24.4*/(""""families" : [ "Poppins:300,400,500,600,700",
+	WebFont.load("""),format.raw/*18.15*/("""{"""),format.raw/*18.16*/("""
+		"""),format.raw/*19.3*/("""google : """),format.raw/*19.12*/("""{"""),format.raw/*19.13*/("""
+			"""),format.raw/*20.4*/(""""families" : [ "Poppins:300,400,500,600,700",
 					"Roboto:300,400,500,600,700" ]
-		"""),format.raw/*26.3*/("""}"""),format.raw/*26.4*/(""",
-		active : function() """),format.raw/*27.23*/("""{"""),format.raw/*27.24*/("""
-			"""),format.raw/*28.4*/("""sessionStorage.fonts = true;
-		"""),format.raw/*29.3*/("""}"""),format.raw/*29.4*/("""
-	"""),format.raw/*30.2*/("""}"""),format.raw/*30.3*/(""");
+		"""),format.raw/*22.3*/("""}"""),format.raw/*22.4*/(""",
+		active : function() """),format.raw/*23.23*/("""{"""),format.raw/*23.24*/("""
+			"""),format.raw/*24.4*/("""sessionStorage.fonts = true;
+		"""),format.raw/*25.3*/("""}"""),format.raw/*25.4*/("""
+	"""),format.raw/*26.2*/("""}"""),format.raw/*26.3*/(""");
 </script>
 
 <!--end::Fonts -->
@@ -85,13 +81,16 @@ Seq[Any](format.raw/*1.28*/("""
 	type="text/css" />
 <!--end::Layout Skins -->
 <link rel="shortcut icon" href="assets/images/logos/favicon.ico" />
+
+<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
 </head>
 <!-- end::Head -->
 <!-- begin::Body -->
 <body
 	class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
-	"""),_display_(/*61.3*/views/*61.8*/.html._layout(user, "courseDetails")),format.raw/*61.44*/("""
-	"""),format.raw/*62.2*/("""<div class="kt-content kt-grid__item kt-grid__item--fluid" id="kt_content" >
+	"""),_display_(/*60.3*/views/*60.8*/.html._layout(user, "courseDetails")),format.raw/*60.44*/("""
+	"""),format.raw/*61.2*/("""<div class="kt-content kt-grid__item kt-grid__item--fluid" id="kt_content" >
 		<div class="kt-subheader   kt-grid__item" id="kt_subheader">
     <div class="kt-subheader__main">
         
@@ -112,10 +111,10 @@ Seq[Any](format.raw/*1.28*/("""
 
 	<!-- begin::Global Config(global config for global JS sciprts) -->
 	<script>
-		var KTAppOptions = """),format.raw/*83.22*/("""{"""),format.raw/*83.23*/("""
-			"""),format.raw/*84.4*/(""""colors" : """),format.raw/*84.15*/("""{"""),format.raw/*84.16*/("""
-				"""),format.raw/*85.5*/(""""state" : """),format.raw/*85.15*/("""{"""),format.raw/*85.16*/("""
-					"""),format.raw/*86.6*/(""""brand" : "#5d78ff",
+		var KTAppOptions = """),format.raw/*82.22*/("""{"""),format.raw/*82.23*/("""
+			"""),format.raw/*83.4*/(""""colors" : """),format.raw/*83.15*/("""{"""),format.raw/*83.16*/("""
+				"""),format.raw/*84.5*/(""""state" : """),format.raw/*84.15*/("""{"""),format.raw/*84.16*/("""
+					"""),format.raw/*85.6*/(""""brand" : "#5d78ff",
 					"dark" : "#282a3c",
 					"light" : "#ffffff",
 					"primary" : "#5867dd",
@@ -123,13 +122,13 @@ Seq[Any](format.raw/*1.28*/("""
 					"info" : "#36a3f7",
 					"warning" : "#ffb822",
 					"danger" : "#fd3995"
-				"""),format.raw/*94.5*/("""}"""),format.raw/*94.6*/(""",
-				"base" : """),format.raw/*95.14*/("""{"""),format.raw/*95.15*/("""
-					"""),format.raw/*96.6*/(""""label" : [ "#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466" ],
+				"""),format.raw/*93.5*/("""}"""),format.raw/*93.6*/(""",
+				"base" : """),format.raw/*94.14*/("""{"""),format.raw/*94.15*/("""
+					"""),format.raw/*95.6*/(""""label" : [ "#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466" ],
 					"shape" : [ "#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a" ]
-				"""),format.raw/*98.5*/("""}"""),format.raw/*98.6*/("""
-			"""),format.raw/*99.4*/("""}"""),format.raw/*99.5*/("""
-		"""),format.raw/*100.3*/("""}"""),format.raw/*100.4*/(""";
+				"""),format.raw/*97.5*/("""}"""),format.raw/*97.6*/("""
+			"""),format.raw/*98.4*/("""}"""),format.raw/*98.5*/("""
+		"""),format.raw/*99.3*/("""}"""),format.raw/*99.4*/(""";
 	</script>
 	<!-- end::Global Config -->
 	<!--begin::Global Theme Bundle(used by all pages) -->
@@ -180,11 +179,11 @@ Seq[Any](format.raw/*1.28*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Jun 17 14:11:49 CEST 2019
+                  DATE: Tue Jun 18 10:25:14 CEST 2019
                   SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/course_details.scala.html
-                  HASH: 0736104f6f0e1a8762af5a60bcf04d6784552adf
-                  MATRIX: 969->1|1090->27|1120->31|1829->712|1858->713|1889->717|1926->726|1955->727|1987->732|2100->818|2128->819|2181->844|2210->845|2242->850|2301->882|2329->883|2359->886|2387->887|3742->2216|3755->2221|3812->2257|3842->2260|4521->2911|4550->2912|4582->2917|4621->2928|4650->2929|4683->2935|4721->2945|4750->2946|4784->2953|5030->3172|5058->3173|5102->3189|5131->3190|5165->3197|5318->3323|5346->3324|5378->3329|5406->3330|5438->3334|5467->3335
-                  LINES: 28->1|33->1|35->3|54->22|54->22|55->23|55->23|55->23|56->24|58->26|58->26|59->27|59->27|60->28|61->29|61->29|62->30|62->30|93->61|93->61|93->61|94->62|115->83|115->83|116->84|116->84|116->84|117->85|117->85|117->85|118->86|126->94|126->94|127->95|127->95|128->96|130->98|130->98|131->99|131->99|132->100|132->100
+                  HASH: bcfbf046d158e3aa187c38d9166695196715f28c
+                  MATRIX: 969->1|1090->27|1120->31|1629->512|1658->513|1689->517|1726->526|1755->527|1787->532|1900->618|1928->619|1981->644|2010->645|2042->650|2101->682|2129->683|2159->686|2187->687|3656->2130|3669->2135|3726->2171|3756->2174|4435->2825|4464->2826|4496->2831|4535->2842|4564->2843|4597->2849|4635->2859|4664->2860|4698->2867|4944->3086|4972->3087|5016->3103|5045->3104|5079->3111|5232->3237|5260->3238|5292->3243|5320->3244|5351->3248|5379->3249
+                  LINES: 28->1|33->1|35->3|50->18|50->18|51->19|51->19|51->19|52->20|54->22|54->22|55->23|55->23|56->24|57->25|57->25|58->26|58->26|92->60|92->60|92->60|93->61|114->82|114->82|115->83|115->83|115->83|116->84|116->84|116->84|117->85|125->93|125->93|126->94|126->94|127->95|129->97|129->97|130->98|130->98|131->99|131->99
                   -- GENERATED --
               */
           

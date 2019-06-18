@@ -30,13 +30,9 @@ object studentStats extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.a
       {
 
 
-Seq[Any](format.raw/*1.1*/("""<style type="text/css">
-    #fcm"""),format.raw/*2.9*/("""{"""),format.raw/*2.10*/("""
-        """),format.raw/*3.9*/("""width: 1600px;
-        height: 1400px;
-        border: 1px solid lightgray;
-    """),format.raw/*6.5*/("""}"""),format.raw/*6.6*/("""
-"""),format.raw/*7.1*/("""</style>
+Seq[Any](format.raw/*1.1*/("""<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
 
 <script src="assets/javascripts/pages/fcmLoader.js"></script>
 
@@ -202,21 +198,22 @@ Seq[Any](format.raw/*1.1*/("""<style type="text/css">
 						    	<tr>
 							      	<th scope="row">1</th>
 							      	<td>12/04/2019</td>
-							      	<td>19/04/1019</td>
+							      	<td>19/04/2019</td>
 							      	<td>0.87</td>
 							      	<td>0.25</td>
 							      	<td>Type1</td>
-							      	<td class="kt-font-success">Success</td>
+							      	<td class="kt-font-success">Sent</td>
 							      	<td>Type2</td>
-							      	<td class="kt-font-danger">Danger</td>
+							      	<td class="kt-font-success">Sent</td>
 							      	<td>
 								      	<div class="dropdown dropright">
 				                            <button type="button" class="btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				                                <i class="flaticon-more-1"></i>
 				                            </button>
 				                            <div class="dropdown-menu dropdown-menu-left" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);">
-				                                <a class="dropdown-item" href="#"><i class="flaticon-profile-1"></i> Details</a>
-				                                <a class="dropdown-item" href="#"><i class="flaticon-analytics"></i> Stats</a>
+				                                <a class="dropdown-item" href="#"><i class="flaticon-cogwheel-2"></i> Compute Feedback</a>
+				                                <a class="dropdown-item" href="#"><i class="flaticon-paper-plane-1"></i> Send Feedback</a>
+				                                <a class="dropdown-item" href="#"><i class="flaticon-earth-globe"></i> See on Map</a>
 				                                <div class="dropdown-divider"></div>
 				                                <a class="dropdown-item kt-font-danger" href="#"><i class="flaticon-delete kt-font-danger"></i> Delete</a>
 				                            </div>
@@ -226,21 +223,22 @@ Seq[Any](format.raw/*1.1*/("""<style type="text/css">
 						    	<tr>
 							      	<th scope="row">2</th>
 							      	<td>12/04/2019</td>
-							      	<td>19/04/1019</td>
+							      	<td>19/04/2019</td>
 							      	<td>0.87</td>
 							      	<td>0.25</td>
 							      	<td>Type1</td>
-							      	<td class="kt-font-success">Success</td>
+							      	<td class="kt-font-warning">Not sent</td>
 							      	<td>Type2</td>
-							      	<td class="kt-font-danger">Danger</td>
+							      	<td class="kt-font-success">Sent</td>
 							      	<td>
 								      	<div class="dropdown dropright">
 				                            <button type="button" class="btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				                                <i class="flaticon-more-1"></i>
 				                            </button>
 				                            <div class="dropdown-menu dropdown-menu-left" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);">
-				                                <a class="dropdown-item" href="#"><i class="flaticon-profile-1"></i> Details</a>
-				                                <a class="dropdown-item" href="#"><i class="flaticon-analytics"></i> Stats</a>
+				                                <a class="dropdown-item" href="#"><i class="flaticon-cogwheel-2"></i> Compute Feedback</a>
+				                                <a class="dropdown-item" href="#"><i class="flaticon-paper-plane-1"></i> Send Feedback</a>
+				                                <a class="dropdown-item" href="#"><i class="flaticon-earth-globe"></i> See on Map</a>
 				                                <div class="dropdown-divider"></div>
 				                                <a class="dropdown-item kt-font-danger" href="#"><i class="flaticon-delete kt-font-danger"></i> Delete</a>
 				                            </div>
@@ -250,21 +248,22 @@ Seq[Any](format.raw/*1.1*/("""<style type="text/css">
 						    	<tr>
 							      	<th scope="row">3</th>
 							      	<td>12/04/2019</td>
-							      	<td>19/04/1019</td>
+							      	<td>19/04/2019</td>
 							      	<td>0.87</td>
 							      	<td>0.25</td>
 							      	<td>Type1</td>
-							      	<td class="kt-font-success">Success</td>
+							      	<td class="kt-font-danger">Not generated</td>
 							      	<td>Type2</td>
-							      	<td class="kt-font-danger">Danger</td>
+							      	<td class="kt-font-danger">Not generated</td>
 							      	<td>
 								      	<div class="dropdown dropright">
 				                            <button type="button" class="btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				                                <i class="flaticon-more-1"></i>
 				                            </button>
 				                            <div class="dropdown-menu dropdown-menu-left" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);">
-				                                <a class="dropdown-item" href="#"><i class="flaticon-profile-1"></i> Details</a>
-				                                <a class="dropdown-item" href="#"><i class="flaticon-analytics"></i> Stats</a>
+				                                <a class="dropdown-item" href="#"><i class="flaticon-cogwheel-2"></i> Compute Feedback</a>
+				                                <a class="dropdown-item" href="#"><i class="flaticon-paper-plane-1"></i> Send Feedback</a>
+				                                <a class="dropdown-item" href="#"><i class="flaticon-earth-globe"></i> See on Map</a>
 				                                <div class="dropdown-divider"></div>
 				                                <a class="dropdown-item kt-font-danger" href="#"><i class="flaticon-delete kt-font-danger"></i> Delete</a>
 				                            </div>
@@ -284,9 +283,28 @@ Seq[Any](format.raw/*1.1*/("""<style type="text/css">
 
 <!-- begin: FCM Representation -->
 <div class="row">
-	<div id="fcm">
+	<div class="col-xl-12">
+		<div class="kt-portlet">
+			<div class="kt-portlet__head">
+				<div class="kt-portlet__head-label">
+					<span class="kt-portlet__head-icon kt-hidden"> <i
+						class="la la-gear"></i>
+					</span>
+					<h3 class="kt-portlet__head-title">Week 1 <small>Start: 12/04/2019 - End: 19/04/2019</small></h3>
+				</div>
+				<div class="kt-portlet__head-toolbar">
+					<div class="kt-portlet__head-actions">
+						<button type="button" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Previous Interaction</button>
+						<button type="button" class="btn btn-secondary">Next Interaction <i class="fas fa-arrow-right"></i></button>
+					</div>
+				</div>
+			</div>
+			<div class="kt-portlet__body">
+				<div id="fcm" style="height: 700px;">
+				</div>
+			</div>
+		</div>
 	</div>
-
 </div>
 <!-- end: FCM Representation -->
 <!-- end: Content -->"""))
@@ -305,11 +323,11 @@ Seq[Any](format.raw/*1.1*/("""<style type="text/css">
 
               /*
                   -- GENERATED --
-                  DATE: Mon Jun 17 14:11:49 CEST 2019
+                  DATE: Tue Jun 18 11:39:06 CEST 2019
                   SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/studentStats.scala.html
-                  HASH: b835035506f751070b0e8653c10c722b152d847d
-                  MATRIX: 1037->0|1096->33|1124->34|1160->44|1269->127|1296->128|1324->130
-                  LINES: 33->1|34->2|34->2|35->3|38->6|38->6|39->7
+                  HASH: 1918b243e0c37652ddcc9ee587ae038e016406c8
+                  MATRIX: 1037->0
+                  LINES: 33->1
                   -- GENERATED --
               */
           
