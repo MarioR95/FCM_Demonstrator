@@ -52,8 +52,8 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Jun 10 11:46:41 CEST 2019
-                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_footerbase.scala.html
+                  DATE: Mon Jun 17 11:33:33 CEST 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_footerbase.scala.html
                   HASH: d19444195f98aa6a126f2a33dfd53a8d170ccbaf
                   MATRIX: 956->1|1052->3|1080->5
                   LINES: 28->1|33->1|34->2

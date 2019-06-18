@@ -1,7 +1,2 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Mario\Desktop\FCM_Demonstrator\app\views\partials\_contentbase.scala.html:5:6: illegal start of simple expression[0m
-[0m[[0m[31merror[0m] [0m[0m	@if(@contentType.equals("courseDetails")){[0m
-[0m[[0m[31merror[0m] [0m[0m	    ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Mario\Desktop\FCM_Demonstrator\app\views\partials\_contentbase.scala.html:11:23: ')' expected but '}' found.[0m
-[0m[[0m[31merror[0m] [0m[0m<!-- end:: Content -->[0m
-[0m[[0m[31merror[0m] [0m[0m                      ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[0minfo[0m] [0m[0mNote: C:\Users\Arufonso\Desktop\FCM_Demonstrator\app\models\database\FileQueryReader.java uses unchecked or unsafe operations.[0m
+[0m[[0m[0minfo[0m] [0m[0mNote: Recompile with -Xlint:unchecked for details.[0m

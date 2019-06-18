@@ -328,8 +328,8 @@ format.raw("""sform="translate(-12,89)" class="amcharts-axis-label"><tspan y="6"
 
               /*
                   -- GENERATED --
-                  DATE: Mon Jun 10 11:46:41 CEST 2019
-                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/coursedetailscontent.scala.html
+                  DATE: Mon Jun 17 11:33:33 CEST 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/coursedetailscontent.scala.html
                   HASH: e785a14fdd30544a65cc9b8180c25f3a6379b4cd
                   MATRIX: 1045->0
                   LINES: 33->1

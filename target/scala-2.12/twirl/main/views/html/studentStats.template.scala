@@ -30,7 +30,17 @@ object studentStats extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.a
       {
 
 
-Seq[Any](format.raw/*1.1*/("""<!-- begin: student details -->
+Seq[Any](format.raw/*1.1*/("""<style type="text/css">
+    #fcm"""),format.raw/*2.9*/("""{"""),format.raw/*2.10*/("""
+        """),format.raw/*3.9*/("""width: 1600px;
+        height: 1400px;
+        border: 1px solid lightgray;
+    """),format.raw/*6.5*/("""}"""),format.raw/*6.6*/("""
+"""),format.raw/*7.1*/("""</style>
+
+<script src="assets/javascripts/pages/fcmLoader.js"></script>
+
+<!-- begin: student details -->
 <div class="kt-subheader   kt-grid__item" id="kt_subheader">
     <div class="kt-subheader__main">
         
@@ -274,7 +284,8 @@ Seq[Any](format.raw/*1.1*/("""<!-- begin: student details -->
 
 <!-- begin: FCM Representation -->
 <div class="row">
-	Rappresentaizone della mappa FCM
+	<div id="fcm">
+	</div>
 
 </div>
 <!-- end: FCM Representation -->
@@ -294,11 +305,11 @@ Seq[Any](format.raw/*1.1*/("""<!-- begin: student details -->
 
               /*
                   -- GENERATED --
-                  DATE: Mon Jun 10 11:46:41 CEST 2019
-                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/studentStats.scala.html
-                  HASH: af35c7442302881e5d94d3ffe0ec720e017f4960
-                  MATRIX: 1037->0
-                  LINES: 33->1
+                  DATE: Mon Jun 17 14:11:49 CEST 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/studentStats.scala.html
+                  HASH: b835035506f751070b0e8653c10c722b152d847d
+                  MATRIX: 1037->0|1096->33|1124->34|1160->44|1269->127|1296->128|1324->130
+                  LINES: 33->1|34->2|34->2|35->3|38->6|38->6|39->7
                   -- GENERATED --
               */
           

@@ -78,8 +78,8 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Jun 10 11:46:41 CEST 2019
-                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_asidebrand.scala.html
+                  DATE: Mon Jun 17 11:33:33 CEST 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_asidebrand.scala.html
                   HASH: 9aece4224ca9e1db0e4833bb283a96632dc669ba
                   MATRIX: 956->1|1052->3|1080->5
                   LINES: 28->1|33->1|34->2
