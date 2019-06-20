@@ -64,77 +64,28 @@ Seq[Any](format.raw/*1.1*/("""<link rel="stylesheet" type="text/css" href="https
 				</div>
 			</div>
 			<div class="kt-portlet__body">
-				<div id="kt_flotcharts_2"
-					style="height: 300px; padding: 0px; position: relative;">
-					<canvas class="flot-base"
-						style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1538px; height: 300px;"
-						width="1538" height="300"></canvas>
-					<div class="flot-text"
-						style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);">
-						<div class="flot-x-axis flot-x1-axis xAxis x1Axis"
-							style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; max-width: 96px; top: 283px; left: 72px; text-align: center;">2</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; max-width: 96px; top: 283px; left: 176px; text-align: center;">4</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; max-width: 96px; top: 283px; left: 280px; text-align: center;">6</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; max-width: 96px; top: 283px; left: 384px; text-align: center;">8</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; max-width: 96px; top: 283px; left: 486px; text-align: center;">10</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; max-width: 96px; top: 283px; left: 590px; text-align: center;">12</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; max-width: 96px; top: 283px; left: 694px; text-align: center;">14</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; max-width: 96px; top: 283px; left: 798px; text-align: center;">16</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; max-width: 96px; top: 283px; left: 902px; text-align: center;">18</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; max-width: 96px; top: 283px; left: 1005px; text-align: center;">20</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; max-width: 96px; top: 283px; left: 1109px; text-align: center;">22</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; max-width: 96px; top: 283px; left: 1213px; text-align: center;">24</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; max-width: 96px; top: 283px; left: 1317px; text-align: center;">26</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; max-width: 96px; top: 283px; left: 1421px; text-align: center;">28</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; max-width: 96px; top: 283px; left: 1525px; text-align: center;">30</div>
-								
+				<div id="kt_flotcharts_my" style="height: 600px; padding: 0px; position: relative;">
+					<canvas class="flot-base" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1538px; height: 300px;" width="1538" height="300"></canvas>
+					<div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);">
+						<div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+							<div class="flot-tick-label tickLabel" style="position: absolute; max-width: 96px; top: 570px; left: 150px;  text-align: center;">1</div>
+							<div class="flot-tick-label tickLabel" style="position: absolute; max-width: 96px; top: 570px; left: 300px;  text-align: center;">2</div>
+							<div class="flot-tick-label tickLabel" style="position: absolute; max-width: 96px; top: 570px; left: 450px; text-align: center;">3</div>
+							<div class="flot-tick-label tickLabel" style="position: absolute; max-width: 96px; top: 570px; left: 600px; text-align: center;">4</div>
+							<div class="flot-tick-label tickLabel" style="position: absolute; max-width: 96px; top: 570px; left: 750px; text-align: center;">5</div>
 						</div>
-						<div class="flot-y-axis flot-y1-axis yAxis y1Axis"
-							style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; top: 270px; left: 10px; text-align: right;">0</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; top: 249px; left: 8px; text-align: right;">10</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; top: 228px; left: 4px; text-align: right;">20</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; top: 208px; left: 4px; text-align: right;">30</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; top: 187px; left: 4px; text-align: right;">40</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; top: 166px; left: 4px; text-align: right;">50</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; top: 145px; left: 4px; text-align: right;">60</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; top: 125px; left: 5px; text-align: right;">70</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; top: 104px; left: 4px; text-align: right;">80</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; top: 83px; left: 4px; text-align: right;">90</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; top: 62px; left: 1px; text-align: right;">100</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; top: 42px; left: 5px; text-align: right;">110</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; top: 21px; left: 1px; text-align: right;">120</div>
-							<div class="flot-tick-label tickLabel"
-								style="position: absolute; top: 0px; left: 1px; text-align: right;">130</div>
+						<div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
+							<div class="flot-tick-label tickLabel" style="position: absolute; top: 550px; left: 8px; text-align: right;">0.00</div>
+							<div class="flot-tick-label tickLabel" style="position: absolute; top: 500px; left: 10px; text-align: right;">0.10</div>
+							<div class="flot-tick-label tickLabel" style="position: absolute; top: 450px; left: 8px; text-align: right;">0.20</div>
+							<div class="flot-tick-label tickLabel" style="position: absolute; top: 400px; left: 8px; text-align: right;">0.30</div>
+							<div class="flot-tick-label tickLabel" style="position: absolute; top: 350px; left: 8px; text-align: right;">0.40</div>
+							<div class="flot-tick-label tickLabel" style="position: absolute; top: 300px; left: 8px; text-align: right;">0.50</div>
+							<div class="flot-tick-label tickLabel" style="position: absolute; top: 250px; left: 8px; text-align: right;">0.60</div>
+							<div class="flot-tick-label tickLabel" style="position: absolute; top: 200px; left: 8px; text-align: right;">0.70</div>
+							<div class="flot-tick-label tickLabel" style="position: absolute; top: 150px; left: 8px; text-align: right;">0.80</div>
+							<div class="flot-tick-label tickLabel" style="position: absolute; top: 100px; left: 8px; text-align: right;">0.90</div>
+							<div class="flot-tick-label tickLabel" style="position: absolute; top: 50px; left: 10px; text-align: right;">1.00</div>
 						</div>
 					</div>
 					<canvas class="flot-overlay" width="1538" height="300"
@@ -152,7 +103,7 @@ Seq[Any](format.raw/*1.1*/("""<link rel="stylesheet" type="text/css" href="https
 											<div
 												style="width: 4px; height: 0; border: 5px solid rgb(93, 120, 255); overflow: hidden"></div>
 										</div></td>
-									<td class="legendLabel">Unique Visits</td>
+									<td class="legendLabel">Motivation</td>
 								</tr>
 								<tr>
 									<td class="legendColorBox"><div
@@ -160,7 +111,7 @@ Seq[Any](format.raw/*1.1*/("""<link rel="stylesheet" type="text/css" href="https
 											<div
 												style="width: 4px; height: 0; border: 5px solid rgb(253, 57, 149); overflow: hidden"></div>
 										</div></td>
-									<td class="legendLabel">Page Views</td>
+									<td class="legendLabel">Engagement</td>
 								</tr>
 							</tbody>
 						</table>
@@ -323,9 +274,9 @@ Seq[Any](format.raw/*1.1*/("""<link rel="stylesheet" type="text/css" href="https
 
               /*
                   -- GENERATED --
-                  DATE: Tue Jun 18 11:39:06 CEST 2019
-                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/studentStats.scala.html
-                  HASH: 1918b243e0c37652ddcc9ee587ae038e016406c8
+                  DATE: Wed Jun 19 17:22:02 CEST 2019
+                  SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/studentStats.scala.html
+                  HASH: e8c65757142f89c90f033ff1badeb4507fe5fc5b
                   MATRIX: 1037->0
                   LINES: 33->1
                   -- GENERATED --
