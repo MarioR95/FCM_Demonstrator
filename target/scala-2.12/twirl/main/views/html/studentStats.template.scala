@@ -64,30 +64,8 @@ Seq[Any](format.raw/*1.1*/("""<link rel="stylesheet" type="text/css" href="https
 				</div>
 			</div>
 			<div class="kt-portlet__body">
-				<div id="kt_flotcharts_my" style="height: 600px; padding: 0px; position: relative;">
+				<div id="kt_flotcharts" style="height: 600px; padding: 0px; position: relative;">
 					<canvas class="flot-base" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1538px; height: 300px;" width="1538" height="300"></canvas>
-					<div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);">
-						<div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-							<div class="flot-tick-label tickLabel" style="position: absolute; max-width: 96px; top: 570px; left: 150px;  text-align: center;">1</div>
-							<div class="flot-tick-label tickLabel" style="position: absolute; max-width: 96px; top: 570px; left: 300px;  text-align: center;">2</div>
-							<div class="flot-tick-label tickLabel" style="position: absolute; max-width: 96px; top: 570px; left: 450px; text-align: center;">3</div>
-							<div class="flot-tick-label tickLabel" style="position: absolute; max-width: 96px; top: 570px; left: 600px; text-align: center;">4</div>
-							<div class="flot-tick-label tickLabel" style="position: absolute; max-width: 96px; top: 570px; left: 750px; text-align: center;">5</div>
-						</div>
-						<div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-							<div class="flot-tick-label tickLabel" style="position: absolute; top: 550px; left: 8px; text-align: right;">0.00</div>
-							<div class="flot-tick-label tickLabel" style="position: absolute; top: 500px; left: 10px; text-align: right;">0.10</div>
-							<div class="flot-tick-label tickLabel" style="position: absolute; top: 450px; left: 8px; text-align: right;">0.20</div>
-							<div class="flot-tick-label tickLabel" style="position: absolute; top: 400px; left: 8px; text-align: right;">0.30</div>
-							<div class="flot-tick-label tickLabel" style="position: absolute; top: 350px; left: 8px; text-align: right;">0.40</div>
-							<div class="flot-tick-label tickLabel" style="position: absolute; top: 300px; left: 8px; text-align: right;">0.50</div>
-							<div class="flot-tick-label tickLabel" style="position: absolute; top: 250px; left: 8px; text-align: right;">0.60</div>
-							<div class="flot-tick-label tickLabel" style="position: absolute; top: 200px; left: 8px; text-align: right;">0.70</div>
-							<div class="flot-tick-label tickLabel" style="position: absolute; top: 150px; left: 8px; text-align: right;">0.80</div>
-							<div class="flot-tick-label tickLabel" style="position: absolute; top: 100px; left: 8px; text-align: right;">0.90</div>
-							<div class="flot-tick-label tickLabel" style="position: absolute; top: 50px; left: 10px; text-align: right;">1.00</div>
-						</div>
-					</div>
 					<canvas class="flot-overlay" width="1538" height="300"
 						style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1538px; height: 300px;"></canvas>
 					<div class="legend">
@@ -274,9 +252,9 @@ Seq[Any](format.raw/*1.1*/("""<link rel="stylesheet" type="text/css" href="https
 
               /*
                   -- GENERATED --
-                  DATE: Wed Jun 19 17:22:02 CEST 2019
+                  DATE: Mon Jun 24 11:02:58 CEST 2019
                   SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/studentStats.scala.html
-                  HASH: e8c65757142f89c90f033ff1badeb4507fe5fc5b
+                  HASH: 8952e95b5fa74d0bd93ff60e3b58073f6f491dce
                   MATRIX: 1037->0
                   LINES: 33->1
                   -- GENERATED --

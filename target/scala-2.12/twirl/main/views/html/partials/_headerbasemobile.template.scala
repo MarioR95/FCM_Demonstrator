@@ -35,7 +35,7 @@ Seq[Any](format.raw/*1.4*/("""
 <div id="kt_header_mobile" class="kt-header-mobile kt-header-mobile--fixed " >
     <div class="kt-header-mobile__logo">
         <a href="?page=index">
-            <img alt="Logo" src="./assets/media/logos/logo-light.png"/>
+            <img alt="Logo" src="./assets/images/logos/logo-light.png"/>
         </a>
     </div>
     <div class="kt-header-mobile__toolbar">
@@ -60,9 +60,9 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Jun 19 11:28:05 CEST 2019
+                  DATE: Mon Jun 24 11:15:12 CEST 2019
                   SOURCE: C:/Users/Mario/Desktop/FCM_Demonstrator/app/views/partials/_headerbasemobile.scala.html
-                  HASH: 2eb58e17b68bed1da6692609de53ab531f6f4e48
+                  HASH: b5568f5b7e3f5db19650927797cb6f156cc4476c
                   MATRIX: 962->1|1058->3|1086->5
                   LINES: 28->1|33->1|34->2
                   -- GENERATED --
