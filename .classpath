@@ -16,6 +16,7 @@
   <classpathentry kind="lib" path=".\lib\commons-logging-1.1.1.jar"/>
   <classpathentry kind="lib" path=".\lib\commons-pool-1.5.4.jar"/>
   <classpathentry kind="lib" path=".\lib\flexjson-2.1.jar"/>
+  <classpathentry kind="lib" path=".\lib\jfcm-core-1.4.2.jar"/>
   <classpathentry kind="lib" path=".\lib\mysql-connector-java-8.0.15.jar"/>
   <classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"></classpathentry>
   <classpathentry sourcepath="C:\Users\Arufonso\.ivy2\cache\com.typesafe.play\twirl-api_2.12\srcs\twirl-api_2.12-1.4.0-sources.jar" kind="lib" path="C:\Users\Arufonso\.ivy2\cache\com.typesafe.play\twirl-api_2.12\jars\twirl-api_2.12-1.4.0.jar">
