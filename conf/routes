@@ -14,7 +14,7 @@ GET 	/course						controllers.Application.courseDetails(request: Request, course
 GET		/logout						controllers.Application.logout(request: Request) 	
 
 # Database interaction routes
-+nocsrf
+
 POST 	/fetchStudentMeasurements	controllers.Application.fetchStudentMeasurements(request: Request)
 
 # Map static resources from the /public folder to the /assets URL path

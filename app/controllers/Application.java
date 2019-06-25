@@ -48,7 +48,9 @@ public class Application extends Controller {
 		return ok(views.html.index.render()).removingFromSession(request,"connected");
 	}
 	
-	public Result fetchStudentMeasurements(Http.Request request) {
+
+	public void fetchStudentMeasurements(Http.Request request) {
+
 		
 		String userId;
 		String courseId;
@@ -68,9 +70,6 @@ public class Application extends Controller {
         } finally {
             ConnectionPool.close(conn);
         }*/
-		
-		
-		return ok();
-		
+
 	}
 }
