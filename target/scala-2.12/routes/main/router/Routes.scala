@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/Arufonso/Desktop/FCM_Demonstrator/conf/routes
-// @DATE:Mon Jun 24 09:38:30 CEST 2019
+// @SOURCE:C:/Users/Mario/Desktop/FCM_Demonstrator/conf/routes
+// @DATE:Tue Jun 25 09:59:08 CEST 2019
 
 package router
 
@@ -18,7 +18,7 @@ class Routes(
   HomeController_2: controllers.HomeController,
   // @LINE:8
   Application_0: controllers.Application,
-  // @LINE:16
+  // @LINE:21
   Assets_1: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -29,7 +29,7 @@ class Routes(
     HomeController_2: controllers.HomeController,
     // @LINE:8
     Application_0: controllers.Application,
-    // @LINE:16
+    // @LINE:21
     Assets_1: controllers.Assets
   ) = this(errorHandler, HomeController_2, Application_0, Assets_1, "/")
 
@@ -49,6 +49,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """dashboard""", """controllers.HomeController.buildDashboard(request:Request)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """course""", """controllers.Application.courseDetails(request:Request, courseName:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """logout""", """controllers.Application.logout(request:Request)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """fetchStudentMeasurements""", """controllers.Application.fetchStudentMeasurements(request:Request)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -155,11 +156,31 @@ class Routes(
     )
   )
 
-  // @LINE:16
-  private[this] lazy val controllers_Assets_versioned5_route = Route("GET",
+  // @LINE:18
+  private[this] lazy val controllers_Application_fetchStudentMeasurements5_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("fetchStudentMeasurements")))
+  )
+  private[this] lazy val controllers_Application_fetchStudentMeasurements5_invoker = createInvoker(
+    
+    (req:play.mvc.Http.Request) =>
+      Application_0.fetchStudentMeasurements(fakeValue[play.mvc.Http.Request]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "fetchStudentMeasurements",
+      Seq(classOf[play.mvc.Http.Request]),
+      "POST",
+      this.prefix + """fetchStudentMeasurements""",
+      """ Database interaction routes""",
+      Seq("""nocsrf""")
+    )
+  )
+
+  // @LINE:21
+  private[this] lazy val controllers_Assets_versioned6_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned5_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned6_invoker = createInvoker(
     Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -210,10 +231,17 @@ class Routes(
           req => Application_0.logout(req))
       }
   
-    // @LINE:16
-    case controllers_Assets_versioned5_route(params@_) =>
+    // @LINE:18
+    case controllers_Application_fetchStudentMeasurements5_route(params@_) =>
+      call { 
+        controllers_Application_fetchStudentMeasurements5_invoker.call(
+          req => Application_0.fetchStudentMeasurements(req))
+      }
+  
+    // @LINE:21
+    case controllers_Assets_versioned6_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned5_invoker.call(Assets_1.versioned(path, file))
+        controllers_Assets_versioned6_invoker.call(Assets_1.versioned(path, file))
       }
   }
 }

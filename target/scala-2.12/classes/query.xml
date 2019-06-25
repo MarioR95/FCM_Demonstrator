@@ -7,7 +7,7 @@
 			WHERE email=? and password=?
 		</content>
 	</query>
-	<query name="RETRIEVE_WEEK_MEASURE">
+	<query name="FETCH_WEEK_MEASURE">
 		<content delimiterParsingDisabled="true">
 			SELECT *
 			FROM measurements

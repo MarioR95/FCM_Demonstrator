@@ -118,15 +118,15 @@ function prevDataset(){
 
 function getWeekMeasure(course,student,week){
 	
-	var jqxhr$.ajax({
+	var jqxhr = $.ajax({
 		type: "POST",
-		url : "da vedere",
+		url : "/fetchStudentMeasurements",
 		data : "courseId="+course+"&studentId="+student+"&weekNumber="+week,
 		dataType: "json"
 	});
 	
 	jqxhr.done(function(response){
-		
+		alert(response);
 	});
 }
 

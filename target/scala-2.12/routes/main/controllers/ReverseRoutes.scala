@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/Arufonso/Desktop/FCM_Demonstrator/conf/routes
-// @DATE:Mon Jun 24 09:38:30 CEST 2019
+// @SOURCE:C:/Users/Mario/Desktop/FCM_Demonstrator/conf/routes
+// @DATE:Tue Jun 25 09:59:08 CEST 2019
 
 import play.api.mvc.Call
 
@@ -32,14 +32,14 @@ package controllers {
   
   }
 
-  // @LINE:16
+  // @LINE:21
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:16
+    // @LINE:21
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))
@@ -53,6 +53,12 @@ package controllers {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:18
+    def fetchStudentMeasurements(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "fetchStudentMeasurements")
+    }
   
     // @LINE:12
     def courseDetails(courseName:String): Call = {
