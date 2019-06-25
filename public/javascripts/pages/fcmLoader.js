@@ -38,6 +38,12 @@ var edgesDefinition =[
     {from: 7, to: 3, value: 0.625, title: "0.625"},
     ];
 
+//Array containing the data retrieved form DB
+var toShow = [];
+
+//Index corresponding to the actual dataset from Array
+var indexToShow = 0;
+
 
 var options = {
 	       
@@ -93,6 +99,35 @@ jQuery(document).ready(function() {
 
 function update(){
 	//nodes.update(new dataset here)
+}
+
+function nextDataset(){
+	if(indexToShow < toShow.length-1){
+		indexToShow++;
+		update();
+	}
+}
+
+function prevDataset(){
+	
+	if(indexToShow >0){
+		indexToShow--;
+		update();
+	}
+}
+
+function getWeekMeasure(course,student,week){
+	
+	var jqxhr$.ajax({
+		type: "POST",
+		url : "/fetchStudentMeasurements",
+		data : "courseId="+course+"&studentId="+student+"&weekNumber="+week,
+		dataType: "json"
+	});
+	
+	jqxhr.done(function(response){
+		alert(response);
+	});
 }
 
 

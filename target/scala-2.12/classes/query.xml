@@ -7,5 +7,12 @@
 			WHERE email=? and password=?
 		</content>
 	</query>
+	<query name="RETRIEVE_WEEK_MEASURE">
+		<content delimiterParsingDisabled="true">
+			SELECT *
+			FROM measurements
+			WHERE courseId=? and studentId=? and weekNumber=?
+		</content>
+	</query>
 	
 </root>

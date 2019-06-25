@@ -4,7 +4,7 @@
 		module="fcm_demonstrator$sources_javadoc"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20190619112403"
+		publication="20190624093508"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
