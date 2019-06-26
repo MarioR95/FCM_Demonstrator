@@ -1,21 +1,21 @@
 var standardSet = [
-    {id: 2, value: 0.3, label: 'Motivation', title: 0.0},
-    {id: 3, value: 0.3, label: 'Engagement', title: 0.1},
-    {id: 4, value: 0.3, label: 'Intrinsic Motivation', title: 0.2},
-    {id: 5, value: 0.3, label: 'Estrinsic Motivation', title: 0.3},
-    {id: 6, value: 0.3, label: 'Social Motivation', title: 0.4},
-    {id: 7, value: 0.3, label: 'Forum Activities', title: 0.5},
-    {id: 8, value: 0.3, label: 'Last Forum Activities', title: 0.6},
-    {id: 9, value: 0.3, label: 'N Posts', title: 0.7},
-    {id: 10, value: 0.3, label: 'Week Session', title: 0.1},
-    {id: 11, value: 0.3, label: 'N Chapters', title: 0.1},
-    {id: 12, value: 0.3, label: 'N Play Videos', title: 0.1},
-    {id: 13, value: 0.3, label: '% Video Completed', title: 0.1},
-    {id: 14, value: 0.3, label: 'Last Lesson', title: 0.1},
-    {id: 15, value: 0.3, label: 'Last Event', title: 0.1},
-    {id: 16, value: 0.3, label: 'Assignment', title: 0.1},
-    {id: 17, value: 0.3, label: 'Interactions', title: 0.1},
-    {id: 18, value: 0.3, label: 'Tasks Done', title: 0.1}
+    {id: 2, value: 0.3, label: 'Motivation', title: 0.0, color:'#FFE6CC'},
+    {id: 3, value: 0.3, label: 'Engagement', title: 0.1, color:'#FFE6CC'},
+    {id: 4, value: 0.3, label: 'Intrinsic Motivation', title: 0.2, color:'#FFF8F2'},
+    {id: 5, value: 0.3, label: 'Estrinsic Motivation', title: 0.3, color:'#FFF8F2'},
+    {id: 6, value: 0.3, label: 'Social Motivation', title: 0.4, color:'#FFF8F2'},
+    {id: 7, value: 0.3, label: 'Forum Activities', title: 0.5, color:'#FFEFE3'},
+    {id: 8, value: 0.3, label: 'Last Forum Activities', title: 0.6, color:'#FFF8F2'},
+    {id: 9, value: 0.3, label: 'N Posts', title: 0.7, color:'#FFF8F2'},
+    {id: 10, value: 0.3, label: 'Week Session', title: 0.1, color:'#FFEFE3'},
+    {id: 11, value: 0.3, label: 'N Chapters', title: 0.1, color:'#FFF8F2'},
+    {id: 12, value: 0.3, label: 'N Play Videos', title: 0.1, color:'#FFF8F2'},
+    {id: 13, value: 0.3, label: '% Video Completed', title: 0.1, color:'#FFF8F2'},
+    {id: 14, value: 0.3, label: 'Last Lesson', title: 0.1, color:'#FFF8F2'},
+    {id: 15, value: 0.3, label: 'Last Event', title: 0.1, color:'#FFF8F2'},
+    {id: 16, value: 0.3, label: 'Assignment', title: 0.1, color:'#FFEFE3'},
+    {id: 17, value: 0.3, label: 'Interactions', title: 0.1, color:'#FFEFE3'},
+    {id: 18, value: 0.3, label: 'Tasks Done', title: 0.1, color:'#FFF8F2'}
     ];
 
 var edgesDefinition =[
@@ -51,6 +51,9 @@ var options = {
        stabilization: true,
    },
 
+   interaction:{
+	 zoomView: false,  
+   },
    nodes: {
         font:{
             size: 15,
@@ -118,11 +121,7 @@ function prevDataset(){
 
 function getWeekMeasure(course,student,week){
 	
-<<<<<<< HEAD
-	var jqxhr = $.ajax({
-=======
-	var jqxhr$.ajax({
->>>>>>> d76359f3c2e780f5a9854fb76ba8174dd537c340
+	var jqxhr= $.ajax({
 		type: "POST",
 		url : "/fetchStudentMeasurements",
 		data : "courseId="+course+"&studentId="+student+"&weekNumber="+week,

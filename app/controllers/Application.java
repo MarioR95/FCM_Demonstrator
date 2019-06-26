@@ -49,7 +49,7 @@ public class Application extends Controller {
 	}
 	
 
-	public void fetchStudentMeasurements(Http.Request request) {
+	public Result fetchStudentMeasurements(Http.Request request) {
 
 		
 		String userId;
@@ -70,6 +70,8 @@ public class Application extends Controller {
         } finally {
             ConnectionPool.close(conn);
         }*/
+		
+		return ok();
 
 	}
 }
