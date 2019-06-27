@@ -9,19 +9,23 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.apache.commons.configuration.ConfigurationException;
 import org.megadix.jfcm.CognitiveMap;
 import org.megadix.jfcm.Concept;
 import org.megadix.jfcm.utils.FcmIO;
 import org.megadix.jfcm.utils.SimpleFcmRunner;
 
-import db.CourseWeekBean;
-import db.DatabaseHandler;
-import db.UserHistoryBean;
-import db.UserRetentionBean;
-import utils.Measures;
-import utils.Normalizer;
-import utils.PathsManager;
-import utils.TypeDate;
+import models.dao.CourseWeekDao;
+import models.dao.SurveyDao;
+import models.dao.UserHistoryDao;
+import models.dao.UserMeasureDao;
+import models.dto.CourseWeekDto;
+import models.dto.UserHistoryDto;
+import models.dto.UserMeasureDto;
+import utilities.Measures;
+import utilities.Normalizer;
+import utilities.PathsManager;
+import utilities.TypeDate;
 
 public class MapHandler {
 
@@ -62,28 +66,30 @@ public class MapHandler {
 	/**
 	 * Initialize the leaf concepts output using values from the established user
 	 * data.
+	 * @throws Exception 
+	 * @throws ConfigurationException 
 	 * 
 	 * @PARAMS: the CognitiveMap object model, the UserRetentionBean corresponding
 	 *          to user current data.
 	 **/
-	public static void setConceptsValues(CognitiveMap map, UserHistoryBean user, int sampling_number) {
+	public static void setConceptsValues(CognitiveMap map, UserHistoryDto user, int weekNumber) throws ConfigurationException, Exception {
 
 		int[] i_motivation_votes = new int[] { user.getCuriosity(), user.getEnjoyment(), user.getGeneralInterest() };
 		int[] e_motivation_votes = new int[] { user.getCertificate(), user.getCredential(), user.getAcademic(),
 				user.getJob() };
 		int[] s_motivation_votes = new int[] { user.getConnection(), user.getFriendship() };
 
-		CourseWeekBean courseWeek = DatabaseHandler.retrieveWeeklyCourseInfoById(user.getCourseID(), sampling_number);
-		List<Double> allForumPostsDone = DatabaseHandler.retrieveNPostsByCourseId(user.getCourseID());
+		CourseWeekDto courseWeek = CourseWeekDao.retrieveWeeklyCourseInfoById(user.getCourseID(), weekNumber);
+		List<Double> allForumPostsDone = UserHistoryDao.retrieveNPostsByCourseId(user.getCourseID());
 		double norm = Normalizer.normalize(allForumPostsDone);
 
 		//map.setOutput("c1", 0.0);// retention
 		map.setOutput("c2", 0.0);// motivation
 		map.setOutput("c3", 0.0);// engagement
 
-		map.setOutput("c4", DatabaseHandler.retriveSurveysAssociation(i_motivation_votes));// intrinsic mot
-		map.setOutput("c5", DatabaseHandler.retriveSurveysAssociation(e_motivation_votes));// estrinsic mot
-		map.setOutput("c6", DatabaseHandler.retriveSurveysAssociation(s_motivation_votes));// social mot
+		map.setOutput("c4", SurveyDao.retriveSurveysAssociation(i_motivation_votes));// intrinsic mot
+		map.setOutput("c5", SurveyDao.retriveSurveysAssociation(e_motivation_votes));// estrinsic mot
+		map.setOutput("c6", SurveyDao.retriveSurveysAssociation(s_motivation_votes));// social mot
 
 		map.setOutput("c7", 0.0);// forumActivities
 		map.setOutput("c9", (new Double(user.getnPosts()) / norm));// nPost
@@ -145,38 +151,46 @@ public class MapHandler {
 	}
 
 	/**
+	 * @throws Exception 
+	 * @throws ConfigurationException 
 	 * 
 	 **/
-	public static void execute(CognitiveMap map, UserHistoryBean user, int sampling_number) {
+	public static void execute(CognitiveMap map, UserHistoryDto user, int weekNumber) throws ConfigurationException, Exception {
 		//SimpleFcmRunner runner = new SimpleFcmRunner(map, -MAX_DELTA, MAX_EPOCHS);
 		//runner.converge();
-		GregorianCalendar currentDate= new GregorianCalendar(2019,4-1,12);
+		GregorianCalendar currentDate= new GregorianCalendar(2019,4-1,19);
 		
 		for(int i = 0; i < MAX_EPOCHS; i++) {
 			map.execute();
 			MapHandler.printMapState(map);
-			DatabaseHandler.doSaveMapIteration(user.getCourseID(), user.getUserID(), sampling_number, i+1, map, TypeDate.gregorianToString(currentDate));
+			UserMeasureDao.doSaveMapIteration(user.getCourseID(), user.getUserID(), weekNumber, i+1, map, TypeDate.gregorianToString(currentDate));
 		}
 		
 
 		// Retrieve oldMeasure if exists
-		UserRetentionBean oldMeasures;
-		if (sampling_number > 0) {
-			oldMeasures = DatabaseHandler.retieveUserRetention(user.getCourseID(), user.getUserID(),
-					(sampling_number - 1));
+		UserMeasureDto oldMeasuresDto;
+		Measures oldMeasures = new Measures();
+		if (weekNumber > 0) {
+			oldMeasuresDto = UserMeasureDao.retieveUserMeasure(user.getCourseID(), user.getUserID(),
+					(weekNumber - 1));
+			
+			oldMeasures.setMotivation_value(oldMeasuresDto.getC2());
+			oldMeasures.setEngagement_value(oldMeasuresDto.getC3());
+			
 		} else {
-			oldMeasures = new UserRetentionBean();
+			oldMeasuresDto = new UserMeasureDto();
 		}
 
+		
 		Measures currentMeasures = new Measures();
 		currentMeasures.setEngagement_value(map.getConcept("c3").getOutput());
 		currentMeasures.setMotivation_value(map.getConcept("c2").getOutput());
 
-		Measures newMeasures = compareUserHistory(oldMeasures.getOld_measures(), currentMeasures, user.getLastEvent());
-		DatabaseHandler.doSaveMeasures(user.getCourseID(), user.getUserID(), sampling_number, newMeasures);
+		Measures newMeasures = compareUserHistory(oldMeasures, currentMeasures, user.getLastEvent());
+		UserMeasureDao.doUpdateMeasures(user.getCourseID(), user.getUserID(), weekNumber, newMeasures);
 		
-		if(sampling_number%2 == 0) {
-			DatabaseHandler.resetMotivationValues(user.getCourseID(), user.getUserID());
+		if(weekNumber%2 == 0) {
+			UserHistoryDao.resetMotivationValues(user.getCourseID(), user.getUserID());
 		}
 
 	}

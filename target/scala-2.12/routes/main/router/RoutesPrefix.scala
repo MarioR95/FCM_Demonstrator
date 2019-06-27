@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Arufonso/Desktop/FCM_Demonstrator/conf/routes
-// @DATE:Mon Jun 24 09:38:30 CEST 2019
+// @DATE:Tue Jun 25 10:32:29 CEST 2019
 
 
 package router {

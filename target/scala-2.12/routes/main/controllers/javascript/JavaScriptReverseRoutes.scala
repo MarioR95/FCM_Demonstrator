@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Arufonso/Desktop/FCM_Demonstrator/conf/routes
-// @DATE:Mon Jun 24 09:38:30 CEST 2019
+// @DATE:Tue Jun 25 10:32:29 CEST 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -41,7 +41,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:16
+  // @LINE:21
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -49,7 +49,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:16
+    // @LINE:21
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -68,6 +68,16 @@ package controllers.javascript {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:18
+    def fetchStudentMeasurements: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Application.fetchStudentMeasurements",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "fetchStudentMeasurements"})
+        }
+      """
+    )
   
     // @LINE:12
     def courseDetails: JavaScriptReverseRoute = JavaScriptReverseRoute(
