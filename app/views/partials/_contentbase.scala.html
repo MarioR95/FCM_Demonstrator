@@ -1,0 +1,12 @@
+@(contentType: String)
+<!-- begin:: Content -->
+<div class="kt-content kt-grid__item kt-grid__item--fluid" id="kt_content" >
+
+	@if(contentType == "courseDetails"){
+		@views.html.coursedetailscontent()
+	}
+	
+	@views.html.studentStats()
+	
+</div>
+<!-- end:: Content -->
