@@ -121,8 +121,8 @@ function prevDataset(){
 
 function getWeekMeasure(course,student,week){
 	
-	var jqxhr= $.ajax({
-		type: "POST",
+	var jqxhr=$.ajax({
+		type: "GET",
 		url : "/fetchStudentMeasurements",
 		data : "courseId="+course+"&studentId="+student+"&weekNumber="+week,
 		dataType: "json"

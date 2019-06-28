@@ -18,7 +18,7 @@ import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Http;
 import play.mvc.Result;
-import utils.TrimmedBeanHandler;
+import utilities.TrimmedBeanHandler;
 
 public class Application extends Controller {
 	 
@@ -54,9 +54,8 @@ public class Application extends Controller {
 		return ok(courseID);
 	}
 	
-	
-	public Result fetchStudentMeasurements(Http.Request request) {
 
+	public Result fetchStudentMeasurements(Http.Request request) {
 		
 		String userId;
 		String courseId;
@@ -76,9 +75,8 @@ public class Application extends Controller {
         } finally {
             ConnectionPool.close(conn);
         }*/
-		
-		return ok();
 
+		return ok();
 	}
 	
 	

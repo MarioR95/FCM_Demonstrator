@@ -9,7 +9,11 @@
 		extra-sbtVersion="1.0"
 		conf="runtime"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
+<<<<<<< HEAD
 		date="20190625102906"/>
+=======
+		date="20190625102922"/>
+>>>>>>> 362cf9f907b32fe5d78784e078c030f8815a8ba9
 	<dependencies>
 		<module organisation="org.foundweekends.giter8" name="sbt-giter8-scaffold">
 			<revision name="0.11.0" status="release" pubdate="20180713151356" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.foundweekends.org/giter8/" extra-scalaVersion="2.12" extra-sbtVersion="1.0" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="48">
@@ -1188,6 +1192,7 @@
 				</artifacts>
 			</revision>
 		</module>
+<<<<<<< HEAD
 		<module organisation="org.scala-sbt" name="global-plugins">
 			<revision name="0.0" status="integration" pubdate="20190625102904" resolver="inter-project" artresolver="inter-project" extra-scalaVersion="2.12" extra-sbtVersion="1.0" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="0">
 				<metadata-artifact status="failed" details="" size="0" time="0" searched="false"/>
@@ -1295,5 +1300,7 @@
 				</artifacts>
 			</revision>
 		</module>
+=======
+>>>>>>> 362cf9f907b32fe5d78784e078c030f8815a8ba9
 	</dependencies>
 </ivy-report>

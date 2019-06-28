@@ -4,7 +4,11 @@
 		module="fcm_demonstrator-build"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
+<<<<<<< HEAD
 		publication="20190625102906"
+=======
+		publication="20190625102922"
+>>>>>>> 362cf9f907b32fe5d78784e078c030f8815a8ba9
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>
