@@ -43,12 +43,18 @@ public class Application extends Controller {
 		
 	}
 	
+	public Result studentStats(Http.Request request) {
+		JsonNode node= Json.parse(request.session().getOptional("connected").get());
+		UserDto user = Json.fromJson(node, UserDto.class);
+		return ok(views.html.student_measures.render(user));
+	}
+
 	
-	public Result logout(Http.Request request) {
-		return ok(views.html.index.render()).removingFromSession(request,"connected");
+	public Result fetchStudentStats(Http.Request request, String courseID, String studentID) {
+		return ok(courseID);
 	}
 	
-
+	
 	public Result fetchStudentMeasurements(Http.Request request) {
 
 		
@@ -73,5 +79,11 @@ public class Application extends Controller {
 		
 		return ok();
 
+	}
+	
+	
+	
+	public Result logout(Http.Request request) {
+		return ok(views.html.index.render()).removingFromSession(request,"connected");
 	}
 }

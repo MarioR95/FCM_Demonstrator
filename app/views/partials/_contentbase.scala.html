@@ -2,11 +2,13 @@
 <!-- begin:: Content -->
 <div class="kt-content kt-grid__item kt-grid__item--fluid" id="kt_content" >
 
-	@if(contentType == "courseDetails"){
-		@views.html.coursedetailscontent()
+
+	@contentType match{
+		case "courseDetails" => {@views.html.coursedetailscontent()}
+		case "studentStats" => {@views.html.studentStats()}
+		case _ => {}
 	}
 	
-	@views.html.studentStats()
 	
 </div>
 <!-- end:: Content -->

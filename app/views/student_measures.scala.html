@@ -13,6 +13,9 @@
 
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
 <script>
 	WebFont.load({
@@ -47,8 +50,23 @@
 <!-- end::Head -->
 <!-- begin::Body -->
 <body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
-		
-	@views.html._layout(user, "courseDetails")
+	<div class="kt-subheader   kt-grid__item" id="kt_subheader">
+	    <div class="kt-container  kt-container--fluid ">
+	        <div class="kt-subheader__main"> 
+	            <h3 class="kt-subheader__title">Student Stats</h3>
+	            <span class="kt-subheader__separator kt-hidden"></span>
+	            <div class="kt-subheader__breadcrumbs">
+	                <a href="/dashboard?username="+@user.getEmail() class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
+	                <span class="kt-subheader__breadcrumbs-separator"></span>
+	                <a href="/course?courseID=HarvardX/CB22x/2013_Spring"" class="kt-subheader__breadcrumbs-link">CourseDetails</a>
+	                <span class="kt-subheader__breadcrumbs-separator"></span>
+	                <a href="#" class="kt-subheader__breadcrumbs-link">StudentStats</a>                     
+	            </div>         
+	        </div>
+	    </div>
+	</div>                            
+	                                              	
+	@views.html._layout(user, "studentStats")
 	
 	<!-- begin::Global Config(global config for global JS sciprts) -->
 	<script>

@@ -125,5 +125,25 @@ var KTFlotcharts = function() {
 }();
 
 jQuery(document).ready(function() {
+	//Get URL
+	$.urlParam = function(name){
+		var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+		return results[1] || 0;
+	}
+	
+	//GET THE STUDENT ID
+	
+	var jqxhr= $.ajax({
+		type: "GET",
+		url : "/fetchStudentStats",
+		data : "courseID="+$.urlParam('courseID')+"&studentID=MHxPC130262720",
+        contentType: "application/json; charset=utf-8",
+		dataType: "json",
+		success: function(data){
+			console.log(data)
+		}
+	});
+	
+	
 	KTFlotcharts.init();
 });

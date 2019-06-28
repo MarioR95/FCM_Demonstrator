@@ -4,18 +4,23 @@
 
 GET     /                           controllers.HomeController.index
 
+GET		/dashboard					controllers.HomeController.buildDashboard(request: Request)
+
+
 +nocsrf
 POST	/authenticate				controllers.Application.authenticate(request: Request,email: String, password: String)
 
-GET		/dashboard					controllers.HomeController.buildDashboard(request: Request)
+GET 	/course						controllers.Application.courseDetails(request: Request, courseID: String)
 
-GET 	/course						controllers.Application.courseDetails(request: Request, courseName: String)
+GET 	/studentStats				controllers.Application.studentStats(request: Request)
 
 GET		/logout						controllers.Application.logout(request: Request) 	
 
 # Database interaction routes
 
-POST 	/fetchStudentMeasurements	controllers.Application.fetchStudentMeasurements(request: Request)
+GET 	/fetchStudentStats			controllers.Application.fetchStudentStats(request: Request, courseID: String, studentID: String)
+
+GET 	/fetchStudentMeasurements	controllers.Application.fetchStudentMeasurements(request: Request)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
