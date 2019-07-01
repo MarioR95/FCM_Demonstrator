@@ -1,24 +1,18 @@
 package controllers;
 
 import java.sql.Connection;
-import java.util.HashMap;
-
-import org.apache.commons.dbutils.QueryRunner;
-import org.apache.commons.dbutils.ResultSetHandler;
+import java.util.List;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
-import constants.IConstants;
-import flexjson.JSONSerializer;
 import models.dao.UserDao;
-import models.database.ConnectionPool;
-import models.database.FileQueryReader;
+import models.dao.UserMeasureDao;
 import models.dto.UserDto;
+import models.dto.UserMeasureDto;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Http;
 import play.mvc.Result;
-import utilities.TrimmedBeanHandler;
 
 public class Application extends Controller {
 	 
@@ -35,7 +29,7 @@ public class Application extends Controller {
 	}
 	
 	
-	public Result courseDetails(Http.Request request, String courseName) {
+	public Result courseDetails(Http.Request request, String courseId) {
 		//Retrieve all the course's info 
 		JsonNode node= Json.parse(request.session().getOptional("connected").get());
 		UserDto user = Json.fromJson(node, UserDto.class);
@@ -50,8 +44,15 @@ public class Application extends Controller {
 	}
 
 	
-	public Result fetchStudentStats(Http.Request request, String courseID, String studentID) {
-		return ok(courseID);
+	public Result fetchStudentStats(Http.Request request, String courseId, String userId) {
+		List<UserMeasureDto> userMeasures = null;
+		try {
+			userMeasures = UserMeasureDao.retieveUserMeasure(courseId, userId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return ok(Json.toJson(userMeasures));
 	}
 	
 

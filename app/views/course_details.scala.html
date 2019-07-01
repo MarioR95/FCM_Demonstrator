@@ -47,6 +47,17 @@
 <!-- end::Head -->
 <!-- begin::Body -->
 <body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
+	<div class="kt-subheader   kt-grid__item" id="kt_subheader">
+	    <div class="kt-container  kt-container--fluid ">
+	        <div class="kt-subheader__main"> 
+	            <h3 class="kt-subheader__title">Algorithms</h3>
+	            <span class="kt-subheader__separator kt-hidden"></span>
+	            <div class="kt-subheader__breadcrumbs">
+	                <a href="/dashboard?username="+@user.getEmail() class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>                   
+	            </div>         
+	        </div>
+    	</div>
+	</div>            
 		
 	@views.html._layout(user, "courseDetails")
 	

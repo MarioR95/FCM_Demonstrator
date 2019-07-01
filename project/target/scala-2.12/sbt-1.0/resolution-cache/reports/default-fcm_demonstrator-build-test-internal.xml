@@ -9,11 +9,7 @@
 		extra-sbtVersion="1.0"
 		conf="test-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-<<<<<<< HEAD
-		date="20190625102906"/>
-=======
-		date="20190625102922"/>
->>>>>>> 362cf9f907b32fe5d78784e078c030f8815a8ba9
+		date="20190628093040"/>
 	<dependencies>
 		<module organisation="org.foundweekends.giter8" name="sbt-giter8-scaffold">
 			<revision name="0.11.0" status="release" pubdate="20180713151356" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.foundweekends.org/giter8/" extra-scalaVersion="2.12" extra-sbtVersion="1.0" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="48">
@@ -1069,7 +1065,6 @@
 					</artifact>
 				</artifacts>
 			</revision>
-<<<<<<< HEAD
 			<revision name="4.5.0" status="release" pubdate="20170913162806" resolver="sbt-chain" artresolver="sbt-chain" evicted="latest-revision" evicted-reason="" homepage="https://github.com/java-native-access/jna" downloaded="false" searched="false" default="false" conf="master(*), compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
 				<license name="LGPL, version 2.1" url="http://www.gnu.org/licenses/licenses.html"/>
 				<license name="Apache License v2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
@@ -1078,21 +1073,6 @@
 				<caller organisation="net.java.dev.jna" name="jna-platform" conf="compile, runtime" rev="4.5.0" rev-constraint-default="4.5.0" rev-constraint-dynamic="4.5.0" callerrev="4.5.0"/>
 				<caller organisation="org.scala-sbt.ipcsocket" name="ipcsocket" conf="compile, runtime" rev="4.5.0" rev-constraint-default="4.5.0" rev-constraint-dynamic="4.5.0" callerrev="1.0.0"/>
 				<caller organisation="org.scala-sbt" name="io_2.12" conf="default, compile, runtime, master" rev="4.5.0" rev-constraint-default="4.5.0" rev-constraint-dynamic="4.5.0" callerrev="1.2.2"/>
-=======
-		</module>
-		<module organisation="com.eed3si9n" name="sjson-new-core_2.12">
-			<revision name="0.8.2" status="release" pubdate="20171213024652" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/eed3si9n/sjson-new" downloaded="false" searched="false" default="false" conf="master(*), compile, runtime(*), runtime, compile(*), master" position="95">
-				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="no" details="" size="3076" time="0" location="C:\Users\Arufonso\.ivy2\cache\com.eed3si9n\sjson-new-core_2.12\ivy-0.8.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/eed3si9n/sjson-new-core_2.12/0.8.2/sjson-new-core_2.12-0.8.2.pom"/>
-				<caller organisation="org.scala-sbt" name="testing_2.12" conf="compile, runtime" rev="0.8.2" rev-constraint-default="0.8.2" rev-constraint-dynamic="0.8.2" callerrev="1.2.8"/>
-				<caller organisation="org.scala-sbt" name="protocol_2.12" conf="compile, runtime" rev="0.8.2" rev-constraint-default="0.8.2" rev-constraint-dynamic="0.8.2" callerrev="1.2.8"/>
-				<caller organisation="com.eed3si9n" name="sjson-new-scalajson_2.12" conf="compile, runtime" rev="0.8.2" rev-constraint-default="0.8.2" rev-constraint-dynamic="0.8.2" callerrev="0.8.2"/>
-				<caller organisation="org.scala-sbt" name="util-logging_2.12" conf="compile, runtime" rev="0.8.2" rev-constraint-default="0.8.2" rev-constraint-dynamic="0.8.2" callerrev="1.2.4"/>
-				<caller organisation="org.scala-sbt" name="librarymanagement-core_2.12" conf="compile, runtime" rev="0.8.2" rev-constraint-default="0.8.2" rev-constraint-dynamic="0.8.2" callerrev="1.2.4"/>
-				<caller organisation="org.scala-sbt" name="librarymanagement-ivy_2.12" conf="compile, runtime" rev="0.8.2" rev-constraint-default="0.8.2" rev-constraint-dynamic="0.8.2" callerrev="1.2.4"/>
-				<caller organisation="com.eed3si9n" name="sjson-new-murmurhash_2.12" conf="compile, runtime" rev="0.8.2" rev-constraint-default="0.8.2" rev-constraint-dynamic="0.8.2" callerrev="0.8.2"/>
-				<caller organisation="org.scala-sbt" name="command_2.12" conf="compile, runtime" rev="0.8.2" rev-constraint-default="0.8.2" rev-constraint-dynamic="0.8.2" callerrev="1.2.8"/>
->>>>>>> 362cf9f907b32fe5d78784e078c030f8815a8ba9
 				<artifacts>
 				</artifacts>
 			</revision>
@@ -1189,7 +1169,7 @@
 			</revision>
 		</module>
 		<module organisation="org.scala-sbt" name="global-plugins">
-			<revision name="0.0" status="integration" pubdate="20190625102904" resolver="inter-project" artresolver="inter-project" extra-scalaVersion="2.12" extra-sbtVersion="1.0" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="0">
+			<revision name="0.0" status="integration" pubdate="20190628093039" resolver="inter-project" artresolver="inter-project" extra-scalaVersion="2.12" extra-sbtVersion="1.0" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="0">
 				<metadata-artifact status="failed" details="" size="0" time="0" searched="false"/>
 				<caller organisation="default" name="fcm_demonstrator-build" conf="test, compile, provided, test-internal, runtime, optional" rev="0.0" rev-constraint-default="0.0" rev-constraint-dynamic="0.0" callerrev="0.1.0-SNAPSHOT" extra-scalaVersion="2.12" extra-sbtVersion="1.0"/>
 				<artifacts>

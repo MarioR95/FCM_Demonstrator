@@ -60,20 +60,27 @@
 		<content delimiterParsingDisabled="true">
 			SELECT * 
 			FROM measurements 
-			WHERE courseId = ? and studentId = ? and weekNumber = ? and iterationNumber = 4
+			WHERE courseId = ? and userId = ? and weekNumber = ? and iterationNumber = 4
 		</content>
 	</query>
 	<query name="USER_MEASURE_S02">
 		<content delimiterParsingDisabled="true">
 			UPDATE measurements 
 			SET c2 = ? , c3 = ? 
-			WHERE courseId = ? and studentId = ? and weekNumber = ? and iterationNumber = 4"
+			WHERE courseId = ? and userId = ? and weekNumber = ? and iterationNumber = 4"
 		</content>
 	</query>
 	<query name="USER_MEASURE_S03">
 		<content delimiterParsingDisabled="true">
 			INSERT INTO measurements 
 			VALUES ( ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ?)
+		</content>
+	</query>
+	<query name="USER_MEASURE_S04">
+		<content delimiterParsingDisabled="true">
+			SELECT * 
+			FROM measurements 
+			WHERE courseId = ? and userId = ? and iterationNumber = 4
 		</content>
 	</query>
 	<query name="SURVEY_S01">

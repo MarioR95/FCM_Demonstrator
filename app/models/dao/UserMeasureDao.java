@@ -3,6 +3,8 @@ package models.dao;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
+
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.ResultSetHandler;
@@ -27,6 +29,23 @@ public class UserMeasureDao {
 			QueryRunner qRunner = new QueryRunner();
 			
 			UserMeasureDto userDto = qRunner.query(conn, FileQueryReader.getQuery("USER_MEASURE_S01"),new TrimmedBeanHandler<UserMeasureDto>(UserMeasureDto.class),new Object[]{courseId,userId,weekNumber});
+			
+            return userDto;
+		}
+		
+		finally {
+			ConnectionPool.close(conn);
+		}
+	}
+	
+	public static List<UserMeasureDto> retieveUserMeasure(String courseId, String userId) throws ConfigurationException, Exception {
+		Connection conn = null;
+		
+		try {
+			conn = ConnectionPool.getSingleton(IConstants.DB_KEY);
+			QueryRunner qRunner = new QueryRunner();
+			
+			List<UserMeasureDto> userDto = qRunner.query(conn, FileQueryReader.getQuery("USER_MEASURE_S04"),new TrimmedBeanListHandler<UserMeasureDto>(UserMeasureDto.class),new Object[]{courseId,userId});
 			
             return userDto;
 		}

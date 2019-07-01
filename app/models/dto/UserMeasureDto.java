@@ -2,7 +2,7 @@ package models.dto;
 
 public class UserMeasureDto {
 
-	private String courseID, userID;
+	private String courseId, userId;
 	private int weekNumber, iterationNumber;
 	private String date;
 	private double c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18;
@@ -11,19 +11,19 @@ public class UserMeasureDto {
 	}
 
 	public String getCourseID() {
-		return courseID;
+		return courseId;
 	}
 
 	public void setCourseID(String courseID) {
-		this.courseID = courseID;
+		this.courseId = courseID;
 	}
 
 	public String getUserID() {
-		return userID;
+		return userId;
 	}
 
 	public void setUserID(String userID) {
-		this.userID = userID;
+		this.userId = userID;
 	}
 
 	public int getWeekNumber() {
@@ -188,7 +188,7 @@ public class UserMeasureDto {
 
 	@Override
 	public String toString() {
-		return "UserMeasureDto [courseID=" + courseID + ", userID=" + userID + ", weekNumber=" + weekNumber
+		return "UserMeasureDto [courseID=" + courseId + ", userID=" + userId + ", weekNumber=" + weekNumber
 				+ ", iterationNumber=" + iterationNumber + ", date=" + date + ", c2=" + c2 + ", c3=" + c3 + ", c4=" + c4
 				+ ", c5=" + c5 + ", c6=" + c6 + ", c7=" + c7 + ", c8=" + c8 + ", c9=" + c9 + ", c10=" + c10 + ", c11="
 				+ c11 + ", c12=" + c12 + ", c13=" + c13 + ", c14=" + c14 + ", c15=" + c15 + ", c16=" + c16 + ", c17="
