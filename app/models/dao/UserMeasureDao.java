@@ -55,8 +55,24 @@ public class UserMeasureDao {
 		}
 	}
 	
-	public static void doUpdateMeasures(String courseId, String userId, int weekNumber, Measures measures) throws ConfigurationException, Exception {	
-				
+	public static List<UserMeasureDto> retrieveWeekInterations(String courseId, String userId, int weekNumber) throws ConfigurationException, Exception {
+		Connection conn = null;
+		
+		try {
+			conn = ConnectionPool.getSingleton(IConstants.DB_KEY);
+			QueryRunner qRunner = new QueryRunner();
+			
+			List<UserMeasureDto> userDto = qRunner.query(conn, FileQueryReader.getQuery("USER_MEASURE_S05"),new TrimmedBeanListHandler<UserMeasureDto>(UserMeasureDto.class),new Object[]{courseId,userId,weekNumber});
+			
+            return userDto;
+		}
+		
+		finally {
+			ConnectionPool.close(conn);
+		}
+	}
+	
+	public static void doUpdateMeasures(String courseId, String userId, int weekNumber, Measures measures) throws ConfigurationException, Exception {				
 		Connection conn = null;
 		
 		try {

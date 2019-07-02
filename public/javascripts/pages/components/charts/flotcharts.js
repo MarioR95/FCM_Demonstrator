@@ -3,7 +3,7 @@
 // Class definition
 var KTFlotcharts = function() {
 
-	var retention_plot = function(eng_data, mot_data, dates, n_samples) {
+	var retention_plot = function(eng_data, mot_data,startDate, measurement_dates, n_samples) {
 	
 		var mot = [,];
 		var eng = [,];
@@ -11,16 +11,12 @@ var KTFlotcharts = function() {
 		
 		mot[0]= [0, 0.0];
 		eng[0]= [0, 0.0];
-		dates[0]= [0, "05-04-2019"];
+		dates[0]= [0, startDate]; //get the start date
 		
 		for(var index=0; index<n_samples; index++){
 			mot[index+1]= [index+1, mot_data[index]];
 			eng[index+1]= [index+1, eng_data[index]];
-			dates[index+1]= [index+1, dates[index]];
-		}
-		
-		for(var i=0; i<n_samples+1; i++){
-			console.log(mot[i]);
+			dates[index+1]= [index+1, measurement_dates[index]];
 		}
 		
 		var plot = $.plot($("#kt_flotcharts"), [{
@@ -75,6 +71,7 @@ var KTFlotcharts = function() {
 			yaxis: {
 				ticks: 5,
 				tickDecimals: 1,
+				max:1.0,
 				tickColor: "#eee",
 			}
 		});
@@ -125,18 +122,22 @@ var KTFlotcharts = function() {
 			var mot_data= [];
 			var dates= [];
 			var n_samples= data.length;
-			
+			var startDate= data[0].startDate;
+
 			for(var i=0; i<n_samples; i++){
 				dates[i]= data[i].date;
 				eng_data[i]= data[i].c2;
 				mot_data[i]= data[i].c3;
-				console.log("eng: "+eng_data[i]+", mot: "+mot_data[i]+", date: "+dates[i]);
+				//console.log("eng: "+eng_data[i]+", mot: "+mot_data[i]+", date: "+dates[i]);
 			}
 			
-			retention_plot(eng_data, mot_data, dates, n_samples);
+			retention_plot(eng_data, mot_data,startDate, dates, n_samples);
 		}
 	};
 }();
+
+
+
 
 jQuery(document).ready(function() {
 	//Get URL
@@ -152,6 +153,7 @@ jQuery(document).ready(function() {
         contentType: "application/json; charset=utf-8",
 		dataType: "json",
 		success: function(data){
+			//Chart plot
 			KTFlotcharts.init(data);
 		},
 		error: function(err){

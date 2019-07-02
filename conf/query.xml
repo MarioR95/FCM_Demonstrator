@@ -7,7 +7,7 @@
 			WHERE email=? and password=?
 		</content>
 	</query>
-	<query name="RETRIEVE_STUDENTS_BY_COURSE">
+	<query name="USERS_01">
 		<content delimiterParsingDisabled="true">
 			SELECT users.email, users.role, users.name, users.surname
 			FROM users
@@ -73,7 +73,7 @@
 	<query name="USER_MEASURE_S03">
 		<content delimiterParsingDisabled="true">
 			INSERT INTO measurements 
-			VALUES ( ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ?)
+			VALUES ( ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? )
 		</content>
 	</query>
 	<query name="USER_MEASURE_S04">
@@ -83,6 +83,13 @@
 			WHERE courseId = ? and userId = ? and iterationNumber = 4
 		</content>
 	</query>
+	<query name="USER_MEASURE_S05">
+		<content delimiterParsingDisabled="true">
+			SELECT *
+			FROM measurements
+			WHERE courseId=? and userId=? and weekNumber=?
+		</content>
+	</query>
 	<query name="SURVEY_S01">
 		<content delimiterParsingDisabled="true">
 			SELECT normalized_value 
@@ -90,12 +97,4 @@
 			WHERE ? BETWEEN survey_association.min AND survey_association.max
 		</content>
 	</query>
-	<query name="FETCH_WEEK_MEASURE">
-		<content delimiterParsingDisabled="true">
-			SELECT *
-			FROM measurements
-			WHERE courseId=? and studentId=? and weekNumber=?
-		</content>
-	</query>
-	
 </root>

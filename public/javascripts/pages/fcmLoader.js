@@ -82,12 +82,17 @@ var options = {
 
 
 var data;
+var nodes;
 
-jQuery(document).ready(function() {    
    
+function fillMap(weekNumber, startDate, endDate){
+	alert("start: "+startDate+", end: "+endDate);
+	$("#fcm_container").show();
+	$("#head-table-measurement").html("Week "+weekNumber+" <small>Start: "+startDate+", End: "+endDate+"</small>")
+	$("#date-info").html();
 	var container = document.getElementById('fcm');
 	
-	var nodes = new vis.DataSet(standardSet);
+	nodes = new vis.DataSet(standardSet);
 	var edges = new vis.DataSet(edgesDefinition);
 	
 	data = {
@@ -96,42 +101,80 @@ jQuery(document).ready(function() {
 	    };
 	
 	var network = new vis.Network(container, data, options);
+}
 	
-});
+
 
 
 function update(){
-	//nodes.update(new dataset here)
+	nodes.update(toShow[indexToShow])
 }
 
 function nextDataset(){
 	if(indexToShow < toShow.length-1){
 		indexToShow++;
 		update();
+		$("#prev").attr("disabled", false);
+	}else{
+		$("#next").attr("disabled", true);
 	}
 }
 
 function prevDataset(){
 	
-	if(indexToShow >0){
+	if(indexToShow > 0){
 		indexToShow--;
 		update();
+		$("#next").attr("disabled", false);
+	}else{
+		$("#prev").attr("disabled", true);
 	}
 }
 
-function getWeekMeasure(course,student,week){
+function getWeekMeasure(weekNumber){
 	
 	var jqxhr=$.ajax({
 		type: "GET",
 		url : "/fetchStudentMeasurements",
-		data : "courseId="+course+"&studentId="+student+"&weekNumber="+week,
-		dataType: "json"
+		data : "courseId="+$.urlParam('courseId')+"&userId="+$.urlParam('userId')+"&weekNumber="+weekNumber,
+		contentType: "application/json; charset=utf-8",
+		dataType: "json",
 	});
 	
+	
 	jqxhr.done(function(response){
-		alert(response);
+		toShow = [];
+		indexToShow = 0;
+		
+		for(var i = 0; i < response.length; i++){
+			var tmpDataset = [
+				{id: 2, value: response[i].c2, label: 'Motivation', title: response[i].c2, color:'#FFE6CC'},
+			    {id: 3, value: response[i].c3, label: 'Engagement', title: response[i].c3, color:'#FFE6CC'},
+			    {id: 4, value: response[i].c4, label: 'Intrinsic Motivation', title: response[i].c4, color:'#FFF8F2'},
+			    {id: 5, value: response[i].c5, label: 'Estrinsic Motivation', title: response[i].c5, color:'#FFF8F2'},
+			    {id: 6, value: response[i].c6, label: 'Social Motivation', title: response[i].c6, color:'#FFF8F2'},
+			    {id: 7, value: response[i].c7, label: 'Forum Activities', title: response[i].c7, color:'#FFEFE3'},
+			    {id: 8, value: response[i].c8, label: 'Last Forum Activities', title: response[i].c8, color:'#FFF8F2'},
+			    {id: 9, value: response[i].c9, label: 'N Posts', title: response[i].c9, color:'#FFF8F2'},
+			    {id: 10, value: response[i].c10, label: 'Week Session', title: response[i].c10, color:'#FFEFE3'},
+			    {id: 11, value: response[i].c11, label: 'N Chapters', title: response[i].c11, color:'#FFF8F2'},
+			    {id: 12, value: response[i].c12, label: 'N Play Videos', title: response[i].c12, color:'#FFF8F2'},
+			    {id: 13, value: response[i].c13, label: '% Video Completed', title: response[i].c13, color:'#FFF8F2'},
+			    {id: 14, value: response[i].c14, label: 'Last Lesson', title: response[i].c14, color:'#FFF8F2'},
+			    {id: 15, value: response[i].c15, label: 'Last Event', title: response[i].c15, color:'#FFF8F2'},
+			    {id: 16, value: response[i].c16, label: 'Assignment', title: response[i].c16, color:'#FFEFE3'},
+			    {id: 17, value: response[i].c17, label: 'Interactions', title: response[i].c17, color:'#FFEFE3'},
+			    {id: 18, value: response[i].c18, label: 'Tasks Done', title: response[i].c18, color:'#FFF8F2'}
+			];
+			
+			toShow.push(tmpDataset);
+		}
+		
+		update();
+		
 	});
+	
+	jqxhr.fail(function(err){
+		console.log(err);
+	})
 }
-
-
-

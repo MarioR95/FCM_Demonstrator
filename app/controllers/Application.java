@@ -55,29 +55,27 @@ public class Application extends Controller {
 		return ok(Json.toJson(userMeasures));
 	}
 	
-
-	public Result fetchStudentMeasurements(Http.Request request) {
+	//TODO
+	public Result fetchStudentRecords(Http.Request request, String courseId, String userId) {
+		List<UserMeasureDto> userMeasures = null;
+		try {
+			userMeasures = UserMeasureDao.retieveUserMeasure(courseId, userId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
-		String userId;
-		String courseId;
-		int weekNumber;
-		
-		Connection conn = null;
-        /*try {
-            conn = ConnectionPool.getSingleton(IConstants.DB_KEY);
-            QueryRunner qRunner = new QueryRunner();
-            HashMap<String, String> fetchedMap= qRunner.query(conn, FileQueryReader.getQuery("FETCH_WEEK_MEASURE"), ,new Object[]{, });
-            if(user == null){
-                user = new UserDto();
-                user.setEmail(username);
-            }
-            System.out.println(user.getEmail()+", "+user.getName());
-            return user;
-        } finally {
-            ConnectionPool.close(conn);
-        }*/
+		return ok(Json.toJson(userMeasures));
+	}
 
-		return ok();
+	public Result fetchStudentMeasurements(Http.Request request, String courseId, String userId, int weekNumber) {
+		List<UserMeasureDto> userMeasures = null;
+		try {
+			userMeasures = UserMeasureDao.retrieveWeekInterations(courseId, userId ,weekNumber);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return ok(Json.toJson(userMeasures));
 	}
 	
 	
