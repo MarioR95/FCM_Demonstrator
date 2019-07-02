@@ -3,25 +3,22 @@
 // Class definition
 var KTFlotcharts = function() {
 
-	var retention_plot = function() {
+	var retention_plot = function(eng_data, mot_data,startDate, measurement_dates, n_samples) {
 	
-		var mot = [
-			[0, 0.0],
-			[1, 0.8],
-			[2, 0.87],
-			[3, 0.7],
-			[4, 0.6],
-			[5, 0.8],
-		];
-		var eng = [
-			[0, 0.0],
-			[1, 0.65],
-			[2, 0.7],
-			[3, 0.9],
-			[4, 0.85],
-			[5, 0.77],
-		];
-
+		var mot = [,];
+		var eng = [,];
+		var dates= [,];
+		
+		mot[0]= [0, 0.0];
+		eng[0]= [0, 0.0];
+		dates[0]= [0, startDate]; //get the start date
+		
+		for(var index=0; index<n_samples; index++){
+			mot[index+1]= [index+1, mot_data[index]];
+			eng[index+1]= [index+1, eng_data[index]];
+			dates[index+1]= [index+1, measurement_dates[index]];
+		}
+		
 		var plot = $.plot($("#kt_flotcharts"), [{
 			data: mot,
 			label: "Motivation",
@@ -67,17 +64,18 @@ var KTFlotcharts = function() {
 			},
 			colors: [KTApp.getStateColor("brand"), KTApp.getStateColor("danger")],
 			xaxis: {
-				ticks: [[0,'05/04/2019'], [1,'12/04/2019'], [2,'19/04/2019'], [3,'26/04/2019'], [4,'02/05/2019'], [5,'09/05/2019']],
+				ticks: dates,
 				tickDecimals: 0,
 				tickColor: "#eee",
 			},
 			yaxis: {
 				ticks: 5,
 				tickDecimals: 1,
+				max:1.0,
 				tickColor: "#eee",
 			}
 		});
-
+		
 		function showTooltip(x, y, contents) {
 			$('<div id="tooltip">' + contents + '</div>').css({
 				position: 'absolute',
@@ -106,7 +104,7 @@ var KTFlotcharts = function() {
 					var x = item.datapoint[0].toFixed(2),
 						y = item.datapoint[1].toFixed(2);
 
-					showTooltip(item.pageX, item.pageY, item.series.label + " = " + y);
+					showTooltip(item.pageX, item.pageY, item.series.label.substring(0,3) + " = " + y);
 				}
 			} else {
 				$("#tooltip").remove();
@@ -118,12 +116,50 @@ var KTFlotcharts = function() {
 	
 	return {
 		// public functions
-		init: function() {
-			retention_plot();
+		init: function(data) {
+			
+			var eng_data= [];
+			var mot_data= [];
+			var dates= [];
+			var n_samples= data.length;
+			var startDate= data[0].startDate;
+
+			for(var i=0; i<n_samples; i++){
+				dates[i]= data[i].date;
+				eng_data[i]= data[i].c2;
+				mot_data[i]= data[i].c3;
+				//console.log("eng: "+eng_data[i]+", mot: "+mot_data[i]+", date: "+dates[i]);
+			}
+			
+			retention_plot(eng_data, mot_data,startDate, dates, n_samples);
 		}
 	};
 }();
 
+
+
+
 jQuery(document).ready(function() {
-	KTFlotcharts.init();
+	//Get URL
+	$.urlParam = function(name){
+		var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+		return results[1] || 0;
+	}
+		
+	$.ajax({
+		type: "GET",
+		url : "/fetchStudentStats",
+		data : "courseId="+$.urlParam('courseId')+"&userId="+$.urlParam('userId'),
+        contentType: "application/json; charset=utf-8",
+		dataType: "json",
+		success: function(data){
+			//Chart plot
+			KTFlotcharts.init(data);
+		},
+		error: function(err){
+			console.log(err)
+		}
+	});
+	
+	
 });

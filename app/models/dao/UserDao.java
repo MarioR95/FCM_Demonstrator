@@ -3,7 +3,7 @@ package models.dao;
 import constants.IConstants;
 import models.database.*;
 import models.dto.UserDto;
-import utils.TrimmedBeanHandler;
+import utilities.TrimmedBeanHandler;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
