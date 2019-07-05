@@ -113,15 +113,11 @@ var KTFlotcharts = function() {
 		});
 	}
 
-	var init_plot= function(){
+	var init_plot= function(startDate){
 		var mot = [,];
 		var eng = [,];
 		var dates= [,];
-		
-		mot[0]= [0, 0.0];
-		eng[0]= [0, 0.0];
-		dates[0]= [0, startDate]; 
-		
+				
 		var plot = $.plot($("#kt_flotcharts"), [{
 			data: mot,
 			label: "Motivation",
@@ -174,7 +170,8 @@ var KTFlotcharts = function() {
 			yaxis: {
 				ticks: 5,
 				tickDecimals: 1,
-				max:1.0,
+				max: 1.0,
+				min: 0.0,
 				tickColor: "#eee",
 			}
 		});
@@ -218,27 +215,30 @@ var KTFlotcharts = function() {
 	
 	return {
 		// public functions
-		fill_chart: function(data) {
+		init: function(data) {
 			console.log(data);
 			var eng_data= [];
 			var mot_data= [];
 			var dates= [];
-			var n_samples= data.length;
 			var startDate= data[1];
+			
+			if(data[0].length > 0){
+				var n_samples= data.length;
 
-			for(var i=0; i<n_samples; i++){
-				dates[i]= data[i].date;
-				eng_data[i]= data[0][i].c2;
-				mot_data[i]= data[0][i].c3;
-				//console.log("eng: "+eng_data[i]+", mot: "+mot_data[i]+", date: "+dates[i]);
+				for(var i=0; i<n_samples; i++){
+					dates[i]= data[0][i].date;
+					eng_data[i]= data[0][i].c2;
+					mot_data[i]= data[0][i].c3;
+					//console.log("eng: "+eng_data[i]+", mot: "+mot_data[i]+", date: "+dates[i]);
+				}
+				
+				retention_plot(eng_data, mot_data,startDate, dates, n_samples);
+			}else{
+				init_plot(startDate);
 			}
 			
-			retention_plot(eng_data, mot_data,startDate, dates, n_samples);
 		}, 
 	
-		init_chart: function(){
-			init_plot();
-		}
 	};
 }();
 
@@ -260,13 +260,8 @@ jQuery(document).ready(function() {
 		dataType: "json",
 		success: function(data){
 			//Chart plot
-			if(data != 'undefined'){
-				KTFlotcharts.fill_chart(data);
-			}else{
-				console.log("else");
-				KTFlotcharts.init_chart();
-			}
-			
+			KTFlotcharts.init(data);
+
 		},
 		error: function(err){
 			console.log(err)

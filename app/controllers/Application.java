@@ -51,7 +51,6 @@ public class Application extends Controller {
 			members= UserDao.doRetrieveStudents();
 			result= new ArrayList[members.size()];
 			
-			
 			for(int i=0; i<members.size(); i++) {
 				String lastEvent= UserHistoryDao.retrieveLastEventByUserId(members.get(i).getUserId());
 				result[i]= new ArrayList<String>();
@@ -76,17 +75,12 @@ public class Application extends Controller {
 
 	public Result fetchStudentStats(Http.Request request, String courseId, String userId) {
 		  List<UserMeasureDto> userMeasures = null;
-		  ArrayList<Object>[] toJson = null;
+		  ArrayList<Object> toJson = new ArrayList<Object>();
 		  try {
-		   userMeasures = UserMeasureDao.retieveUserMeasure(courseId, userId);
-		   toJson= new ArrayList[userMeasures.size()];
-		   System.out.println(userMeasures);
-		   String startDate = UserHistoryDao.retrieveStartDate(courseId, userId);
-		   for(int i=0; i<userMeasures.size(); i++) {
-			   toJson[i].add(userMeasures.get(i));
-			   toJson[i].add(startDate);
-		   }
-		   
+			   userMeasures = UserMeasureDao.retieveUserMeasure(courseId, userId);
+			   String startDate = UserHistoryDao.retrieveStartDate(courseId, userId);
+			   toJson.add(userMeasures);
+			   toJson.add(startDate);
 		  } catch (Exception e) {
 		   e.printStackTrace();
 		  }

@@ -1,9 +1,6 @@
 package models.dao;
 
 import java.sql.Connection;
-import java.sql.Date;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.apache.commons.configuration.ConfigurationException;
@@ -15,7 +12,7 @@ import models.database.FileQueryReader;
 import models.dto.UserHistoryDto;
 import utilities.TrimmedBeanHandler;
 import utilities.TrimmedBeanListHandler;
-import utilities.DateUtil;
+
 
 public class UserHistoryDao {
 
@@ -93,7 +90,7 @@ public class UserHistoryDao {
 		   
 		   String startDate = qRunner.query(conn, FileQueryReader.getQuery("USER_HISTORY_S02"),new TrimmedBeanHandler<UserHistoryDto>(UserHistoryDto.class),new Object[]{userId}).getStartTime();
 		   
-		            return startDate;
+		     return startDate;
 		  }
 		  
 		  finally {
