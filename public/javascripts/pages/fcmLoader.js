@@ -86,10 +86,10 @@ var nodes;
 
    
 function fillMap(weekNumber, startDate, endDate){
-	alert("start: "+startDate+", end: "+endDate);
+
 	$("#fcm_container").show();
 	$("#head-table-measurement").html("Week "+weekNumber+" <small>Start: "+startDate+", End: "+endDate+"</small>")
-	$("#date-info").html();
+
 	var container = document.getElementById('fcm');
 	
 	nodes = new vis.DataSet(standardSet);

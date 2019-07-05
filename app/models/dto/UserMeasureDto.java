@@ -4,7 +4,7 @@ public class UserMeasureDto {
 
 	private String courseId, userId;
 	private int weekNumber, iterationNumber;
-	private String startDate, date;
+	private String date;
 	private double c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18;
 	
 	public UserMeasureDto() {
@@ -42,14 +42,6 @@ public class UserMeasureDto {
 		this.iterationNumber = iterationNumber;
 	}
 
-	public String getStartDate() {
-		return startDate;
-	}
-	
-	public void setStartDate(String startDate) {
-		this.startDate= startDate;
-	}
-	
 	public String getDate() {
 		return date;
 	}

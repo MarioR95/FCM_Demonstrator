@@ -17,6 +17,7 @@ GET 	/studentStats				controllers.Application.studentStats(request: Request)
 GET		/logout						controllers.Application.logout(request: Request) 	
 
 # Database interaction routes
+GET		/courseMembers				controllers.Application.courseMembers(request: Request, courseId: String)
 
 GET 	/fetchStudentStats			controllers.Application.fetchStudentStats(request: Request, courseId: String, userId: String)
 

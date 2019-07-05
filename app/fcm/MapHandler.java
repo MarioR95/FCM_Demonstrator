@@ -4,7 +4,6 @@ import java.io.FileNotFoundException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,7 +12,6 @@ import org.apache.commons.configuration.ConfigurationException;
 import org.megadix.jfcm.CognitiveMap;
 import org.megadix.jfcm.Concept;
 import org.megadix.jfcm.utils.FcmIO;
-import org.megadix.jfcm.utils.SimpleFcmRunner;
 
 import models.dao.CourseWeekDao;
 import models.dao.SurveyDao;
@@ -22,15 +20,15 @@ import models.dao.UserMeasureDao;
 import models.dto.CourseWeekDto;
 import models.dto.UserHistoryDto;
 import models.dto.UserMeasureDto;
+import utilities.DateUtil;
 import utilities.Measures;
 import utilities.Normalizer;
 import utilities.PathsManager;
-import utilities.TypeDate;
 
 public class MapHandler {
 
 	private static final int MAX_EPOCHS = 4;
-	private static final double MAX_DELTA = 0.1;
+	//private static final double MAX_DELTA = 0.1;
 	private static final double C = 5.5;
 
 	public static final double MINIMAMENTE = 0.125;
@@ -79,8 +77,8 @@ public class MapHandler {
 				user.getJob() };
 		int[] s_motivation_votes = new int[] { user.getConnection(), user.getFriendship() };
 
-		CourseWeekDto courseWeek = CourseWeekDao.retrieveWeeklyCourseInfoById(user.getCourseID(), weekNumber);
-		List<Double> allForumPostsDone = UserHistoryDao.retrieveNPostsByCourseId(user.getCourseID());
+		CourseWeekDto courseWeek = CourseWeekDao.retrieveWeeklyCourseInfoById(user.getCourseId(), weekNumber);
+		List<Double> allForumPostsDone = UserHistoryDao.retrieveNPostsByCourseId(user.getCourseId());
 		double norm = Normalizer.normalize(allForumPostsDone);
 
 		//map.setOutput("c1", 0.0);// retention
@@ -101,9 +99,9 @@ public class MapHandler {
 
 		map.setOutput("c13", user.getPercVideoViewed());// percVideoViewed
 
-		map.setOutput("c8", computeMapDatesValue(user.getLastForumView()));// lastForumActivities
-		map.setOutput("c14", computeMapDatesValue(user.getLastLesson()));// lastLesson
-		map.setOutput("c15", computeMapDatesValue(user.getLastLesson()));// lastEvent
+		map.setOutput("c8", computeMapDatesValue(DateUtil.convertFromDMY(user.getLastForumView())));// lastForumActivities
+		map.setOutput("c14", computeMapDatesValue(DateUtil.convertFromDMY(user.getLastLesson())));// lastLesson
+		map.setOutput("c15", computeMapDatesValue(DateUtil.convertFromDMY(user.getLastEvent())));// lastEvent
 
 		map.setOutput("c16", 0.0);// assignment
 		map.setOutput("c17", 0.0);// interactions
@@ -120,7 +118,7 @@ public class MapHandler {
 	 * @RETURN: the new Measures object which represents the values that must be
 	 *          stored.
 	 **/
-	private static Measures compareUserHistory(Measures previousMeasures, Measures currentMeasures, TypeDate lastEvent) {
+	private static Measures compareUserHistory(Measures previousMeasures, Measures currentMeasures, GregorianCalendar lastEvent) {
 
 		Measures newMeasure = new Measures();
 
@@ -133,7 +131,7 @@ public class MapHandler {
 		if (previousMeasures.getEngagement_value() == 0 && previousMeasures.getMotivation_value() == 0) {
 			alpha = 0.0;
 		} else {
-			alpha = computeAlpha(TypeDate.datesDifference(lastEvent));
+			alpha = computeAlpha(DateUtil.datesDifference(lastEvent));
 
 			alpha_mot = alpha * previousMeasures.getMotivation_value();
 			alpha_eng = alpha * previousMeasures.getEngagement_value();
@@ -163,7 +161,7 @@ public class MapHandler {
 		for(int i = 0; i < MAX_EPOCHS; i++) {
 			map.execute();
 			MapHandler.printMapState(map);
-			UserMeasureDao.doSaveMapIteration(user.getCourseID(), user.getUserID(), weekNumber, i+1, map, TypeDate.gregorianToString(currentDate));
+			UserMeasureDao.doSaveMapIteration(user.getCourseId(), user.getUserId(), weekNumber, i+1, map, DateUtil.format(currentDate));
 		}
 		
 
@@ -171,7 +169,7 @@ public class MapHandler {
 		UserMeasureDto oldMeasuresDto;
 		Measures oldMeasures = new Measures();
 		if (weekNumber > 0) {
-			oldMeasuresDto = UserMeasureDao.retieveUserMeasure(user.getCourseID(), user.getUserID(),
+			oldMeasuresDto = UserMeasureDao.retieveUserMeasure(user.getCourseId(), user.getUserId(),
 					(weekNumber - 1));
 			
 			oldMeasures.setMotivation_value(oldMeasuresDto.getC2());
@@ -186,11 +184,11 @@ public class MapHandler {
 		currentMeasures.setEngagement_value(map.getConcept("c3").getOutput());
 		currentMeasures.setMotivation_value(map.getConcept("c2").getOutput());
 
-		Measures newMeasures = compareUserHistory(oldMeasures, currentMeasures, user.getLastEvent());
-		UserMeasureDao.doUpdateMeasures(user.getCourseID(), user.getUserID(), weekNumber, newMeasures);
+		Measures newMeasures = compareUserHistory(oldMeasures, currentMeasures, DateUtil.convertFromDMY(user.getLastEvent()));
+		UserMeasureDao.doUpdateMeasures(user.getCourseId(), user.getUserId(), weekNumber, newMeasures);
 		
 		if(weekNumber%2 == 0) {
-			UserHistoryDao.resetMotivationValues(user.getCourseID(), user.getUserID());
+			UserHistoryDao.resetMotivationValues(user.getCourseId(), user.getUserId());
 		}
 
 	}
@@ -227,9 +225,9 @@ public class MapHandler {
 		}
 	}
 
-	private static double computeMapDatesValue(TypeDate date) {
+	private static double computeMapDatesValue(GregorianCalendar date) {
 
-		int diff = TypeDate.datesDifference(date);
+		int diff = DateUtil.datesDifference(date);
 		return ((Math.pow(Math.E, (4.8 - (0.2 * diff)))) / 100);
 
 	}

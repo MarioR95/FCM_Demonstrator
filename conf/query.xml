@@ -4,14 +4,14 @@
 		<content delimiterParsingDisabled="true">
 			SELECT users.email, users.role, users.name, users.surname
 			FROM users
-			WHERE email=? and password=?
+			WHERE email = ? and password = ?
 		</content>
 	</query>
-	<query name="USERS_01">
+	<query name="USERS_S02">
 		<content delimiterParsingDisabled="true">
-			SELECT users.email, users.role, users.name, users.surname
+			SELECT users.email, users.userId, users.name, users.surname
 			FROM users
-			WHERE email=? and password=?
+			WHERE role = 0
 		</content>
 	</query>
 	<query name="COURSE_S01">
@@ -37,9 +37,9 @@
 	</query>
 	<query name="USER_HISTORY_S02">
 		<content delimiterParsingDisabled="true">
-			SELECT * 
+			SELECT *
 			FROM users_history 
-			WHERE userId = ? and courseId = ?
+			WHERE userId = ? 
 		</content>
 	</query>
 	<query name="USER_HISTORY_S03">
