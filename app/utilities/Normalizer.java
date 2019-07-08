@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Normalizer {
 
-	public static double normalize(List<Double> list) {
+	public static double normalize(List<Integer> list) {
 		
 		double sum = 0;
 		double norm = 0;

@@ -1,6 +1,7 @@
 package models.dao;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.configuration.ConfigurationException;
@@ -50,7 +51,7 @@ public class UserHistoryDao {
 		}
 	}
 	
-	public static List<Double> retrieveNPostsByCourseId(String courseId) throws ConfigurationException, Exception{
+	public static List<Integer> retrieveNPostsByCourseId(String courseId) throws ConfigurationException, Exception{
 		
 		Connection conn = null;
 		
@@ -58,10 +59,30 @@ public class UserHistoryDao {
 			conn = ConnectionPool.getSingleton(IConstants.DB_KEY);
 			QueryRunner qRunner = new QueryRunner();
 			
-			List<Double> nForums = qRunner.query(conn, FileQueryReader.getQuery("USER_HISTORY_S04"),new TrimmedBeanListHandler<Double>(Double.class),new Object[]{courseId});
-
+			List<UserHistoryDto> users = qRunner.query(conn, FileQueryReader.getQuery("USER_HISTORY_S02"),new TrimmedBeanListHandler<UserHistoryDto>(UserHistoryDto.class),new Object[]{courseId});
+			
+			List<Integer> nForums = new ArrayList<Integer>();
+			
+			for(UserHistoryDto u : users) {
+				nForums.add(u.getnPosts());
+			}
+			
 			return nForums;
 			
+		} finally {
+			ConnectionPool.close(conn);
+		}
+	}
+	
+	public static UserHistoryDto retrieveStudentHistoryById(String userId) throws ConfigurationException, Exception {
+		Connection conn = null;
+	
+		try {
+			conn = ConnectionPool.getSingleton(IConstants.DB_KEY);
+			QueryRunner qRunner = new QueryRunner();
+			UserHistoryDto user = qRunner.query(conn, FileQueryReader.getQuery("USER_HISTORY_S02"),new TrimmedBeanHandler<UserHistoryDto>(UserHistoryDto.class),new Object[]{userId});
+			
+			return user;
 		} finally {
 			ConnectionPool.close(conn);
 		}
