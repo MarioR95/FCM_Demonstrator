@@ -467,11 +467,11 @@ public class UserHistoryDto {
 
 	@Override
 	public String toString() {
-		return "UserRetentionBean [courseId=" + courseId + ", userId=" + userId + ", registered=" + registered
+		return "UserHistoryDto [courseId=" + courseId + ", userId=" + userId + ", registered=" + registered
 				+ ", viewed=" + viewed + ", explored=" + explored + ", certified=" + certified + ", final_cc_cname_DI="
 				+ final_cc_cname_DI + ", LoE=" + LoE + ", YoB=" + YoB + ", gender=" + gender + ", startTime="
-				+ startTime.toString() + ", lastEvent=" + lastEvent.toString() + ", lastForumView=" + lastForumView.toString() + ", lastLesson="
-				+ lastLesson.toString() + ", nEvents=" + nEvents + ", nDaysAct=" + nDaysAct + ", nPosts=" + nPosts
+				+ startTime + ", lastEvent=" + lastEvent + ", lastForumView=" + lastForumView + ", lastLesson="
+				+ lastLesson + ", nEvents=" + nEvents + ", nDaysAct=" + nDaysAct + ", nPosts=" + nPosts
 				+ ", nPlayVideo=" + nPlayVideo + ", nChapters=" + nChapters + ", tasksDone=" + tasksDone
 				+ ", percVideoViewed=" + percVideoViewed + ", avgSession=" + avgSession + ", curiosity=" + curiosity
 				+ ", enjoyment=" + enjoyment + ", generalInterest=" + generalInterest + ", certificate=" + certificate

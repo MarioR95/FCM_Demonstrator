@@ -138,7 +138,7 @@ function executeMap(weekNumber){
 			url : "/executeMap",
 			data : "courseId="+$.urlParam('courseId')+"&userId="+$.urlParam('userId')+"&weekNumber="+weekNumber,
 			contentType: "application/json; charset=utf-8",
-			dataType: "json",
+			dataType: "text",
 	});
 	
 	jqxhr.done(function(response){
@@ -159,12 +159,13 @@ function getWeekMeasure(weekNumber){
 		url : "/fetchStudentMeasurements",
 		data : "courseId="+$.urlParam('courseId')+"&userId="+$.urlParam('userId')+"&weekNumber="+weekNumber,
 		contentType: "application/json; charset=utf-8",
-		dataType: "text",
+		dataType: "json",
 	});
 	
 	
 	jqxhr.done(function(response){
 
+		console.log(response.length);
 			
 		toShow = [];
 		indexToShow = 0;

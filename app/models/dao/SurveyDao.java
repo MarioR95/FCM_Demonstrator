@@ -35,9 +35,15 @@ public class SurveyDao {
 	
 			avg = Math.floor((avg /= votes.length) * 100) / 100;
 			
-			SurveyDto survey = qRunner.query(conn, FileQueryReader.getQuery("SURVEY_S01"),new TrimmedBeanHandler<SurveyDto>(SurveyDto.class),new Object[]{avg});
+			if(avg>=0 && avg <1) {
+				return 0;
+			}
 			
-	        return survey.getNormalizedValue();
+			else {
+				SurveyDto survey = qRunner.query(conn, FileQueryReader.getQuery("SURVEY_S01"),new TrimmedBeanHandler<SurveyDto>(SurveyDto.class),new Object[]{avg});
+			
+				return survey.getNormalized_value();
+			}
 		}
 		
 		finally {

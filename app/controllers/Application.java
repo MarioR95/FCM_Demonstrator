@@ -116,7 +116,6 @@ public class Application extends Controller {
 		
 		
 		try {
-			//nome del file query
 			CognitiveMap map = MapHandler.loadFromXML();
 			UserHistoryDto user = UserHistoryDao.retrieveStudentHistoryById(userId);
 			MapHandler.setConceptsValues(map, user, weekNumber);

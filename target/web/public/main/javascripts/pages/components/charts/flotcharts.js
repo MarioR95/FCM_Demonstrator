@@ -223,7 +223,7 @@ var KTFlotcharts = function() {
 			var startDate= data[1];
 			
 			if(data[0].length > 0){
-				var n_samples= data.length;
+				var n_samples= data[0].length;
 
 				for(var i=0; i<n_samples; i++){
 					dates[i]= data[0][i].date;

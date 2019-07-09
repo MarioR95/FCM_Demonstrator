@@ -67,7 +67,7 @@
 		<content delimiterParsingDisabled="true">
 			UPDATE measurements 
 			SET c2 = ? , c3 = ? 
-			WHERE courseId = ? and userId = ? and weekNumber = ? and iterationNumber = 4"
+			WHERE courseId = ? and userId = ? and weekNumber = ? and iterationNumber = 4
 		</content>
 	</query>
 	<query name="USER_MEASURE_S03">

@@ -79,7 +79,7 @@ public class UserMeasureDao {
 			conn = ConnectionPool.getSingleton(IConstants.DB_KEY);
 			QueryRunner qRunner = new QueryRunner();
 			
-			qRunner.update(conn, FileQueryReader.getQuery("USER_HISTORY_S03"),new Object[]{measures.getMotivation_value(), measures.getEngagement_value(), courseId, userId, weekNumber});
+			qRunner.update(conn, FileQueryReader.getQuery("USER_MEASURE_S02"),new Object[]{measures.getMotivation_value(), measures.getEngagement_value(), courseId, userId, weekNumber});
 		}
 	
 		

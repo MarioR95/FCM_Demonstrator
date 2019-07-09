@@ -59,7 +59,7 @@ public class UserHistoryDao {
 			conn = ConnectionPool.getSingleton(IConstants.DB_KEY);
 			QueryRunner qRunner = new QueryRunner();
 			
-			List<UserHistoryDto> users = qRunner.query(conn, FileQueryReader.getQuery("USER_HISTORY_S02"),new TrimmedBeanListHandler<UserHistoryDto>(UserHistoryDto.class),new Object[]{courseId});
+			List<UserHistoryDto> users = qRunner.query(conn, FileQueryReader.getQuery("USER_HISTORY_S01"),new TrimmedBeanListHandler<UserHistoryDto>(UserHistoryDto.class),new Object[]{courseId});
 			
 			List<Integer> nForums = new ArrayList<Integer>();
 			

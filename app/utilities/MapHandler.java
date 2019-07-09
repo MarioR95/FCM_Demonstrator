@@ -74,7 +74,7 @@ public class MapHandler {
 	 *          to user current data.
 	 **/
 	public static void setConceptsValues(CognitiveMap map, UserHistoryDto user, int weekNumber) throws ConfigurationException, Exception {
-
+		
 		int[] i_motivation_votes = new int[] { user.getCuriosity(), user.getEnjoyment(), user.getGeneralInterest() };
 		int[] e_motivation_votes = new int[] { user.getCertificate(), user.getCredential(), user.getAcademic(),
 				user.getJob() };
@@ -87,7 +87,7 @@ public class MapHandler {
 		//map.setOutput("c1", 0.0);// retention
 		map.setOutput("c2", 0.0);// motivation
 		map.setOutput("c3", 0.0);// engagement
-
+		
 		map.setOutput("c4", SurveyDao.retriveSurveysAssociation(i_motivation_votes));// intrinsic mot
 		map.setOutput("c5", SurveyDao.retriveSurveysAssociation(e_motivation_votes));// estrinsic mot
 		map.setOutput("c6", SurveyDao.retriveSurveysAssociation(s_motivation_votes));// social mot
@@ -96,9 +96,9 @@ public class MapHandler {
 		map.setOutput("c9", (new Double(user.getnPosts()) / norm));// nPost
 
 		map.setOutput("c10", 0.0);// AVGSession
-		map.setOutput("c11", (new Double(user.getnChapters()) / courseWeek.getnChapters()));// nChapter
+		map.setOutput("c11", (new Double(user.getnChapters()) / courseWeek.getNChapters_week()));// nChapter
 
-		map.setOutput("c12", (new Double(user.getnPlayVideo()) / courseWeek.getnVideos()));// nPlayVdeos
+		map.setOutput("c12", (new Double(user.getnPlayVideo()) / courseWeek.getNVideos_week()));// nPlayVdeos
 
 		map.setOutput("c13", user.getPercVideoViewed());// percVideoViewed
 
@@ -108,7 +108,7 @@ public class MapHandler {
 
 		map.setOutput("c16", 0.0);// assignment
 		map.setOutput("c17", 0.0);// interactions
-		map.setOutput("c18", (new Double(user.getTasksDone()) / courseWeek.getnTasks()));// tasksDone
+		map.setOutput("c18", (new Double(user.getTasksDone()) / courseWeek.getNTasks_week()));// tasksDone
 
 	}
 
@@ -159,11 +159,12 @@ public class MapHandler {
 	public static void execute(CognitiveMap map, UserHistoryDto user, int weekNumber) throws ConfigurationException, Exception {
 		//SimpleFcmRunner runner = new SimpleFcmRunner(map, -MAX_DELTA, MAX_EPOCHS);
 		//runner.converge();
-		GregorianCalendar currentDate= new GregorianCalendar(2019,4-1,19);
-		MapHandler.printMapHeader(map, "\t");
+		
+		//TODO
+		GregorianCalendar currentDate= new GregorianCalendar(2019,4-1,7);
+		
 		for(int i = 0; i < MAX_EPOCHS; i++) {
 			map.execute();
-			MapHandler.printMapState(map);
 			UserMeasureDao.doSaveMapIteration(user.getCourseId(), user.getUserId(), weekNumber, i+1, map, DateUtil.format(currentDate));
 		}
 		
@@ -171,7 +172,9 @@ public class MapHandler {
 		// Retrieve oldMeasure if exists
 		UserMeasureDto oldMeasuresDto;
 		Measures oldMeasures = new Measures();
-		if (weekNumber > 0) {
+		
+		if (weekNumber > 1) {
+			
 			oldMeasuresDto = UserMeasureDao.retieveUserMeasure(user.getCourseId(), user.getUserId(),
 					(weekNumber - 1));
 			

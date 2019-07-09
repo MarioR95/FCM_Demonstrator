@@ -9,7 +9,7 @@ public class Normalizer {
 		double sum = 0;
 		double norm = 0;
 		
-		for(double n: list)
+		for(int n: list)
 			sum+=Math.pow(n, 2);
 		
 		norm = Math.sqrt(sum);
