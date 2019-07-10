@@ -1,15 +1,20 @@
 package controllers;
 
+import java.util.List;
+
 import com.fasterxml.jackson.databind.JsonNode;
 
 import flexjson.JSONDeserializer;
+import models.dao.UserHistoryDao;
 import models.dto.UserDto;
+import models.dto.UserHistoryDto;
 import play.libs.Json;
 import play.mvc.*;
 
 public class HomeController extends Controller {
 
     public Result index() {
+    	
         return ok(views.html.index.render());
     }
     
