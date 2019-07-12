@@ -21,7 +21,7 @@ var Datatable = function(){
 		         "             <i class='flaticon-more-1'></i>"+
 		         "          </button>"+
 		         "          <div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>"+
-		         "             <a class='dropdown-item' href='#'><i class='flaticon-cogwheel-2'></i> Compute Feedback</a>"+
+		         "             <a class='dropdown-item disabled' href='#'><i class='flaticon-cogwheel-2'></i> Compute Feedback</a>"+
 		         "             <a class='dropdown-item' href='#'><i class='flaticon-paper-plane-1'></i> Send Feedback</a>"+
 		         "            <a class='dropdown-item' href='#' onclick='fillMap("+(i+1)+",\""+(i == 0 ? startDate : dates[i-1])+"\",\""+dates[i]+"\"); getWeekMeasure("+(i+1)+", 1)'><i class='flaticon-earth-globe'></i> See on Map</a>"+
 		         "             <div class='dropdown-divider'></div>"+
@@ -50,8 +50,8 @@ var Datatable = function(){
 		           "          </button>"+
 		           "          <div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>"+
 		           "             <a class='dropdown-item' href='#' onclick='executeMap("+(i+1)+")'><i class='flaticon-cogwheel-2'></i> Compute Feedback</a>"+
-		           "             <a class='dropdown-item' href='#'><i class='flaticon-paper-plane-1'></i> Send Feedback</a>"+
-		           "            <a class='dropdown-item' href='#'><i class='flaticon-earth-globe'></i> See on Map</a>"+
+		           "             <a class='dropdown-item disabled' href='#'><i class='flaticon-paper-plane-1'></i> Send Feedback</a>"+
+		           "            <a class='dropdown-item disabled' href='#'><i class='flaticon-earth-globe'></i> See on Map</a>"+
 		           "             <div class='dropdown-divider'></div>"+
 		           "             <a class='dropdown-item kt-font-danger' href='#'><i class='flaticon-delete kt-font-danger'></i> Delete</a>"+
 		           "          </div>"+

@@ -35,12 +35,12 @@ Seq[Any](format.raw/*1.49*/("""
 """),_display_(/*3.2*/views/*3.7*/.html.partials._headerbasemobile()),format.raw/*3.41*/("""
 """),format.raw/*4.1*/("""<div class="kt-grid kt-grid--hor kt-grid--root">
     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
-       """),_display_(/*6.9*/views/*6.14*/.html.partials._asidebase()),format.raw/*6.41*/("""
+       """),_display_(/*6.9*/views/*6.14*/.html.partials._asidebase(user.getRole())),format.raw/*6.55*/("""
         """),format.raw/*7.9*/("""<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
            """),_display_(/*8.13*/views/*8.18*/.html.partials._headerbase(user)),format.raw/*8.50*/("""
             """),format.raw/*9.13*/("""<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
             <!-- content -->
-           """),_display_(/*11.13*/views/*11.18*/.html.partials._contentbase(contentType)),format.raw/*11.58*/("""
+           """),_display_(/*11.13*/views/*11.18*/.html.partials._contentbase(user,contentType)),format.raw/*11.63*/("""
             """),format.raw/*12.13*/("""</div>
 			"""),_display_(/*13.5*/views/*13.10*/.html.partials._footerbase()),format.raw/*13.38*/("""
         """),format.raw/*14.9*/("""</div>
@@ -65,10 +65,10 @@ Seq[Any](format.raw/*1.49*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Jul 08 09:26:29 CEST 2019
+                  DATE: Fri Jul 12 10:22:48 CEST 2019
                   SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/_layout.scala.html
-                  HASH: 59abf576c313ad8dab85f325f63e20e254eed04f
-                  MATRIX: 969->1|1111->48|1139->50|1188->74|1200->79|1254->113|1282->115|1448->256|1461->261|1508->288|1544->298|1680->408|1693->413|1745->445|1786->459|1926->572|1940->577|2001->617|2043->631|2081->643|2095->648|2144->676|2181->686|2257->736|2270->741|2324->774|2353->777|2366->782|2418->813|2447->816|2460->821
+                  HASH: 445defcf303aef043c98931906d011f661384560
+                  MATRIX: 969->1|1111->48|1139->50|1188->74|1200->79|1254->113|1282->115|1448->256|1461->261|1522->302|1558->312|1694->422|1707->427|1759->459|1800->473|1940->586|1954->591|2020->636|2062->650|2100->662|2114->667|2163->695|2200->705|2276->755|2289->760|2343->793|2372->796|2385->801|2437->832|2466->835|2479->840
                   LINES: 28->1|33->1|34->2|35->3|35->3|35->3|36->4|38->6|38->6|38->6|39->7|40->8|40->8|40->8|41->9|43->11|43->11|43->11|44->12|45->13|45->13|45->13|46->14|50->18|50->18|50->18|51->19|51->19|51->19|52->20|52->20
                   -- GENERATED --
               */

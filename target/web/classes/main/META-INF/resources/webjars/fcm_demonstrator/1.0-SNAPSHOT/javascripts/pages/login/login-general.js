@@ -96,10 +96,11 @@ var KTLoginGeneral = function() {
             	type: 'POST',
                 url: '/authenticate?email='+document.getElementById('email').value+'&password='+document.getElementById('password').value,
                 success: function(response, status, xhr, $form) {
+                	var jsonResponse = JSON.parse(response);
                 	// similate 2s delay
                 	setTimeout(function() {
 	                    btn.removeClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').attr('disabled', false);    
-	                	location.href="/dashboard?username=amenichino@unisa.it";               	
+	                	location.href="/dashboard?"+jsonResponse.email;               	
 	                    //showErrorMsg(form, 'danger', 'Incorrect username or password. Please try again.');
                     }, 2000);
                 }

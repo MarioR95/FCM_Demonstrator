@@ -22,29 +22,29 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object _asidebase extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
+object _asidebase extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[Integer,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/():play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(role: Integer):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.4*/("""
+Seq[Any](format.raw/*1.17*/("""
 """),format.raw/*2.1*/("""<!-- begin:: Aside -->
 <button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
 <div class="kt-aside kt-aside--fixed kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop" id="kt_aside">
     """),_display_(/*5.6*/views/*5.11*/.html.partials._asidebrand()),format.raw/*5.39*/("""
-    """),_display_(/*6.6*/views/*6.11*/.html.partials._asidemenu()),format.raw/*6.38*/("""
+    """),_display_(/*6.6*/views/*6.11*/.html.partials._asidemenu(role)),format.raw/*6.42*/("""
 """),format.raw/*7.1*/("""</div>
 <!-- end:: Aside -->"""))
       }
     }
   }
 
-  def render(): play.twirl.api.HtmlFormat.Appendable = apply()
+  def render(role:Integer): play.twirl.api.HtmlFormat.Appendable = apply(role)
 
-  def f:(() => play.twirl.api.HtmlFormat.Appendable) = () => apply()
+  def f:((Integer) => play.twirl.api.HtmlFormat.Appendable) = (role) => apply(role)
 
   def ref: this.type = this
 
@@ -53,10 +53,10 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Jul 08 09:26:29 CEST 2019
+                  DATE: Thu Jul 11 13:25:51 CEST 2019
                   SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_asidebase.scala.html
-                  HASH: 59f5afc7a0759e8408c4d38cceeb4c6df597ba26
-                  MATRIX: 955->1|1051->3|1079->5|1341->242|1354->247|1402->275|1434->282|1447->287|1494->314|1522->316
+                  HASH: 7df1573c3013eaeb368bf322106005139712b80f
+                  MATRIX: 963->1|1073->16|1101->18|1363->255|1376->260|1424->288|1456->295|1469->300|1520->331|1548->333
                   LINES: 28->1|33->1|34->2|37->5|37->5|37->5|38->6|38->6|38->6|39->7
                   -- GENERATED --
               */

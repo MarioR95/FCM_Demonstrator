@@ -1,14 +1,19 @@
-@(contentType: String)
+@(user: models.dto.UserDto, contentType: String)
 <!-- begin:: Content -->
 <div class="kt-content kt-grid__item kt-grid__item--fluid" id="kt_content" >
 
-
 	@contentType match{
-		case "courseDetails" => {@views.html.coursedetailscontent()}
+		case "courseDetails" => {
+			@{ if (user.getRole() ==  1)
+				views.html.tcoursedetailscontent()
+			else
+				views.html.scoursedetailscontent()
+	
+			}
+		}
 		case "studentStats" => {@views.html.studentStats()}
 		case _ => {}
 	}
-	
 	
 </div>
 <!-- end:: Content -->

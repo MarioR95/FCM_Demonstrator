@@ -2,7 +2,7 @@
 <root>
 	<query name="LOGIN_S01">
 		<content delimiterParsingDisabled="true">
-			SELECT users.email, users.role, users.name, users.surname
+			SELECT *
 			FROM users
 			WHERE email = ? and password = ?
 		</content>

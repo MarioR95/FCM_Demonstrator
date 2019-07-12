@@ -22,7 +22,7 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object coursedetailscontent extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
+object tcoursedetailscontent extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
   def apply():play.twirl.api.HtmlFormat.Appendable = {
@@ -233,10 +233,10 @@ format.raw("""(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,10
 
               /*
                   -- GENERATED --
-                  DATE: Mon Jul 08 09:26:28 CEST 2019
-                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/coursedetailscontent.scala.html
+                  DATE: Fri Jul 12 10:22:48 CEST 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/tcoursedetailscontent.scala.html
                   HASH: c3cbb83a2868a59b234cc690c0e518f8c08f77bc
-                  MATRIX: 1045->0
+                  MATRIX: 1046->0
                   LINES: 33->1
                   -- GENERATED --
               */

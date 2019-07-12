@@ -5,6 +5,7 @@ import java.net.MalformedURLException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -160,8 +161,9 @@ public class MapHandler {
 		//SimpleFcmRunner runner = new SimpleFcmRunner(map, -MAX_DELTA, MAX_EPOCHS);
 		//runner.converge();
 		
-		//TODO
-		GregorianCalendar currentDate= new GregorianCalendar(2019,4-1,7);
+		//GregorianCalendar currentDate= new GregorianCalendar(2019,4-1,7);
+		Calendar calendar = Calendar.getInstance();
+		GregorianCalendar currentDate =  (GregorianCalendar) calendar;
 		
 		for(int i = 0; i < MAX_EPOCHS; i++) {
 			map.execute();

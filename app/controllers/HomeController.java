@@ -15,7 +15,7 @@ public class HomeController extends Controller {
     
     
     public Result buildDashboard(Http.Request request) {
-    // Get the user role from the sessione and display the correct dashboard
+    // Get the user role from the session and display the correct dashboard
     	
     	if(request.session().getOptional("connected").isPresent()) {
     		
@@ -24,7 +24,7 @@ public class HomeController extends Controller {
     		if(user.getRole() == 1) { 	//TEACHER CASE
             	return ok( views.html.tdashboard.render(user));
     		}else {						//STUDENT CASE
-    			return ok();
+    			return ok(views.html.sdashboard.render(user));
     		}
     		
         }
