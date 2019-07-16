@@ -6,6 +6,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.megadix.jfcm.CognitiveMap;
+
 import com.fasterxml.jackson.databind.JsonNode;
 
 import models.dao.CourseDao;
@@ -19,6 +21,7 @@ import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Http;
 import play.mvc.Result;
+import utilities.MapHandler;
 
 public class Application extends Controller {
 	 
@@ -107,6 +110,24 @@ public class Application extends Controller {
 		  }
 		  
 		  return ok(Json.toJson(toJson));
+	}
+	
+	public Result executeMap(Http.Request request, String courseId, String userId, int weekNumber) {
+		
+		
+		try {
+			CognitiveMap map = MapHandler.loadFromXML();
+			UserHistoryDto user = UserHistoryDao.retrieveStudentHistoryById(userId);
+			MapHandler.setConceptsValues(map, user, weekNumber);
+			MapHandler.execute(map, user,weekNumber);
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return ok();
 	}
 
 	public Result fetchStudentMeasurements(Http.Request request, String courseId, String userId, int weekNumber) {

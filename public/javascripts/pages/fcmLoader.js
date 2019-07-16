@@ -83,7 +83,6 @@ var options = {
 
 var data;
 var nodes;
-
    
 function fillMap(weekNumber, startDate, endDate){
 
@@ -131,6 +130,28 @@ function prevDataset(){
 	}
 }
 
+
+function executeMap(weekNumber){
+	
+	var jqxhr=$.ajax({
+			type: "GET",
+			url : "/executeMap",
+			data : "courseId="+$.urlParam('courseId')+"&userId="+$.urlParam('userId')+"&weekNumber="+weekNumber,
+			contentType: "application/json; charset=utf-8",
+			dataType: "text",
+	});
+	
+	jqxhr.done(function(response){
+		alert("Fatto");
+		location.reload();
+	});
+	
+	jqxhr.fail(function(response){
+		console.log(response);
+	});
+	
+}
+
 function getWeekMeasure(weekNumber){
 	
 	var jqxhr=$.ajax({
@@ -143,6 +164,9 @@ function getWeekMeasure(weekNumber){
 	
 	
 	jqxhr.done(function(response){
+
+		console.log(response.length);
+			
 		toShow = [];
 		indexToShow = 0;
 		

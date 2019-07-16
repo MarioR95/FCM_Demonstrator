@@ -25,6 +25,8 @@ GET 	/fetchStudentRecords		controllers.Application.fetchStudentRecords(request: 
 
 GET 	/fetchStudentMeasurements	controllers.Application.fetchStudentMeasurements(request: Request, courseId: String, userId: String, weekNumber: Integer)
 
+GET		/executeMap					controllers.Application.executeMap(request: Request, courseId: String, userId: String, weekNumber: Integer)
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 

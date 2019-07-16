@@ -16,6 +16,8 @@ public interface IConstants {
 	static final String LOG4J_FILE = "log4j.xml";
 	//nome del file query
 	static final String QUERY_FILE = "query.xml";
+	//nome della FCM
+	static final String FCM_FILE = "XMLMap.xml";
 	
 	static final String DB_KEY = "dataset";
 

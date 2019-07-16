@@ -1,6 +1,8 @@
 <classpath>
   <classpathentry kind="src" path="app"/>
   <classpathentry kind="src" path="conf"/>
+  <classpathentry kind="src" path="target\scala-2.12\twirl\main"/>
+  <classpathentry kind="src" path="target\scala-2.12\routes\main"/>
   <classpathentry excluding="resources\" kind="src" path="test"/>
   <classpathentry kind="lib" path=".\lib\commons-beanutils-1.7.0.jar"/>
   <classpathentry kind="lib" path=".\lib\commons-beanutils-core-1.8.0.jar"/>
