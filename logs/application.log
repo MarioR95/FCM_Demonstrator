@@ -1,11 +1,27 @@
+<<<<<<< HEAD
 2019-07-17 10:32:53,440 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-4 - Configuration not found for database: No configuration setting found for key 'db'
 2019-07-17 10:32:54,517 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-4 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+=======
+<<<<<<< HEAD
+2019-07-16 09:20:30,855 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-6 - Configuration not found for database: No configuration setting found for key 'db'
+2019-07-16 09:20:32,181 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-6 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+=======
+<<<<<<< HEAD
+2019-07-17 09:25:29,804 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-10 - Configuration not found for database: No configuration setting found for key 'db'
+2019-07-17 09:25:31,928 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-10 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+=======
+2019-07-12 09:42:06,225 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-16 - Configuration not found for database: No configuration setting found for key 'db'
+2019-07-12 09:42:08,169 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-16 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+>>>>>>> 6e18764495c11464f8274d2e4c40cbc6316d3d8d
+>>>>>>> 656765ef56c68a46cbee2e1f83f4c54f1b888ee6
+>>>>>>> df542d3d8b97c6b1ce5523908f8c4e83255134e3
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     play.filters.csrf.CSRFFilter
 
+<<<<<<< HEAD
 2019-07-17 10:32:54,562 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-4 - Application started (Dev) (no global state)
 2019-07-17 10:33:18,226 [ERROR] from application in application-akka.actor.default-dispatcher-4 - 
 
@@ -26,10 +42,102 @@ play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPoint
 	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
 	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
 	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:49)
+=======
+<<<<<<< HEAD
+2019-07-16 09:20:32,256 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-6 - Application started (Dev) (no global state)
+2019-07-16 10:13:15,407 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-38 - Configuration not found for database: No configuration setting found for key 'db'
+2019-07-16 10:13:15,638 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-38 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+=======
+<<<<<<< HEAD
+2019-07-17 09:25:32,020 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-10 - Application started (Dev) (no global state)
+2019-07-17 09:32:04,854 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-13 - Configuration not found for database: No configuration setting found for key 'db'
+2019-07-17 09:32:05,259 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-13 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+=======
+2019-07-12 09:42:08,265 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-16 - Application started (Dev) (no global state)
+2019-07-12 09:58:07,881 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-38 - Configuration not found for database: No configuration setting found for key 'db'
+2019-07-12 09:58:08,105 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-38 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+>>>>>>> 6e18764495c11464f8274d2e4c40cbc6316d3d8d
+>>>>>>> 656765ef56c68a46cbee2e1f83f4c54f1b888ee6
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    play.filters.csrf.CSRFFilter
+
+<<<<<<< HEAD
+2019-07-16 10:13:15,655 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-38 - Application started (Dev) (no global state)
+2019-07-16 10:39:35,709 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-90 - 
+
+! @7cgclla6o - Internal server error, for (GET) [/course?courseId=HarvardX/CB22x/2013_Spring] ->
+=======
+<<<<<<< HEAD
+2019-07-17 09:32:05,281 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-13 - Application started (Dev) (no global state)
+2019-07-17 09:32:58,443 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-23 - Configuration not found for database: No configuration setting found for key 'db'
+2019-07-17 09:32:58,740 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-23 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+=======
+2019-07-12 09:58:08,118 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-38 - Application started (Dev) (no global state)
+2019-07-12 09:59:13,076 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-39 - Configuration not found for database: No configuration setting found for key 'db'
+2019-07-12 09:59:13,266 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-39 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+>>>>>>> 6e18764495c11464f8274d2e4c40cbc6316d3d8d
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    play.filters.csrf.CSRFFilter
+
+<<<<<<< HEAD
+2019-07-17 09:32:58,751 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-23 - Application started (Dev) (no global state)
+2019-07-17 09:33:59,283 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-25 - Configuration not found for database: No configuration setting found for key 'db'
+2019-07-17 09:33:59,564 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-25 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+=======
+2019-07-12 09:59:13,277 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-39 - Application started (Dev) (no global state)
+2019-07-12 10:22:50,212 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-54 - 
+
+! @7cf9h908n - Internal server error, for (POST) [/authenticate?email=amenichino@unisa.it&password=123123123] ->
+>>>>>>> 656765ef56c68a46cbee2e1f83f4c54f1b888ee6
+ 
+play.sbt.PlayExceptions$CompilationException: Compilation error[not found: value user]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:37)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:37)
+	at scala.Option.map(Option.scala:146)
+	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:41)
+	at scala.Option.map(Option.scala:146)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:36)
+	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:29)
+	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:64)
+	at scala.util.Either$LeftProjection.map(Either.scala:569)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:64)
+	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:80)
+	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:501)
+	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:58)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:64)
+	at play.runsupport.Reloader.reload(Reloader.scala:501)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:143)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:304)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:189)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1262)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:523)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:409)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:599)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:480)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:574)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:742)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:757)
+	at akka.actor.Actor.aroundReceive(Actor.scala:539)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:537)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:664)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:610)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:579)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:268)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:229)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:241)
+>>>>>>> df542d3d8b97c6b1ce5523908f8c4e83255134e3
 	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
 	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
 	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+<<<<<<< HEAD
 Caused by: java.lang.NullPointerException: null
 	at views.html.partials._topbaruser$.apply(_topbaruser.template.scala:41)
 	at views.html.partials._topbarbase$.apply(_topbarbase.template.scala:38)
@@ -139,10 +247,53 @@ java.nio.file.NoSuchFileException: C:\Users\Mario\AppData\Local\Temp\playtemp380
 	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
 	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
 	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:49)
+=======
+2019-07-16 10:40:45,449 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-103 - 
+
+! @7cgclp9f6 - Internal server error, for (GET) [/course?courseId=HarvardX/CB22x/2013_Spring] ->
+ 
+play.sbt.PlayExceptions$CompilationException: Compilation error[not found: value user]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:37)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:37)
+	at scala.Option.map(Option.scala:146)
+	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:41)
+	at scala.Option.map(Option.scala:146)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:36)
+	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:29)
+	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:64)
+	at scala.util.Either$LeftProjection.map(Either.scala:569)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:64)
+	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:80)
+	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:501)
+	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:58)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:64)
+	at play.runsupport.Reloader.reload(Reloader.scala:501)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:143)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:304)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:189)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1262)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:523)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:409)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:599)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:480)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:574)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:742)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:757)
+	at akka.actor.Actor.aroundReceive(Actor.scala:539)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:537)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:664)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:610)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:579)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:268)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:229)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:241)
+>>>>>>> df542d3d8b97c6b1ce5523908f8c4e83255134e3
 	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
 	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
 	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+<<<<<<< HEAD
 2019-07-17 10:49:43,557 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-30 - Configuration not found for database: No configuration setting found for key 'db'
 2019-07-17 10:49:43,705 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-30 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
@@ -171,10 +322,53 @@ play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPoint
 	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
 	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
 	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:49)
+=======
+2019-07-16 10:48:54,823 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-111 - 
+
+! @7cgcn15d7 - Internal server error, for (GET) [/course?courseId=HarvardX/CB22x/2013_Spring] ->
+ 
+play.sbt.PlayExceptions$CompilationException: Compilation error[not found: value user]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:37)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:37)
+	at scala.Option.map(Option.scala:146)
+	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:41)
+	at scala.Option.map(Option.scala:146)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:36)
+	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:29)
+	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:64)
+	at scala.util.Either$LeftProjection.map(Either.scala:569)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:64)
+	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:80)
+	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:501)
+	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:58)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:64)
+	at play.runsupport.Reloader.reload(Reloader.scala:501)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:143)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:304)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:189)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1262)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:523)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:409)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:599)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:480)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:574)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:742)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:757)
+	at akka.actor.Actor.aroundReceive(Actor.scala:539)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:537)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:664)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:610)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:579)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:268)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:229)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:241)
+>>>>>>> df542d3d8b97c6b1ce5523908f8c4e83255134e3
 	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
 	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
 	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+<<<<<<< HEAD
 Caused by: java.lang.NullPointerException: null
 	at views.html.partials._topbaruser$.apply(_topbaruser.template.scala:41)
 	at views.html.partials._topbarbase$.apply(_topbarbase.template.scala:38)
@@ -389,10 +583,25 @@ Caused by: java.lang.NullPointerException: null
 2019-07-17 10:54:02,810 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-36 - Configuration not found for database: No configuration setting found for key 'db'
 2019-07-17 10:54:02,959 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-36 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
+=======
+2019-07-16 10:51:34,326 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-105 - Configuration not found for database: No configuration setting found for key 'db'
+2019-07-16 10:51:34,547 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-105 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     play.filters.csrf.CSRFFilter
+
+2019-07-16 10:51:34,560 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-105 - Application started (Dev) (no global state)
+2019-07-16 11:02:13,811 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-130 - Configuration not found for database: No configuration setting found for key 'db'
+2019-07-16 11:02:14,020 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-130 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+>>>>>>> df542d3d8b97c6b1ce5523908f8c4e83255134e3
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    play.filters.csrf.CSRFFilter
+<<<<<<< HEAD
 
 2019-07-17 10:54:02,964 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-36 - Application started (Dev) (no global state)
 2019-07-17 10:54:32,279 [ERROR] from application in application-akka.actor.default-dispatcher-10 - 
@@ -547,16 +756,74 @@ Caused by: java.lang.NullPointerException: null
 	... 12 common frames omitted
 2019-07-17 10:59:00,577 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-53 - Configuration not found for database: No configuration setting found for key 'db'
 2019-07-17 10:59:00,698 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-53 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+=======
+
+2019-07-16 11:02:14,028 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-130 - Application started (Dev) (no global state)
+2019-07-16 11:19:52,385 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-164 - Configuration not found for database: No configuration setting found for key 'db'
+2019-07-16 11:19:52,575 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-164 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     play.filters.csrf.CSRFFilter
 
+2019-07-16 11:19:52,584 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-164 - Application started (Dev) (no global state)
+2019-07-16 13:32:10,441 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-258 - Configuration not found for database: No configuration setting found for key 'db'
+2019-07-16 13:32:10,533 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-258 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    play.filters.csrf.CSRFFilter
+
+2019-07-16 13:32:10,537 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-258 - Application started (Dev) (no global state)
+2019-07-16 13:32:23,309 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-275 - Configuration not found for database: No configuration setting found for key 'db'
+2019-07-16 13:32:23,365 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-275 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+>>>>>>> df542d3d8b97c6b1ce5523908f8c4e83255134e3
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    play.filters.csrf.CSRFFilter
+
+<<<<<<< HEAD
 2019-07-17 10:59:00,702 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-53 - Application started (Dev) (no global state)
 2019-07-17 10:59:18,063 [ERROR] from application in application-akka.actor.default-dispatcher-7 - 
 
 ! @7cgk5cc32 - Internal server error, for (GET) [/dashboard?dcalifano21@studenti.unisa.it] ->
+=======
+2019-07-16 13:32:23,370 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-275 - Application started (Dev) (no global state)
+2019-07-16 13:32:45,071 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-258 - Configuration not found for database: No configuration setting found for key 'db'
+2019-07-16 13:32:45,131 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-258 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    play.filters.csrf.CSRFFilter
+
+2019-07-16 13:32:45,134 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-258 - Application started (Dev) (no global state)
+2019-07-16 13:33:04,106 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-271 - Configuration not found for database: No configuration setting found for key 'db'
+2019-07-16 13:33:04,169 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-271 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    play.filters.csrf.CSRFFilter
+
+2019-07-16 13:33:04,172 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-271 - Application started (Dev) (no global state)
+2019-07-16 13:33:19,879 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-258 - Configuration not found for database: No configuration setting found for key 'db'
+2019-07-16 13:33:19,937 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-258 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    play.filters.csrf.CSRFFilter
+
+2019-07-16 13:33:19,939 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-258 - Application started (Dev) (no global state)
+2019-07-16 13:34:26,650 [ERROR] from application in application-akka.actor.default-dispatcher-4 - 
+
+! @7cgdik7ej - Internal server error, for (GET) [/dashboard?f.rossi17@studenti.unisa.it] ->
+>>>>>>> df542d3d8b97c6b1ce5523908f8c4e83255134e3
  
 play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPointerException: null]]
 	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:351)
@@ -629,7 +896,21 @@ Caused by: java.lang.NullPointerException: null
 	at akka.http.scaladsl.util.FastFuture$.strictTransform$1(FastFuture.scala:41)
 	at akka.http.scaladsl.util.FastFuture$.$anonfun$transformWith$3(FastFuture.scala:51)
 	... 12 common frames omitted
+<<<<<<< HEAD
 2019-07-17 11:00:18,687 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-56 - 
+=======
+<<<<<<< HEAD
+2019-07-16 13:36:51,348 [INFO] from play.core.server.AkkaHttpServer in pool-5-thread-1 - Stopping server...
+=======
+2019-07-12 10:46:53,412 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-72 - Configuration not found for database: No configuration setting found for key 'db'
+2019-07-12 10:46:53,472 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-72 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+>>>>>>> 6e18764495c11464f8274d2e4c40cbc6316d3d8d
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    play.filters.csrf.CSRFFilter
+>>>>>>> df542d3d8b97c6b1ce5523908f8c4e83255134e3
 
 ! @7cgk5fnip - Internal server error, for (GET) [/dashboard?dcalifano21@studenti.unisa.it] ->
  
@@ -690,5 +971,14 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[ error: missing 
     play.filters.hosts.AllowedHostsFilter
     play.filters.csrf.CSRFFilter
 
+<<<<<<< HEAD
 2019-07-17 11:01:24,326 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-55 - Application started (Dev) (no global state)
 2019-07-17 11:23:52,390 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-shutdown-hook-1 - Stopping server...
+=======
+2019-07-17 09:35:32,790 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-16 - Application started (Dev) (no global state)
+2019-07-17 10:25:59,481 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-shutdown-hook-1 - Stopping server...
+=======
+2019-07-12 10:46:53,474 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-72 - Application started (Dev) (no global state)
+>>>>>>> 6e18764495c11464f8274d2e4c40cbc6316d3d8d
+>>>>>>> 656765ef56c68a46cbee2e1f83f4c54f1b888ee6
+>>>>>>> df542d3d8b97c6b1ce5523908f8c4e83255134e3
