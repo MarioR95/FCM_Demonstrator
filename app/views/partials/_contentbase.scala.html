@@ -7,7 +7,7 @@
 			@{ if (user.getRole() ==  1)
 				views.html.tcoursedetailscontent()
 			else
-				views.html.scoursedetailscontent()
+				views.html.scoursedetailscontent(user)
 	
 			}
 		}
