@@ -33,8 +33,8 @@ public class Application extends Controller {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-        return ok().addingToSession(request, "connected",Json.toJson(user).toString());
+		System.out.println(Json.toJson(user).toString());
+        return ok(Json.toJson(user).toString()).addingToSession(request, "connected",Json.toJson(user).toString());
 	}
 	
 	public Result courseDetails(Http.Request request, String courseId) {
