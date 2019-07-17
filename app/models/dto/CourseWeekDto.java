@@ -2,20 +2,20 @@ package models.dto;
 
 public class CourseWeekDto {
 
-	private String courseID;
+	private String courseId;
 	private int week_number;
-	private int nChapters, nVideos, nTasks;
+	private int NChapters_week, NVideos_week, NTasks_week;
 	
 	public CourseWeekDto() {
 		
 	}
 
-	public String getCourseID() {
-		return courseID;
+	public String getCourseId() {
+		return courseId;
 	}
 
-	public void setCourseID(String courseID) {
-		this.courseID = courseID;
+	public void setCourseId(String courseId) {
+		this.courseId = courseId;
 	}
 
 	public int getWeek_number() {
@@ -26,35 +26,35 @@ public class CourseWeekDto {
 		this.week_number = week_number;
 	}
 
-	public int getnChapters() {
-		return nChapters;
+	public int getNChapters_week() {
+		return NChapters_week;
 	}
 
-	public void setnChapters(int nChapters) {
-		this.nChapters = nChapters;
+	public void setNChapters_week(int nChapters_week) {
+		NChapters_week = nChapters_week;
 	}
 
-	public int getnVideos() {
-		return nVideos;
+	public int getNVideos_week() {
+		return NVideos_week;
 	}
 
-	public void setnVideos(int nVideos) {
-		this.nVideos = nVideos;
+	public void setNVideos_week(int nVideos_week) {
+		NVideos_week = nVideos_week;
 	}
 
-	public int getnTasks() {
-		return nTasks;
+	public int getNTasks_week() {
+		return NTasks_week;
 	}
 
-	public void setnTasks(int nTasks) {
-		this.nTasks = nTasks;
+	public void setNTasks_week(int nTasks_week) {
+		NTasks_week = nTasks_week;
 	}
 
 	@Override
 	public String toString() {
-		return "CourseWeekBean [courseID=" + courseID + ", week_number=" + week_number + ", nChapters=" + nChapters
-				+ ", nVideos=" + nVideos + ", nTasks=" + nTasks + "]";
+		return "CourseWeekDto [courseId=" + courseId + ", week_number=" + week_number + ", NChapters_week="
+				+ NChapters_week + ", NVideos_week=" + NVideos_week + ", NTasks_week=" + NTasks_week + "]";
 	}
-	
+
 	
 }

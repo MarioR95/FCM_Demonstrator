@@ -25,7 +25,6 @@ public class CourseWeekDao {
 			QueryRunner qRunner = new QueryRunner();
 			
 			CourseWeekDto week = qRunner.query(conn, FileQueryReader.getQuery("COURSE_WEEK_S01"),new TrimmedBeanHandler<CourseWeekDto>(CourseWeekDto.class),new Object[]{courseID,week_number});
-			
             return week;
 		}
 		

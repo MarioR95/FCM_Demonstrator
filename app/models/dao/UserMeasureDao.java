@@ -79,7 +79,7 @@ public class UserMeasureDao {
 			conn = ConnectionPool.getSingleton(IConstants.DB_KEY);
 			QueryRunner qRunner = new QueryRunner();
 			
-			qRunner.update(conn, FileQueryReader.getQuery("USER_HISTORY_S03"),new Object[]{measures.getMotivation_value(), measures.getEngagement_value(), courseId, userId, weekNumber});
+			qRunner.update(conn, FileQueryReader.getQuery("USER_MEASURE_S02"),new Object[]{measures.getMotivation_value(), measures.getEngagement_value(), courseId, userId, weekNumber});
 		}
 	
 		
@@ -103,7 +103,7 @@ public class UserMeasureDao {
 				}
 			};
 			
-			qRunner.insert(conn, FileQueryReader.getQuery("USER_HISTORY_S04"), rsh,
+			qRunner.insert(conn, FileQueryReader.getQuery("USER_MEASURE_S03"), rsh,
 					new Object[]{courseId, userId, weekNumber, iterationNumber, date,
 							map.getConcept("c2").getOutput(),map.getConcept("c3").getOutput(),map.getConcept("c4").getOutput(),map.getConcept("c5").getOutput(),map.getConcept("c6").getOutput(),
 							map.getConcept("c7").getOutput(),map.getConcept("c8").getOutput(),map.getConcept("c9").getOutput(),map.getConcept("c10").getOutput(),map.getConcept("c11").getOutput(),
