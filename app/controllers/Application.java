@@ -30,14 +30,10 @@ public class Application extends Controller {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println(user);
-		if(null != user) {
-			System.out.println(Json.toJson(user).toString());
-	        return ok(Json.toJson(user).toString()).addingToSession(request, "connected",Json.toJson(user).toString());
-		}else {
-			return badRequest("Invalid username or password.");
-		}
 		
+		//System.out.println(Json.toJson(user).toString());
+	    return ok(Json.toJson(user).toString()).addingToSession(request, "connected",Json.toJson(user).toString());
+	
 	}
 	
 	public Result courseDetails(Http.Request request, String courseId) {
