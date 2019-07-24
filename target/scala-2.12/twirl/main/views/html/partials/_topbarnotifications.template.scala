@@ -22,15 +22,15 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object _topbarnotifications extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
+object _topbarnotifications extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[models.dto.UserDto,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/():play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(user: models.dto.UserDto):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.4*/("""
+Seq[Any](format.raw/*1.28*/("""
 """),format.raw/*2.1*/("""<!--begin: Notifications -->
 <div class="kt-header__topbar-item dropdown">
     <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="30px,0px" aria-expanded="true">
@@ -48,7 +48,7 @@ Seq[Any](format.raw/*1.4*/("""
     </div>
     <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
         <form>
-            """),_display_(/*19.14*/views/*19.19*/.html.partials._dropdownnotifications()),format.raw/*19.58*/("""
+            """),_display_(/*19.14*/views/*19.19*/.html.partials._dropdownnotifications(user)),format.raw/*19.62*/("""
         """),format.raw/*20.9*/("""</form>
     </div>
 </div>
@@ -57,9 +57,9 @@ Seq[Any](format.raw/*1.4*/("""
     }
   }
 
-  def render(): play.twirl.api.HtmlFormat.Appendable = apply()
+  def render(user:models.dto.UserDto): play.twirl.api.HtmlFormat.Appendable = apply(user)
 
-  def f:(() => play.twirl.api.HtmlFormat.Appendable) = () => apply()
+  def f:((models.dto.UserDto) => play.twirl.api.HtmlFormat.Appendable) = (user) => apply(user)
 
   def ref: this.type = this
 
@@ -68,10 +68,10 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Jul 17 11:23:27 CEST 2019
+                  DATE: Wed Jul 24 15:47:47 CEST 2019
                   SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_topbarnotifications.scala.html
-                  HASH: 1febce0d7f311b43f50c3c905227210c32857ab2
-                  MATRIX: 965->1|1061->3|1089->5|3871->2760|3885->2765|3945->2804|3982->2814
+                  HASH: 5ea33a6495372f0d11113c454252c3cc5370fff1
+                  MATRIX: 984->1|1105->27|1133->29|3915->2784|3929->2789|3993->2832|4030->2842
                   LINES: 28->1|33->1|34->2|51->19|51->19|51->19|52->20
                   -- GENERATED --
               */

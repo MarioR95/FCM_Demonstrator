@@ -34,7 +34,7 @@ Seq[Any](format.raw/*1.28*/("""
 """),format.raw/*2.1*/("""<!-- begin:: Header Topbar -->
 <div class="kt-header__topbar" style="position: absolute; right: 0">
     """),_display_(/*4.6*/views/*4.11*/.html.partials._topbarsearch()),format.raw/*4.41*/("""
-    """),_display_(/*5.6*/views/*5.11*/.html.partials._topbarnotifications()),format.raw/*5.48*/("""
+    """),_display_(/*5.6*/views/*5.11*/.html.partials._topbarnotifications(user)),format.raw/*5.52*/("""
     """),_display_(/*6.6*/views/*6.11*/.html.partials._topbaruser(user)),format.raw/*6.43*/("""
 """),format.raw/*7.1*/("""</div>
 <!-- end:: Header Topbar -->"""))
@@ -53,10 +53,10 @@ Seq[Any](format.raw/*1.28*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Jul 17 11:23:27 CEST 2019
+                  DATE: Wed Jul 24 15:47:59 CEST 2019
                   SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_topbarbase.scala.html
-                  HASH: 641fcf9428acbc8b6c4024495b4aabe69ce7fa6d
-                  MATRIX: 975->1|1096->27|1124->29|1256->136|1269->141|1319->171|1351->178|1364->183|1421->220|1453->227|1466->232|1518->264|1546->266
+                  HASH: 9a7ef55ec66cbaba29d9417bfe304de5761fdea0
+                  MATRIX: 975->1|1096->27|1124->29|1256->136|1269->141|1319->171|1351->178|1364->183|1425->224|1457->231|1470->236|1522->268|1550->270
                   LINES: 28->1|33->1|34->2|36->4|36->4|36->4|37->5|37->5|37->5|38->6|38->6|38->6|39->7
                   -- GENERATED --
               */
