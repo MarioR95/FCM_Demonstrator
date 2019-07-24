@@ -1,0 +1,5 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Arufonso\Desktop\FCM_Demonstrator\app\views\partials\_topbarbase.scala.html:5:46: not enough arguments for method apply: (user: models.dto.UserDto)play.twirl.api.HtmlFormat.Appendable in object _topbarnotifications.[0m
+[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter user.[0m
+[0m[[0m[31merror[0m] [0m[0m    @views.html.partials._topbarnotifications()[0m
+[0m[[0m[31merror[0m] [0m[0m                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

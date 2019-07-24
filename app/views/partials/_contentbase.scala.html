@@ -6,6 +6,9 @@
 		case "dashWidget" => {
 			@views.html.tdashwidgetcontent()
 		}
+		case "dashboard" => {
+			@views.html.sdashwidgetcontent(user)
+		}
 		case "courseDetails" => {
 			@{ if (user.getRole() ==  1)
 				views.html.tcoursedetailscontent()
@@ -14,7 +17,9 @@
 	
 			}
 		}
-		case "studentStats" => {@views.html.studentStats()}
+		case "studentStats" => {
+			@views.html.studentStats()
+		}
 		case _ => {}
 	}
 	
