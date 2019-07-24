@@ -1,0 +1,5 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Arufonso\Desktop\FCM_Demonstrator\app\views\partials\_contentbase.scala.html:6:54: not enough arguments for method apply: (user: models.dto.UserDto)play.twirl.api.HtmlFormat.Appendable in object sdashwidgetcontent.[0m
+[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter user.[0m
+[0m[[0m[31merror[0m] [0m[0m		case "dashboard" => {@views.html.sdashwidgetcontent()}[0m
+[0m[[0m[31merror[0m] [0m[0m		                                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

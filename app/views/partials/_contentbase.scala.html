@@ -3,6 +3,7 @@
 <div class="kt-content kt-grid__item kt-grid__item--fluid" id="kt_content" >
 
 	@contentType match{
+		case "dashboard" => {@views.html.sdashwidgetcontent(user)}
 		case "courseDetails" => {
 			@{ if (user.getRole() ==  1)
 				views.html.tcoursedetailscontent()
