@@ -1,8 +1,5 @@
 package controllers;
 
-import java.sql.Date;
-import java.time.Instant;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,8 +30,10 @@ public class Application extends Controller {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println(Json.toJson(user).toString());
-        return ok(Json.toJson(user).toString()).addingToSession(request, "connected",Json.toJson(user).toString());
+		
+		//System.out.println(Json.toJson(user).toString());
+	    return ok(Json.toJson(user).toString()).addingToSession(request, "connected",Json.toJson(user).toString());
+	
 	}
 	
 	public Result courseDetails(Http.Request request, String courseId) {
@@ -113,7 +112,6 @@ public class Application extends Controller {
 	}
 	
 	public Result executeMap(Http.Request request, String courseId, String userId, int weekNumber) {
-		
 		
 		try {
 			CognitiveMap map = MapHandler.loadFromXML();
