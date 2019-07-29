@@ -12,7 +12,7 @@ var Datatable = function(){
 		        " <td>"+eng[i]+"</td>"+
 		        " <td>"+mot[i]+"</td>"+
 		        " <td>Type1</td>"+
-		        " <td class='kt-font-success'>Sent</td>"+
+		        " <td class='kt-font-warning'>Not Sent</td>"+
 		        " <td>Type2</td>"+
 		        " <td class='kt-font-success'>Sent</td>"+
 		        " <td>"+

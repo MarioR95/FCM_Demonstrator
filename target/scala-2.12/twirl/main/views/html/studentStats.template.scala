@@ -97,8 +97,8 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin: Content -->
 						      		<th>Week of Measure</th>
 						      		<th>Start</th>
 						      		<th>End</th>
-						      		<th>Engagement</th>
 						      		<th>Motivation</th>
+						      		<th>Engagement</th>
 						      		<th colspan="2">Student Feedback</th>
 						      		<th colspan="2">Teacher Feedback</th>
 						      		<th>Actions</th>
@@ -160,9 +160,9 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin: Content -->
 
               /*
                   -- GENERATED --
-                  DATE: Wed Jul 17 11:23:27 CEST 2019
+                  DATE: Fri Jul 26 09:41:34 CEST 2019
                   SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/studentStats.scala.html
-                  HASH: ec3ba3e42bc8cf9295eabce57eddf5145f6c1509
+                  HASH: 5b1b4c2770afe1630da5337980e731746a1c7b9d
                   MATRIX: 1037->2
                   LINES: 33->2
                   -- GENERATED --
