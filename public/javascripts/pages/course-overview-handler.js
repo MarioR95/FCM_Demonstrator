@@ -274,7 +274,7 @@ var KTDashboard = function() {
 	var course_interactions_plot= function(){
         var rawData = [[5, 0], [15, 1],[35, 2],[20, 3],[25, 4]];
         var dataSet = [{ label: "Users Platform Activity", data: rawData, color: '#5867DD' }];
-        var ticks = [[0, "Mai"], [1, "Poco"], [2, "Med."], [3, "Abb."], [4, "Attivo"]];
+        var ticks = [[0, "Never"], [1, "Little"], [2, "Med."], [3, "Quite"], [4, "Active"]];
  
         var options = {
             series: {
@@ -499,7 +499,7 @@ function interaction_plot_2(){
     var config = {
         type: 'line',
         data: {
-            labels: ["05-04-2019", "06-04-2019", "07-04-2019", "08-04-2019", "09-04-2019", "10-04-2019", "11-04-2019"],
+            labels: ["12-04-2019", "13-04-2019", "14-04-2019", "15-04-2019", "16-04-2019", "17-04-2019", "18-04-2019"],
             datasets: [{
                 label: "",
                 borderColor: '#5867DD',
@@ -609,7 +609,7 @@ function interaction_plot_3(){
     var config = {
         type: 'line',
         data: {
-            labels: ["05-04-2019", "06-04-2019", "07-04-2019", "08-04-2019", "09-04-2019", "10-04-2019", "11-04-2019"],
+            labels: ["19-04-2019", "20-04-2019", "21-04-2019", "22-04-2019", "23-04-2019", "24-04-2019", "25-04-2019"],
             datasets: [{
                 label: "",
                 borderColor: '#5867DD',
