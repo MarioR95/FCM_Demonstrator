@@ -3,6 +3,8 @@ package models.dao;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.List;
 
 import org.apache.commons.configuration.ConfigurationException;
@@ -19,7 +21,10 @@ import utilities.TrimmedBeanHandler;
 import utilities.TrimmedBeanListHandler;
 
 public class UserMeasureDao {
+	
+	private static final NumberFormat nf= new DecimalFormat("#0.00");
 
+	
 	public static UserMeasureDto retieveUserMeasure(String courseId, String userId, int weekNumber) throws ConfigurationException, Exception {
 		
 		Connection conn = null;
@@ -79,7 +84,7 @@ public class UserMeasureDao {
 			conn = ConnectionPool.getSingleton(IConstants.DB_KEY);
 			QueryRunner qRunner = new QueryRunner();
 			
-			qRunner.update(conn, FileQueryReader.getQuery("USER_MEASURE_S02"),new Object[]{measures.getMotivation_value(), measures.getEngagement_value(), courseId, userId, weekNumber});
+			qRunner.update(conn, FileQueryReader.getQuery("USER_MEASURE_S02"), new Object[]{Double.parseDouble(nf.format(measures.getMotivation_value())), Double.parseDouble(nf.format(measures.getEngagement_value())), courseId, userId, weekNumber});
 		}
 	
 		
@@ -102,13 +107,29 @@ public class UserMeasureDao {
 					return 1;
 				}
 			};
-			
+
+			System.out.println(Double.parseDouble(nf.format(map.getConcept("c2").getOutput())));
 			qRunner.insert(conn, FileQueryReader.getQuery("USER_MEASURE_S03"), rsh,
 					new Object[]{courseId, userId, weekNumber, iterationNumber, date,
-							map.getConcept("c2").getOutput(),map.getConcept("c3").getOutput(),map.getConcept("c4").getOutput(),map.getConcept("c5").getOutput(),map.getConcept("c6").getOutput(),
-							map.getConcept("c7").getOutput(),map.getConcept("c8").getOutput(),map.getConcept("c9").getOutput(),map.getConcept("c10").getOutput(),map.getConcept("c11").getOutput(),
-							map.getConcept("c12").getOutput(),map.getConcept("c13").getOutput(),map.getConcept("c14").getOutput(),map.getConcept("c15").getOutput(),map.getConcept("c16").getOutput(),
-							map.getConcept("c17").getOutput(),map.getConcept("c18").getOutput()});
+							Double.parseDouble(nf.format(map.getConcept("c2").getOutput())),
+							Double.parseDouble(nf.format(map.getConcept("c3").getOutput())),
+							Double.parseDouble(nf.format(map.getConcept("c4").getOutput())),
+							Double.parseDouble(nf.format(map.getConcept("c5").getOutput())),
+							Double.parseDouble(nf.format(map.getConcept("c6").getOutput())),
+							Double.parseDouble(nf.format(map.getConcept("c7").getOutput())),
+							Double.parseDouble(nf.format(map.getConcept("c8").getOutput())),
+							Double.parseDouble(nf.format(map.getConcept("c9").getOutput())),
+							Double.parseDouble(nf.format(map.getConcept("c10").getOutput())),
+							Double.parseDouble(nf.format(map.getConcept("c11").getOutput())),
+							Double.parseDouble(nf.format(map.getConcept("c12").getOutput())),
+							Double.parseDouble(nf.format(map.getConcept("c13").getOutput())),
+							Double.parseDouble(nf.format(map.getConcept("c14").getOutput())),
+							Double.parseDouble(nf.format(map.getConcept("c15").getOutput())),
+							Double.parseDouble(nf.format(map.getConcept("c16").getOutput())),
+							Double.parseDouble(nf.format(map.getConcept("c17").getOutput())),
+							Double.parseDouble(nf.format(map.getConcept("c18").getOutput()))
+					}
+			);
 		}
 		
 		finally {
