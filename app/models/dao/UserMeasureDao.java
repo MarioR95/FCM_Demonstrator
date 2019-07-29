@@ -1,11 +1,13 @@
 package models.dao;
 
+import java.math.RoundingMode;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.List;
+
 
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.dbutils.QueryRunner;
@@ -16,6 +18,7 @@ import constants.IConstants;
 import models.database.ConnectionPool;
 import models.database.FileQueryReader;
 import models.dto.UserMeasureDto;
+import utilities.MapHandler;
 import utilities.Measures;
 import utilities.TrimmedBeanHandler;
 import utilities.TrimmedBeanListHandler;
@@ -94,7 +97,7 @@ public class UserMeasureDao {
 	}
 	
 	public static void doSaveMapIteration(String courseId, String userId, int weekNumber,int iterationNumber, CognitiveMap map, String date) throws ConfigurationException, Exception {
-		
+	
 		Connection conn = null;
 		
 		try {
