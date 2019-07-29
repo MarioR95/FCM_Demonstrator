@@ -97,7 +97,7 @@ Seq[Any](format.raw/*1.1*/("""<li class="kt-menu__item kt-menu__item--submenu" a
 
               /*
                   -- GENERATED --
-                  DATE: Wed Jul 17 11:23:27 CEST 2019
+                  DATE: Mon Jul 29 09:44:00 CEST 2019
                   SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_sasidemenu.scala.html
                   HASH: de9384828f6cdf21c20534f6f385d6b6c2ee72cf
                   MATRIX: 1045->0

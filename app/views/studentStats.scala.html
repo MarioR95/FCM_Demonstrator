@@ -1,6 +1,5 @@
 
 <!-- begin: Content -->
-	<!-- begin: Row with two widget -->
 <div class="row">
 	<!-- begin: first widget -->
 	<div class="col-xl-12">
@@ -16,29 +15,25 @@
 			<div class="kt-portlet__body">
 				<div id="kt_flotcharts" style="height: 400px; padding: 0px; position: relative;">
 					<canvas class="flot-base" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1538px; height: 300px;" width="1538" height="300"></canvas>
-					<canvas class="flot-overlay" width="1538" height="300"
-						style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1538px; height: 300px;"></canvas>
+					<canvas class="flot-overlay" width="1538" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1538px; height: 300px;"></canvas>
 					<div class="legend">
-						<div
-							style="position: absolute; width: 85px; height: 36px; top: 13px; right: 12px; background-color: rgb(255, 255, 255); opacity: 0.85;">
+						<div style="position: absolute; width: 85px; height: 36px; top: 13px; right: 12px; background-color: rgb(255, 255, 255); opacity: 0.85;">
 						</div>
-						<table
-							style="position: absolute; top: 13px; right: 12px;; font-size: smaller; color: #545454">
+						<table style="position: absolute; top: 13px; right: 12px;; font-size: smaller; color: #545454">
 							<tbody>
 								<tr>
-									<td class="legendColorBox"><div
-											style="border: 1px solid #ccc; padding: 1px">
-											<div
-												style="width: 4px; height: 0; border: 5px solid rgb(93, 120, 255); overflow: hidden"></div>
-										</div></td>
+									<td class="legendColorBox">
+										<div style="border: 1px solid #ccc; padding: 1px">
+										<div style="width: 4px; height: 0; border: 5px solid rgb(93, 120, 255); overflow: hidden"></div>
+										</div>
+									</td>
 									<td class="legendLabel">Motivation</td>
 								</tr>
 								<tr>
-									<td class="legendColorBox"><div
-											style="border: 1px solid #ccc; padding: 1px">
-											<div
-												style="width: 4px; height: 0; border: 5px solid rgb(253, 57, 149); overflow: hidden"></div>
-										</div></td>
+									<td class="legendColorBox"><div style="border: 1px solid #ccc; padding: 1px">
+										<div style="width: 4px; height: 0; border: 5px solid rgb(253, 57, 149); overflow: hidden"></div>
+										</div>
+									</td>
 									<td class="legendLabel">Engagement</td>
 								</tr>
 							</tbody>
@@ -50,7 +45,6 @@
 	</div>
 	<!-- end: first widget -->
 </div>
-<!-- end: Row with two widget -->
 
 <!-- begin: Student table -->
 <div class="row">
@@ -73,7 +67,7 @@
 						      		<th>Actions</th>
 						    	</tr>
 						  	</thead>
-						  	<tbody class="tbody-dark">
+						  	<tbody id="tbody-measures" class="tbody-dark">
 							
 						  	</tbody>
 						</table>
@@ -90,7 +84,7 @@
 <div class="row" id="fcm_container" style="display:none">
 	<div class="col-xl-12">
 		<div class="kt-portlet">
-			<div class="kt-portlet__head">
+			<div id= "fcm-header" class="kt-portlet__head">
 				<div class="kt-portlet__head-label">
 					<span class="kt-portlet__head-icon kt-hidden"> <i
 						class="la la-gear"></i>

@@ -58,18 +58,30 @@ Seq[Any](format.raw/*1.28*/("""
 </script>
 
 
-<script>
+<style type="text/css">
+	#kt_wrapper"""),format.raw/*30.13*/("""{"""),format.raw/*30.14*/("""
+		"""),format.raw/*31.3*/("""padding-top: 60px;
+	"""),format.raw/*32.2*/("""}"""),format.raw/*32.3*/("""
+	
+	"""),format.raw/*34.2*/(""".kt-widget__icon"""),format.raw/*34.18*/("""{"""),format.raw/*34.19*/("""
+		"""),format.raw/*35.3*/("""font-size:50px;
+	"""),format.raw/*36.2*/("""}"""),format.raw/*36.3*/("""
+	
+	"""),format.raw/*38.2*/(""".kt-widget__details """),format.raw/*38.22*/("""{"""),format.raw/*38.23*/("""
+		"""),format.raw/*39.3*/("""padding: 5px;
+	"""),format.raw/*40.2*/("""}"""),format.raw/*40.3*/("""
+	"""),format.raw/*41.2*/(""".kt-widget__item:hover """),format.raw/*41.25*/("""{"""),format.raw/*41.26*/("""
+		"""),format.raw/*42.3*/("""background-color: #F6F6F9;
+	"""),format.raw/*43.2*/("""}"""),format.raw/*43.3*/("""
 
-
-
-
-</script>
+"""),format.raw/*45.1*/("""</style>
 
 <!--end::Fonts -->
 <!--begin::Page Vendors Styles(used by this page) -->
 <link
 	href="assets/vendors/custom/fullcalendar/fullcalendar.bundle.css"
 	rel="stylesheet" type="text/css" />
+	
 <!--end::Page Vendors Styles -->
 <!--begin::Global Theme Styles(used by all pages) -->
 <link href="assets/vendors/global/vendors.bundle.css" rel="stylesheet"
@@ -93,13 +105,13 @@ Seq[Any](format.raw/*1.28*/("""
 <!-- begin::Body -->
 <body
 	class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
-	"""),_display_(/*64.3*/views/*64.8*/.html._layout(user, "dashboard")),format.raw/*64.40*/("""
-	"""),format.raw/*65.2*/("""<!-- begin::Global Config(global config for global JS sciprts) -->
+	"""),_display_(/*76.3*/views/*76.8*/.html._layout(user, "dashWidget")),format.raw/*76.41*/("""
+	"""),format.raw/*77.2*/("""<!-- begin::Global Config(global config for global JS sciprts) -->
 	<script>
-		var KTAppOptions = """),format.raw/*67.22*/("""{"""),format.raw/*67.23*/("""
-			"""),format.raw/*68.4*/(""""colors" : """),format.raw/*68.15*/("""{"""),format.raw/*68.16*/("""
-				"""),format.raw/*69.5*/(""""state" : """),format.raw/*69.15*/("""{"""),format.raw/*69.16*/("""
-					"""),format.raw/*70.6*/(""""brand" : "#5d78ff",
+		var KTAppOptions = """),format.raw/*79.22*/("""{"""),format.raw/*79.23*/("""
+			"""),format.raw/*80.4*/(""""colors" : """),format.raw/*80.15*/("""{"""),format.raw/*80.16*/("""
+				"""),format.raw/*81.5*/(""""state" : """),format.raw/*81.15*/("""{"""),format.raw/*81.16*/("""
+					"""),format.raw/*82.6*/(""""brand" : "#5d78ff",
 					"dark" : "#282a3c",
 					"light" : "#ffffff",
 					"primary" : "#5867dd",
@@ -107,13 +119,13 @@ Seq[Any](format.raw/*1.28*/("""
 					"info" : "#36a3f7",
 					"warning" : "#ffb822",
 					"danger" : "#fd3995"
-				"""),format.raw/*78.5*/("""}"""),format.raw/*78.6*/(""",
-				"base" : """),format.raw/*79.14*/("""{"""),format.raw/*79.15*/("""
-					"""),format.raw/*80.6*/(""""label" : [ "#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466" ],
+				"""),format.raw/*90.5*/("""}"""),format.raw/*90.6*/(""",
+				"base" : """),format.raw/*91.14*/("""{"""),format.raw/*91.15*/("""
+					"""),format.raw/*92.6*/(""""label" : [ "#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466" ],
 					"shape" : [ "#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a" ]
-				"""),format.raw/*82.5*/("""}"""),format.raw/*82.6*/("""
-			"""),format.raw/*83.4*/("""}"""),format.raw/*83.5*/("""
-		"""),format.raw/*84.3*/("""}"""),format.raw/*84.4*/(""";
+				"""),format.raw/*94.5*/("""}"""),format.raw/*94.6*/("""
+			"""),format.raw/*95.4*/("""}"""),format.raw/*95.5*/("""
+		"""),format.raw/*96.3*/("""}"""),format.raw/*96.4*/(""";
 	</script>
 	<!-- end::Global Config -->
 	<!--begin::Global Theme Bundle(used by all pages) -->
@@ -121,7 +133,6 @@ Seq[Any](format.raw/*1.28*/("""
 	<script src="assets/javascripts/scripts.bundle.js" type="text/javascript"></script>
 	<!--end::Global Theme Bundle -->
 	<!--begin::Page Vendors(used by this page) -->
-	<script src="assets/vendors/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript"></script>
 	<script src="//maps.google.com/maps/api/js?key=AIzaSyBTGnKT7dt597vo9QgeQ7BFhvSRP4eiMSM" type="text/javascript"></script>
 	<script src="assets/vendors/custom/gmaps/gmaps.js" type="text/javascript"></script>
 	<!--end::Page Vendors -->
@@ -132,8 +143,10 @@ Seq[Any](format.raw/*1.28*/("""
 	<script src="assets/javascripts/pages//layout/aside/menu/contentView.js" type="text/javascript"></script>
 	<!--end::Page Scripts -->
 	<script src="assets/vendors/custom/flot/flot.bundle.js" type="text/javascript"></script>
-
-	
+	<script src="assets/vendors/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript"></script>
+	<script src="assets/javascripts/pages/components/calendar/google.js" type="text/javascript"></script>
+	<script src="assets/javascripts/pages/components/charts/morris-charts.js"type="text/javascript"></script>
+	<script src="assets/javascripts/pages/dash-widget-handler.js" type="text/javascript"></script>
 </body>
 <!-- end::Body -->
 </html>"""))
@@ -152,11 +165,11 @@ Seq[Any](format.raw/*1.28*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Jul 17 11:23:27 CEST 2019
+                  DATE: Mon Jul 29 09:44:00 CEST 2019
                   SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/tdashboard.scala.html
-                  HASH: 34aeda4040e4b63db7ec137605601d50ffcf3a65
-                  MATRIX: 965->1|1086->27|1116->31|1623->510|1652->511|1683->515|1720->524|1749->525|1781->530|1894->616|1922->617|1975->642|2004->643|2036->648|2095->680|2123->681|2153->684|2181->685|3569->2047|3582->2052|3635->2084|3665->2087|3793->2187|3822->2188|3854->2193|3893->2204|3922->2205|3955->2211|3993->2221|4022->2222|4056->2229|4302->2448|4330->2449|4374->2465|4403->2466|4437->2473|4590->2599|4618->2600|4650->2605|4678->2606|4709->2610|4737->2611
-                  LINES: 28->1|33->1|35->3|49->17|49->17|50->18|50->18|50->18|51->19|53->21|53->21|54->22|54->22|55->23|56->24|56->24|57->25|57->25|96->64|96->64|96->64|97->65|99->67|99->67|100->68|100->68|100->68|101->69|101->69|101->69|102->70|110->78|110->78|111->79|111->79|112->80|114->82|114->82|115->83|115->83|116->84|116->84
+                  HASH: f24fcd98aca58b5751ab2af9d86cb3c0ceb2e2cf
+                  MATRIX: 965->1|1086->27|1116->31|1623->510|1652->511|1683->515|1720->524|1749->525|1781->530|1894->616|1922->617|1975->642|2004->643|2036->648|2095->680|2123->681|2153->684|2181->685|2265->741|2294->742|2325->746|2373->767|2401->768|2434->774|2478->790|2507->791|2538->795|2583->813|2611->814|2644->820|2692->840|2721->841|2752->845|2795->861|2823->862|2853->865|2904->888|2933->889|2964->893|3020->922|3048->923|3079->927|4432->2254|4445->2259|4499->2292|4529->2295|4657->2395|4686->2396|4718->2401|4757->2412|4786->2413|4819->2419|4857->2429|4886->2430|4920->2437|5166->2656|5194->2657|5238->2673|5267->2674|5301->2681|5454->2807|5482->2808|5514->2813|5542->2814|5573->2818|5601->2819
+                  LINES: 28->1|33->1|35->3|49->17|49->17|50->18|50->18|50->18|51->19|53->21|53->21|54->22|54->22|55->23|56->24|56->24|57->25|57->25|62->30|62->30|63->31|64->32|64->32|66->34|66->34|66->34|67->35|68->36|68->36|70->38|70->38|70->38|71->39|72->40|72->40|73->41|73->41|73->41|74->42|75->43|75->43|77->45|108->76|108->76|108->76|109->77|111->79|111->79|112->80|112->80|112->80|113->81|113->81|113->81|114->82|122->90|122->90|123->91|123->91|124->92|126->94|126->94|127->95|127->95|128->96|128->96
                   -- GENERATED --
               */
           

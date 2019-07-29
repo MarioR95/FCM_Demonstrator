@@ -11,14 +11,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.apache.commons.configuration.ConfigurationException;
-import org.apache.commons.configuration.ConfigurationUtils;
-import org.apache.commons.configuration.XMLConfiguration;
-import org.apache.commons.io.FileUtils;
 import org.megadix.jfcm.CognitiveMap;
 import org.megadix.jfcm.Concept;
 import org.megadix.jfcm.utils.FcmIO;
 
-import constants.IConstants;
 import models.dao.CourseWeekDao;
 import models.dao.SurveyDao;
 import models.dao.UserHistoryDao;
@@ -32,7 +28,7 @@ public class MapHandler {
 	private static final int MAX_EPOCHS = 4;
 	//private static final double MAX_DELTA = 0.1;
 	private static final double C = 5.5;
-
+	
 	public static final double MINIMAMENTE = 0.125;
 	public static final double POCO = 0.25;
 	public static final double MEDIOCRAMENTE = 0.375;

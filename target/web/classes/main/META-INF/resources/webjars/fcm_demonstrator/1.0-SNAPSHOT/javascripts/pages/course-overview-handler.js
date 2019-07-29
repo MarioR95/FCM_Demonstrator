@@ -274,7 +274,7 @@ var KTDashboard = function() {
 	var course_interactions_plot= function(){
         var rawData = [[5, 0], [15, 1],[35, 2],[20, 3],[25, 4]];
         var dataSet = [{ label: "Users Platform Activity", data: rawData, color: '#5867DD' }];
-        var ticks = [[0, "Mai"], [1, "Poco"], [2, "Med."], [3, "Abb."], [4, "Attivo"]];
+        var ticks = [[0, "Never"], [1, "Little"], [2, "Med."], [3, "Quite"], [4, "Active"]];
  
         var options = {
             series: {

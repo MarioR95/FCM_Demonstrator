@@ -31,7 +31,6 @@ object studentStats extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.a
 
 
 Seq[Any](format.raw/*2.1*/("""<!-- begin: Content -->
-	<!-- begin: Row with two widget -->
 <div class="row">
 	<!-- begin: first widget -->
 	<div class="col-xl-12">
@@ -47,29 +46,25 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin: Content -->
 			<div class="kt-portlet__body">
 				<div id="kt_flotcharts" style="height: 400px; padding: 0px; position: relative;">
 					<canvas class="flot-base" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1538px; height: 300px;" width="1538" height="300"></canvas>
-					<canvas class="flot-overlay" width="1538" height="300"
-						style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1538px; height: 300px;"></canvas>
+					<canvas class="flot-overlay" width="1538" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1538px; height: 300px;"></canvas>
 					<div class="legend">
-						<div
-							style="position: absolute; width: 85px; height: 36px; top: 13px; right: 12px; background-color: rgb(255, 255, 255); opacity: 0.85;">
+						<div style="position: absolute; width: 85px; height: 36px; top: 13px; right: 12px; background-color: rgb(255, 255, 255); opacity: 0.85;">
 						</div>
-						<table
-							style="position: absolute; top: 13px; right: 12px;; font-size: smaller; color: #545454">
+						<table style="position: absolute; top: 13px; right: 12px;; font-size: smaller; color: #545454">
 							<tbody>
 								<tr>
-									<td class="legendColorBox"><div
-											style="border: 1px solid #ccc; padding: 1px">
-											<div
-												style="width: 4px; height: 0; border: 5px solid rgb(93, 120, 255); overflow: hidden"></div>
-										</div></td>
+									<td class="legendColorBox">
+										<div style="border: 1px solid #ccc; padding: 1px">
+										<div style="width: 4px; height: 0; border: 5px solid rgb(93, 120, 255); overflow: hidden"></div>
+										</div>
+									</td>
 									<td class="legendLabel">Motivation</td>
 								</tr>
 								<tr>
-									<td class="legendColorBox"><div
-											style="border: 1px solid #ccc; padding: 1px">
-											<div
-												style="width: 4px; height: 0; border: 5px solid rgb(253, 57, 149); overflow: hidden"></div>
-										</div></td>
+									<td class="legendColorBox"><div style="border: 1px solid #ccc; padding: 1px">
+										<div style="width: 4px; height: 0; border: 5px solid rgb(253, 57, 149); overflow: hidden"></div>
+										</div>
+									</td>
 									<td class="legendLabel">Engagement</td>
 								</tr>
 							</tbody>
@@ -81,7 +76,6 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin: Content -->
 	</div>
 	<!-- end: first widget -->
 </div>
-<!-- end: Row with two widget -->
 
 <!-- begin: Student table -->
 <div class="row">
@@ -104,7 +98,7 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin: Content -->
 						      		<th>Actions</th>
 						    	</tr>
 						  	</thead>
-						  	<tbody class="tbody-dark">
+						  	<tbody id="tbody-measures" class="tbody-dark">
 							
 						  	</tbody>
 						</table>
@@ -121,7 +115,7 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin: Content -->
 <div class="row" id="fcm_container" style="display:none">
 	<div class="col-xl-12">
 		<div class="kt-portlet">
-			<div class="kt-portlet__head">
+			<div id= "fcm-header" class="kt-portlet__head">
 				<div class="kt-portlet__head-label">
 					<span class="kt-portlet__head-icon kt-hidden"> <i
 						class="la la-gear"></i>
@@ -160,9 +154,9 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin: Content -->
 
               /*
                   -- GENERATED --
-                  DATE: Fri Jul 26 09:41:34 CEST 2019
+                  DATE: Mon Jul 29 09:44:00 CEST 2019
                   SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/studentStats.scala.html
-                  HASH: 5b1b4c2770afe1630da5337980e731746a1c7b9d
+                  HASH: 5b859a8d886a77becb092d5a78a79bab36ea539d
                   MATRIX: 1037->2
                   LINES: 33->2
                   -- GENERATED --

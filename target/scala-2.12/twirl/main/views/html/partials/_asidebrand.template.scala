@@ -76,7 +76,7 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Jul 17 11:23:26 CEST 2019
+                  DATE: Mon Jul 29 09:44:00 CEST 2019
                   SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_asidebrand.scala.html
                   HASH: 8357fe8d6a704389cfc7130645ccb0d0f4e9ddf5
                   MATRIX: 956->1|1052->3|1080->5

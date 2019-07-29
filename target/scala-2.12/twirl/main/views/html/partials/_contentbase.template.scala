@@ -34,16 +34,22 @@ Seq[Any](format.raw/*1.49*/("""
 """),format.raw/*2.1*/("""<!-- begin:: Content -->
 <div class="kt-content kt-grid__item kt-grid__item--fluid" id="kt_content" >
 
-	"""),_display_(/*5.3*/contentType/*5.14*/ match/*5.20*/{/*6.3*/case "dashboard" =>/*6.22*/ {_display_(_display_(/*6.25*/views/*6.30*/.html.sdashwidgetcontent(user)))}/*7.3*/case "courseDetails" =>/*7.26*/ {_display_(Seq[Any](format.raw/*7.28*/("""
-			"""),_display_(/*8.5*/{ if (user.getRole() ==  1)
+	"""),_display_(/*5.3*/contentType/*5.14*/ match/*5.20*/{/*6.3*/case "dashWidget" =>/*6.23*/ {_display_(Seq[Any](format.raw/*6.25*/("""
+			"""),_display_(/*7.5*/views/*7.10*/.html.tdashwidgetcontent()),format.raw/*7.36*/("""
+		""")))}/*9.3*/case "dashboard" =>/*9.22*/ {_display_(Seq[Any](format.raw/*9.24*/("""
+			"""),_display_(/*10.5*/views/*10.10*/.html.sdashwidgetcontent(user)),format.raw/*10.40*/("""
+		""")))}/*12.3*/case "courseDetails" =>/*12.26*/ {_display_(Seq[Any](format.raw/*12.28*/("""
+			"""),_display_(/*13.5*/{ if (user.getRole() ==  1)
 				views.html.tcoursedetailscontent()
 			else
 				views.html.scoursedetailscontent(user)
 	
-			}),format.raw/*13.5*/("""
-		""")))}/*15.3*/case "studentStats" =>/*15.25*/ {_display_(_display_(/*15.28*/views/*15.33*/.html.studentStats()))}/*16.3*/case _ =>/*16.12*/ {}}),format.raw/*17.3*/("""
+			}),format.raw/*18.5*/("""
+		""")))}/*20.3*/case "studentStats" =>/*20.25*/ {_display_(Seq[Any](format.raw/*20.27*/("""
+			"""),_display_(/*21.5*/views/*21.10*/.html.studentStats()),format.raw/*21.30*/("""
+		""")))}/*23.3*/case _ =>/*23.12*/ {}}),format.raw/*24.3*/("""
 	
-"""),format.raw/*19.1*/("""</div>
+"""),format.raw/*26.1*/("""</div>
 <!-- end:: Content -->"""))
       }
     }
@@ -60,11 +66,11 @@ Seq[Any](format.raw/*1.49*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Thu Jul 18 12:09:41 CEST 2019
+                  DATE: Mon Jul 29 09:44:00 CEST 2019
                   SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_contentbase.scala.html
-                  HASH: 5af17a5ed80082d75a2cd31d0fb54c834c954608
-                  MATRIX: 983->1|1125->48|1153->50|1286->158|1305->169|1319->175|1327->180|1354->199|1384->202|1397->207|1437->242|1468->265|1507->267|1538->273|1687->402|1710->411|1741->433|1772->436|1786->441|1817->466|1835->475|1859->482|1891->487
-                  LINES: 28->1|33->1|34->2|37->5|37->5|37->5|37->6|37->6|37->6|37->6|37->7|37->7|37->7|38->8|43->13|44->15|44->15|44->15|44->15|44->16|44->16|44->17|46->19
+                  HASH: 7aaf5c9879fd410a580aa17040633596cce89cff
+                  MATRIX: 983->1|1125->48|1153->50|1286->158|1305->169|1319->175|1327->180|1355->200|1394->202|1425->208|1438->213|1484->239|1506->248|1533->267|1572->269|1604->275|1618->280|1669->310|1692->319|1724->342|1764->344|1796->350|1945->479|1968->488|1999->510|2039->512|2071->518|2085->523|2126->543|2149->552|2167->561|2191->568|2223->573
+                  LINES: 28->1|33->1|34->2|37->5|37->5|37->5|37->6|37->6|37->6|38->7|38->7|38->7|39->9|39->9|39->9|40->10|40->10|40->10|41->12|41->12|41->12|42->13|47->18|48->20|48->20|48->20|49->21|49->21|49->21|50->23|50->23|50->24|52->26
                   -- GENERATED --
               */
           

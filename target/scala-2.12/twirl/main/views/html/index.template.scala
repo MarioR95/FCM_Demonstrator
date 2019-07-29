@@ -103,10 +103,10 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 								</div>
 								<form class="kt-form" action="">
 									<div class="input-group">
-										<input id="email" class="form-control" type="text" placeholder="Email" name="email" autocomplete="off" style="color: #ffffff;" value="d.califano21&#64;studenti.unisa.it">
+										<input id="email" class="form-control" type="text" placeholder="Email" name="email" autocomplete="off" style="color: #ffffff;">
 									</div>
 									<div class="input-group">
-										<input id="password" class="form-control" type="password" placeholder="Password" name="password" style="color: #ffffff;" value="000000000">
+										<input id="password" class="form-control" type="password" placeholder="Password" name="password" style="color: #ffffff;" >
 									</div>
 									<div class="row kt-login__extra">
 										<div class="col">
@@ -239,10 +239,10 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 
               /*
                   -- GENERATED --
-                  DATE: Wed Jul 17 11:23:26 CEST 2019
+                  DATE: Mon Jul 29 09:44:00 CEST 2019
                   SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/index.scala.html
-                  HASH: 49dce38b853ab6bcb2a8afa2968766794e45825e
-                  MATRIX: 1030->0|1620->562|1649->563|1682->569|1718->577|1747->578|1781->585|1887->664|1915->665|1969->691|1998->692|2032->699|2093->733|2121->734|2153->739|2181->740|8292->6822|8322->6823|8356->6829|8395->6839|8425->6840|8460->6847|8498->6856|8528->6857|8564->6865|8811->7084|8840->7085|8885->7101|8915->7102|8951->7110|9101->7232|9130->7233|9164->7239|9193->7240|9226->7245|9255->7246
+                  HASH: 9eacb500a2a1860fe9631a78ba002acb59bc6828
+                  MATRIX: 1030->0|1620->562|1649->563|1682->569|1718->577|1747->578|1781->585|1887->664|1915->665|1969->691|1998->692|2032->699|2093->733|2121->734|2153->739|2181->740|8232->6762|8262->6763|8296->6769|8335->6779|8365->6780|8400->6787|8438->6796|8468->6797|8504->6805|8751->7024|8780->7025|8825->7041|8855->7042|8891->7050|9041->7172|9070->7173|9104->7179|9133->7180|9166->7185|9195->7186
                   LINES: 33->1|51->19|51->19|52->20|52->20|52->20|53->21|54->22|54->22|55->23|55->23|56->24|57->25|57->25|58->26|58->26|191->159|191->159|192->160|192->160|192->160|193->161|193->161|193->161|194->162|202->170|202->170|203->171|203->171|204->172|206->174|206->174|207->175|207->175|208->176|208->176
                   -- GENERATED --
               */

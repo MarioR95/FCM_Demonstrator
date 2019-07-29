@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Arufonso/Desktop/FCM_Demonstrator/conf/routes
-// @DATE:Wed Jul 17 11:23:26 CEST 2019
+// @DATE:Mon Jul 29 09:44:00 CEST 2019
 
 package controllers;
 

@@ -68,7 +68,7 @@ Seq[Any](format.raw/*1.28*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Jul 24 15:47:47 CEST 2019
+                  DATE: Mon Jul 29 09:44:00 CEST 2019
                   SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/partials/_topbarnotifications.scala.html
                   HASH: 5ea33a6495372f0d11113c454252c3cc5370fff1
                   MATRIX: 984->1|1105->27|1133->29|3915->2784|3929->2789|3993->2832|4030->2842

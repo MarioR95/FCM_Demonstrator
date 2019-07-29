@@ -613,7 +613,7 @@ format.raw("""/a>
 								</span>
 								<a href="#" class="kt-widget4__title kt-widget4__title--light">
 									<span
-									class="kt-widget4__number kt-font-dark">19/07/2019</span> Congratulations! You did a great job with the <i>Complexity and annotations : Basic</i> Quiz.
+									class="kt-widget4__number kt-font-dark">24/07/2019</span> Congratulations! You did a great job with the <i>Complexity and annotations : Basic</i> Quiz.
 								</a>
 								<div class="dropdown dropright">
 									<button type="button" class="btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -630,7 +630,7 @@ format.raw("""/a>
 								</span>
 								<a href="#" class="kt-widget4__title kt-widget4__title--light">
 									<span
-									class="kt-widget4__number kt-font-dark">20/07/2019</span> Your work with the <i>C Programming</i> course is amazing, maybe you are interested to improve yourself with the new materials in your course page. 
+									class="kt-widget4__number kt-font-dark">22/07/2019</span> Your work with the <i>C Programming</i> course is amazing, maybe you are interested to improve yourself with the new materials in your course page. 
 								</a>
 								<div class="dropdown dropright">
 									<button type="button" class="btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -646,7 +646,7 @@ format.raw("""/a>
 									<i class="fas fa-bell kt-font-warning"></i>
 								</span>
 								<a href="#" class="kt-widget4__title kt-widget4__title--light">
-									<span class="kt-widget4__number kt-font-dark">22/07/2019</span> Your last quiz was not so good. Let's try to study again the section <i>Dynamic Programming</i> in your <i>Algorithm</i> course. 
+									<span class="kt-widget4__number kt-font-dark">20/07/2019</span> Your last quiz was not so good. Let's try to study again the section <i>Dynamic Programming</i> in your <i>Algorithm</i> course. 
 								</a>
 								<div class="dropdown dropright">
 									<button type="button" class="btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -663,7 +663,7 @@ format.raw("""/a>
 								</span>
 								<a href="#" class="kt-widget4__title kt-widget4__title--light">
 									<span
-									class="kt-widget4__number kt-font-dark">24/07/2019</span> Somethings went wrong with your last quizzes. We suggest to contact your teacher via the chat. 
+									class="kt-widget4__number kt-font-dark">19/07/2019</span> Somethings went wrong with your last quizzes. We suggest to contact your teacher via the chat. 
 								</a>
 								<div class="dropdown dropright">
 									<button type="button" class="btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -752,9 +752,9 @@ format.raw("""/a>
 
               /*
                   -- GENERATED --
-                  DATE: Wed Jul 24 15:16:54 CEST 2019
+                  DATE: Mon Jul 29 09:48:39 CEST 2019
                   SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/sdashwidgetcontent.scala.html
-                  HASH: 2c33affd2cb5ed9131e65e412cf911fed2c7d270
+                  HASH: cde08b44c73475d6044a5018b6d05a0e2c6651b3
                   MATRIX: 973->1|1094->27|1122->29|2062->942|2075->946|2106->956|2147->970|2160->974|2194->987|2223->988|2421->1159|2434->1163|2466->1174
                   LINES: 28->1|33->1|34->2|54->22|54->22|54->22|55->23|55->23|55->23|55->23|60->28|60->28|60->28
                   -- GENERATED --

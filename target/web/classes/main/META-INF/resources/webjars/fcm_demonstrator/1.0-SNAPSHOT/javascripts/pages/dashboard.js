@@ -648,27 +648,47 @@ var KTDashboard = function() {
             return;
         }
 
-        Morris.Donut({
+        var chart= Morris.Donut({
             element: 'kt_chart_revenue_change',
             data: [{
-                    label: "New York",
-                    value: 10
-                },
-                {
-                    label: "London",
-                    value: 7
-                },
-                {
-                    label: "Paris",
+                    label: "Forum",
                     value: 20
+                },
+                {
+                    label: "Quiz",
+                    value: 30
+                },
+                {
+                    label: "Multimedia",
+                    value: 12
+                },
+                {
+                    label: "Assignment",
+                    value: 38
                 }
             ],
             colors: [
                 KTApp.getStateColor('success'),
                 KTApp.getStateColor('danger'),
-                KTApp.getStateColor('brand')
+                KTApp.getStateColor('brand'),
+                KTApp.getStateColor('warning')
             ],
+            showPercentage: true,
+            formatter: function(y, data){
+            	return y+"%";
+            }
         });
+        
+    	chart.options.data.forEach(function(label, i) {
+	        var legendItem = $('<span></span>').text( label['label']).prepend('<span>&nbsp;</span>');
+	        legendItem.find('span')
+	          .css('backgroundColor', chart.options.colors[i])
+	          .css('width', '15px')
+	          .css('height', '15px')
+	          .css('display', 'inline-block')
+	          .css('margin', '5px')
+	        $('#legend').append(legendItem)
+    	});
     }
 
     // Support Tickets Chart.
@@ -1878,11 +1898,186 @@ var KTDashboard = function() {
         });
     }
 
+    //CUSTOM
+    var coursesInteraction = function(){
+    	var config = {
+		  type: 'line',
+		  data: {
+		    labels: ['05-04-2019', '06-04-2019', '07-04-2019', '08-04-2019', '09-04-2019','10-04-2019','11-04-2019'],
+		    datasets: [{
+		      label: 'Algorithms',
+		      data: [32, 24, 18, 56, 33, 41, 29],
+		      borderColor: 'rgb(122, 137, 250)',
+	    	  backgroundColor: 'rgba(122, 137, 250, 0.2)',
+	    	  lineTension: 0
+		    }, {
+		      label: 'Data Structures',
+		      data: [, , ,23, 14, 46, 19],
+		      borderColor: '#FD3995',
+	    	  backgroundColor: 'rgba(253,57,149,0.2)',
+	    	  lineTension: 0
+		    }]
+		  },
+		  options: {
+		    spanGaps: true,
+		    responsive: true,
+		    tooltips: {
+		      mode: 'index',
+		      intersect: false,
+		      callbacks: {
+	                label: function(tooltipItem, data) {
+	                    return data.datasets[tooltipItem.datasetIndex].label+": "+tooltipItem.yLabel+"%";
+	                }
+	            }
+		    },
+		    hover: {
+		      mode: 'nearest',
+		      intersect: true
+		    },
+		    scales: {
+		      xAxes: [{
+		        display: true,
+		        scaleLabel: {
+		          display: true,
+		        }
+		      }],
+		      yAxes: [{
+		        display: true,
+		        scaleLabel: {
+		          display: true,
+		        },
+		        ticks: {
+		        	min:0,
+		        	max: 100
+	            }
+		      }]
+		    }
+		  },
+
+		};
+    	
+    	var ctx= $('#kt_courses_interactions_chart');
+        var chart = new Chart(ctx, config);
+       
+    }
+   
+    //CUSTOM
+    var retention = function(){
+    	
+    	var ctx= $('#kt-retention-plot');
+
+    	var data = {
+		  labels: ["Algorithms", "Data Structures"],
+		  datasets: [{
+		    label: "Mot",
+		    backgroundColor: KTApp.getStateColor("brand"),
+		    data: [0.7, 0.8]
+		  }, {
+		    label: "Eng",
+		    backgroundColor: KTApp.getStateColor("danger"),
+		    data: [0.57, 0.64]
+		  }]
+		};
+
+		var myBarChart = new Chart(ctx, {
+		  type: 'horizontalBar',
+		  data: data,
+		  options: {
+		    barValueSpacing: 20,
+		    scales: {
+		      xAxes: [{
+		        ticks: {
+		          min: 0,
+		          max: 1
+		        }
+		      }]
+		    }
+		  }
+		
+		});
+    }
+
+    //CUSTOM
+    var dropout= function(){
+    	 var chartContainer = KTUtil.getByID('kt_dropout');
+
+         if (!chartContainer) {
+             return;
+         }
+
+         var chartData = {
+             labels: ["Algorithms", "Data Structures"],
+             datasets: [{
+                 label: 'In course',
+                 backgroundColor: KTApp.getStateColor('brand'),
+                 data: [
+                     39, 30
+                 ]
+             }, {
+                 label: 'Dropped',
+                 backgroundColor: '#f3f3fb',
+                 data: [
+                     5, 10,
+                 ]
+             }]
+         };
+
+         var chart = new Chart(chartContainer, {
+             type: 'bar',
+             data: chartData,
+             options: {
+                 title: {
+                     display: false,
+                 },
+                 tooltips: {
+                     intersect: false,
+                     mode: 'nearest',
+                     xPadding: 10,
+                     yPadding: 10,
+                     caretPadding: 2
+                 },
+                 legend: {
+                     display: true
+                 },
+                 responsive: true,
+                 maintainAspectRatio: false,
+                 barRadius: 4,
+                 scales: {
+                     xAxes: [{
+                         display: true,
+                         stacked: true,
+                         barPercentage: 0.5
+                     }],
+                     yAxes: [{
+                         display: true,
+                         stacked: true,
+                     }]
+                 },
+                 layout: {
+                     padding: {
+                         left: 0,
+                         right: 0,
+                         top: 0,
+                         bottom: 0
+                     }
+                 },
+                 grid: {
+     				hoverable: true,
+     				clickable: true,
+     				tickColor: "#eee",
+     				borderColor: "#eee",
+     				borderWidth: 1
+     			},
+             }
+         });
+    }
+    
+     
     return {
         // Init demos
         init: function() {
             // init charts
-            dailySales();
+            //dailySales();
             profitShare();
             salesStats();
             salesByApps();
@@ -1913,6 +2108,10 @@ var KTDashboard = function() {
             // earnings slide
             earningsSlide();
 
+            // custom: MOLIERE
+            coursesInteraction();
+            retention();
+            dropout();
             
             // demo loading
             var loading = new KTDialog({'type': 'loader', 'placement': 'top center', 'message': 'Loading ...'});
@@ -1929,3 +2128,8 @@ var KTDashboard = function() {
 jQuery(document).ready(function() {
     KTDashboard.init();
 });
+
+
+
+
+

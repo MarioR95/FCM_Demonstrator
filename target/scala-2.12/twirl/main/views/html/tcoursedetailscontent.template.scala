@@ -41,22 +41,22 @@ Seq[Any](format.raw/*1.1*/("""<div class="kt-content kt-grid__item kt-grid__item
               </li>
               <li class="nav-item">
                   <a class="nav-link" data-toggle="tab" href="#kt_tabs_1_2">
-                      <i class="fas fa-bullhorn"></i> Annunci
+                      <i class="fas fa-bullhorn"></i> Announcement 
                   </a>
               </li>
               <li class="nav-item">
                   <a class="nav-link" data-toggle="tab" href="#kt_tabs_1_3">
-                      <i class="far fa-chart-bar"></i> Statistiche
+                      <i class="far fa-chart-bar"></i> Statistics
                   </a>
               </li>
               <li class="nav-item">
                   <a class="nav-link" data-toggle="tab" href="#kt_tabs_1_4">
-                      <i class="fas fa-book-open"></i> Didattica
+                      <i class="fas fa-book-open"></i> Didactics
                   </a>
               </li>
               <li class="nav-item">
                   <a class="nav-link" data-toggle="tab" href="#kt_tabs_1_5">
-                      <i class="fas fa-users"></i> Membri
+                      <i class="fas fa-users"></i> Members
                   </a>
               </li>
           </ul>                    
@@ -84,11 +84,11 @@ Seq[Any](format.raw/*1.1*/("""<div class="kt-content kt-grid__item kt-grid__item
 						    	</tr>
 						  	</tbody>
 				      </table>
-	           		Obiettivi del corso: 
+	           		Course goals: 
 					<ul>	
-						<li>Fornire allo studente metodi e conoscenze atti al progetto di algoritmi efficienti</li>
-						<li>Fornire strumenti per l'analisi delle risorse (spazio e tempo) utilizzate da algoritmi</li>
-						<li>Fornire un catalogo dei piu' noti ed efficienti algoritmi per problemi computazionali di base (ordinamento, ricerca, ottimizzazione di risorse, etc.)</li>
+						<li>Provide methods and knowledge for efficient algorithms design</li>
+						<li>Provide resources analysis tools (space and time) used by algorithms</li>
+						<li>Provide a catalog of the most known and efficient algorithms for basic computational problems(sorting, searching, resources optimization, etc.)</li>
 					</ul>
                </div>
               <!-- end: Info -->
@@ -103,15 +103,12 @@ Seq[Any](format.raw/*1.1*/("""<div class="kt-content kt-grid__item kt-grid__item
 							<div class="kt-notes__content">
 								<div class="kt-notes__section">
 									<div class="kt-notes__info">
-										<a href="#" class="kt-notes__title"> TODO </a> 
-										<span class="kt-notes__desc"> 9:30AM 16 June, 2015 </span>
+										<a href="#" class="kt-notes__title"> Quiz 1 preparation </a> 
+										<span class="kt-notes__desc"> 9:30AM 10 April, 2019 </span>
 										<span class="kt-badge kt-badge--brand kt-badge--inline">important</span>
 									</div>
 								</div>
-								<span class="kt-notes__body"> Sed ut perspiciatis unde
-									omnis iste natus error sit voluptatem accusantium doloremque
-									laudantium, totam rem aperiam, eaque ipsa quae ab illo
-									inventore veritatis et quasi architecto. 
+								<span class="kt-notes__body"> 
 								</span>
 							</div>
 						</div>
@@ -123,12 +120,10 @@ Seq[Any](format.raw/*1.1*/("""<div class="kt-content kt-grid__item kt-grid__item
 								<div class="kt-notes__section">
 									<div class="kt-notes__info">
 										<a href="#" class="kt-notes__title"> Upload materials</a> 
-										<span class="kt-notes__desc"> 7:10AM 21 February, 2016 </span>
+										<span class="kt-notes__desc"> 7:10AM 08 April, 2019 </span>
 									</div>
 								</div>
-								<span class="kt-notes__body"> Sed ut perspiciatis unde
-									omnis iste natus error sit voluptatem accusantium aque ipsa
-									quae ab illo inventore veritatis et quasi architecto. 
+								<span class="kt-notes__body"> Introduction and first chapter slides uploaded. 
 								</span>
 							</div>
 						</div>
@@ -307,12 +302,12 @@ Seq[Any](format.raw/*1.1*/("""<div class="kt-content kt-grid__item kt-grid__item
   									<td>29 Apr 2019</td>
   									<td>
   										<div class="progress" style="height: 20px;">
-											<div class="progress-bar" role="progressbar" style="width: 19%; height: 20px;" aria-valuenow="10" aria-valuemin="0" aria-valuemax=""><h6 style="margin:0">10</h6></div>
+											<div class="progress-bar" role="progressbar" style="width: 57%; height: 20px;" aria-valuenow="30" aria-valuemin="0" aria-valuemax=""><h6 style="margin:0">30</h6></div>
 										</div>
 									</td>
   									<td>
   										<div class="progress" style="height: 20px;">
-											<div class="progress-bar" role="progressbar" style="width: 100%; height: 20px;" aria-valuenow="60" aria-valuemin="0" aria-valuemax=""><h6 style="margin:0">60</h6></div>
+											<div class="progress-bar" role="progressbar" style="width: 25%; height: 20px;" aria-valuenow="10" aria-valuemin="0" aria-valuemax=""><h6 style="margin:0">10</h6></div>
 										</div>
 									</td>
   									<td>0</td>
@@ -374,13 +369,13 @@ Seq[Any](format.raw/*1.1*/("""<div class="kt-content kt-grid__item kt-grid__item
               <!-- begin: Didattica -->
               <div class="tab-pane" id="kt_tabs_1_4" role="tabpanel">
               	<ul>
-              		<li>INTRODUZIONE ALLA ANALISI ASINTOTICA DEGLI ALGORITMI</li>
-              		<li>LA TECNICA DI PROGETTO DI ALGORITMI DIVIDE ET IMPERA: MERGESORT, QUICKSORT</li>
-              		<li>LA TECNICA DI PROGETTO DI ALGORITMI PROGRAMMAZIONE DINAMICA: CALCOLO DI NUMERI DI FIBONACCI, COMBINAZIONI; PROBLEMI DI OTTIMIZZAZIONE: SCHEDULING DI RISORSE, ZAINO INTERO, PROBLEMI SU STRINGHE, CAMMINI MINIMI SU GRAFI.</li>
-              		<li>LA TECNICA DI PROGETTO DI ALGORITMI GREEDY E RELATIVI ESEMPI DI APPLICAZIONE: SCHEDULING DI INTERVALLI; SCHEDULING CON DEADLINE; COMPRESSIONE DATI E CODICI DI HUFFMAN.</li>
-              		<li>CONNETTIVITA' E VISITA DI GRAFI; DAG E ORDINAMENTO TOPOLOGICO. CALCOLO DI CAMMINI MINIMI (ALGORITMO DI DIJKSTRA). CALCOLO DI ALBERI RICOPRENTI MINIMI (ALGORITMI DI PRIM E KRUSKAL).</li>
-              		<li>CALCOLO DI FLUSSO SU GRAFI E LORO APPLICAZIONI</li>
-              		<li>ALGORITMI INTELLIGENTI DI RICERCA ESAUSTIVA: BACKTRACKING E BRANCH - AND - BOUND.</li>	
+              		<li>INTRODUCTION TO THE ALGORITHMS ASYMPTOTIC ANALYSIS</li>
+              		<li>ALGORITHMS DESIGN TECHNIQUE - DIVIDE ER IMPERALA: MERGESORT, QUICKSORT</li>
+              		<li>ALGORITHMS DESIGN TECHNIQUE - DYNAMIC PROGRAMMING: FIBONACCI'S NUMBERS, COMBINATIONS; OPTIMIZATION PROBLEMS: RESOURCES SCHEDULING, BAG PROBLEM, PROBLEMS OVER STRINGS, MINIMUM PATH.</li>
+              		<li>ALGORITHMS DESIGN TECHNIQUE - GREEDY : INTERVAL SCHEDULING ; SCHEDULING WITH DEADLINE;  DATA COMPRESSION AND HUFFMAN CODES.</li>
+              		<li>GRAPHS CONNECTIVITY AND VISIT; DAG AND TOPOLOGICAL VISIT. MINUMUM PATH COMPUTATION (DIJKSTRA'S ALGORITHMS). MINIMUM STRATUM TREE COMPUTATION (PRIM AND KRUSKAL'S ALGORITHMS).</li>
+              		<li>GRAPHS FLOW COMPUTATION</li>
+              		<li>SMART ALGORITHMS FOR ESAUSTIVE RESEARCH: BACKTRACKING AND BRANCH - AND - BOUND.</li>	
               	</ul>
   
 			  </div>
@@ -439,9 +434,9 @@ Seq[Any](format.raw/*1.1*/("""<div class="kt-content kt-grid__item kt-grid__item
 
               /*
                   -- GENERATED --
-                  DATE: Wed Jul 17 11:23:27 CEST 2019
+                  DATE: Mon Jul 29 09:44:00 CEST 2019
                   SOURCE: C:/Users/Arufonso/Desktop/FCM_Demonstrator/app/views/tcoursedetailscontent.scala.html
-                  HASH: 96bbcbf17dde2878cc92061ccb3c82486a7d4d5b
+                  HASH: c4808ce2342b55da6e496d145bf42043421cafa7
                   MATRIX: 1046->0
                   LINES: 33->1
                   -- GENERATED --
