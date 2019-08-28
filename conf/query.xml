@@ -1,5 +1,41 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <root>
+	<query name="FEEDBACK_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT *
+			FROM feedback
+			WHERE courseId = ? and userId = ?
+			order by measureDate ASC
+		</content>
+	</query>
+	<query name="FEEDBACK_S02">
+		<content delimiterParsingDisabled="true">
+			SELECT *
+			FROM feedback
+			WHERE courseId = ?
+		</content>
+	</query>
+	<query name="FEEDBACK_S03">
+		<content delimiterParsingDisabled="true">
+			SELECT *
+			FROM feedback
+			WHERE userId = ?
+			ORDER BY feedbackDate DESC
+		</content>
+	</query>
+	<query name="FEEDBACK_S04">
+		<content delimiterParsingDisabled="true">
+			SELECT *
+			FROM feedback
+			WHERE courseId = ? and userId = ? and measureDate = ?
+		</content>
+	</query>
+	<query name="FEEDBACK_S05">
+		<content delimiterParsingDisabled="true">
+			INSERT INTO feedback (id, measureDate, courseId, userId, feedbackDate, status, content, type)
+			VALUES (DEFAULT, ? , ? , ? , null , 0 , null , -1 )
+		</content>
+	</query>
 	<query name="LOGIN_S01">
 		<content delimiterParsingDisabled="true">
 			SELECT *

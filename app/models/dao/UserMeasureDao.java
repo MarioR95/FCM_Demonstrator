@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
 import java.util.List;
 
@@ -24,9 +25,6 @@ import utilities.TrimmedBeanHandler;
 import utilities.TrimmedBeanListHandler;
 
 public class UserMeasureDao {
-	
-	private static final NumberFormat nf= new DecimalFormat("#0.00");
-
 	
 	public static UserMeasureDto retieveUserMeasure(String courseId, String userId, int weekNumber) throws ConfigurationException, Exception {
 		
@@ -52,7 +50,6 @@ public class UserMeasureDao {
 		try {
 			conn = ConnectionPool.getSingleton(IConstants.DB_KEY);
 			QueryRunner qRunner = new QueryRunner();
-			
 			List<UserMeasureDto> userDto = qRunner.query(conn, FileQueryReader.getQuery("USER_MEASURE_S04"),new TrimmedBeanListHandler<UserMeasureDto>(UserMeasureDto.class),new Object[]{courseId,userId});
 			
             return userDto;
@@ -80,7 +77,13 @@ public class UserMeasureDao {
 		}
 	}
 	
-	public static void doUpdateMeasures(String courseId, String userId, int weekNumber, Measures measures) throws ConfigurationException, Exception {				
+	public static void doUpdateMeasures(String courseId, String userId, int weekNumber, Measures measures) throws ConfigurationException, Exception {
+		
+		DecimalFormat nf = new DecimalFormat("#.##");
+		DecimalFormatSymbols dfs = new DecimalFormatSymbols();
+		dfs.setDecimalSeparator('.');
+		nf.setDecimalFormatSymbols(dfs);
+		
 		Connection conn = null;
 		
 		try {
@@ -98,6 +101,11 @@ public class UserMeasureDao {
 	
 	public static void doSaveMapIteration(String courseId, String userId, int weekNumber,int iterationNumber, CognitiveMap map, String date) throws ConfigurationException, Exception {
 	
+		 DecimalFormat nf = new DecimalFormat("#.##");
+		 DecimalFormatSymbols dfs = new DecimalFormatSymbols();
+		 dfs.setDecimalSeparator('.');
+		 nf.setDecimalFormatSymbols(dfs);
+		
 		Connection conn = null;
 		
 		try {
@@ -110,8 +118,7 @@ public class UserMeasureDao {
 					return 1;
 				}
 			};
-
-			System.out.println(Double.parseDouble(nf.format(map.getConcept("c2").getOutput())));
+			
 			qRunner.insert(conn, FileQueryReader.getQuery("USER_MEASURE_S03"), rsh,
 					new Object[]{courseId, userId, weekNumber, iterationNumber, date,
 							Double.parseDouble(nf.format(map.getConcept("c2").getOutput())),
