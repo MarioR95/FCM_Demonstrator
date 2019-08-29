@@ -8,9 +8,11 @@ import org.megadix.jfcm.CognitiveMap;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import models.dao.CourseDao;
+import models.dao.FeedbackDao;
 import models.dao.UserDao;
 import models.dao.UserHistoryDao;
 import models.dao.UserMeasureDao;
+import models.dto.FeedbackDto;
 import models.dto.UserDto;
 import models.dto.UserHistoryDto;
 import models.dto.UserMeasureDto;
@@ -93,16 +95,19 @@ public class Application extends Controller {
 	public Result fetchStudentRecords(Http.Request request, String courseId, String userId) {
 		  
 		  List<UserMeasureDto> userMeasures = null;
+		  List<FeedbackDto> userFeedback = null;
 		  ArrayList<Object> toJson = new ArrayList<Object>();
 		  
 		  try {
 		   
 		   int courseLife = CourseDao.retrieveCourseLife(courseId);
 		   userMeasures = UserMeasureDao.retieveUserMeasure(courseId, userId);
+		   userFeedback = FeedbackDao.retrieveFeedbackList(courseId, userId);
 		   String startDate = UserHistoryDao.retrieveStartDate(courseId, userId);
 		   toJson.add(userMeasures);
 		   toJson.add(courseLife);
 		   toJson.add(startDate);
+		   toJson.add(userFeedback);
 		   
 		  } catch (Exception e) {
 		   e.printStackTrace();
@@ -111,13 +116,30 @@ public class Application extends Controller {
 		  return ok(Json.toJson(toJson));
 	}
 	
-	public Result executeMap(Http.Request request, String courseId, String userId, int weekNumber) {
+	public Result fetchFeedback(Http.Request request, String userId) {
 		
+		List<FeedbackDto> userFeedback = null;
+		
+		try {
+			System.out.println("id = "+ userId);
+			userFeedback = FeedbackDao.retrieveFeedbackListByUser(userId);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return ok(Json.toJson(userFeedback));
+	}
+
+	
+	public Result executeMap(Http.Request request, String courseId, String userId, int weekNumber) {
+
 		try {
 			CognitiveMap map = MapHandler.loadFromXML();
 			UserHistoryDto user = UserHistoryDao.retrieveStudentHistoryById(userId);
 			MapHandler.setConceptsValues(map, user, weekNumber);
 			MapHandler.execute(map, user,weekNumber);
+			FeedbackDao.createBaseFeedback(courseId, userId);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

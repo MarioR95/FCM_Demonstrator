@@ -46,7 +46,6 @@ var KTWizard2 = function () {
             formEl = $('#kt_form');
             wizardChoices();
             initWizard(); 
-            setCurrent();
         }
     };
 }();
