@@ -13,8 +13,6 @@ var Datatable = function(){
 		        " <td>"+Number(mot[i]).toFixed(2)+"</td>"+
 		        " <td>Type1</td>"+
 		        " <td class='kt-font-warning'>Not Sent</td>"+
-		        " <td>Type2</td>"+
-		        " <td class='kt-font-success'>Sent</td>"+
 		        " <td>"+
 		      "    <div class='dropdown dropright'>"+
 		         "         <button type='button' class='btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>"+
@@ -22,7 +20,7 @@ var Datatable = function(){
 		         "          </button>"+
 		         "          <div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>"+
 		         "             <a class='dropdown-item disabled' href='#tbody-measures'><i class='flaticon-cogwheel-2'></i> Compute Feedback</a>"+
-		         "             <a class='dropdown-item' href='#tbody-measures'><i class='flaticon-paper-plane-1'></i> Send Feedback</a>"+
+		         "             <a class='dropdown-item' data-toggle='modal' href='#kt_modal_4'><i class='flaticon-paper-plane-1'></i> Send Feedback</a>"+
 		         "             <a class='dropdown-item' href='#fcm-header' onclick='fillMap("+(i+1)+",\""+(i == 0 ? startDate : dates[i-1])+"\",\""+dates[i]+"\"); getWeekMeasure("+(i+1)+", 1)'><i class='flaticon-earth-globe'></i> See on Map</a>"+
 		         "             <div class='dropdown-divider'></div>"+
 		         "             <a class='dropdown-item kt-font-danger' href='#'><i class='flaticon-delete kt-font-danger'></i> Delete</a>"+
@@ -40,8 +38,6 @@ var Datatable = function(){
 		          " <td> 0 </td>"+
 		          " <td> 0 </td>"+
 		          " <td>Type1</td>"+
-		          " <td class='kt-font-danger'>Not generated</td>"+
-		          " <td>Type2</td>"+
 		          " <td class='kt-font-danger'>Not generated</td>"+
 		          " <td>"+
 		        "    <div class='dropdown dropright'>"+
@@ -65,7 +61,6 @@ var Datatable = function(){
 	return {
 		// public functions
 		  init: function(data) {   
-			   console.log(data);
 			   if(data != 'undefined'){
 				   var eng_data= [];
 				   var mot_data= [];

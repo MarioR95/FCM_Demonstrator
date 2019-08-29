@@ -16,11 +16,11 @@ var KTWizard3 = function () {
 		});
 
 		// Validation before going to next page
-		wizard.on('beforeNext', function(wizardObj) {
+		/*wizard.on('beforeNext', function(wizardObj) {
 			if (validator.form() !== true) {
 				wizardObj.stop();  // don't go to the next step
 			}
-		})
+		})*/
 
 		// Change event
 		wizard.on('change', function(wizard) {
@@ -150,11 +150,11 @@ var KTWizard3 = function () {
 		// public functions
 		init: function() {
 			wizardEl = KTUtil.get('kt_wizard_v3');
-			formEl = $('#kt_form');
+			//formEl = $('#kt_form');
 
 			initWizard(); 
-			initValidation();
-			initSubmit();
+			//initValidation();
+			//initSubmit();
 		}
 	};
 }();

@@ -48,6 +48,238 @@
 
 <!-- begin: Student table -->
 <div class="row">
+	<div class="modal fade" id="kt_modal_4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+	    <div class="modal-dialog modal-lg" role="document">
+	        <div class="modal-content" style="width:1024px;">
+	            <div class="modal-header">
+	                <h5 class="modal-title" id="exampleModalLabel">Feedback Choice</h5>
+	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                </button>
+	            </div>
+	            <div class="modal-body">          	
+					<div class="kt-grid kt-wizard-v3 kt-wizard-v3--white" id="kt_wizard_v3" data-ktwizard-state="first">
+						<div class="kt-grid__item">
+							<!--begin: Form Wizard Nav -->
+							<div class="kt-wizard-v3__nav">
+								<div class="kt-wizard-v3__nav-items">
+									<a class="kt-wizard-v3__nav-item" href="#" data-ktwizard-type="step" data-ktwizard-state="current">
+										<div class="kt-wizard-v3__nav-body" style="width:300px">
+											<div class="kt-wizard-v3__nav-label">
+												<span>1</span> Choose Actions Group
+											</div>
+											<div class="kt-wizard-v3__nav-bar"></div>
+										</div>							
+									</a>
+									<a class="kt-wizard-v3__nav-item" href="#" data-ktwizard-type="step" data-ktwizard-state="pending">
+										<div class="kt-wizard-v3__nav-body" style="width:300px">
+											<div class="kt-wizard-v3__nav-label">
+												<span>2</span> Choose Feedback
+											</div>
+											<div class="kt-wizard-v3__nav-bar"></div>
+										</div>
+									</a>
+									<a class="kt-wizard-v3__nav-item" href="#" data-ktwizard-type="step" data-ktwizard-state="pending">
+										<div class="kt-wizard-v3__nav-body"style="width:300px">
+											<div class="kt-wizard-v3__nav-label">
+												<span>3</span> Review and Submit
+											</div>
+											<div class="kt-wizard-v3__nav-bar"></div>
+										</div>							
+									</a>				
+								</div>
+							</div>
+							<!--end: Form Wizard Nav -->
+						</div>
+						<div class="kt-grid__item kt-grid__item--fluid kt-wizard-v3__wrapper">
+							<!--begin: Form Wizard Form-->
+							<form class="kt-form" id="kt_form" novalidate="novalidate" style="width:90%;">
+								<!--begin: Form Wizard Step 1-->
+								<div class="kt-wizard-v3__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
+									<div class="kt-portlet__body kt-portlet__body--fit">
+									<div class="kt-grid  kt-wizard-v2 kt-wizard-v2--white" id="kt_wizard_v2" data-ktwizard-state="between" >
+										<div class="kt-grid__item kt-wizard-v2__aside">
+											<!--begin: Form Wizard Nav -->
+											<div class="kt-wizard-v2__nav">
+												<div class="kt-wizard-v2__nav-items">
+													<a class="kt-wizard-v2__nav-item" id="el-1" href="#">
+														<div class="kt-wizard-v2__nav-body">
+															<div class="kt-wizard-v2__nav-icon">
+																<i class="flaticon-globe"></i>
+															</div>
+															<div class="kt-wizard-v2__nav-label">
+																<div class="kt-wizard-v2__nav-label-title">Interaction Reinforcement</div>
+																<div class="kt-wizard-v2__nav-label-desc">Improve the user's interaction</div>
+															</div>
+														</div>
+													</a>
+													<a class="kt-wizard-v2__nav-item" id="el-2" href="#">
+														<div class="kt-wizard-v2__nav-body">
+															<div class="kt-wizard-v2__nav-icon">
+																<i class="flaticon-bus-stop"></i>
+															</div>
+															<div class="kt-wizard-v2__nav-label">
+																<div class="kt-wizard-v2__nav-label-title">Social Reinforcement</div>
+																<div class="kt-wizard-v2__nav-label-desc">Improve the user's social interaction</div>
+															</div>
+														</div>
+													</a>
+													<a class="kt-wizard-v2__nav-item" id="el-3" href="#">
+														<div class="kt-wizard-v2__nav-body">
+															<div class="kt-wizard-v2__nav-icon">
+																<i class="flaticon-bus-stop"></i>
+															</div>
+															<div class="kt-wizard-v2__nav-label">
+																<div class="kt-wizard-v2__nav-label-title">Course Reinforcement</div>
+																<div class="kt-wizard-v2__nav-label-desc">Improve the course contents</div>
+															</div>
+														</div>
+													</a>								
+												</div>
+											</div>
+											<!--end: Form Wizard Nav -->	
+										</div>
+										<div class="kt-grid__item kt-grid__item--fluid kt-wizard-v2__wrapper">
+											<div class="kt-wizard-v2__content" id="kt-user-measures">
+									            <div class="kt-portlet__head">
+									                <div class="kt-portlet__head-label" style="margin:2%">
+									                    <h3 class="kt-portlet__head-title">
+									                        Student's improvements
+									                    </h3>
+									                </div>
+									            </div>
+									            <div class="kt-portlet__body">
+									                <div class="kt-notification-v2">
+									                    <div class="kt-notification-v2__item">
+									                    	<div class="kt-notification-v2__itek-wrapper">
+									                            <div class="kt-notification-v2__item-title">
+									                                Assignment
+									                            </div>
+									                            <div class="kt-notification-v2__item-desc">
+									                                Description...
+									                            </div>
+									                        </div>	
+									                    	<div class="progress" style="height: 25px; width:200px">
+																<div class="progress-bar" role="progressbar" style="width: 50%; height: 25px; vertical-align: middle; " aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><h6 style="margin:0">0.5</h6></div>
+															</div>
+															<i class="flaticon2-arrow-up" style="margin:1%; color:green;"> </i>
+															
+									                    </div>
+				
+									                    <div class="kt-notification-v2__item">
+									                    	<div class="kt-notification-v2__itek-wrapper">
+									                            <div class="kt-notification-v2__item-title">
+									                                Forum Activity
+									                            </div>
+									                            <div class="kt-notification-v2__item-desc">
+									                                Description...
+									                            </div>
+									                        </div>	
+									                    	<div class="progress" style="height: 25px; width:200px">
+																<div class="progress-bar" role="progressbar" style="width: 80%; height: 25px; vertical-align: middle; " aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><h6 style="margin:0">0.8</h6></div>
+															</div>
+															<i style="margin:1%; width: 14px"></i>
+									                    </div>
+									                        
+									                   	<div class="kt-notification-v2__item">
+									                    	<div class="kt-notification-v2__itek-wrapper">
+									                            <div class="kt-notification-v2__item-title">
+									                                Tasks Done
+									                            </div>
+									                            <div class="kt-notification-v2__item-desc">
+									                                Description...
+									                            </div>
+									                        </div>	
+									                    	<div class="progress" style="height: 25px; width:200px">
+																<div class="progress-bar" role="progressbar" style="width: 30%; height: 25px; vertical-align: middle; " aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"><h6 style="margin:0">0.3</h6></div>
+															</div>
+															<i class="flaticon2-arrow-up" style="margin:1%; color:green;"> </i>	
+									                    </div>                 
+									                </div>
+									            </div>
+											</div>
+										</div>
+									</div>
+								</div>
+								</div>
+								<!--end: Form Wizard Step 1-->
+			
+								<!--begin: Form Wizard Step 2-->
+								<div class="kt-wizard-v3__content" data-ktwizard-type="step-content">
+									<div class="kt-portlet__body">
+						                <div class="kt-notification-v2">
+						                    <a href="#" class="kt-notification-v2__item">
+						                        <div class="kt-notification-v2__item-icon">
+						                            <i class="flaticon-bell kt-font-success"></i>
+						                        </div>
+						                        <div class="kt-notification-v2__itek-wrapper">
+						                            <div class="kt-notification-v2__item-title">
+						                                Study Group
+						                            </div>
+						                            <div class="kt-notification-v2__item-desc">
+						                                Build a study group to enhance the cooperation between students.
+						                            </div>
+						                        </div>	
+						                    </a>
+						
+						                    <a href="#" class="kt-notification-v2__item">
+						                        <div class="kt-notification-v2__item-icon">
+						                            <i class="flaticon2-box kt-font-danger"></i>
+						                        </div>
+						                        <div class="kt-notification-v2__itek-wrapper">
+						                            <div class="kt-notification-v2__item-title">
+						                                Gamification
+						                            </div>
+						                            <div class="kt-notification-v2__item-desc">
+						                                Description...
+						                            </div>
+						                        </div>	
+						                    </a>
+						
+						                    <a href="#" class="kt-notification-v2__item">
+						                        <div class="kt-notification-v2__item-icon">
+						                            <i class="flaticon-psd kt-font-brand"></i>
+						                        </div>
+						                        <div class="kt-notification-v2__itek-wrapper">
+						                            <div class="kt-notification-v2__item-title">
+						                                Abstract concept
+						                            </div>
+						                            <div class="kt-notification-v2__item-desc">
+														Help students using abstract concepts to better understand the topics
+						                            </div>
+						                        </div>	
+						                    </a>
+						                </div>						
+						            </div>
+								</div>
+								<!--end: Form Wizard Step 2-->
+			
+								<!--begin: Form Wizard Step 3-->
+								<div class="kt-wizard-v3__content" data-ktwizard-type="step-content">
+			
+								</div>
+								<!--end: Form Wizard Step 3-->
+			
+								<!--begin: Form Actions -->					
+								<div class="kt-form__actions">
+									<div class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
+										Previous
+									</div>
+									<div class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-submit">
+										Submit
+									</div>
+									<div class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next">
+										Next Step
+									</div>
+								</div>		
+								<!--end: Form Actions -->
+							</form>			
+							<!--end: Form Wizard Form-->
+						</div>
+					</div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
 	<div class="col-xl-12">
 		<div class="kt-portlet">
 			<div class="kt-portlet__body">
@@ -63,7 +295,6 @@
 						      		<th>Motivation</th>
 						      		<th>Engagement</th>
 						      		<th colspan="2">Student Feedback</th>
-						      		<th colspan="2">Teacher Feedback</th>
 						      		<th>Actions</th>
 						    	</tr>
 						  	</thead>
