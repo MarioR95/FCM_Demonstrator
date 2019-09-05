@@ -30,6 +30,7 @@ var KTWizard2 = function () {
     
     //CUSTOM
     var wizardChoices = function() {
+    	//ACTON LIST
 		$('.kt-wizard-v2__nav-item').on('click', function(){
 			$(this).attr("data-ktwizard-state", "current");
 			var el_id= $(this).attr('id');
@@ -37,6 +38,7 @@ var KTWizard2 = function () {
 				$(this).attr("data-ktwizard-state", "pending");
 			});
 		});
+		
 	}
     
     return {

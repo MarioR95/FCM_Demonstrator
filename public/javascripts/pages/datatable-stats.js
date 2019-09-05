@@ -16,7 +16,7 @@ var Datatable = function(){
 		 * 3 - Success*/
 		
 		  var i;
-		  console.log
+		  
 		  for( i=0; i<n_samples; i++){
 			  
 			  var type;
@@ -51,43 +51,41 @@ var Datatable = function(){
 			  }
 			  
 		   $(".tbody-dark").append(
-		   "<tr>"+
-		        " <th scope='row'>"+(i+1)+"</th>"+
-		        " <td>"+(i== 0 ? startDate : dates[i-1])+"</td>"+
-		        " <td>"+dates[i]+"</td>"+
-		        " <td>"+Number(eng[i]).toFixed(2)+"</td>"+
-		        " <td>"+Number(mot[i]).toFixed(2)+"</td>"+
-		        " <td>"+type+"</td>"+
-		        " <td class='kt-font-"+statusColor+"'>"+status+"</td>"+
-		        " <td>"+
-		      "    <div class='dropdown dropright'>"+
-		         "         <button type='button' class='btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>"+
-		         "             <i class='flaticon-more-1'></i>"+
-		         "          </button>"+
-		         "          <div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>"+
-		         "             <a class='dropdown-item disabled' href='#tbody-measures'><i class='flaticon-cogwheel-2'></i> Compute Feedback</a>"+
-		         "             <a class='dropdown-item "+(feedback[i].status == 1 ? 'disabled' : "")+"' href='#tbody-measures'><i class='flaticon-paper-plane-1'></i> Send Feedback</a>"+
-		         "             <a class='dropdown-item disabled' href='#fcm-header' onclick='fillMap("+(i+1)+",\""+(i == 0 ? startDate : dates[i-1])+"\",\""+dates[i]+"\"); getWeekMeasure("+(i+1)+", 1)'><i class='flaticon-earth-globe'></i> See on Map</a>"+
-		         "          </div>"+
-		         "  </div>"+
-		      " </td>"+
-		   "</tr>");
+			   "<tr>"+
+			        " <th scope='row'>"+(i+1)+"</th>"+
+			        " <td>"+(i== 0 ? startDate : dates[i-1])+"</td>"+
+			        " <td>"+dates[i]+"</td>"+
+			        " <td>"+Number(eng[i]).toFixed(2)+"</td>"+
+			        " <td>"+Number(mot[i]).toFixed(2)+"</td>"+
+			        " <td>"+type+"</td>"+
+			        " <td class='kt-font-"+statusColor+"'>"+status+"</td>"+
+			        " <td>"+
+			      "    <div class='dropdown dropright'>"+
+			         "         <button type='button' class='btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>"+
+			         "             <i class='flaticon-more-1'></i>"+
+			         "          </button>"+
+			         "          <div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>"+
+			         "             <a class='dropdown-item disabled' href='#tbody-measures'><i class='flaticon-cogwheel-2'></i> Compute Feedback</a>"+
+			         "             <a class='dropdown-item "+(feedback[i].status == 1 ? 'disabled' : "")+"' data-toggle='modal' href='#kt_modal_4'><i class='flaticon-paper-plane-1'></i> Send Feedback</a>"+
+			         "             <a class='dropdown-item' href='#fcm-header' onclick='fillMap("+(i+1)+",\""+(i == 0 ? startDate : dates[i-1])+"\",\""+dates[i]+"\"); getWeekMeasure("+(i+1)+", 1)'><i class='flaticon-earth-globe'></i> See on Map</a>"+
+			         "          </div>"+
+			         "  </div>"+
+			      " </td>"+
+			   "</tr>");
 		  }
+		  
 		  if(i<courseLife){
 			  
-			  //checkFeedbackStatus(feedback[i-1].status);
+			  var func = "executeMap("+(i+1)+")";
 			  
-			  //console.log(prevStatus);
+			  var feedStatus;
 			  
-			  var func;
+			  if(i>0)
+				  feedStatus = feedback[i-1].status;
 			  
-			  if(feedback[i-1].status == 0){
-				  func = 'alert("Operation Denied!")';
-			  }
+			  else
+				  feedStatus = 1;
 			  
-			  else{
-				  func = "executeMap("+(i+1)+")";
-			  }
 			  
 			  console.log("Function = "+func);
 			  
@@ -106,11 +104,7 @@ var Datatable = function(){
 		           "             <i class='flaticon-more-1'></i>"+
 		           "          </button>"+
 		           "          <div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>"+
-		           "             <a class='dropdown-item "+(feedback[i-1].status == 0 ? 'disabled' : "")+"' href='#tbody-measures' onclick='"+func+"'><i class='flaticon-cogwheel-2'></i> Compute Feedback</a>"+
-		           "             <a class='dropdown-item disabled' href='#tbody-measures'><i class='flaticon-paper-plane-1'></i> Send Feedback</a>"+
-		           "            <a class='dropdown-item disabled' href='#fcm-header'><i class='flaticon-earth-globe'></i> See on Map</a>"+
-		           "             <div class='dropdown-divider'></div>"+
-		           "             <a class='dropdown-item kt-font-danger' href='#'><i class='flaticon-delete kt-font-danger'></i> Delete</a>"+
+		           "             <a class='dropdown-item "+(feedStatus == 0  ? 'disabled' : "")+"' href='#tbody-measures' onclick='"+func+"'><i class='flaticon-cogwheel-2'></i> Compute Feedback</a>"+
 		           "          </div>"+
 		           "  </div>"+
 		        " </td>"+
