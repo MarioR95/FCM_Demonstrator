@@ -60,6 +60,22 @@ public class UserMeasureDao {
 		}
 	}
 	
+	public static UserMeasureDto retieveLastUserMeasure(String courseId, String userId, int weekNumber) throws ConfigurationException, Exception {
+		Connection conn = null;
+		
+		try {
+			conn = ConnectionPool.getSingleton(IConstants.DB_KEY);
+			QueryRunner qRunner = new QueryRunner();
+			UserMeasureDto userDto = qRunner.query(conn, FileQueryReader.getQuery("USER_MEASURE_S06"),new TrimmedBeanHandler<UserMeasureDto>(UserMeasureDto.class),new Object[]{courseId,userId,weekNumber});
+			
+            return userDto;
+		}
+		
+		finally {
+			ConnectionPool.close(conn);
+		}
+	}
+	
 	public static List<UserMeasureDto> retrieveWeekInterations(String courseId, String userId, int weekNumber) throws ConfigurationException, Exception {
 		Connection conn = null;
 		

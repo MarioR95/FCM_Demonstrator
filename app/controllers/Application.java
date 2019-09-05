@@ -139,7 +139,7 @@ public class Application extends Controller {
 			UserHistoryDto user = UserHistoryDao.retrieveStudentHistoryById(userId);
 			MapHandler.setConceptsValues(map, user, weekNumber);
 			MapHandler.execute(map, user,weekNumber);
-			FeedbackDao.createBaseFeedback(courseId, userId);
+			FeedbackDao.createBaseFeedback(courseId, userId,weekNumber);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

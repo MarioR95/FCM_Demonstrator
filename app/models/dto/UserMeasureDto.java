@@ -1,6 +1,14 @@
 package models.dto;
 
 public class UserMeasureDto {
+	
+	
+	/*
+	 * C2: motivation, C3: engagement, C4: intrinsicMotivation, C5: estrinsicMotivation, C6: socialMotivation,
+	 * C7: forumActivities, C8: lastForumActivities, C9: nPost, C10: weekSession, C11: nChapter,
+	 * C12: nPlayVideo, C13: %VideoViewed, C14: lastLesson, C15: lastEvent, C16: Assignment,
+	 * C17: interaction, C18: tasksDone
+	 * */
 
 	private String courseId, userId;
 	private int weekNumber, iterationNumber;

@@ -126,6 +126,13 @@
 			WHERE courseId=? and userId=? and weekNumber=?
 		</content>
 	</query>
+	<query name="USER_MEASURE_S06">
+		<content delimiterParsingDisabled="true">
+			SELECT *
+			FROM measurements
+			WHERE courseId=? and userId=? and weekNumber=? and iterationNumer = 4
+		</content>
+	</query>
 	<query name="SURVEY_S01">
 		<content delimiterParsingDisabled="true">
 			SELECT normalized_value 

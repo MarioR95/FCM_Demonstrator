@@ -79,7 +79,6 @@ var DatatableStudents = function(){
 			var surnames = [];
 			var ids= [];
 			var lastEvents= [];
-			console.log(data)
 			for(var i=0; i<n_members; i++){
 				emails[i]= data[i][EMAIL_INDEX];
 				ids[i]= data[i][USERID_INDEX];
