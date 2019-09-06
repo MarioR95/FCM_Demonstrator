@@ -161,7 +161,21 @@ public class Application extends Controller {
 		return ok(Json.toJson(userMeasures));
 	}
 	
+	
+	public Result feedbackChoice(Http.Request request, double mot, double eng, String userId, String courseId) {
+		//Define range HIGH, MEDIUM, LOW
+		//String 
+		//Check over mot and eng value and get the actions group
+		//Get actions with relative description 
+		return ok();
+	}
+	
+	
+	
 	public Result logout(Http.Request request) {
 		return ok(views.html.index.render()).removingFromSession(request,"connected");
 	}
+	
+	
+	
 }
