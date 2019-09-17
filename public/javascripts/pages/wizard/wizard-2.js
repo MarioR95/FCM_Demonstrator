@@ -28,25 +28,12 @@ var KTWizard2 = function () {
         });
     }
     
-    //CUSTOM
-    var wizardChoices = function() {
-    	//ACTON LIST
-		$('.kt-wizard-v2__nav-item').on('click', function(){
-			$(this).attr("data-ktwizard-state", "current");
-			var el_id= $(this).attr('id');
-			$(".kt-wizard-v2__nav-item:not(#"+el_id+")").each(function(){
-				$(this).attr("data-ktwizard-state", "pending");
-			});
-		});
-		
-	}
     
     return {
         // public functions
         init: function() {
             wizardEl = KTUtil.get('kt_wizard_v2');
             formEl = $('#kt_form');
-            wizardChoices();
             initWizard(); 
         }
     };

@@ -133,4 +133,32 @@
 			WHERE ? BETWEEN survey_association.min AND survey_association.max
 		</content>
 	</query>
+	<query name="FIRST_LEVEL_FEEDBACK_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT * 
+			FROM first_level_feedback_association 
+			WHERE eng= ? AND mot= ?
+		</content>
+	</query>
+	<query name="GROUPS_ASSOCIATION_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT *
+			FROM groups_association 
+			WHERE groupId= ?
+		</content>
+	</query>
+	<query name="SECOND_LEVEL_FEEDBACK_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT * 
+			FROM second_level_feedback_association 
+			WHERE actionGroupId= ? 
+		</content>
+	</query>
+	<query name="FEEDBACK_PREDICTION_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT * 
+			FROM feedback_prediction
+			WHERE actionId= ? 
+		</content>
+	</query>	
 </root>

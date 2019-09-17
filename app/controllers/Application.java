@@ -1,18 +1,31 @@
 package controllers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.megadix.jfcm.CognitiveMap;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import models.dao.CourseDao;
 import models.dao.FeedbackDao;
+import models.dao.FeedbackPredictionDao;
+import models.dao.FirstLevelFeedbackAssociationDao;
+import models.dao.GroupsAssociationDao;
+import models.dao.SecondLevelFeedbackAssociationDao;
 import models.dao.UserDao;
 import models.dao.UserHistoryDao;
 import models.dao.UserMeasureDao;
 import models.dto.FeedbackDto;
+import models.dto.FeedbackPredictionDto;
+import models.dto.FirstLevelFeedbackAssociationDto;
+import models.dto.GroupsAssociationDto;
+import models.dto.SecondLevelFeedbackAssociationDto;
 import models.dto.UserDto;
 import models.dto.UserHistoryDto;
 import models.dto.UserMeasureDto;
@@ -20,6 +33,7 @@ import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Http;
 import play.mvc.Result;
+import utilities.ActionAssociation;
 import utilities.MapHandler;
 
 public class Application extends Controller {
@@ -162,12 +176,50 @@ public class Application extends Controller {
 	}
 	
 	
-	public Result feedbackChoice(Http.Request request, double mot, double eng, String userId, String courseId) {
-		//Define range HIGH, MEDIUM, LOW
-		//String 
-		//Check over mot and eng value and get the actions group
-		//Get actions with relative description 
-		return ok();
+	public Result feedbackChoice(Http.Request request, String courseId, String userId, int weekNumber, double mot, double eng) {
+		
+		ObjectMapper mapper = new ObjectMapper();
+		ObjectNode node = mapper.createObjectNode();
+
+		String q_mot= ActionAssociation.getConceptQualifier(mot);
+		String q_eng= ActionAssociation.getConceptQualifier(eng);
+		
+		FirstLevelFeedbackAssociationDto actionGroup= null;
+		try {
+			actionGroup = FirstLevelFeedbackAssociationDao.retrieveActionGroup(q_mot, q_eng);
+			List<GroupsAssociationDto> groups= GroupsAssociationDao.retrieveActionsList(actionGroup.getGroupId());
+			
+			for(GroupsAssociationDto g: groups) { 
+				List<SecondLevelFeedbackAssociationDto> actions= SecondLevelFeedbackAssociationDao.retrieveActionsList(g.getActionId());
+				ArrayNode actionsList= mapper.valueToTree(actions);
+				node.putArray(g.getType()).addAll(actionsList);
+			}
+						
+			node.set("numActions", mapper.convertValue(groups.size(), JsonNode.class));
+			
+			UserMeasureDto currentMeasures= UserMeasureDao.retieveUserMeasure(courseId, userId, weekNumber);
+			System.out.println(currentMeasures);
+			node.set("currentMeasures", mapper.convertValue(currentMeasures, JsonNode.class));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ok(node);
+	}
+	
+	
+	public Result retrieveFeedbackImprovements(Http.Request request, int actionId) {
+		ObjectMapper  mapper = new ObjectMapper();
+		ObjectNode node = mapper.createObjectNode();
+
+		try {
+			List<FeedbackPredictionDto> improvements= FeedbackPredictionDao.retrieveImprovementsByActionId(actionId);
+			ArrayNode actionsList= mapper.valueToTree(improvements);
+			node.putArray("improvements").addAll(actionsList);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ok(node);
 	}
 	
 	
