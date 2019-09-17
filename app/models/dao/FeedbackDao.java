@@ -41,11 +41,13 @@ public class FeedbackDao {
 				}
 			};
 			
+			//TODO method to choose the right type of feedback
+			
 			UserMeasureDto lastMeasure = UserMeasureDao.retieveLastUserMeasure(courseId, userId, weekNumber);
 			
 			int type = computeFeedbackType(lastMeasure.getC2(), lastMeasure.getC3());
 			
-			qRunner.insert(conn, FileQueryReader.getQuery("FEEDBACK_S05"), rsh, new Object[]{DateUtil.format(currentDate), courseId, userId});
+			qRunner.insert(conn, FileQueryReader.getQuery("FEEDBACK_S05"), rsh, new Object[]{DateUtil.format(currentDate), courseId, userId, type});
 		}
 		
 		finally {

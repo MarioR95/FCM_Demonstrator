@@ -29,7 +29,9 @@ GET		/executeMap					controllers.Application.executeMap(request: Request, course
 
 GET		/fetchFeedback				controllers.Application.fetchFeedback(request: Request, userId: String)
 
-GET 	/feedbackChoice				controllers.Application.feedbackChoice(request: Request, mot: Double, eng: Double, userId: String, courseId: String)
+GET 	/feedbackChoice				controllers.Application.feedbackChoice(request: Request, courseId: String, userId: String, weekNumber: Integer, mot: Double, eng: Double)
+
+GET		/feedbackPrediction 		controllers.Application.retrieveFeedbackImprovements(request: Request, actionId: Integer)
 
 
 # Map static resources from the /public folder to the /assets URL path

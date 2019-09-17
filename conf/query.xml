@@ -33,7 +33,7 @@
 	<query name="FEEDBACK_S05">
 		<content delimiterParsingDisabled="true">
 			INSERT INTO feedback (id, measureDate, courseId, userId, feedbackDate, status, content, type, efficacy, actionId)
-			VALUES (DEFAULT, ? , ? , ? , null , 0 , null , -1, null, null )
+			VALUES (DEFAULT, ? , ? , ? , null , 0 , null , ? , DEFAULT, null )
 		</content>
 	</query>
 	<query name="LOGIN_S01">
@@ -138,6 +138,34 @@
 			SELECT normalized_value 
 			FROM survey_association 
 			WHERE ? BETWEEN survey_association.min AND survey_association.max
+		</content>
+	</query>
+	<query name="FIRST_LEVEL_FEEDBACK_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT * 
+			FROM first_level_feedback_association 
+			WHERE eng= ? AND mot= ?
+		</content>
+	</query>
+	<query name="GROUPS_ASSOCIATION_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT *
+			FROM groups_association 
+			WHERE groupId= ?
+		</content>
+	</query>
+	<query name="SECOND_LEVEL_FEEDBACK_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT * 
+			FROM second_level_feedback_association 
+			WHERE actionGroupId= ? 
+		</content>
+	</query>
+	<query name="FEEDBACK_PREDICTION_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT * 
+			FROM feedback_prediction
+			WHERE actionId= ? 
 		</content>
 	</query>
 </root>
