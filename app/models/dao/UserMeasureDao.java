@@ -23,6 +23,24 @@ import utilities.TrimmedBeanListHandler;
 
 public class UserMeasureDao {
 	
+	public static int retieveUserLastWeekNumber(String courseId, String userId) throws ConfigurationException, Exception {
+		
+		Connection conn = null;
+		
+		try {
+			conn = ConnectionPool.getSingleton(IConstants.DB_KEY);
+			QueryRunner qRunner = new QueryRunner();
+			
+			int weekNumber = qRunner.query(conn, FileQueryReader.getQuery("USER_MEASURE_S07"),new TrimmedBeanHandler<Integer>(Integer.class),new Object[]{courseId,userId});
+			
+            return weekNumber;
+		}
+		
+		finally {
+			ConnectionPool.close(conn);
+		}
+	}
+	
 	public static UserMeasureDto retieveUserMeasure(String courseId, String userId, int weekNumber) throws ConfigurationException, Exception {
 		
 		Connection conn = null;

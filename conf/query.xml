@@ -133,6 +133,15 @@
 			WHERE courseId=? and userId=? and weekNumber=? and iterationNumber = 4 
 		</content>
 	</query>
+	<query name="USER_MEASURE_S07">
+		<content delimiterParsingDisabled="true">
+			SELECT weekNumber
+			FROM measurements
+			WHERE courseId=? and userId=? and iterationNumber = 4
+			ORDER BY weekNumber DESC
+			LIMIT 1 
+		</content>
+	</query>
 	<query name="SURVEY_S01">
 		<content delimiterParsingDisabled="true">
 			SELECT normalized_value 

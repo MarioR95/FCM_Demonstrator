@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.commons.configuration.ConfigurationException;
 import org.megadix.jfcm.CognitiveMap;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -35,6 +36,7 @@ import play.mvc.Http;
 import play.mvc.Result;
 import utilities.ActionAssociation;
 import utilities.MapHandler;
+import utilities.Measures;
 
 public class Application extends Controller {
 	 
@@ -143,6 +145,33 @@ public class Application extends Controller {
 		}
 		
 		return ok(Json.toJson(userFeedback));
+	}
+	
+	public Result retrieveStudentsStatus(Http.Request request, String courseId) throws ConfigurationException, Exception {
+		
+		List<UserHistoryDto> studentsList = UserHistoryDao.retrieveAllStudentsByCourseId(courseId);
+		
+		try {
+			for(UserHistoryDto u : studentsList) {
+				
+				CognitiveMap map = MapHandler.loadFromXML();
+				
+				int weekNumber = UserMeasureDao.retieveUserLastWeekNumber(courseId, u.getUserId());
+				
+				
+				//Vedere se funziona
+				System.out.println(weekNumber);
+				
+				MapHandler.setConceptsValues(map, u, weekNumber);
+				
+				Measures measure =  MapHandler.executeOnTheFly(map, u,weekNumber);
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return ok();
 	}
 
 	

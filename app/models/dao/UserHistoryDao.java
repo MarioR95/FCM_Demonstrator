@@ -16,6 +16,7 @@ import utilities.TrimmedBeanListHandler;
 
 
 public class UserHistoryDao {
+	
 
 	public static List<UserHistoryDto> retrieveAllStudentsByCourseId(String courseId) throws ConfigurationException, Exception {
 		
