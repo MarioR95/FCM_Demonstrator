@@ -15,6 +15,7 @@ import constants.IConstants;
 import models.database.ConnectionPool;
 import models.database.FileQueryReader;
 import models.dto.FeedbackDto;
+import models.dto.UserMeasureDto;
 import utilities.DateUtil;
 import utilities.TrimmedBeanHandler;
 import utilities.TrimmedBeanListHandler;
@@ -22,7 +23,7 @@ import utilities.TrimmedBeanListHandler;
 public class FeedbackDao {
 	
 	
-	public static void createBaseFeedback(String courseId, String userId) throws ConfigurationException, Exception {
+	public static void createBaseFeedback(String courseId, String userId, int weekNumber) throws ConfigurationException, Exception {
 		Calendar calendar = Calendar.getInstance();
 		GregorianCalendar currentDate =  (GregorianCalendar) calendar;
 		
@@ -40,7 +41,13 @@ public class FeedbackDao {
 				}
 			};
 			
-			qRunner.insert(conn, FileQueryReader.getQuery("FEEDBACK_S05"), rsh, new Object[]{DateUtil.format(currentDate), courseId, userId});
+			//TODO method to choose the right type of feedback
+			
+			UserMeasureDto lastMeasure = UserMeasureDao.retieveLastUserMeasure(courseId, userId, weekNumber);
+			
+			int type = computeFeedbackType(lastMeasure.getC2(), lastMeasure.getC3());
+			
+			qRunner.insert(conn, FileQueryReader.getQuery("FEEDBACK_S05"), rsh, new Object[]{DateUtil.format(currentDate), courseId, userId, type});
 		}
 		
 		finally {
@@ -48,6 +55,13 @@ public class FeedbackDao {
 		}
 	}
 
+	private static int computeFeedbackType(double motivation, double engagement) throws ConfigurationException, Exception {
+		
+		int value = 0;		
+		
+		
+		return value;
+	}
 	
 	public static List<FeedbackDto> retrieveFeedbackList(String courseId, String userId) throws ConfigurationException, Exception {
 		

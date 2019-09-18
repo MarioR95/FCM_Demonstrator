@@ -62,7 +62,7 @@ public class Application extends Controller {
 	}
 	
 	public Result courseMembers(Http.Request request, String courseId) {
-		/*Change this body method if you want to retrieve all students by a courseId. Use UserHistoryDao.retrieveAllStudentsByCourseId*/
+		//Change this body method if you want to retrieve all students by a courseId. Use UserHistoryDao.retrieveAllStudentsByCourseId
 		List<UserDto> members= null;
 		ArrayList<String>[] result= null;
 		try {
@@ -153,7 +153,7 @@ public class Application extends Controller {
 			UserHistoryDto user = UserHistoryDao.retrieveStudentHistoryById(userId);
 			MapHandler.setConceptsValues(map, user, weekNumber);
 			MapHandler.execute(map, user,weekNumber);
-			FeedbackDao.createBaseFeedback(courseId, userId);
+			FeedbackDao.createBaseFeedback(courseId, userId, weekNumber);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

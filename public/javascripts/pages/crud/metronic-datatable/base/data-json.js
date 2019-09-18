@@ -115,6 +115,8 @@ var KTDatatableJsonRemoteDemo = function () {
 					';
 					},
 				}],
+				
+			
 
 		});
 

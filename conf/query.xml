@@ -32,8 +32,8 @@
 	</query>
 	<query name="FEEDBACK_S05">
 		<content delimiterParsingDisabled="true">
-			INSERT INTO feedback (id, measureDate, courseId, userId, feedbackDate, status, content, type)
-			VALUES (DEFAULT, ? , ? , ? , null , 0 , null , -1 )
+			INSERT INTO feedback (id, measureDate, courseId, userId, feedbackDate, status, content, type, efficacy, actionId)
+			VALUES (DEFAULT, ? , ? , ? , null , 0 , null , ? , DEFAULT, null )
 		</content>
 	</query>
 	<query name="LOGIN_S01">
@@ -126,6 +126,13 @@
 			WHERE courseId=? and userId=? and weekNumber=?
 		</content>
 	</query>
+	<query name="USER_MEASURE_S06">
+		<content delimiterParsingDisabled="true">
+			SELECT *
+			FROM measurements
+			WHERE courseId=? and userId=? and weekNumber=? and iterationNumber = 4 
+		</content>
+	</query>
 	<query name="SURVEY_S01">
 		<content delimiterParsingDisabled="true">
 			SELECT normalized_value 
@@ -161,4 +168,5 @@
 			WHERE actionId= ? 
 		</content>
 	</query>	
+
 </root>
