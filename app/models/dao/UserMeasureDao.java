@@ -26,25 +26,28 @@ public class UserMeasureDao {
 	public static int retieveUserLastWeekNumber(String courseId, String userId) throws ConfigurationException, Exception {
 		
 		Connection conn = null;
-		
+		UserMeasureDto user= null;
 		try {
 			conn = ConnectionPool.getSingleton(IConstants.DB_KEY);
 			QueryRunner qRunner = new QueryRunner();
 			
-			int weekNumber = qRunner.query(conn, FileQueryReader.getQuery("USER_MEASURE_S07"),new TrimmedBeanHandler<Integer>(Integer.class),new Object[]{courseId,userId});
+			user = qRunner.query(conn, FileQueryReader.getQuery("USER_MEASURE_S07"),new TrimmedBeanHandler<UserMeasureDto>(UserMeasureDto.class),new Object[]{courseId,userId});
+			if(user != null) {				
+				return user.getWeekNumber();
+			}
 			
-            return weekNumber;
+			return -1;
+
 		}
-		
 		finally {
 			ConnectionPool.close(conn);
 		}
+		
 	}
 	
 	public static UserMeasureDto retieveUserMeasure(String courseId, String userId, int weekNumber) throws ConfigurationException, Exception {
 		
-		Connection conn = null;
-		
+		Connection conn = null;	
 		try {
 			conn = ConnectionPool.getSingleton(IConstants.DB_KEY);
 			QueryRunner qRunner = new QueryRunner();

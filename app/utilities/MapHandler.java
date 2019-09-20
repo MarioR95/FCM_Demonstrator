@@ -197,25 +197,24 @@ public class MapHandler {
 
 	}
 	
+	
 	public static Measures executeOnTheFly(CognitiveMap map, UserHistoryDto user, int weekNumber) throws ConfigurationException, Exception {
 		
 		Calendar calendar = Calendar.getInstance();
 		GregorianCalendar currentDate =  (GregorianCalendar) calendar;
 		
+		//iterate until convergence
 		for(int i = 0; i < MAX_EPOCHS; i++) {
 			map.execute();
-			UserMeasureDao.doSaveMapIteration(user.getCourseId(), user.getUserId(), weekNumber, i+1, map, DateUtil.format(currentDate));
 		}
 		
-
 		// Retrieve oldMeasure if exists
 		UserMeasureDto oldMeasuresDto;
 		Measures oldMeasures = new Measures();
 		
 		if (weekNumber > 1) {
 			
-			oldMeasuresDto = UserMeasureDao.retieveUserMeasure(user.getCourseId(), user.getUserId(),
-					(weekNumber - 1));
+			oldMeasuresDto = UserMeasureDao.retieveUserMeasure(user.getCourseId(), user.getUserId(),(weekNumber - 1));
 			
 			oldMeasures.setMotivation_value(oldMeasuresDto.getC2());
 			oldMeasures.setEngagement_value(oldMeasuresDto.getC3());

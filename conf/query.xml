@@ -135,7 +135,7 @@
 	</query>
 	<query name="USER_MEASURE_S07">
 		<content delimiterParsingDisabled="true">
-			SELECT weekNumber
+			SELECT *
 			FROM measurements
 			WHERE courseId=? and userId=? and iterationNumber = 4
 			ORDER BY weekNumber DESC

@@ -33,7 +33,7 @@ GET 	/feedbackChoice				controllers.Application.feedbackChoice(request: Request,
 
 GET		/feedbackPrediction 		controllers.Application.retrieveFeedbackImprovements(request: Request, actionId: Integer)
 
-
+GET 	/retrieveStudentsStatus		controllers.Application.retrieveStudentsStatus(request: Request, courseId: String)
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 

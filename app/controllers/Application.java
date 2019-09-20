@@ -150,31 +150,33 @@ public class Application extends Controller {
 	public Result retrieveStudentsStatus(Http.Request request, String courseId) throws ConfigurationException, Exception {
 		
 		List<UserHistoryDto> studentsList = UserHistoryDao.retrieveAllStudentsByCourseId(courseId);
+		Measures measure= null;	
+		
+		ObjectMapper  mapper = new ObjectMapper();
+		ObjectNode node = mapper.createObjectNode();
 		
 		try {
 			for(UserHistoryDto u : studentsList) {
-				
 				CognitiveMap map = MapHandler.loadFromXML();
 				
 				int weekNumber = UserMeasureDao.retieveUserLastWeekNumber(courseId, u.getUserId());
 				
-				
-				//Vedere se funziona
-				System.out.println(weekNumber);
-				
-				MapHandler.setConceptsValues(map, u, weekNumber);
-				
-				Measures measure =  MapHandler.executeOnTheFly(map, u,weekNumber);
+				if(weekNumber != -1) {
+					
+					MapHandler.setConceptsValues(map, u, weekNumber);
+					
+					measure =  MapHandler.executeOnTheFly(map, u, weekNumber);
+					node.set(u.getUserId(),  mapper.convertValue(measure, JsonNode.class));
+				}
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
-		return ok();
+		return ok(node);
 	}
 
-	
 	public Result executeMap(Http.Request request, String courseId, String userId, int weekNumber) {
 
 		try {
@@ -203,7 +205,6 @@ public class Application extends Controller {
 		
 		return ok(Json.toJson(userMeasures));
 	}
-	
 	
 	public Result feedbackChoice(Http.Request request, String courseId, String userId, int weekNumber, double mot, double eng) {
 		
@@ -235,7 +236,6 @@ public class Application extends Controller {
 		return ok(node);
 	}
 	
-	
 	public Result retrieveFeedbackImprovements(Http.Request request, int actionId) {
 		ObjectMapper  mapper = new ObjectMapper();
 		ObjectNode node = mapper.createObjectNode();
@@ -250,8 +250,6 @@ public class Application extends Controller {
 		}
 		return ok(node);
 	}
-	
-	
 	
 	public Result logout(Http.Request request) {
 		return ok(views.html.index.render()).removingFromSession(request,"connected");
