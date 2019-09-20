@@ -3,7 +3,7 @@ package models.dto;
 public class UserHistoryDto {
 
 	private String courseId, userId;
-	private boolean registered, viewed, explored, certified;
+	private boolean registered, viewed, explored, certified, dropped;
 	private String final_cc_cname_DI, LoE, YoB, gender;
 	private String startTime, lastEvent, lastForumView, lastLesson;
 	private int nEvents, nDaysAct, nPosts, nPlayVideo, nChapters, tasksDone;
@@ -54,6 +54,17 @@ public class UserHistoryDto {
 
 	public void setRegistered(boolean registered) {
 		this.registered = registered;
+	}
+	
+	public boolean isDropped() {
+		return dropped;
+	}
+
+
+
+
+	public void setDropped(boolean dropped) {
+		this.dropped = dropped;
 	}
 
 
@@ -463,20 +474,20 @@ public class UserHistoryDto {
 	}
 
 
-
-
 	@Override
 	public String toString() {
 		return "UserHistoryDto [courseId=" + courseId + ", userId=" + userId + ", registered=" + registered
-				+ ", viewed=" + viewed + ", explored=" + explored + ", certified=" + certified + ", final_cc_cname_DI="
-				+ final_cc_cname_DI + ", LoE=" + LoE + ", YoB=" + YoB + ", gender=" + gender + ", startTime="
-				+ startTime + ", lastEvent=" + lastEvent + ", lastForumView=" + lastForumView + ", lastLesson="
-				+ lastLesson + ", nEvents=" + nEvents + ", nDaysAct=" + nDaysAct + ", nPosts=" + nPosts
-				+ ", nPlayVideo=" + nPlayVideo + ", nChapters=" + nChapters + ", tasksDone=" + tasksDone
+				+ ", viewed=" + viewed + ", explored=" + explored + ", certified=" + certified + ", dropped=" + dropped
+				+ ", final_cc_cname_DI=" + final_cc_cname_DI + ", LoE=" + LoE + ", YoB=" + YoB + ", gender=" + gender
+				+ ", startTime=" + startTime + ", lastEvent=" + lastEvent + ", lastForumView=" + lastForumView
+				+ ", lastLesson=" + lastLesson + ", nEvents=" + nEvents + ", nDaysAct=" + nDaysAct + ", nPosts="
+				+ nPosts + ", nPlayVideo=" + nPlayVideo + ", nChapters=" + nChapters + ", tasksDone=" + tasksDone
 				+ ", percVideoViewed=" + percVideoViewed + ", avgSession=" + avgSession + ", curiosity=" + curiosity
 				+ ", enjoyment=" + enjoyment + ", generalInterest=" + generalInterest + ", certificate=" + certificate
 				+ ", credential=" + credential + ", academic=" + academic + ", job=" + job + ", connection="
 				+ connection + ", friendship=" + friendship + ", incomplete_flag=" + incomplete_flag + "]";
 	}
+
+
 	
 }

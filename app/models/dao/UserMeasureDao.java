@@ -36,6 +36,8 @@ public class UserMeasureDao {
 			
 			int weekNumber = qRunner.query(conn, FileQueryReader.getQuery("USER_MEASURE_S07"),new TrimmedBeanHandler<Integer>(Integer.class),new Object[]{courseId,userId});
 			
+			System.out.println(userId+" - "+ weekNumber);
+			
             return weekNumber;
 		}
 		

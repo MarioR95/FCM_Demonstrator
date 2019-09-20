@@ -72,12 +72,30 @@ public class Application extends Controller {
 			result= new ArrayList[members.size()];
 			
 			for(int i=0; i<members.size(); i++) {
-				String lastEvent= UserHistoryDao.retrieveLastEventByUserId(members.get(i).getUserId());
+				String status;
+				UserHistoryDto user = UserHistoryDao.retrieveUserByCourseAndUserId(courseId, members.get(i).getUserId());
+				String lastEvent = user.getLastEvent();
+				
+				if(user.isDropped()) {
+					status = "Dropped";
+				}
+				
+				else {
+					
+					UserMeasureDto u = UserMeasureDao.retieveLastUserMeasure(courseId, user.getUserId(), UserMeasureDao.retieveUserLastWeekNumber(courseId, user.getUserId()));
+					double tmpMot,tmpEng;
+					tmpMot = u.getC2();
+					tmpEng = u.getC3();
+					
+					status = "Warning";
+				}
+							
 				result[i]= new ArrayList<String>();
 				result[i].add(members.get(i).getEmail());
 				result[i].add(members.get(i).getUserId());
 				result[i].add(members.get(i).getName());
 				result[i].add(members.get(i).getSurname());
+				result[i].add(status);
 				result[i].add(lastEvent);
 			}
 		} catch (Exception e) {

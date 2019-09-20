@@ -204,7 +204,6 @@ public class MapHandler {
 		
 		for(int i = 0; i < MAX_EPOCHS; i++) {
 			map.execute();
-			UserMeasureDao.doSaveMapIteration(user.getCourseId(), user.getUserId(), weekNumber, i+1, map, DateUtil.format(currentDate));
 		}
 		
 
