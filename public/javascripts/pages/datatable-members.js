@@ -1,7 +1,37 @@
 //Class definition
 var Datatable = function(){
 	
+	var usersMeasure = [];
+	
+	var retrieveUsersMeasures = function(){
+		
+		$.urlParam = function(name){
+			var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+			return results[1] || 0;
+		}
+		
+		$.ajax({
+			type: "GET",
+			url : "/retrieveStudentsStatus",
+			data : "courseId="+$.urlParam('courseId'),
+	        contentType: "application/json; charset=utf-8",
+			dataType: "json",
+			success: function(data){
+				usersMeasure = data;
+				console.log("misure",usersMeasure);
+			},
+			error: function(err){
+				console.log(err)
+			}
+		});
+		
+	}
+	
+	
 	var fill_datatable= function(n_members, emails, ids, names, surnames, lastEvents,status){
+		
+		retrieveUsersMeasures();
+		
 		for(var i=0; i<n_members; i++){
 			
 			var color;
@@ -80,6 +110,7 @@ jQuery(document).ready(function() {
 		dataType: "json",
 		success: function(data){
 			//Datatable
+			console.log("dati",data);
 			Datatable.init(data);
 		},
 		error: function(err){

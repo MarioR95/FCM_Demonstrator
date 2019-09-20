@@ -1,12 +1,10 @@
 package models.dao;
 
-import java.math.RoundingMode;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
-import java.text.NumberFormat;
 import java.util.List;
 
 
@@ -19,7 +17,6 @@ import constants.IConstants;
 import models.database.ConnectionPool;
 import models.database.FileQueryReader;
 import models.dto.UserMeasureDto;
-import utilities.MapHandler;
 import utilities.Measures;
 import utilities.TrimmedBeanHandler;
 import utilities.TrimmedBeanListHandler;
@@ -29,27 +26,28 @@ public class UserMeasureDao {
 	public static int retieveUserLastWeekNumber(String courseId, String userId) throws ConfigurationException, Exception {
 		
 		Connection conn = null;
-		
+		UserMeasureDto user= null;
 		try {
 			conn = ConnectionPool.getSingleton(IConstants.DB_KEY);
 			QueryRunner qRunner = new QueryRunner();
 			
-			int weekNumber = qRunner.query(conn, FileQueryReader.getQuery("USER_MEASURE_S07"),new TrimmedBeanHandler<Integer>(Integer.class),new Object[]{courseId,userId});
+			user = qRunner.query(conn, FileQueryReader.getQuery("USER_MEASURE_S07"),new TrimmedBeanHandler<UserMeasureDto>(UserMeasureDto.class),new Object[]{courseId,userId});
+			if(user != null) {				
+				return user.getWeekNumber();
+			}
 			
-			System.out.println(userId+" - "+ weekNumber);
-			
-            return weekNumber;
+			return -1;
+
 		}
-		
 		finally {
 			ConnectionPool.close(conn);
 		}
+		
 	}
 	
 	public static UserMeasureDto retieveUserMeasure(String courseId, String userId, int weekNumber) throws ConfigurationException, Exception {
 		
-		Connection conn = null;
-		
+		Connection conn = null;	
 		try {
 			conn = ConnectionPool.getSingleton(IConstants.DB_KEY);
 			QueryRunner qRunner = new QueryRunner();

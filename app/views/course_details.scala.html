@@ -100,8 +100,13 @@
 	<script src="assets/vendors/custom/flot/flot.bundle.js" type="text/javascript"></script>
 	<!--begin:: Custom Scripts  -->
 	<script src="assets/javascripts/pages/course-overview-handler.js" type="text/javascript"></script>
-	<script src="assets/javascripts/pages/datatable-members.js" type="text/javascript"></script>
-	<script src="assets/javascripts/pages/datatable-members-student.js" type="text/javascript"></script>
+	@{ 
+	if(user.getRole() == 1) 	<!-- TEACHER'S CASE -->
+		<script src="assets/javascripts/pages/datatable-members.js" type="text/javascript"></script>
+	else	<!-- STUDENT'S CASE -->
+		<script src="assets/javascripts/pages/datatable-members-student.js" type="text/javascript"></script>
+		
+	}
 	<!--end: Custom Scripts  -->
 </body>
 <!-- end::Body -->
