@@ -177,5 +177,11 @@
 			WHERE actionId= ? 
 		</content>
 	</query>	
-
+	<query name="MEASUREMENTS_ASSOCIATION_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT * 
+			FROM measurements_association
+			WHERE mot= ? AND eng= ? 
+		</content>
+	</query>	
 </root>
