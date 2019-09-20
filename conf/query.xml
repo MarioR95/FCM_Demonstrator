@@ -92,6 +92,13 @@
 			WHERE courseId = ?
 		</content>
 	</query>
+	<query name="USER_HISTORY_S05">
+		<content delimiterParsingDisabled="true">
+			SELECT * 
+			FROM users_history 
+			WHERE courseId = ? and userId = ?
+		</content>
+	</query>
 	<query name="USER_MEASURE_S01">
 		<content delimiterParsingDisabled="true">
 			SELECT * 

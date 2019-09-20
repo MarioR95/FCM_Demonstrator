@@ -1,21 +1,54 @@
-var EMAIL_INDEX= 0;
-var USERID_INDEX= 1;
-var NAME_INDEX= 2;
-var SURNAME_INDEX= 3;
-var LASTEVENT_INDEX= 4;
-
-
 //Class definition
 var Datatable = function(){
 	
-	var fill_datatable= function(n_members, emails, ids, names, surnames, lastEvents){
+	var usersMeasure = [];
+	
+	var retrieveUsersMeasures = function(){
+		
+		$.urlParam = function(name){
+			var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+			return results[1] || 0;
+		}
+		
+		$.ajax({
+			type: "GET",
+			url : "/retrieveStudentsStatus",
+			data : "courseId="+$.urlParam('courseId'),
+	        contentType: "application/json; charset=utf-8",
+			dataType: "json",
+			success: function(data){
+				usersMeasure = data;
+				console.log("misure",usersMeasure);
+			},
+			error: function(err){
+				console.log(err)
+			}
+		});
+		
+	}
+	
+	
+	var fill_datatable= function(n_members, emails, ids, names, surnames, lastEvents,status){
+		
+		retrieveUsersMeasures();
+		
 		for(var i=0; i<n_members; i++){
+			
+			var color;
+			if(status[i] == "Dropped")
+				color = "danger";
+			else if(status[i] == "Warning")
+				color = "warning";
+			else
+				color = "success";
+			
 			$("#tbody-members").append(
 			"<tr>"+
 		    "  	<th scope='row'>"+(i+1)+"</th>"+
 		    "  	<td>"+names[i]+"</td>"+
 		    "  	<td>"+surnames[i]+"</td>"+
 		    "  	<td>"+ids[i]+"</td>"+
+		    "	<td class='kt-font-"+color+"'>"+status[i]+"</td>"+ 
 		    "  	<td>"+lastEvents[i]+"</td>"+
 		    "  	<td>"+
 			"      	<div class='dropdown dropright'>"+
@@ -45,15 +78,17 @@ var Datatable = function(){
 			var surnames = [];
 			var ids= [];
 			var lastEvents= [];
+			var status = [];
 			for(var i=0; i<n_members; i++){
-				emails[i]= data[i][EMAIL_INDEX];
-				ids[i]= data[i][USERID_INDEX];
-				names[i]= data[i][NAME_INDEX];
-				surnames[i]= data[i][SURNAME_INDEX];
-				lastEvents[i]= data[i][LASTEVENT_INDEX];
+				emails[i]= data[i][0];
+				ids[i]= data[i][1];
+				names[i]= data[i][2];
+				surnames[i]= data[i][3];
+				status[i] = data[i][4];
+				lastEvents[i]= data[i][5];
 			}
 			
-			fill_datatable(n_members, emails, ids, names, surnames, lastEvents);
+			fill_datatable(n_members, emails, ids, names, surnames, lastEvents,status);
 		}
 	};
 	
@@ -75,6 +110,7 @@ jQuery(document).ready(function() {
 		dataType: "json",
 		success: function(data){
 			//Datatable
+			console.log("dati",data);
 			Datatable.init(data);
 		},
 		error: function(err){

@@ -1,35 +1,17 @@
-2019-09-20 09:15:03,566 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-3 - Configuration not found for database: No configuration setting found for key 'db'
-2019-09-20 09:15:05,872 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-3 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-09-20 11:00:12,540 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-7 - Configuration not found for database: No configuration setting found for key 'db'
+2019-09-20 11:00:13,496 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-7 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     play.filters.csrf.CSRFFilter
 
-2019-09-20 09:15:05,987 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-3 - Application started (Dev) (no global state)
-2019-09-20 09:23:03,963 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-35 - Configuration not found for database: No configuration setting found for key 'db'
-2019-09-20 09:23:04,367 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-35 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-09-20 11:00:13,567 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-7 - Application started (Dev) (no global state)
+2019-09-20 11:24:55,289 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-28 - 
 
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-    play.filters.csrf.CSRFFilter
-
-2019-09-20 09:23:04,386 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-35 - Application started (Dev) (no global state)
-2019-09-20 10:30:33,400 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-58 - Configuration not found for database: No configuration setting found for key 'db'
-2019-09-20 10:30:33,717 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-58 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-    play.filters.csrf.CSRFFilter
-
-2019-09-20 10:30:33,732 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-58 - Application started (Dev) (no global state)
-2019-09-20 10:40:05,055 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-69 - 
-
-! @7d8okbcf2 - Internal server error, for (GET) [/course?courseId=HarvardX/CB22x/2013_Spring] ->
+! @7d8p08e96 - Internal server error, for (GET) [/course?courseId=HarvardX/CB22x/2013_Spring] ->
  
-play.sbt.PlayExceptions$CompilationException: Compilation error[illegal start of simple expression]
+play.sbt.PlayExceptions$CompilationException: Compilation error[ error: variable status might not have been initialized]
 	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:37)
 	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:37)
 	at scala.Option.map(Option.scala:146)
@@ -43,7 +25,7 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[illegal start of
 	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:80)
 	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:501)
 	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:58)
-	at java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
 	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:64)
 	at play.runsupport.Reloader.reload(Reloader.scala:501)
 	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:143)
@@ -69,13 +51,23 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[illegal start of
 	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
 	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2019-09-20 10:40:28,483 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-68 - Configuration not found for database: No configuration setting found for key 'db'
-2019-09-20 10:40:28,926 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-68 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-09-20 11:25:12,674 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-30 - Configuration not found for database: No configuration setting found for key 'db'
+2019-09-20 11:25:12,804 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-30 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     play.filters.csrf.CSRFFilter
 
-2019-09-20 10:40:28,942 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-68 - Application started (Dev) (no global state)
-2019-09-20 10:41:01,590 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-shutdown-hook-1 - Stopping server...
+2019-09-20 11:25:12,812 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-30 - Application started (Dev) (no global state)
+2019-09-20 11:25:46,651 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-31 - Configuration not found for database: No configuration setting found for key 'db'
+2019-09-20 11:25:46,750 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-31 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    play.filters.csrf.CSRFFilter
+
+2019-09-20 11:25:46,756 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-31 - Application started (Dev) (no global state)
+2019-09-20 11:40:11,543 [INFO] from play.core.server.AkkaHttpServer in pool-5-thread-3 - Stopping server...
+2019-09-20 11:40:13,122 [WARN] from akka.actor.CoordinatedShutdown in play-dev-mode-akka.actor.default-dispatcher-68 - Task [shutdown-application-dev-mode] failed in phase [service-stop]: Compilation error[ error: cannot find symbol]
