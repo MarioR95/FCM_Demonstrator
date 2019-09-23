@@ -18,6 +18,7 @@ import models.dao.FeedbackDao;
 import models.dao.FeedbackPredictionDao;
 import models.dao.FirstLevelFeedbackAssociationDao;
 import models.dao.GroupsAssociationDao;
+import models.dao.MeasurementsAssociationDao;
 import models.dao.SecondLevelFeedbackAssociationDao;
 import models.dao.UserDao;
 import models.dao.UserHistoryDao;
@@ -26,6 +27,7 @@ import models.dto.FeedbackDto;
 import models.dto.FeedbackPredictionDto;
 import models.dto.FirstLevelFeedbackAssociationDto;
 import models.dto.GroupsAssociationDto;
+import models.dto.MeasurementsAssociationDto;
 import models.dto.SecondLevelFeedbackAssociationDto;
 import models.dto.UserDto;
 import models.dto.UserHistoryDto;
@@ -75,21 +77,13 @@ public class Application extends Controller {
 				String status;
 				UserHistoryDto user = UserHistoryDao.retrieveUserByCourseAndUserId(courseId, members.get(i).getUserId());
 				String lastEvent = user.getLastEvent();
-				
-				if(user.isDropped()) {
-					status = "Dropped";
-				}
-				
-				else {
-					status = "Warning";
-				}
+					
 							
 				result[i]= new ArrayList<String>();
 				result[i].add(members.get(i).getEmail());
 				result[i].add(members.get(i).getUserId());
 				result[i].add(members.get(i).getName());
 				result[i].add(members.get(i).getSurname());
-				result[i].add(status);
 				result[i].add(lastEvent);
 			}
 		} catch (Exception e) {
@@ -174,14 +168,23 @@ public class Application extends Controller {
 				int weekNumber = UserMeasureDao.retieveUserLastWeekNumber(courseId, u.getUserId());
 				
 				if(weekNumber != -1) {
+					if(! u.isDropped()) {
+						MapHandler.setConceptsValues(map, u, weekNumber);
+						
+						measure =  MapHandler.executeOnTheFly(map, u, weekNumber);
+						String q_eng= ActionAssociation.getConceptQualifier(measure.getEngagement_value());
+						String q_mot= ActionAssociation.getConceptQualifier(measure.getMotivation_value());
+						
+						MeasurementsAssociationDto measurementAssociation= MeasurementsAssociationDao.doRetrieveAssociation(q_mot, q_eng);
+						
+						//String label = studentStatusAssociation(measure);
+						
+						node.set(u.getUserId(), mapper.convertValue(measurementAssociation.getStatusType(), JsonNode.class));
+					}else {
+						node.set(u.getUserId(), mapper.convertValue("dropped", JsonNode.class));
+
+					}
 					
-					MapHandler.setConceptsValues(map, u, weekNumber);
-					
-					measure =  MapHandler.executeOnTheFly(map, u, weekNumber);
-					
-					String label = studentStatusAssociation(measure);
-					
-					node.set(u.getUserId(),  mapper.convertValue(measure, JsonNode.class));
 				}
 			}
 		} catch (Exception e) {
