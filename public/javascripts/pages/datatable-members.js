@@ -1,21 +1,34 @@
-var EMAIL_INDEX= 0;
-var USERID_INDEX= 1;
-var NAME_INDEX= 2;
-var SURNAME_INDEX= 3;
-var LASTEVENT_INDEX= 4;
-
-
 //Class definition
 var Datatable = function(){
 	
-	var fill_datatable= function(n_members, emails, ids, names, surnames, lastEvents){
+	
+	
+	var retrieveUsersMeasures = function(){
+		
+		
+		
+	}
+	
+	
+	var fill_datatable= function(n_members, emails, ids, names, surnames, lastEvents, status){
+		
 		for(var i=0; i<n_members; i++){
+			
+			var color;
+			if(status[ids[i]] == "dropped")
+				color = "danger";
+			else if(status[ids[i]] == "warning")
+				color = "warning";
+			else
+				color = "success";
+			
 			$("#tbody-members").append(
 			"<tr>"+
 		    "  	<th scope='row'>"+(i+1)+"</th>"+
 		    "  	<td>"+names[i]+"</td>"+
 		    "  	<td>"+surnames[i]+"</td>"+
 		    "  	<td>"+ids[i]+"</td>"+
+		    "	<td class='kt-font-"+color+"'>"+status[ids[i]]+"</td>"+ 
 		    "  	<td>"+lastEvents[i]+"</td>"+
 		    "  	<td>"+
 			"      	<div class='dropdown dropright'>"+
@@ -38,22 +51,24 @@ var Datatable = function(){
 	
 	return {
 		// public functions
-		init: function(data) {
-			var n_members= data.length;
+		init: function(members, membersStatus) {
+			var n_members= members.length;
 			var emails= [];
 			var names = [];
 			var surnames = [];
 			var ids= [];
 			var lastEvents= [];
-			for(var i=0; i<n_members; i++){
-				emails[i]= data[i][EMAIL_INDEX];
-				ids[i]= data[i][USERID_INDEX];
-				names[i]= data[i][NAME_INDEX];
-				surnames[i]= data[i][SURNAME_INDEX];
-				lastEvents[i]= data[i][LASTEVENT_INDEX];
-			}
+			var status = membersStatus;
 			
-			fill_datatable(n_members, emails, ids, names, surnames, lastEvents);
+			for(var i=0; i<n_members; i++){
+				emails[i]= members[i][0];
+				ids[i]= members[i][1];
+				names[i]= members[i][2];
+				surnames[i]= members[i][3];
+				lastEvents[i]= members[i][4];
+			}	
+			
+			fill_datatable(n_members, emails, ids, names, surnames, lastEvents,status);
 		}
 	};
 	
@@ -66,7 +81,8 @@ jQuery(document).ready(function() {
 		var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
 		return results[1] || 0;
 	}
-		
+	
+	//RETRIEVE ALL MEMBERS
 	$.ajax({
 		type: "GET",
 		url : "/courseMembers",
@@ -74,8 +90,21 @@ jQuery(document).ready(function() {
         contentType: "application/json; charset=utf-8",
 		dataType: "json",
 		success: function(data){
-			//Datatable
-			Datatable.init(data);
+			var members = data
+			//GET THE MEMBER'S STATUS
+			$.ajax({
+				type: "GET",
+				url : "/retrieveStudentsStatus",
+				data : "courseId="+$.urlParam('courseId'),
+		        contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				success: function(membersStatus){
+					Datatable.init(members, membersStatus);
+				},
+				error: function(err){
+					console.log(err)
+				}
+			});		
 		},
 		error: function(err){
 			console.log(err)

@@ -1,6 +1,14 @@
 package models.dto;
 
 public class UserMeasureDto {
+	
+	
+	/*
+	 * C2: motivation, C3: engagement, C4: intrinsicMotivation, C5: estrinsicMotivation, C6: socialMotivation,
+	 * C7: forumActivities, C8: lastForumActivities, C9: nPost, C10: weekSession, C11: nChapter,
+	 * C12: nPlayVideo, C13: %VideoViewed, C14: lastLesson, C15: lastEvent, C16: Assignment,
+	 * C17: interaction, C18: tasksDone
+	 * */
 
 	private String courseId, userId;
 	private int weekNumber, iterationNumber;
@@ -9,6 +17,38 @@ public class UserMeasureDto {
 	
 	public UserMeasureDto() {
 	}
+	
+	
+
+	public UserMeasureDto(String courseId, String userId, int weekNumber, int iterationNumber, String date, double c2,
+			double c3, double c4, double c5, double c6, double c7, double c8, double c9, double c10, double c11,
+			double c12, double c13, double c14, double c15, double c16, double c17, double c18) {
+		super();
+		this.courseId = courseId;
+		this.userId = userId;
+		this.weekNumber = weekNumber;
+		this.iterationNumber = iterationNumber;
+		this.date = date;
+		this.c2 = c2;
+		this.c3 = c3;
+		this.c4 = c4;
+		this.c5 = c5;
+		this.c6 = c6;
+		this.c7 = c7;
+		this.c8 = c8;
+		this.c9 = c9;
+		this.c10 = c10;
+		this.c11 = c11;
+		this.c12 = c12;
+		this.c13 = c13;
+		this.c14 = c14;
+		this.c15 = c15;
+		this.c16 = c16;
+		this.c17 = c17;
+		this.c18 = c18;
+	}
+
+
 
 	public String getCourseID() {
 		return courseId;

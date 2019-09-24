@@ -196,6 +196,42 @@ public class MapHandler {
 		}
 
 	}
+	
+	
+	public static Measures executeOnTheFly(CognitiveMap map, UserHistoryDto user, int weekNumber) throws ConfigurationException, Exception {
+		
+		Calendar calendar = Calendar.getInstance();
+		GregorianCalendar currentDate =  (GregorianCalendar) calendar;
+		
+		//iterate until convergence
+		for(int i = 0; i < MAX_EPOCHS; i++) {
+			map.execute();
+		}
+		
+		// Retrieve oldMeasure if exists
+		UserMeasureDto oldMeasuresDto;
+		Measures oldMeasures = new Measures();
+		
+		if (weekNumber > 1) {
+			
+			oldMeasuresDto = UserMeasureDao.retieveUserMeasure(user.getCourseId(), user.getUserId(),(weekNumber - 1));
+			
+			oldMeasures.setMotivation_value(oldMeasuresDto.getC2());
+			oldMeasures.setEngagement_value(oldMeasuresDto.getC3());
+			
+		} else {
+			oldMeasuresDto = new UserMeasureDto();
+		}
+
+		
+		Measures currentMeasures = new Measures();
+		currentMeasures.setEngagement_value(map.getConcept("c3").getOutput());
+		currentMeasures.setMotivation_value(map.getConcept("c2").getOutput());
+
+		Measures newMeasures = compareUserHistory(oldMeasures, currentMeasures, DateUtil.convertFromDMY(user.getLastEvent()));
+		
+		return newMeasures;
+	}
 
 
 	public static void printMapHeader(CognitiveMap map, String sep) {

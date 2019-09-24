@@ -17,6 +17,7 @@ GET 	/studentStats				controllers.Application.studentStats(request: Request)
 GET		/logout						controllers.Application.logout(request: Request) 	
 
 # Database interaction routes
+
 GET		/courseMembers				controllers.Application.courseMembers(request: Request, courseId: String)
 
 GET 	/fetchStudentStats			controllers.Application.fetchStudentStats(request: Request, courseId: String, userId: String)
@@ -27,6 +28,13 @@ GET 	/fetchStudentMeasurements	controllers.Application.fetchStudentMeasurements(
 
 GET		/executeMap					controllers.Application.executeMap(request: Request, courseId: String, userId: String, weekNumber: Integer)
 
+GET		/fetchFeedback				controllers.Application.fetchFeedback(request: Request, userId: String)
+
+GET 	/feedbackChoice				controllers.Application.feedbackChoice(request: Request, courseId: String, userId: String, weekNumber: Integer, mot: Double, eng: Double)
+
+GET		/feedbackPrediction 		controllers.Application.retrieveFeedbackImprovements(request: Request, actionId: Integer)
+
+GET 	/retrieveStudentsStatus		controllers.Application.retrieveStudentsStatus(request: Request, courseId: String)
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 

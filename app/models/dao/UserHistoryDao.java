@@ -16,6 +16,25 @@ import utilities.TrimmedBeanListHandler;
 
 
 public class UserHistoryDao {
+	
+	
+	public static UserHistoryDto retrieveUserByCourseAndUserId(String courseId, String userId) throws ConfigurationException, Exception {
+		
+		Connection conn = null;
+		
+		try {
+			conn = ConnectionPool.getSingleton(IConstants.DB_KEY);
+			QueryRunner qRunner = new QueryRunner();
+			
+			UserHistoryDto user = qRunner.query(conn, FileQueryReader.getQuery("USER_HISTORY_S05"),new TrimmedBeanHandler<UserHistoryDto>(UserHistoryDto.class),new Object[]{courseId,userId});
+			
+            return user;
+		}
+		
+		finally {
+			ConnectionPool.close(conn);
+		}
+	}
 
 	public static List<UserHistoryDto> retrieveAllStudentsByCourseId(String courseId) throws ConfigurationException, Exception {
 		

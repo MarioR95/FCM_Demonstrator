@@ -216,7 +216,7 @@ var KTFlotcharts = function() {
 	return {
 		// public functions
 		init: function(data) {
-			console.log(data);
+			//console.log(data);
 			var eng_data= [];
 			var mot_data= [];
 			var dates= [];

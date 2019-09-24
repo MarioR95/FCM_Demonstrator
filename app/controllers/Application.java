@@ -1,16 +1,34 @@
 package controllers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import org.apache.commons.configuration.ConfigurationException;
 import org.megadix.jfcm.CognitiveMap;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import models.dao.CourseDao;
+import models.dao.FeedbackDao;
+import models.dao.FeedbackPredictionDao;
+import models.dao.FirstLevelFeedbackAssociationDao;
+import models.dao.GroupsAssociationDao;
+import models.dao.MeasurementsAssociationDao;
+import models.dao.SecondLevelFeedbackAssociationDao;
 import models.dao.UserDao;
 import models.dao.UserHistoryDao;
 import models.dao.UserMeasureDao;
+import models.dto.FeedbackDto;
+import models.dto.FeedbackPredictionDto;
+import models.dto.FirstLevelFeedbackAssociationDto;
+import models.dto.GroupsAssociationDto;
+import models.dto.MeasurementsAssociationDto;
+import models.dto.SecondLevelFeedbackAssociationDto;
 import models.dto.UserDto;
 import models.dto.UserHistoryDto;
 import models.dto.UserMeasureDto;
@@ -18,7 +36,9 @@ import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Http;
 import play.mvc.Result;
+import utilities.ActionAssociation;
 import utilities.MapHandler;
+import utilities.Measures;
 
 public class Application extends Controller {
 	 
@@ -46,7 +66,7 @@ public class Application extends Controller {
 	}
 	
 	public Result courseMembers(Http.Request request, String courseId) {
-		/*Change this body method if you want to retrieve all students by a courseId. Use UserHistoryDao.retrieveAllStudentsByCourseId*/
+		//Change this body method if you want to retrieve all students by a courseId. Use UserHistoryDao.retrieveAllStudentsByCourseId
 		List<UserDto> members= null;
 		ArrayList<String>[] result= null;
 		try {
@@ -54,7 +74,11 @@ public class Application extends Controller {
 			result= new ArrayList[members.size()];
 			
 			for(int i=0; i<members.size(); i++) {
-				String lastEvent= UserHistoryDao.retrieveLastEventByUserId(members.get(i).getUserId());
+				String status;
+				UserHistoryDto user = UserHistoryDao.retrieveUserByCourseAndUserId(courseId, members.get(i).getUserId());
+				String lastEvent = user.getLastEvent();
+					
+							
 				result[i]= new ArrayList<String>();
 				result[i].add(members.get(i).getEmail());
 				result[i].add(members.get(i).getUserId());
@@ -93,16 +117,19 @@ public class Application extends Controller {
 	public Result fetchStudentRecords(Http.Request request, String courseId, String userId) {
 		  
 		  List<UserMeasureDto> userMeasures = null;
+		  List<FeedbackDto> userFeedback = null;
 		  ArrayList<Object> toJson = new ArrayList<Object>();
 		  
 		  try {
 		   
 		   int courseLife = CourseDao.retrieveCourseLife(courseId);
 		   userMeasures = UserMeasureDao.retieveUserMeasure(courseId, userId);
+		   userFeedback = FeedbackDao.retrieveFeedbackList(courseId, userId);
 		   String startDate = UserHistoryDao.retrieveStartDate(courseId, userId);
 		   toJson.add(userMeasures);
 		   toJson.add(courseLife);
 		   toJson.add(startDate);
+		   toJson.add(userFeedback);
 		   
 		  } catch (Exception e) {
 		   e.printStackTrace();
@@ -111,13 +138,71 @@ public class Application extends Controller {
 		  return ok(Json.toJson(toJson));
 	}
 	
-	public Result executeMap(Http.Request request, String courseId, String userId, int weekNumber) {
+	public Result fetchFeedback(Http.Request request, String userId) {
 		
+		List<FeedbackDto> userFeedback = null;
+		
+		try {
+			System.out.println("id = "+ userId);
+			userFeedback = FeedbackDao.retrieveFeedbackListByUser(userId);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return ok(Json.toJson(userFeedback));
+	}
+	
+	public Result retrieveStudentsStatus(Http.Request request, String courseId) throws ConfigurationException, Exception {
+		
+		List<UserHistoryDto> studentsList = UserHistoryDao.retrieveAllStudentsByCourseId(courseId);
+		Measures measure= null;	
+		
+		ObjectMapper  mapper = new ObjectMapper();
+		ObjectNode node = mapper.createObjectNode();
+		
+		try {
+			for(UserHistoryDto u : studentsList) {
+				CognitiveMap map = MapHandler.loadFromXML();
+				
+				int weekNumber = UserMeasureDao.retieveUserLastWeekNumber(courseId, u.getUserId());
+				
+				if(weekNumber != -1) {
+					if(! u.isDropped()) {
+						MapHandler.setConceptsValues(map, u, weekNumber);
+						
+						measure =  MapHandler.executeOnTheFly(map, u, weekNumber);
+						String q_eng= ActionAssociation.getConceptQualifier(measure.getEngagement_value());
+						String q_mot= ActionAssociation.getConceptQualifier(measure.getMotivation_value());
+						
+						MeasurementsAssociationDto measurementAssociation= MeasurementsAssociationDao.doRetrieveAssociation(q_mot, q_eng);
+						
+						//String label = studentStatusAssociation(measure);
+						
+						node.set(u.getUserId(), mapper.convertValue(measurementAssociation.getStatusType(), JsonNode.class));
+					}else {
+						node.set(u.getUserId(), mapper.convertValue("dropped", JsonNode.class));
+
+					}
+					
+				}
+			}
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		
+		return ok(node);
+	}
+
+	public Result executeMap(Http.Request request, String courseId, String userId, int weekNumber) {
+
 		try {
 			CognitiveMap map = MapHandler.loadFromXML();
 			UserHistoryDto user = UserHistoryDao.retrieveStudentHistoryById(userId);
 			MapHandler.setConceptsValues(map, user, weekNumber);
 			MapHandler.execute(map, user,weekNumber);
+			FeedbackDao.createBaseFeedback(courseId, userId, weekNumber);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -139,7 +224,55 @@ public class Application extends Controller {
 		return ok(Json.toJson(userMeasures));
 	}
 	
+	public Result feedbackChoice(Http.Request request, String courseId, String userId, int weekNumber, double mot, double eng) {
+		
+		ObjectMapper mapper = new ObjectMapper();
+		ObjectNode node = mapper.createObjectNode();
+
+		String q_mot= ActionAssociation.getConceptQualifier(mot);
+		String q_eng= ActionAssociation.getConceptQualifier(eng);
+		
+		FirstLevelFeedbackAssociationDto actionGroup= null;
+		try {
+			actionGroup = FirstLevelFeedbackAssociationDao.retrieveActionGroup(q_mot, q_eng);
+			List<GroupsAssociationDto> groups= GroupsAssociationDao.retrieveActionsList(actionGroup.getGroupId());
+			
+			for(GroupsAssociationDto g: groups) { 
+				List<SecondLevelFeedbackAssociationDto> actions= SecondLevelFeedbackAssociationDao.retrieveActionsList(g.getActionId());
+				ArrayNode actionsList= mapper.valueToTree(actions);
+				node.putArray(g.getType()).addAll(actionsList);
+			}
+						
+			node.set("numActions", mapper.convertValue(groups.size(), JsonNode.class));
+			
+			UserMeasureDto currentMeasures= UserMeasureDao.retieveUserMeasure(courseId, userId, weekNumber);
+			System.out.println(currentMeasures);
+			node.set("currentMeasures", mapper.convertValue(currentMeasures, JsonNode.class));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ok(node);
+	}
+	
+	public Result retrieveFeedbackImprovements(Http.Request request, int actionId) {
+		ObjectMapper  mapper = new ObjectMapper();
+		ObjectNode node = mapper.createObjectNode();
+
+		try {
+			List<FeedbackPredictionDto> improvements= FeedbackPredictionDao.retrieveImprovementsByActionId(actionId);
+			ArrayNode actionsList= mapper.valueToTree(improvements);
+			node.putArray("improvements").addAll(actionsList);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ok(node);
+	}
+	
 	public Result logout(Http.Request request) {
 		return ok(views.html.index.render()).removingFromSession(request,"connected");
 	}
+	
+	
+	
 }
