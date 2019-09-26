@@ -160,7 +160,7 @@
 		<content delimiterParsingDisabled="true">
 			SELECT * 
 			FROM first_level_feedback_association 
-			WHERE eng= ? AND mot= ?
+			WHERE mot= ? AND eng= ?
 		</content>
 	</query>
 	<query name="GROUPS_ASSOCIATION_S01">

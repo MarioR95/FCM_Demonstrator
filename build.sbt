@@ -1,4 +1,4 @@
-name := """FCM_Demonstrator"""
+name := """Moliere_dashboard"""
 organization := "it.corisa"
 
 version := "1.0-SNAPSHOT"
