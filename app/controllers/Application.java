@@ -13,6 +13,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
+import flexjson.JSON;
 import models.dao.CourseDao;
 import models.dao.FeedbackDao;
 import models.dao.FeedbackPredictionDao;
@@ -234,6 +235,7 @@ public class Application extends Controller {
 		
 		FirstLevelFeedbackAssociationDto actionGroup= null;
 		try {
+			System.out.println(q_eng+" "+q_mot);
 			actionGroup = FirstLevelFeedbackAssociationDao.retrieveActionGroup(q_mot, q_eng);
 			List<GroupsAssociationDto> groups= GroupsAssociationDao.retrieveActionsList(actionGroup.getGroupId());
 			
@@ -246,7 +248,6 @@ public class Application extends Controller {
 			node.set("numActions", mapper.convertValue(groups.size(), JsonNode.class));
 			
 			UserMeasureDto currentMeasures= UserMeasureDao.retieveUserMeasure(courseId, userId, weekNumber);
-			System.out.println(currentMeasures);
 			node.set("currentMeasures", mapper.convertValue(currentMeasures, JsonNode.class));
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -268,6 +269,65 @@ public class Application extends Controller {
 		}
 		return ok(node);
 	}
+	
+	public Result checkEfficacy(Http.Request request,String courseId, String userId, String prevDate, int prevWeek) {
+		String efficacy= "";
+		try {
+			
+			UserMeasureDto prevMeasures= UserMeasureDao.retieveLastUserMeasure(courseId, userId, prevWeek);
+			
+			UserMeasureDto currMeasures= UserMeasureDao.retieveLastUserMeasure(courseId, userId, prevWeek+1);
+			
+			FeedbackDto lastFeedbackReceived= FeedbackDao.retrieveFeedbacByDate(courseId, userId, prevDate);
+			//Retrieve dell'improvement
+			List<FeedbackPredictionDto> improvements = FeedbackPredictionDao.retrieveImprovementsByActionId(lastFeedbackReceived.getActionId()); 
+			//Check over curr_Measures and (preMeasures+improvements)
+			if(improvements.size() == 1) {
+				double improvement= improvements.get(0).getImprovement();
+				double max_threshold= 0.0;
+				double prev_conceptValue=0.0;
+				double curr_conceptValue=0.0;
+				
+				switch (improvements.get(0).getConcept()) {
+				case "Forum Activities":
+					prev_conceptValue= prevMeasures.getC7();
+					curr_conceptValue= currMeasures.getC7();
+					break;
+				case "Interaction": 
+					prev_conceptValue= prevMeasures.getC17();
+					curr_conceptValue= currMeasures.getC17();
+					break;
+				case "Assignment": 
+					prev_conceptValue= prevMeasures.getC16();
+					curr_conceptValue= currMeasures.getC16();
+					break;
+				default:
+					break;
+				}
+				
+				max_threshold= prev_conceptValue+improvement;
+				
+				if(curr_conceptValue > prev_conceptValue && curr_conceptValue <= max_threshold) {	//THERE WAS AN IMPROVEMENT
+					efficacy="Positive";
+				}
+				else if(curr_conceptValue == prev_conceptValue) { //NO IMPROVEMENT
+					efficacy="Neutral";
+				}else {
+					efficacy="Negative"; //THERE WAS A WORSENING
+				}
+				
+			}else {
+				for(FeedbackPredictionDto f: improvements) {
+					
+				}
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ok(Json.toJson(efficacy));
+	}
+	
 	
 	public Result logout(Http.Request request) {
 		return ok(views.html.index.render()).removingFromSession(request,"connected");

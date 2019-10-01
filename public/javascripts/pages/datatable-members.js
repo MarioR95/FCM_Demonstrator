@@ -10,7 +10,7 @@ var Datatable = function(){
 	}
 	
 	
-	var fill_datatable= function(n_members, emails, ids, names, surnames, lastEvents, status){
+	var fill_datatable= function(n_members, emails, ids, names, surnames, lastEvents,status){
 		
 		for(var i=0; i<n_members; i++){
 			
@@ -65,7 +65,7 @@ var Datatable = function(){
 				ids[i]= members[i][1];
 				names[i]= members[i][2];
 				surnames[i]= members[i][3];
-				lastEvents[i]= members[i][4];
+				lastEvents[i]= members[i][5];
 			}	
 			
 			fill_datatable(n_members, emails, ids, names, surnames, lastEvents,status);
