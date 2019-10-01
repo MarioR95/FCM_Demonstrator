@@ -1,14 +1,6 @@
 //Class definition
 var Datatable = function(){
-	
-	
-	
-	var retrieveUsersMeasures = function(){
-		
-		
-		
-	}
-	
+
 	
 	var fill_datatable= function(n_members, emails, ids, names, surnames, lastEvents, status){
 		
@@ -28,7 +20,7 @@ var Datatable = function(){
 		    "  	<td>"+names[i]+"</td>"+
 		    "  	<td>"+surnames[i]+"</td>"+
 		    "  	<td>"+ids[i]+"</td>"+
-		    "	<td class='kt-font-"+color+"'>"+status[ids[i]]+"</td>"+ 
+		    "	<td><span class='kt-badge kt-badge--"+color+"  kt-badge--inline kt-badge--pill'>"+status[ids[i]]+"</span></td>"+
 		    "  	<td>"+lastEvents[i]+"</td>"+
 		    "  	<td>"+
 			"      	<div class='dropdown dropright'>"+

@@ -54,6 +54,24 @@ public class FeedbackDao {
 			ConnectionPool.close(conn);
 		}
 	}
+	
+	public static void updateFeedback(String feedbackDate, String action, String content, String courseId, String userId, String measureDate) throws ConfigurationException, Exception {
+		
+		Connection conn = null;
+		
+		try {
+			conn = ConnectionPool.getSingleton(IConstants.DB_KEY);
+			QueryRunner qRunner = new QueryRunner();
+			
+			qRunner.update(conn, FileQueryReader.getQuery("FEEDBACK_S06"),new Object[]{feedbackDate, content, action, courseId, userId, measureDate});
+
+			
+		} finally {
+			ConnectionPool.close(conn);
+		}
+		
+		
+	}
 
 	private static int computeFeedbackType(double motivation, double engagement) throws ConfigurationException, Exception {
 		

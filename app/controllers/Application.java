@@ -1,7 +1,10 @@
 package controllers;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.apache.commons.configuration.ConfigurationException;
@@ -38,6 +41,7 @@ import play.mvc.Controller;
 import play.mvc.Http;
 import play.mvc.Result;
 import utilities.ActionAssociation;
+import utilities.DateUtil;
 import utilities.MapHandler;
 import utilities.Measures;
 
@@ -194,6 +198,27 @@ public class Application extends Controller {
 		}
 		
 		return ok(node);
+	}
+	
+	public Result sendFeedback(Http.Request request, String courseId, String userId, String action, String description, String date) throws ParseException {
+		
+		Calendar calendar = Calendar.getInstance();
+		String currentDate = DateUtil.format((GregorianCalendar) calendar);
+		
+		try {
+			
+			FeedbackDao.updateFeedback(currentDate, action, description, courseId, userId, date);
+		
+		} catch (ConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return ok();
 	}
 
 	public Result executeMap(Http.Request request, String courseId, String userId, int weekNumber) {

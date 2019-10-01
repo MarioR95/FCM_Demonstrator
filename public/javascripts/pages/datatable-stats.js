@@ -81,7 +81,7 @@ var Datatable = function(){
 			  statusColor = "success";
 		 }
 		
-		//if(e.data.type != -1){
+		if(e.data.type >= 0 && e.data.type <= 3){
 		
 			$(e.subTable).html(
 					"<table class='table' style='width: 15%'>" +
@@ -90,18 +90,18 @@ var Datatable = function(){
 						"</tr>" +
 						"<tr>" +
 							"<td>Type</td>" +
-							"<td class='kt-font-"+typeColor+"'>"+type+"</td>" +
+							"<td><span class='kt-badge kt-badge--"+typeColor+" kt-badge--inline kt-badge--pill'>"+type+"</span></td>" +
 						"</tr>" +
 						"<tr>" +
 							"<td>Status</td>" +
-							"<td class='kt-font-"+statusColor+"'>"+status+"</td>" +
+							"<td><span class='kt-badge kt-badge--"+statusColor+" kt-badge--inline kt-badge--pill'>"+status+"</span></td>" +
 						"</tr>" +
 						"<tr>" +
 							"<td>Feedback Efficacy</td>" +
-							"<td class='kt-font-"+efficacyColor+"'>"+efficacy+"</td>" +
+							"<td><span class='kt-badge kt-badge--"+efficacyColor+" kt-badge--inline kt-badge--pill'>"+efficacy+"</span></td>" +
 						"</tr>" +
 					"</table>");
-		//}
+		}
 	}
 	
 	var createJson = function(eng, mot, startDate, dates, n_samples,courseLife,feedback){
@@ -214,8 +214,11 @@ var Datatable = function(){
 							contentType : "application/json; charset=utf-8",
 							dataType : "json",
 							success : function(data) {
+								
 								var ACTION_PARAM='';
 								var FEEDBACK_PARAM='';
+								var FEEDBACK_DESC='';
+								
 								var currentMeasures= data['currentMeasures'];
 								var keys= Object.keys(data)
 								$('.kt-wizard-v2__nav-items').empty();
@@ -247,7 +250,7 @@ var Datatable = function(){
 									});
 									var label_name= $(this).find('.kt-wizard-v2__nav-label-title').html();
 									
-									ACTION_PARAM = "?actionType="+label_name;
+									ACTION_PARAM = "&action="+label_name;
 									
 									var actions= data[label_name];
 									$('#actions-container').empty();
@@ -272,7 +275,9 @@ var Datatable = function(){
 									$('.kt-feedback__item').click(function(){
 										$(this).css("background-color", "#F4F6F9");
 										var label_name= $(this).find('.kt-notification-v2__item-title').html();
-										FEEDBACK_PARAM = "?feedback="+label_name;
+										var label_desc= $(this).find('.kt-notification-v2__item-desc').html();
+										FEEDBACK_PARAM = "&feedback="+label_name;
+										FEEDBACK_DESC = "&description="+label_desc;
 										$('#feedback_input').attr('placeholder', label_name);
 									})
 									
@@ -347,24 +352,30 @@ var Datatable = function(){
 						   			var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
 						   			return results[1] || 0;
 						   		}
-								
-								var options = { 
-							        //beforeSubmit: showRequest,  // pre-submit callback 
-							        success: function(){
-							        	console.log("DONE")
-							        },  // post-submit callback 
-							        url: "sendFeedback?courseId="+$.urlParam('courseId')+"&userId="+$.urlParam('userId')+ACTION_PARAM+FEEDBACK_PARAM+"&date="+row.data.end,         // override for form's 'action' attribute 
-							        type:'get',        // 'get' or 'post', override for form's 'method' attribute 
-							        dataType:  'json',        // 'xml', 'script', or 'json' (expected server response type) 
-							        clearForm: true,        // clear all form fields after successful submit 
-							        resetForm: true        // reset the form after successful submit 
-							    }; 
 							 
 							    // bind to the form's submit event 
 							    $('.btn-success[data-ktwizard-type=action-submit]').click(function() { 
 							        // inside event callbacks 'this' is the DOM element so we first 
-							        // wrap it in a jQuery object and then invoke ajaxSubmit 
-							        $(this).ajaxSubmit(options); 
+							        // wrap it in a jQuery object and then invoke ajaxSubmit
+							    	
+							    	
+							    	if($('#action_input').attr('placeholder') != "" && $('#feedback_input').attr('placeholder') != ""){
+							    		
+							    		$.ajax({
+							    			type: "GET",
+							    			url: "/sendFeedback",
+							    			data : "courseId="+$.urlParam('courseId')+"&userId="+$.urlParam('userId')+ACTION_PARAM+FEEDBACK_DESC+"&date="+row.data.end,
+							    	        contentType: "application/json; charset=utf-8",
+							    			dataType: "json",
+							    			success: function(data){
+							    				console.log("ajaxFeedback",data);
+							    			},
+							    			error: function(err){
+							    				console.log("error",err)
+							    			}
+							    		}); 
+							    	}
+							        
 							 
 							        // !!! Important !!! 
 							        // always return false to prevent standard browser submit and page navigation 

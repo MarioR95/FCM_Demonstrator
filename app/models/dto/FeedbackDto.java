@@ -3,7 +3,7 @@ package models.dto;
 public class FeedbackDto {
 
 	private int id,status,type,efficacy;
-	private String measureDate,feedbackDate,courseId,userId,content;
+	private String measureDate,feedbackDate,courseId,userId,content,action;
 	private int actionId;
 	
 	public FeedbackDto() {
@@ -86,8 +86,16 @@ public class FeedbackDto {
 		return actionId;
 	}
 
-	public void setActionId(int actionId) {
+	public void setAction(int actionId) {
 		this.actionId = actionId;
+	}
+	
+	public String getAction() {
+		return action;
+	}
+	
+	public void setAction(String action) {
+		this.action = action;
 	}
 
 	@Override

@@ -32,8 +32,15 @@
 	</query>
 	<query name="FEEDBACK_S05">
 		<content delimiterParsingDisabled="true">
-			INSERT INTO feedback (id, measureDate, courseId, userId, feedbackDate, status, content, type, efficacy, actionId)
-			VALUES (DEFAULT, ? , ? , ? , null , 0 , null , ? , DEFAULT, null )
+			INSERT INTO feedback (id, measureDate, courseId, userId, feedbackDate, status, action, content, type, efficacy, actionId)
+			VALUES (DEFAULT, ? , ? , ? , null , 0 , null, null , ? , DEFAULT, null, null)
+		</content>
+	</query>
+	<query name="FEEDBACK_S06">
+		<content delimiterParsingDisabled="true">
+			UPDATE feedback 
+			SET feedbackDate=?, status=1, content=?, action=? 
+			WHERE courseId = ? and userId = ? and measureDate=?
 		</content>
 	</query>
 	<query name="LOGIN_S01">

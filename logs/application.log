@@ -1,36 +1,65 @@
-2019-09-26 11:36:15,212 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-8 - Configuration not found for database: No configuration setting found for key 'db'
-2019-09-26 11:36:17,561 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-8 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-10-01 09:52:22,405 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-8 - Configuration not found for database: No configuration setting found for key 'db'
+2019-10-01 09:52:24,290 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-8 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     play.filters.csrf.CSRFFilter
 
-2019-09-26 11:36:17,679 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-8 - Application started (Dev) (no global state)
-2019-09-26 11:41:04,760 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-21 - Configuration not found for database: No configuration setting found for key 'db'
-2019-09-26 11:41:05,006 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-21 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-10-01 09:52:24,381 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-8 - Application started (Dev) (no global state)
+2019-10-01 10:05:18,440 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-20 - Configuration not found for database: No configuration setting found for key 'db'
+2019-10-01 10:05:18,696 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-20 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     play.filters.csrf.CSRFFilter
 
-2019-09-26 11:41:05,027 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-21 - Application started (Dev) (no global state)
-2019-09-26 11:44:13,076 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-31 - Configuration not found for database: No configuration setting found for key 'db'
-2019-09-26 11:44:13,378 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-31 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-10-01 10:05:18,708 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-20 - Application started (Dev) (no global state)
+2019-10-01 12:15:34,889 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-59 - 
+
+! @7dc16j4ao - Internal server error, for (GET) [/studentStats?courseId=HarvardX/CB22x/2013_Spring&name=Domenico&surname=Califano&userId=MHxPC130155947] ->
+ 
+play.sbt.routes.RoutesCompilationException: Compilation error[`)' expected but `d' found]
+	at play.sbt.routes.RoutesCompiler$.$anonfun$compileRoutes$4(RoutesCompiler.scala:182)
+	at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:233)
+	at scala.collection.immutable.List.foreach(List.scala:388)
+	at scala.collection.TraversableLike.map(TraversableLike.scala:233)
+	at scala.collection.TraversableLike.map$(TraversableLike.scala:226)
+	at scala.collection.immutable.List.map(List.scala:294)
+	at play.sbt.routes.RoutesCompiler$.compileRoutes(RoutesCompiler.scala:180)
+	at play.sbt.routes.RoutesCompiler$.$anonfun$compileRoutesFiles$1(RoutesCompiler.scala:150)
+	at scala.Function1.$anonfun$compose$1(Function1.scala:44)
+	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:40)
+	at sbt.std.Transform$$anon$4.work(System.scala:67)
+	at sbt.Execute.$anonfun$submit$2(Execute.scala:269)
+	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:16)
+	at sbt.Execute.work(Execute.scala:278)
+	at sbt.Execute.$anonfun$submit$1(Execute.scala:269)
+	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:178)
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:37)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2019-10-01 12:16:03,908 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-61 - Configuration not found for database: No configuration setting found for key 'db'
+2019-10-01 12:16:04,026 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-61 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     play.filters.csrf.CSRFFilter
 
-2019-09-26 11:44:13,394 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-31 - Application started (Dev) (no global state)
-2019-09-26 11:52:28,522 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-41 - Configuration not found for database: No configuration setting found for key 'db'
-2019-09-26 11:52:28,770 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-41 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-10-01 12:16:04,033 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-61 - Application started (Dev) (no global state)
+2019-10-01 12:34:01,831 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-75 - Configuration not found for database: No configuration setting found for key 'db'
+2019-10-01 12:34:01,924 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-75 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     play.filters.csrf.CSRFFilter
 
-2019-09-26 11:52:28,777 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-41 - Application started (Dev) (no global state)
+2019-10-01 12:34:01,930 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-75 - Application started (Dev) (no global state)
+2019-10-01 13:07:43,121 [INFO] from play.core.server.AkkaHttpServer in pool-5-thread-2 - Stopping server...
