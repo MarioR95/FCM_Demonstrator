@@ -1,7 +1,10 @@
 package controllers;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.apache.commons.configuration.ConfigurationException;
@@ -12,6 +15,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.mysql.cj.xdevapi.JsonNumber;
 
 import flexjson.JSON;
 import models.dao.CourseDao;
@@ -38,6 +42,7 @@ import play.mvc.Controller;
 import play.mvc.Http;
 import play.mvc.Result;
 import utilities.ActionAssociation;
+import utilities.DateUtil;
 import utilities.MapHandler;
 import utilities.Measures;
 
@@ -144,7 +149,6 @@ public class Application extends Controller {
 		List<FeedbackDto> userFeedback = null;
 		
 		try {
-			System.out.println("id = "+ userId);
 			userFeedback = FeedbackDao.retrieveFeedbackListByUser(userId);
 			
 		} catch (Exception e) {
@@ -167,7 +171,6 @@ public class Application extends Controller {
 				CognitiveMap map = MapHandler.loadFromXML();
 				
 				int weekNumber = UserMeasureDao.retieveUserLastWeekNumber(courseId, u.getUserId());
-				
 				if(weekNumber != -1) {
 					if(! u.isDropped()) {
 						MapHandler.setConceptsValues(map, u, weekNumber);
@@ -178,14 +181,14 @@ public class Application extends Controller {
 						
 						MeasurementsAssociationDto measurementAssociation= MeasurementsAssociationDao.doRetrieveAssociation(q_mot, q_eng);
 						
-						//String label = studentStatusAssociation(measure);
-						
 						node.set(u.getUserId(), mapper.convertValue(measurementAssociation.getStatusType(), JsonNode.class));
 					}else {
 						node.set(u.getUserId(), mapper.convertValue("dropped", JsonNode.class));
-
 					}
 					
+				}else {
+					node.set(u.getUserId(), mapper.convertValue("undefined", JsonNode.class));
+
 				}
 			}
 		} catch (Exception e) {
@@ -194,6 +197,23 @@ public class Application extends Controller {
 		}
 		
 		return ok(node);
+	}
+	
+	public Result sendFeedback(Http.Request request, String courseId, String userId, int actionId, String description, String date) throws ParseException {
+		
+		Calendar calendar = Calendar.getInstance();
+		String currentDate = DateUtil.format((GregorianCalendar) calendar);
+		
+		try {
+			
+			FeedbackDao.updateFeedback(currentDate, actionId, description, courseId, userId, date);
+		
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		
+		return ok(Json.toJson("200"));
 	}
 
 	public Result executeMap(Http.Request request, String courseId, String userId, int weekNumber) {
@@ -277,7 +297,6 @@ public class Application extends Controller {
 			UserMeasureDto prevMeasures= UserMeasureDao.retieveLastUserMeasure(courseId, userId, prevWeek);
 			
 			UserMeasureDto currMeasures= UserMeasureDao.retieveLastUserMeasure(courseId, userId, prevWeek+1);
-			
 			FeedbackDto lastFeedbackReceived= FeedbackDao.retrieveFeedbacByDate(courseId, userId, prevDate);
 			//Retrieve dell'improvement
 			List<FeedbackPredictionDto> improvements = FeedbackPredictionDao.retrieveImprovementsByActionId(lastFeedbackReceived.getActionId()); 
@@ -310,10 +329,10 @@ public class Application extends Controller {
 				if(curr_conceptValue > prev_conceptValue && curr_conceptValue <= max_threshold) {	//THERE WAS AN IMPROVEMENT
 					efficacy="Positive";
 				}
-				else if(curr_conceptValue == prev_conceptValue) { //NO IMPROVEMENT
+				else if(curr_conceptValue == prev_conceptValue) { 	//NO IMPROVEMENT
 					efficacy="Neutral";
-				}else {
-					efficacy="Negative"; //THERE WAS A WORSENING
+				}else if(curr_conceptValue < prev_conceptValue){	//THERE WAS A WORSENING
+					efficacy="Negative"; 
 				}
 				
 			}else {

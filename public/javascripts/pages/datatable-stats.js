@@ -5,21 +5,26 @@ var Datatable = function(){
 	
 	var checkLastFeedbackEfficacy= function(prev_row, row, index){
 		var prev_date= prev_row.find('td[data-field=end]').text();
-		if(index > 1){
+		
+			//Get URL
+	   		$.urlParam = function(name){
+	   			var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+	   			return results[1] || 0;
+	   		}
 			$.ajax({
 				type : "GET",
 				url : "/checkEfficacy",
-				data : "courseId="+$.urlParam('courseId')+"&userId="+$.urlParam('userId')+"&prevDate"+prev_date+"&prevWeek="+index,
+				data : "courseId="+$.urlParam('courseId')+"&userId="+$.urlParam('userId')+"&prevDate="+prev_date+"&prevWeek="+index,
 				contentType : "application/json; charset=utf-8",
 				dataType : "json",
 				success : function(data) {
-					console.log(data)
+					alert("EFFICACY "+data)
 				},
 				error : function(err) {
 					console.log(err)
 				}
 			});
-		}
+		
 		
 		
 	}
@@ -81,27 +86,27 @@ var Datatable = function(){
 			  statusColor = "success";
 		 }
 		
-		//if(e.data.type != -1){
+		if(e.data.type >= 0 && e.data.type <= 3){
 		
 			$(e.subTable).html(
-					"<table class='table' style='width: 15%'>" +
+					"<table class='table' style='width: 20%'>" +
 						"<tr>" +
 							"<th colspan=2 style='text-align:center'>Feedback Details</td>" +
 						"</tr>" +
 						"<tr>" +
 							"<td>Type</td>" +
-							"<td class='kt-font-"+typeColor+"'>"+type+"</td>" +
+							"<td><span class='kt-badge kt-badge--"+typeColor+" kt-badge--inline kt-badge--pill'>"+type+"</span></td>" +
 						"</tr>" +
 						"<tr>" +
 							"<td>Status</td>" +
-							"<td class='kt-font-"+statusColor+"'>"+status+"</td>" +
+							"<td><span class='kt-badge kt-badge--"+statusColor+" kt-badge--inline kt-badge--pill'>"+status+"</span></td>" +
 						"</tr>" +
 						"<tr>" +
 							"<td>Feedback Efficacy</td>" +
-							"<td class='kt-font-"+efficacyColor+"'>"+efficacy+"</td>" +
+							"<td><span class='kt-badge kt-badge--"+efficacyColor+" kt-badge--inline kt-badge--pill'>"+efficacy+"</span></td>" +
 						"</tr>" +
 					"</table>");
-		//}
+		}
 	}
 	
 	var createJson = function(eng, mot, startDate, dates, n_samples,courseLife,feedback){
@@ -114,7 +119,7 @@ var Datatable = function(){
 			var x = '{ '+
 						'"id":'+(i+1)+','+
 						'"weekOfMeasure":'+(i+1)+','+
-						'"start":"'+(i== 0 ? startDate : dates[i-1])+'",'+
+						'"start":"'+(i == 0 ? startDate : dates[i-1])+'",'+
 						'"end":"'+dates[i]+'",'+
 						'"motivation":'+Number(mot[i]).toFixed(2)+','+
 						'"engagement":'+Number(eng[i]).toFixed(2)+','+
@@ -180,12 +185,19 @@ var Datatable = function(){
 			
 			rows:{
 				
-				afterTemplate: function (row, data, index) {
+				afterTemplate: function (row, content, index) {
 					
 					row.find("#measure"+(index+1)).click(function(){
+						//GET NEW MEASUREMENTS
 						executeMap(index+1);
 						
-						//checkLastFeedbackEfficacy(rows[index], index);	//decommentare una volta testata la funzione
+						//CHECK PREVIOUS FEEDBACK EFFICACY
+						if(index > 1){
+							var prev_row= $("tr[data-row="+(index-1)+"]");
+							checkLastFeedbackEfficacy(prev_row, row, index-1);	
+						}
+						
+						
 					});
 					
 					row.find("#view"+(index+1)).click(function(){
@@ -195,13 +207,8 @@ var Datatable = function(){
 					
 					
 					row.find("#send"+(index+1)).click(function() {
-						console.log("week= "+ (index+1));
+						var endDate= content.end;
 						
-						
-						var prev_row= $("tr[data-row="+(index-1)+"]")
-						
-						checkLastFeedbackEfficacy(prev_row, row, index);	//DEVE ESSERE CANCELLATA perchè deve essere chiamata quando faccio getMeasure
-							
 				   		//Get URL
 				   		$.urlParam = function(name){
 				   			var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -214,9 +221,10 @@ var Datatable = function(){
 							contentType : "application/json; charset=utf-8",
 							dataType : "json",
 							success : function(data) {
-								console.log(data)
+
 								var ACTION_PARAM='';
 								var FEEDBACK_PARAM='';
+								var FEEDBACK_DESC='';
 								var currentMeasures= data['currentMeasures'];
 								var keys= Object.keys(data)
 								$('.kt-wizard-v2__nav-items').empty();
@@ -248,8 +256,9 @@ var Datatable = function(){
 										$(this).attr("data-ktwizard-state", "pending");
 									});
 									var label_name= $(this).find('.kt-wizard-v2__nav-label-title').html();
-									var actionI= $(this).find('.input_actionId').attr('value');
-									ACTION_PARAM = "?actionType="+label_name;
+									var actionId= $(this).find('.input_actionId').attr('value');
+									
+									ACTION_PARAM = "&actionId="+actionId;
 									
 									var actions= data[label_name];
 									$('#actions-container').empty();
@@ -274,7 +283,9 @@ var Datatable = function(){
 									$('.kt-feedback__item').click(function(){
 										$(this).css("background-color", "#F4F6F9");
 										var label_name= $(this).find('.kt-notification-v2__item-title').html();
-										FEEDBACK_PARAM = "?feedback="+label_name;
+										var label_desc= $(this).find('.kt-notification-v2__item-desc').html();
+										FEEDBACK_PARAM = "&feedback="+label_name;
+										FEEDBACK_DESC = "&description="+label_desc;
 										$('#feedback_input').attr('placeholder', label_name);
 									})
 									
@@ -327,7 +338,7 @@ var Datatable = function(){
 														"		<div class='kt-notification-v2__item-desc'>" +improvements[i].description+"</div>"+
 														"	</div>" +
 														"	<div class='progress' style='height: 25px; width:200px'>" +
-														"		<div class='progress-bar' role='progressbar' style='width:"+perc_currentMeasure+"%; height: 25px; vertical-align: middle;' aria-valuenow='"+perc_currentMeasure+"' aria-valuemin='0' aria-valuemax='100'><h6 style='margin:0'>"+(perc_currentMeasure/100)+"</h6></div>" +
+														"		<div class='progress-bar' role='progressbar' style='width:"+perc_currentMeasure+"%; height: 25px; vertical-align: middle;' aria-valuenow='"+perc_currentMeasure+"' aria-valuemin='0' aria-valuemax='100'><h6 style='margin:0'>"+((perc_currentMeasure/100) >= 0.1 ? (perc_currentMeasure/100) : '')+"</h6></div>" +
 														"		<div class='progress-bar' role='progressbar' style='width:"+(perc_currentMeasure < 80 ? perc_improvement : (100-perc_currentMeasure))+"%; height: 25px; vertical-align: middle; background-color:green;' aria-valuenow='"+(perc_currentMeasure < 80 ? perc_improvement : (100-perc_currentMeasure))+"' aria-valuemin='0' aria-valuemax='100'><h6 style='margin:0; background-color: green'>"+(perc_currentMeasure < 80 ? perc_improvement/100 : (100-perc_currentMeasure)/100)+"</h6></div>" +
 														"	</div>" +
 														"	<i class='flaticon2-arrow-up' style='margin:1%; color:green;'> </i>" +
@@ -349,28 +360,27 @@ var Datatable = function(){
 						   			var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
 						   			return results[1] || 0;
 						   		}
-								
-								var options = { 
-							        //beforeSubmit: showRequest,  // pre-submit callback 
-							        success: function(){
-							        	console.log("DONE")
-							        },  // post-submit callback 
-							        url: "sendFeedback?courseId="+$.urlParam('courseId')+"&userId="+$.urlParam('userId')+ACTION_PARAM+FEEDBACK_PARAM+"&date="+row.data.end,         // override for form's 'action' attribute 
-							        type:'get',        // 'get' or 'post', override for form's 'method' attribute 
-							        dataType:  'json',        // 'xml', 'script', or 'json' (expected server response type) 
-							        clearForm: true,        // clear all form fields after successful submit 
-							        resetForm: true        // reset the form after successful submit 
-							    }; 
+
 							 
 							    // bind to the form's submit event 
 							    $('.btn-success[data-ktwizard-type=action-submit]').click(function() { 
-							        // inside event callbacks 'this' is the DOM element so we first 
-							        // wrap it in a jQuery object and then invoke ajaxSubmit 
-							        $(this).ajaxSubmit(options); 
-							 
-							        // !!! Important !!! 
-							        // always return false to prevent standard browser submit and page navigation 
-							        //return false; 
+							    	
+							    	if($('#action_input').attr('placeholder') != "" && $('#feedback_input').attr('placeholder') != ""){
+							    		$.ajax({
+							    			type: "GET",
+							    			url: "/sendFeedback",
+							    			data : "courseId="+$.urlParam('courseId')+"&userId="+$.urlParam('userId')+ACTION_PARAM+FEEDBACK_DESC+"&date="+endDate,
+							    	        contentType: "application/json; charset=utf-8",
+							    			dataType: "json",
+							    			success: function(data){
+							    				console.log("ajaxFeedback",data);
+							    				location.reload();
+							    			},
+							    			error: function(err){
+							    				console.log("error",err)
+							    			}
+							    		}); 
+							    	}
 							    }); 
 								
 							},

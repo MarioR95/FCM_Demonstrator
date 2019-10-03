@@ -142,7 +142,7 @@ function executeMap(weekNumber){
 	});
 	
 	jqxhr.done(function(response){
-		location.reload();
+		//location.reload();
 	});
 	
 	jqxhr.fail(function(response){

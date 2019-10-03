@@ -40,6 +40,8 @@ GET		/feedbackPrediction 		controllers.Application.retrieveFeedbackImprovements(
 GET 	/retrieveStudentsStatus		controllers.Application.retrieveStudentsStatus(request: Request, courseId: String)
 +anyhost
 GET 	/checkEfficacy				controllers.Application.checkEfficacy(request: Request, courseId: String, userId: String, prevDate: String, prevWeek: Integer)
++anyhost
+GET		/sendFeedback				controllers.Application.sendFeedback(request: Request, courseId: String, userId: String, actionId: Integer, description: String, date: String)
 
 # Map static resources from the /public folder to the /assets URL path
 +anyhost
