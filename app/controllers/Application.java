@@ -207,9 +207,8 @@ public class Application extends Controller {
 		try {
 			
 			FeedbackDao.updateFeedback(currentDate, actionId, description, courseId, userId, date);
-		
+			//TODO notification system: send a notification both user and teacher.
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
 		
@@ -226,7 +225,6 @@ public class Application extends Controller {
 			FeedbackDao.createBaseFeedback(courseId, userId, weekNumber);
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -255,7 +253,6 @@ public class Application extends Controller {
 		
 		FirstLevelFeedbackAssociationDto actionGroup= null;
 		try {
-			System.out.println(q_eng+" "+q_mot);
 			actionGroup = FirstLevelFeedbackAssociationDao.retrieveActionGroup(q_mot, q_eng);
 			List<GroupsAssociationDto> groups= GroupsAssociationDao.retrieveActionsList(actionGroup.getGroupId());
 			
@@ -291,19 +288,17 @@ public class Application extends Controller {
 	}
 	
 	public Result checkEfficacy(Http.Request request,String courseId, String userId, String prevDate, int prevWeek) {
-		String efficacy= "";
+		int efficacy= -1;
 		try {
-			
+			System.out.println("prev week- "+prevWeek);
 			UserMeasureDto prevMeasures= UserMeasureDao.retieveLastUserMeasure(courseId, userId, prevWeek);
-			
+			System.out.println("prev measure. "+ prevMeasures);
 			UserMeasureDto currMeasures= UserMeasureDao.retieveLastUserMeasure(courseId, userId, prevWeek+1);
+			System.out.println("curr measure. "+ currMeasures);
 			FeedbackDto lastFeedbackReceived= FeedbackDao.retrieveFeedbacByDate(courseId, userId, prevDate);
-			//Retrieve dell'improvement
 			List<FeedbackPredictionDto> improvements = FeedbackPredictionDao.retrieveImprovementsByActionId(lastFeedbackReceived.getActionId()); 
 			//Check over curr_Measures and (preMeasures+improvements)
 			if(improvements.size() == 1) {
-				double improvement= improvements.get(0).getImprovement();
-				double max_threshold= 0.0;
 				double prev_conceptValue=0.0;
 				double curr_conceptValue=0.0;
 				
@@ -324,27 +319,54 @@ public class Application extends Controller {
 					break;
 				}
 				
-				max_threshold= prev_conceptValue+improvement;
-				
-				if(curr_conceptValue > prev_conceptValue && curr_conceptValue <= max_threshold) {	//THERE WAS AN IMPROVEMENT
-					efficacy="Positive";
-				}
-				else if(curr_conceptValue == prev_conceptValue) { 	//NO IMPROVEMENT
-					efficacy="Neutral";
+				if(curr_conceptValue > prev_conceptValue) {	//THERE WAS AN IMPROVEMENT
+					efficacy=2;
+				}else if(curr_conceptValue == prev_conceptValue) { 	//NO IMPROVEMENT
+					efficacy=1;
 				}else if(curr_conceptValue < prev_conceptValue){	//THERE WAS A WORSENING
-					efficacy="Negative"; 
+					efficacy=0; 
 				}
 				
 			}else {
+				double prev_conceptsAvg= 0.0;
+				double curr_conceptsAvg= 0.0;
+
 				for(FeedbackPredictionDto f: improvements) {
 					
+					switch (f.getConcept()) {
+					case "Forum Activities":
+						prev_conceptsAvg += prevMeasures.getC7();
+						curr_conceptsAvg += currMeasures.getC7();
+						break;
+					case "Interaction":
+						prev_conceptsAvg += prevMeasures.getC17();
+						curr_conceptsAvg += currMeasures.getC17();
+						break;
+					case "Assignment":
+						prev_conceptsAvg += prevMeasures.getC16();
+						curr_conceptsAvg += currMeasures.getC16();
+						break;
+					default:
+						break;
+					}
+				}
+				
+				if(curr_conceptsAvg > prev_conceptsAvg) {	//THERE WAS AN IMPROVEMENT
+					efficacy=2;
+				}else if(curr_conceptsAvg == prev_conceptsAvg) { 	//NO IMPROVEMENT
+					efficacy=1;
+				}else if(curr_conceptsAvg < prev_conceptsAvg){	//THERE WAS A WORSENING
+					efficacy=0; 
 				}
 			}
+			
+			FeedbackDao.updateFeedbackEfficacy(courseId, userId, prevDate, efficacy);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return ok(Json.toJson(efficacy));
+		
+		return ok(Json.toJson(200));
 	}
 	
 	

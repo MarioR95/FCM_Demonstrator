@@ -6,27 +6,25 @@ var Datatable = function(){
 	var checkLastFeedbackEfficacy= function(prev_row, row, index){
 		var prev_date= prev_row.find('td[data-field=end]').text();
 		
-			//Get URL
-	   		$.urlParam = function(name){
-	   			var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-	   			return results[1] || 0;
-	   		}
-			$.ajax({
-				type : "GET",
-				url : "/checkEfficacy",
-				data : "courseId="+$.urlParam('courseId')+"&userId="+$.urlParam('userId')+"&prevDate="+prev_date+"&prevWeek="+index,
-				contentType : "application/json; charset=utf-8",
-				dataType : "json",
-				success : function(data) {
-					alert("EFFICACY "+data)
-				},
-				error : function(err) {
-					console.log(err)
-				}
-			});
-		
-		
-		
+		//Get URL
+   		$.urlParam = function(name){
+   			var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+   			return results[1] || 0;
+   		}
+		$.ajax({
+			type : "GET",
+			url : "/checkEfficacy",
+			data : "courseId="+$.urlParam('courseId')+"&userId="+$.urlParam('userId')+"&prevDate="+prev_date+"&prevWeek="+index,
+			contentType : "application/json; charset=utf-8",
+			dataType : "json",
+			success : function(data) {
+				location.reload();
+			},
+			error : function(err) {
+				console.log(err)
+			}
+		});
+	
 	}
 	
 	var subTable = function(e){
@@ -54,32 +52,32 @@ var Datatable = function(){
 		    break;
 		   default:
 			   type = " - ";
-		   	   typeColor = "Dark"
+		   	   typeColor = "dark"
 		    break;
 		}
 		
 		switch (e.data.efficacy) {
-		  case -1:
+		  case 0:
 			  efficacy = "Negative";
 			  efficacyColor = "danger";
 			break;
-		  case 0:
+		  case 1:
 			  efficacy = "Neutral";
 			  efficacyColor = "brand"; 
 		    break;
-		  case 1:
+		  case 2:
 			  efficacy = "Positive";
 			  efficacyColor = "success";
 		    break;
 		  default:
 			  efficacy = " - ";
-		  	  efficacyColor = "Dark"
+		  	  efficacyColor = "dark"
 		    break;
 		}
 		
 		if(e.data.status == 0){
 			  status = "Not Sent";
-			  statusColor = "warning";
+			  statusColor = "danger";
 		 }
 		 else{
 			  status = "Sent";
@@ -89,7 +87,7 @@ var Datatable = function(){
 		if(e.data.type >= 0 && e.data.type <= 3){
 		
 			$(e.subTable).html(
-					"<table class='table' style='width: 20%'>" +
+					"<table class='table' style='width: 30%; text-align: center'>" +
 						"<tr>" +
 							"<th colspan=2 style='text-align:center'>Feedback Details</td>" +
 						"</tr>" +
@@ -141,7 +139,7 @@ var Datatable = function(){
 				'"engagement": 0 ,'+
 				'"type": -1 ,'+
 				'"status": 0 ,'+
-				'"efficacy": -2'+
+				'"efficacy": -1'+
 				'}';
 			
 			toJson+=x;
@@ -192,9 +190,9 @@ var Datatable = function(){
 						executeMap(index+1);
 						
 						//CHECK PREVIOUS FEEDBACK EFFICACY
-						if(index > 1){
+						if(index > 0){
 							var prev_row= $("tr[data-row="+(index-1)+"]");
-							checkLastFeedbackEfficacy(prev_row, row, index-1);	
+							checkLastFeedbackEfficacy(prev_row, row, index);	
 						}
 						
 						

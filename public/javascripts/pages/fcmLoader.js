@@ -142,7 +142,8 @@ function executeMap(weekNumber){
 	});
 	
 	jqxhr.done(function(response){
-		//location.reload();
+		if(weekNumber == 1)
+			location.reload();
 	});
 	
 	jqxhr.fail(function(response){

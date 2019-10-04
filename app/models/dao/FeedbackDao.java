@@ -16,6 +16,7 @@ import models.database.ConnectionPool;
 import models.database.FileQueryReader;
 import models.dto.FeedbackDto;
 import models.dto.UserMeasureDto;
+import utilities.ActionAssociation;
 import utilities.DateUtil;
 import utilities.TrimmedBeanHandler;
 import utilities.TrimmedBeanListHandler;
@@ -40,12 +41,13 @@ public class FeedbackDao {
 					return 1;
 				}
 			};
-			
-			//TODO method to choose the right type of feedback
-			
+						
 			UserMeasureDto lastMeasure = UserMeasureDao.retieveLastUserMeasure(courseId, userId, weekNumber);
 			
-			int type = computeFeedbackType(lastMeasure.getC2(), lastMeasure.getC3());
+			String c_mot= ActionAssociation.getConceptQualifier(lastMeasure.getC2());
+			String c_eng= ActionAssociation.getConceptQualifier(lastMeasure.getC3());
+			
+			int type = MeasurementsAssociationDao.doRetrieveAssociation(c_mot, c_eng).getFeedbackType();
 			
 			qRunner.insert(conn, FileQueryReader.getQuery("FEEDBACK_S05"), rsh, new Object[]{DateUtil.format(currentDate), courseId, userId, type});
 		}
@@ -73,12 +75,19 @@ public class FeedbackDao {
 		
 	}
 
-	private static int computeFeedbackType(double motivation, double engagement) throws ConfigurationException, Exception {
+	public static void updateFeedbackEfficacy(String courseId, String userId, String feedbackDate, int efficacy) throws ConfigurationException, Exception {
+		Connection conn = null;
 		
-		int value = 0;		
-		
-		
-		return value;
+		try {
+			conn = ConnectionPool.getSingleton(IConstants.DB_KEY);
+			QueryRunner qRunner = new QueryRunner();
+			
+			qRunner.update(conn, FileQueryReader.getQuery("FEEDBACK_S07"),new Object[]{efficacy, courseId, userId, feedbackDate});
+
+			
+		} finally {
+			ConnectionPool.close(conn);
+		}
 	}
 	
 	public static List<FeedbackDto> retrieveFeedbackList(String courseId, String userId) throws ConfigurationException, Exception {
@@ -134,7 +143,7 @@ public class FeedbackDao {
 		}
 	}
 	
-public static FeedbackDto retrieveFeedbacByDate(String courseId, String userId, String date) throws ConfigurationException, Exception {
+	public static FeedbackDto retrieveFeedbacByDate(String courseId, String userId, String date) throws ConfigurationException, Exception {
 		
 		Connection conn = null;
 		

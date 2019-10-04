@@ -43,6 +43,13 @@
 			WHERE courseId = ? and userId = ? and measureDate=?
 		</content>
 	</query>
+	<query name="FEEDBACK_S07">
+		<content delimiterParsingDisabled="true">
+			UPDATE feedback 
+			SET efficacy = ?
+			WHERE courseId = ? and userId = ? and feedbackDate=?
+		</content>
+	</query>
 	<query name="LOGIN_S01">
 		<content delimiterParsingDisabled="true">
 			SELECT *
