@@ -4,9 +4,10 @@ var Datatable = function(){
 	var jsonArray;
 	
 	var subTable = function(e){
-		
+		console.log(e.data)
 		var status,statusColor;
-		var type,typeColor
+		var actionType
+		var type,typeColor;
 		var efficacy,efficacyColor;
 		
 		switch (e.data.type) {
@@ -30,6 +31,15 @@ var Datatable = function(){
 			   type = " - ";
 		   	   typeColor = "dark"
 		    break;
+		}
+		
+		switch(e.data.actionType){
+		  case "null": 
+			  actionType= "-";
+			  break;
+		  default:
+			  actionType= e.data.actionType;
+		  	  break;
 		}
 		
 		switch (e.data.efficacy) {
@@ -63,20 +73,21 @@ var Datatable = function(){
 		if(e.data.type >= 0 && e.data.type <= 3){
 		
 			$(e.subTable).html(
-					"<table class='table' style='width: 30%; text-align: center'>" +
+					"<table class='table' style='width: 40%;'>" +
 						"<tr>" +
-							"<th colspan=2 style='text-align:center'>Feedback Details</td>" +
+							"<td><b>Action Type</b></td>" +
+							"<td>"+actionType+"</td>" +
 						"</tr>" +
 						"<tr>" +
-							"<td>Type</td>" +
+							"<td><b>Feedback Type</b></td>" +
 							"<td><span class='kt-badge kt-badge--"+typeColor+" kt-badge--inline kt-badge--pill'>"+type+"</span></td>" +
 						"</tr>" +
 						"<tr>" +
-							"<td>Status</td>" +
+							"<td><b>Status</b></td>" +
 							"<td><span class='kt-badge kt-badge--"+statusColor+" kt-badge--inline kt-badge--pill'>"+status+"</span></td>" +
 						"</tr>" +
 						"<tr>" +
-							"<td>Feedback Efficacy</td>" +
+							"<td><b>Feedback Efficacy</b></td>" +
 							"<td><span class='kt-badge kt-badge--"+efficacyColor+" kt-badge--inline kt-badge--pill'>"+efficacy+"</span></td>" +
 						"</tr>" +
 					"</table>");
@@ -98,6 +109,7 @@ var Datatable = function(){
 						'"motivation":'+Number(mot[i]).toFixed(2)+','+
 						'"engagement":'+Number(eng[i]).toFixed(2)+','+
 						'"type":'+feedback[i].type+','+
+						'"actionType":"'+feedback[i].actionType+'",'+
 						'"status":'+feedback[i].status+','+
 						'"efficacy":'+feedback[i].efficacy+''+
 						'}'+(i != (courseLife-1) ? "," : "")+'';
@@ -114,6 +126,7 @@ var Datatable = function(){
 				'"motivation": 0 ,'+
 				'"engagement": 0 ,'+
 				'"type": -1 ,'+
+				'"actionType": "-",'+
 				'"status": 0 ,'+
 				'"efficacy": -1'+
 				'}';
@@ -128,7 +141,7 @@ var Datatable = function(){
 	}
 	
 	var fill_datatable = function(eng, mot, startDate, dates, n_samples,courseLife,feedback){
-		
+		console.log(feedback);
 		jsonArray = createJson(eng, mot, startDate, dates, n_samples,courseLife,feedback);
 		
 		var datatable = $('#feedbackDatatable').KTDatatable({
@@ -144,6 +157,14 @@ var Datatable = function(){
 				scroll: false,
 				height: null,
 				footer: false,
+				
+				icons: {
+					rowDetail: {
+						  expand: 'fa fa-caret-down',
+						  collapse: 'fa fa-caret-right pulse'
+						}
+				}
+				
 			},
 
 			sortable: false,
@@ -160,9 +181,6 @@ var Datatable = function(){
 			rows:{
 				
 				afterTemplate: function (row, content, index) {
-					
-					row.find("td[data-field=id]").addClass("pulse");
-					
 					
 					row.find("#measure"+(index+1)).click(function(){
 						//GET NEW MEASUREMENTS
@@ -370,8 +388,8 @@ var Datatable = function(){
 			columns: [
 				{
 					field: 'id',
-					title: '',
-					width: 10,
+					title: 'Feedback Details',
+					textAlign: "center",
 				}, {
 					field: 'weekOfMeasure',
 					title: 'WeekOfMeasure',
