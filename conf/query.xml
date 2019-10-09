@@ -39,7 +39,7 @@
 	<query name="FEEDBACK_S06">
 		<content delimiterParsingDisabled="true">
 			UPDATE feedback 
-			SET feedbackDate=?, status=1, content=?, actionId=?
+			SET feedbackDate=?, status=1, content=?, actionType=?, actionId=?
 			WHERE courseId = ? and userId = ? and measureDate=?
 		</content>
 	</query>

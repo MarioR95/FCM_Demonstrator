@@ -194,6 +194,7 @@ var Datatable = function(){
 							success : function(data) {
 
 								var ACTION_PARAM='';
+								var ACTION_TYPE_PARAM='';
 								var FEEDBACK_PARAM='';
 								var FEEDBACK_DESC='';
 								var currentMeasures= data['currentMeasures'];
@@ -229,6 +230,7 @@ var Datatable = function(){
 									var actionId= $(this).find('.input_actionId').attr('value');
 									
 									ACTION_PARAM = "&actionId="+actionId;
+									ACTION_TYPE_PARAM= "&actionType="+label_name;
 									
 									var actions= data[label_name];
 									$('#actions-container').empty();
@@ -271,9 +273,7 @@ var Datatable = function(){
 								        contentType: "application/json; charset=utf-8",
 										dataType: "json",
 										success: function(data){
-											const c7= "Forum Activities";
-											const c16= "Assignment";
-											const c17= "Interaction";
+											
 											
 											var improvements = data['improvements']; 
 											$('#feedback_prediction_container').empty();
@@ -287,6 +287,7 @@ var Datatable = function(){
 													perc_currentMeasure= currentMeasures['c16']*100
 												if(improvements[i].concept == 'Interaction')
 													perc_currentMeasure= currentMeasures['c17']*100
+												
 												//FIRST PAGE
 												$('#feedback_prediction_container').append(
 														"<div class='kt-notification-v2__item'>" +
@@ -339,7 +340,7 @@ var Datatable = function(){
 							    		$.ajax({
 							    			type: "GET",
 							    			url: "/sendFeedback",
-							    			data : "courseId="+$.urlParam('courseId')+"&userId="+$.urlParam('userId')+ACTION_PARAM+FEEDBACK_DESC+"&date="+endDate,
+							    			data : "courseId="+$.urlParam('courseId')+"&userId="+$.urlParam('userId')+ACTION_PARAM+ACTION_TYPE_PARAM+FEEDBACK_DESC+"&date="+endDate,
 							    	        contentType: "application/json; charset=utf-8",
 							    			dataType: "json",
 							    			success: function(data){
