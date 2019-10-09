@@ -3,30 +3,6 @@ var Datatable = function(){
 	
 	var jsonArray;
 	
-	var checkLastFeedbackEfficacy= function(prev_row, row, index){
-		var prev_date= prev_row.find('td[data-field=end]').text();
-		
-		//Get URL
-   		$.urlParam = function(name){
-   			var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-   			return results[1] || 0;
-   		}
-		$.ajax({
-			type : "GET",
-			url : "/checkEfficacy",
-			data : "courseId="+$.urlParam('courseId')+"&userId="+$.urlParam('userId')+"&prevDate="+prev_date+"&prevWeek="+index,
-			contentType : "application/json; charset=utf-8",
-			dataType : "json",
-			success : function(data) {
-				location.reload();
-			},
-			error : function(err) {
-				console.log(err)
-			}
-		});
-	
-	}
-	
 	var subTable = function(e){
 		
 		var status,statusColor;
@@ -185,17 +161,14 @@ var Datatable = function(){
 				
 				afterTemplate: function (row, content, index) {
 					
+					row.find("td[data-field=id]").addClass("pulse");
+					
+					
 					row.find("#measure"+(index+1)).click(function(){
 						//GET NEW MEASUREMENTS
-						executeMap(index+1);
+						executeMap(index);
 						
-						//CHECK PREVIOUS FEEDBACK EFFICACY
-						if(index > 0){
-							var prev_row= $("tr[data-row="+(index-1)+"]");
-							checkLastFeedbackEfficacy(prev_row, row, index);	
-						}
-						
-						
+	
 					});
 					
 					row.find("#view"+(index+1)).click(function(){
@@ -244,8 +217,7 @@ var Datatable = function(){
 											"</a>");
 								}
 								
-								
-							    
+
 						    	//HANDLE ACTONS LIST
 								$('.kt-wizard-v2__nav-item').on('click', function(){
 									$(this).attr("data-ktwizard-state", "current");
@@ -503,6 +475,7 @@ jQuery(document).ready(function() {
 		success: function(data){
 			//Datatable
 			Datatable.init(data);
+			
 		},
 		error: function(err){
 			console.log(err)

@@ -83,8 +83,7 @@ public class Application extends Controller {
 				String status;
 				UserHistoryDto user = UserHistoryDao.retrieveUserByCourseAndUserId(courseId, members.get(i).getUserId());
 				String lastEvent = user.getLastEvent();
-					
-							
+		
 				result[i]= new ArrayList<String>();
 				result[i].add(members.get(i).getEmail());
 				result[i].add(members.get(i).getUserId());
@@ -227,9 +226,8 @@ public class Application extends Controller {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-		return ok();
+
+		return ok("200");
 	}
 
 	public Result fetchStudentMeasurements(Http.Request request, String courseId, String userId, int weekNumber) {
@@ -290,11 +288,8 @@ public class Application extends Controller {
 	public Result checkEfficacy(Http.Request request,String courseId, String userId, String prevDate, int prevWeek) {
 		int efficacy= -1;
 		try {
-			System.out.println("prev week- "+prevWeek);
 			UserMeasureDto prevMeasures= UserMeasureDao.retieveLastUserMeasure(courseId, userId, prevWeek);
-			System.out.println("prev measure. "+ prevMeasures);
 			UserMeasureDto currMeasures= UserMeasureDao.retieveLastUserMeasure(courseId, userId, prevWeek+1);
-			System.out.println("curr measure. "+ currMeasures);
 			FeedbackDto lastFeedbackReceived= FeedbackDao.retrieveFeedbacByDate(courseId, userId, prevDate);
 			List<FeedbackPredictionDto> improvements = FeedbackPredictionDao.retrieveImprovementsByActionId(lastFeedbackReceived.getActionId()); 
 			//Check over curr_Measures and (preMeasures+improvements)
@@ -359,7 +354,6 @@ public class Application extends Controller {
 					efficacy=0; 
 				}
 			}
-			
 			FeedbackDao.updateFeedbackEfficacy(courseId, userId, prevDate, efficacy);
 			
 		} catch (Exception e) {

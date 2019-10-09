@@ -47,7 +47,7 @@
 		<content delimiterParsingDisabled="true">
 			UPDATE feedback 
 			SET efficacy = ?
-			WHERE courseId = ? and userId = ? and feedbackDate=?
+			WHERE courseId = ? and userId = ? and measureDate=?
 		</content>
 	</query>
 	<query name="LOGIN_S01">
