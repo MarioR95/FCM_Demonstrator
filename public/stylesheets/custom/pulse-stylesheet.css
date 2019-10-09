@@ -2,7 +2,8 @@
   border-radius: 50%;
   width: 1px;
   height: 1px;
-  padding: 10px;
+  padding: 7px;
+  padding-left: 4px;
   cursor: pointer;
   box-shadow: 0 0 0 rgba(134, 154, 255, 1);
   animation: pulse 2s infinite;

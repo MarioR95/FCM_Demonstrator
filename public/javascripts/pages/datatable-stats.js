@@ -144,6 +144,14 @@ var Datatable = function(){
 				scroll: false,
 				height: null,
 				footer: false,
+				
+				icons: {
+					rowDetail: {
+						  expand: 'fa fa-caret-down',
+						  collapse: 'fa fa-caret-right pulse'
+						}
+				}
+				
 			},
 
 			sortable: false,
@@ -160,9 +168,6 @@ var Datatable = function(){
 			rows:{
 				
 				afterTemplate: function (row, content, index) {
-					
-					row.find("td[data-field=id]").addClass("pulse");
-					
 					
 					row.find("#measure"+(index+1)).click(function(){
 						//GET NEW MEASUREMENTS
@@ -369,8 +374,8 @@ var Datatable = function(){
 			columns: [
 				{
 					field: 'id',
-					title: '',
-					width: 10,
+					title: 'Feedback Details',
+					textAlign: "center",
 				}, {
 					field: 'weekOfMeasure',
 					title: 'WeekOfMeasure',
