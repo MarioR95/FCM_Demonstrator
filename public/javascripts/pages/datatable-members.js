@@ -1,26 +1,21 @@
 //Class definition
 var Datatable = function(){
+
 	
-	
-	
-	var retrieveUsersMeasures = function(){
-		
-		
-		
-	}
-	
-	
-	var fill_datatable= function(n_members, emails, ids, names, surnames, lastEvents, status){
-		
+	var fill_datatable= function(n_members, emails, ids, names, surnames, lastEvents,status){
 		for(var i=0; i<n_members; i++){
-			
+				
 			var color;
-			if(status[ids[i]] == "dropped")
+			if(status[ids[i]] == 'undefined')
+				color = "dark";
+			else if(status[ids[i]] == "dropped")
 				color = "danger";
 			else if(status[ids[i]] == "warning")
 				color = "warning";
 			else
 				color = "success";
+			
+			
 			
 			$("#tbody-members").append(
 			"<tr>"+
@@ -28,7 +23,7 @@ var Datatable = function(){
 		    "  	<td>"+names[i]+"</td>"+
 		    "  	<td>"+surnames[i]+"</td>"+
 		    "  	<td>"+ids[i]+"</td>"+
-		    "	<td class='kt-font-"+color+"'>"+status[ids[i]]+"</td>"+ 
+		    "	<td><span class='kt-badge kt-badge--"+color+"  kt-badge--inline kt-badge--pill'>"+status[ids[i]]+"</span></td>"+
 		    "  	<td>"+lastEvents[i]+"</td>"+
 		    "  	<td>"+
 			"      	<div class='dropdown dropright'>"+
@@ -59,7 +54,6 @@ var Datatable = function(){
 			var ids= [];
 			var lastEvents= [];
 			var status = membersStatus;
-			
 			for(var i=0; i<n_members; i++){
 				emails[i]= members[i][0];
 				ids[i]= members[i][1];

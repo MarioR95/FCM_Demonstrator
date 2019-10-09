@@ -4,9 +4,10 @@ var Datatable = function(){
 	var jsonArray;
 	
 	var subTable = function(e){
-		
+		console.log(e.data)
 		var status,statusColor;
-		var type,typeColor
+		var actionType
+		var type,typeColor;
 		var efficacy,efficacyColor;
 		
 		switch (e.data.type) {
@@ -28,59 +29,69 @@ var Datatable = function(){
 		    break;
 		   default:
 			   type = " - ";
-		   	   typeColor = "Dark"
+		   	   typeColor = "dark"
 		    break;
 		}
 		
+		switch(e.data.actionType){
+		  case "null": 
+			  actionType= "-";
+			  break;
+		  default:
+			  actionType= e.data.actionType;
+		  	  break;
+		}
+		
 		switch (e.data.efficacy) {
-		  case -1:
+		  case 0:
 			  efficacy = "Negative";
 			  efficacyColor = "danger";
 			break;
-		  case 0:
+		  case 1:
 			  efficacy = "Neutral";
 			  efficacyColor = "brand"; 
 		    break;
-		  case 1:
+		  case 2:
 			  efficacy = "Positive";
 			  efficacyColor = "success";
 		    break;
 		  default:
 			  efficacy = " - ";
-		  	  efficacyColor = "Dark"
+		  	  efficacyColor = "dark"
 		    break;
 		}
 		
 		if(e.data.status == 0){
 			  status = "Not Sent";
-			  statusColor = "warning";
+			  statusColor = "danger";
 		 }
 		 else{
 			  status = "Sent";
 			  statusColor = "success";
 		 }
 		
-		//if(e.data.type != -1){
+		if(e.data.type >= 0 && e.data.type <= 3){
 		
 			$(e.subTable).html(
-					"<table class='table' style='width: 15%'>" +
+					"<table class='table' style='width: 40%;'>" +
 						"<tr>" +
-							"<th colspan=2 style='text-align:center'>Feedback Details</td>" +
+							"<td><b>Action Type</b></td>" +
+							"<td>"+actionType+"</td>" +
 						"</tr>" +
 						"<tr>" +
-							"<td>Type</td>" +
-							"<td class='kt-font-"+typeColor+"'>"+type+"</td>" +
+							"<td><b>Feedback Type</b></td>" +
+							"<td><span class='kt-badge kt-badge--"+typeColor+" kt-badge--inline kt-badge--pill'>"+type+"</span></td>" +
 						"</tr>" +
 						"<tr>" +
-							"<td>Status</td>" +
-							"<td class='kt-font-"+statusColor+"'>"+status+"</td>" +
+							"<td><b>Status</b></td>" +
+							"<td><span class='kt-badge kt-badge--"+statusColor+" kt-badge--inline kt-badge--pill'>"+status+"</span></td>" +
 						"</tr>" +
 						"<tr>" +
-							"<td>Feedback Efficacy</td>" +
-							"<td class='kt-font-"+efficacyColor+"'>"+efficacy+"</td>" +
+							"<td><b>Feedback Efficacy</b></td>" +
+							"<td><span class='kt-badge kt-badge--"+efficacyColor+" kt-badge--inline kt-badge--pill'>"+efficacy+"</span></td>" +
 						"</tr>" +
 					"</table>");
-		//}
+		}
 	}
 	
 	var createJson = function(eng, mot, startDate, dates, n_samples,courseLife,feedback){
@@ -93,11 +104,12 @@ var Datatable = function(){
 			var x = '{ '+
 						'"id":'+(i+1)+','+
 						'"weekOfMeasure":'+(i+1)+','+
-						'"start":"'+(i== 0 ? startDate : dates[i-1])+'",'+
+						'"start":"'+(i == 0 ? startDate : dates[i-1])+'",'+
 						'"end":"'+dates[i]+'",'+
 						'"motivation":'+Number(mot[i]).toFixed(2)+','+
 						'"engagement":'+Number(eng[i]).toFixed(2)+','+
 						'"type":'+feedback[i].type+','+
+						'"actionType":"'+feedback[i].actionType+'",'+
 						'"status":'+feedback[i].status+','+
 						'"efficacy":'+feedback[i].efficacy+''+
 						'}'+(i != (courseLife-1) ? "," : "")+'';
@@ -114,8 +126,9 @@ var Datatable = function(){
 				'"motivation": 0 ,'+
 				'"engagement": 0 ,'+
 				'"type": -1 ,'+
+				'"actionType": "-",'+
 				'"status": 0 ,'+
-				'"efficacy": -2'+
+				'"efficacy": -1'+
 				'}';
 			
 			toJson+=x;
@@ -127,13 +140,11 @@ var Datatable = function(){
 	
 	}
 	
-	var fill_datatable2 = function(eng, mot, startDate, dates, n_samples,courseLife,feedback){
-		
+	var fill_datatable = function(eng, mot, startDate, dates, n_samples,courseLife,feedback){
+		console.log(feedback);
 		jsonArray = createJson(eng, mot, startDate, dates, n_samples,courseLife,feedback);
 		
 		var datatable = $('#feedbackDatatable').KTDatatable({
-			
-			
 			// datasource definition
 			data: {
 				type: 'local',
@@ -146,6 +157,14 @@ var Datatable = function(){
 				scroll: false,
 				height: null,
 				footer: false,
+				
+				icons: {
+					rowDetail: {
+						  expand: 'fa fa-caret-down',
+						  collapse: 'fa fa-caret-right pulse'
+						}
+				}
+				
 			},
 
 			sortable: false,
@@ -161,10 +180,13 @@ var Datatable = function(){
 			
 			rows:{
 				
-				afterTemplate: function (row, data, index) {
+				afterTemplate: function (row, content, index) {
 					
 					row.find("#measure"+(index+1)).click(function(){
-						executeMap(index+1);
+						//GET NEW MEASUREMENTS
+						executeMap(index);
+						
+	
 					});
 					
 					row.find("#view"+(index+1)).click(function(){
@@ -173,8 +195,9 @@ var Datatable = function(){
 					});
 					
 					
-					$("#send"+(index+1)).click(function() {
-						console.log("week= "+ (index+1));
+					row.find("#send"+(index+1)).click(function() {
+						var endDate= content.end;
+						
 				   		//Get URL
 				   		$.urlParam = function(name){
 				   			var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -187,8 +210,12 @@ var Datatable = function(){
 							contentType : "application/json; charset=utf-8",
 							dataType : "json",
 							success : function(data) {
-								var currentMeasures= data['currentMeasures'];
 
+								var ACTION_PARAM='';
+								var ACTION_TYPE_PARAM='';
+								var FEEDBACK_PARAM='';
+								var FEEDBACK_DESC='';
+								var currentMeasures= data['currentMeasures'];
 								var keys= Object.keys(data)
 								$('.kt-wizard-v2__nav-items').empty();
 								$('#feedback_prediction_container').empty();
@@ -203,13 +230,13 @@ var Datatable = function(){
 											"		<div class='kt-wizard-v2__nav-label'>" +
 											"			<div class='kt-wizard-v2__nav-label-title'>"+keys[i]+"</div>" +
 											"			<div class='kt-wizard-v2__nav-label-desc'>"+data[keys[i]][i].actionDescription+"</div>" +
+											"			<input class='input_actionId' type='hidden' value='"+data[keys[i]][i].actionGroupId+"'/> "+
 											"		</div>" +
 											"	</div>" +
 											"</a>");
 								}
 								
 
-							    
 						    	//HANDLE ACTONS LIST
 								$('.kt-wizard-v2__nav-item').on('click', function(){
 									$(this).attr("data-ktwizard-state", "current");
@@ -218,8 +245,10 @@ var Datatable = function(){
 										$(this).attr("data-ktwizard-state", "pending");
 									});
 									var label_name= $(this).find('.kt-wizard-v2__nav-label-title').html();
+									var actionId= $(this).find('.input_actionId').attr('value');
 									
-									ACTION_PARAM = "?actionType="+label_name;
+									ACTION_PARAM = "&actionId="+actionId;
+									ACTION_TYPE_PARAM= "&actionType="+label_name;
 									
 									var actions= data[label_name];
 									$('#actions-container').empty();
@@ -244,7 +273,9 @@ var Datatable = function(){
 									$('.kt-feedback__item').click(function(){
 										$(this).css("background-color", "#F4F6F9");
 										var label_name= $(this).find('.kt-notification-v2__item-title').html();
-										FEEDBACK_PARAM = "?feedback="+label_name;
+										var label_desc= $(this).find('.kt-notification-v2__item-desc').html();
+										FEEDBACK_PARAM = "&feedback="+label_name;
+										FEEDBACK_DESC = "&description="+label_desc;
 										$('#feedback_input').attr('placeholder', label_name);
 									})
 									
@@ -260,9 +291,7 @@ var Datatable = function(){
 								        contentType: "application/json; charset=utf-8",
 										dataType: "json",
 										success: function(data){
-											const c7= "Forum Activities";
-											const c16= "Assignment";
-											const c17= "Interaction";
+											
 											
 											var improvements = data['improvements']; 
 											$('#feedback_prediction_container').empty();
@@ -276,6 +305,7 @@ var Datatable = function(){
 													perc_currentMeasure= currentMeasures['c16']*100
 												if(improvements[i].concept == 'Interaction')
 													perc_currentMeasure= currentMeasures['c17']*100
+												
 												//FIRST PAGE
 												$('#feedback_prediction_container').append(
 														"<div class='kt-notification-v2__item'>" +
@@ -284,7 +314,7 @@ var Datatable = function(){
 														"		<div class='kt-notification-v2__item-desc'>" +improvements[i].description+"</div>"+
 														"	</div>" +
 														"	<div class='progress' style='height: 25px; width:200px'>" +
-														"		<div class='progress-bar' role='progressbar' style='width:"+perc_currentMeasure+"%; height: 25px; vertical-align: middle;' aria-valuenow='"+perc_currentMeasure+"' aria-valuemin='0' aria-valuemax='100'><h6 style='margin:0'>"+(perc_currentMeasure/100)+"</h6></div>" +
+														"		<div class='progress-bar' role='progressbar' style='width:"+perc_currentMeasure+"%; height: 25px; vertical-align: middle;' aria-valuenow='"+perc_currentMeasure+"' aria-valuemin='0' aria-valuemax='100'><h6 style='margin:0'>"+((perc_currentMeasure/100) >= 0.1 ? (perc_currentMeasure/100) : '')+"</h6></div>" +
 														"		<div class='progress-bar' role='progressbar' style='width:"+(perc_currentMeasure < 80 ? perc_improvement : (100-perc_currentMeasure))+"%; height: 25px; vertical-align: middle; background-color:green;' aria-valuenow='"+(perc_currentMeasure < 80 ? perc_improvement : (100-perc_currentMeasure))+"' aria-valuemin='0' aria-valuemax='100'><h6 style='margin:0; background-color: green'>"+(perc_currentMeasure < 80 ? perc_improvement/100 : (100-perc_currentMeasure)/100)+"</h6></div>" +
 														"	</div>" +
 														"	<i class='flaticon2-arrow-up' style='margin:1%; color:green;'> </i>" +
@@ -297,7 +327,7 @@ var Datatable = function(){
 														"		<div class='kt-notification-v2__item-desc'>" +improvements[i].description+"</div>"+
 														"	</div>" +
 														"	<div class='progress' style='height: 25px; width:200px'>" +
-														"		<div class='progress-bar' role='progressbar' style='width:"+perc_currentMeasure+"%; height: 25px; vertical-align: middle;' aria-valuenow='"+perc_currentMeasure+"' aria-valuemin='0' aria-valuemax='100'><h6 style='margin:0'>"+(perc_currentMeasure/100)+"</h6></div>" +
+														"		<div class='progress-bar' role='progressbar' style='width:"+perc_currentMeasure+"%; height: 25px; vertical-align: middle;' aria-valuenow='"+perc_currentMeasure+"' aria-valuemin='0' aria-valuemax='100'><h6 style='margin:0'>"+((perc_currentMeasure/100) >= 0.1 ? (perc_currentMeasure/100) : '')+"</h6></div>" +
 														"		<div class='progress-bar' role='progressbar' style='width:"+(perc_currentMeasure < 80 ? perc_improvement : (100-perc_currentMeasure))+"%; height: 25px; vertical-align: middle; background-color:green;' aria-valuenow='"+(perc_currentMeasure < 80 ? perc_improvement : (100-perc_currentMeasure))+"' aria-valuemin='0' aria-valuemax='100'><h6 style='margin:0; background-color: green'>"+(perc_currentMeasure < 80 ? perc_improvement/100 : (100-perc_currentMeasure)/100)+"</h6></div>" +
 														"	</div>" +
 														"	<i class='flaticon2-arrow-up' style='margin:1%; color:green;'> </i>" +
@@ -315,6 +345,33 @@ var Datatable = function(){
 									
 								});
 								
+								$.urlParam = function(name){
+						   			var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+						   			return results[1] || 0;
+						   		}
+
+							 
+							    // bind to the form's submit event 
+							    $('.btn-success[data-ktwizard-type=action-submit]').click(function() { 
+							    	
+							    	if($('#action_input').attr('placeholder') != "" && $('#feedback_input').attr('placeholder') != ""){
+							    		$.ajax({
+							    			type: "GET",
+							    			url: "/sendFeedback",
+							    			data : "courseId="+$.urlParam('courseId')+"&userId="+$.urlParam('userId')+ACTION_PARAM+ACTION_TYPE_PARAM+FEEDBACK_DESC+"&date="+endDate,
+							    	        contentType: "application/json; charset=utf-8",
+							    			dataType: "json",
+							    			success: function(data){
+							    				console.log("ajaxFeedback",data);
+							    				location.reload();
+							    			},
+							    			error: function(err){
+							    				console.log("error",err)
+							    			}
+							    		}); 
+							    	}
+							    }); 
+								
 							},
 							error : function(err) {
 								console.log(err)
@@ -331,8 +388,8 @@ var Datatable = function(){
 			columns: [
 				{
 					field: 'id',
-					title: '',
-					width: 10,
+					title: 'Feedback Details',
+					textAlign: "center",
 				}, {
 					field: 'weekOfMeasure',
 					title: 'WeekOfMeasure',
@@ -394,118 +451,6 @@ var Datatable = function(){
 		});
 	}
 	
-	var fill_datatable= function(eng, mot, startDate, dates, n_samples,courseLife,feedback){
-		
-		jsonArray = createJson(eng, mot, startDate, dates, n_samples,courseLife,feedback);
-		
-		console.log(jsonArray);
-		
-		/*Feedback association number
-		 * Status:
-		 * 0 - Not Sent
-		 * 1 - Sent
-		 * 
-		 * Type:
-		 *-1 - NA
-		 * 0 - Danger
-		 * 1 - Warning
-		 * 2 - Renforce
-		 * 3 - Success*/
-		
-		  var i;
-		  
-		  for( i=0; i<n_samples; i++){
-			  
-			  var type;
-			  var status;
-			  var statusColor;
-			  
-			  switch (feedback[i].type) {
-				  case 0:
-					  type = "Danger";
-					break;
-				  case 1:
-					  type = "Warning";
-				    break;
-				  case 2:
-					  type = "Renforce";
-				    break;
-				  case 3:
-					  type = "Success";
-				    break;
-				   default:
-					   type = "NA";
-				    break;
-				}
-			  
-			  if(feedback[i].status == 0){
-				  status = "Not Sent";
-				  statusColor = "warning";
-			  }
-			  else{
-				  status = "Sent";
-				  statusColor = "success";
-			  }
-			  
-		   $(".tbody-dark").append(
-		   "<tr>"+
-		        " <th scope='row'>"+(i+1)+"</th>"+
-		        " <td>"+(i== 0 ? startDate : dates[i-1])+"</td>"+
-		        " <td>"+dates[i]+"</td>"+
-		        " <td>"+Number(eng[i]).toFixed(2)+"</td>"+
-		        " <td>"+Number(mot[i]).toFixed(2)+"</td>"+
-		        " <td>"+type+"</td>"+
-		        " <td class='kt-font-"+statusColor+"'>"+status+"</td>"+
-		        " <td>"+
-		      "    <div class='dropdown dropright'>"+
-		         "         <button type='button' class='btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>"+
-		         "             <i class='flaticon-more-1'></i>"+
-		         "          </button>"+
-		         "          <div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>"+
-		         "             <a class='dropdown-item disabled' href='#tbody-measures'><i class='flaticon-cogwheel-2'></i> Compute Feedback</a>"+
-		         "             <a class='dropdown-item "+(feedback[i].status == 1 ? 'disabled' : "")+"' data-toggle='modal' href='#kt_modal_4'><i class='flaticon-paper-plane-1'></i> Send Feedback</a>"+
-		         "             <a class='dropdown-item' href='#fcm-header' onclick='fillMap("+(i+1)+",\""+(i == 0 ? startDate : dates[i-1])+"\",\""+dates[i]+"\"); getWeekMeasure("+(i+1)+", 1)'><i class='flaticon-earth-globe'></i> See on Map</a>"+
-		         "          </div>"+
-		         "  </div>"+
-		      " </td>"+
-		   "</tr>");
-		  }
-		  
-		  if(n_samples<courseLife){
-			  
-			  var func = "executeMap("+(i+1)+")";
-			  
-			  var feedStatus;
-			  
-			  if(i>0)
-				  feedStatus = feedback[i-1].status;
-			  
-			  else
-				  feedStatus = 1;
-			  
-		   $(".tbody-dark").append(
-		     "<tr>"+
-		          " <th scope='row'>"+(i+1)+"</th>"+
-		          " <td>"+(i== 0 ? startDate : dates[i-1])+"</td>"+
-		          " <td> - </td>"+
-		          " <td> 0 </td>"+
-		          " <td> 0 </td>"+
-		          " <td>NA</td>"+
-		          " <td class='kt-font-danger'>Not generated</td>"+
-		          " <td>"+
-		        "    <div class='dropdown dropright'>"+
-		           "         <button type='button' class='btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>"+
-		           "             <i class='flaticon-more-1'></i>"+
-		           "          </button>"+
-		           "          <div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>"+
-		           "             <a class='dropdown-item "+(feedStatus == 0  ? 'disabled' : "")+"' href='#tbody-measures' onclick='"+func+"'><i class='flaticon-cogwheel-2'></i> Compute Feedback</a>"+
-		           "          </div>"+
-		           "  </div>"+
-		        " </td>"+
-		     "</tr>");
-		  }
-		 }
-
 	
 	return {
 		// public functions
@@ -524,7 +469,7 @@ var Datatable = function(){
 					    mot_data[i] = data[0][i].c3;
 					    feedback[i] = data[3][i];
 				   }
-				   fill_datatable2(eng_data, mot_data, startDate, dates, n_samples,courseLife,feedback);
+				   fill_datatable(eng_data, mot_data, startDate, dates, n_samples,courseLife,feedback);
 			   } 
 		  }
 	};
@@ -549,6 +494,7 @@ jQuery(document).ready(function() {
 		success: function(data){
 			//Datatable
 			Datatable.init(data);
+			
 		},
 		error: function(err){
 			console.log(err)

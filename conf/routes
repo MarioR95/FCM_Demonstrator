@@ -1,40 +1,51 @@
 # Routes
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
-
++anyhost
 GET     /                           controllers.HomeController.index
 
++anyhost
 GET		/dashboard					controllers.HomeController.buildDashboard(request: Request)
 
-
++anyhost
 +nocsrf
 POST	/authenticate				controllers.Application.authenticate(request: Request,email: String, password: String)
 
++anyhost
 GET 	/course						controllers.Application.courseDetails(request: Request, courseId: String)
 
++anyhost
 GET 	/studentStats				controllers.Application.studentStats(request: Request)
-
++anyhost
 GET		/logout						controllers.Application.logout(request: Request) 	
 
 # Database interaction routes
-
++anyhost
 GET		/courseMembers				controllers.Application.courseMembers(request: Request, courseId: String)
-
++anyhost
 GET 	/fetchStudentStats			controllers.Application.fetchStudentStats(request: Request, courseId: String, userId: String)
-
++anyhost
 GET 	/fetchStudentRecords		controllers.Application.fetchStudentRecords(request: Request, courseId: String, userId: String)
-
++anyhost
 GET 	/fetchStudentMeasurements	controllers.Application.fetchStudentMeasurements(request: Request, courseId: String, userId: String, weekNumber: Integer)
-
++anyhost
 GET		/executeMap					controllers.Application.executeMap(request: Request, courseId: String, userId: String, weekNumber: Integer)
-
++anyhost
 GET		/fetchFeedback				controllers.Application.fetchFeedback(request: Request, userId: String)
-
++anyhost
 GET 	/feedbackChoice				controllers.Application.feedbackChoice(request: Request, courseId: String, userId: String, weekNumber: Integer, mot: Double, eng: Double)
-
++anyhost
 GET		/feedbackPrediction 		controllers.Application.retrieveFeedbackImprovements(request: Request, actionId: Integer)
-
++anyhost
 GET 	/retrieveStudentsStatus		controllers.Application.retrieveStudentsStatus(request: Request, courseId: String)
++anyhost
+GET 	/checkEfficacy				controllers.Application.checkEfficacy(request: Request, courseId: String, userId: String, prevDate: String, prevWeek: Integer)
++anyhost
+GET		/sendFeedback				controllers.Application.sendFeedback(request: Request, courseId: String, userId: String, actionId: Integer, actionType: String, description: String, date: String)
+
 # Map static resources from the /public folder to the /assets URL path
++anyhost
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+
 

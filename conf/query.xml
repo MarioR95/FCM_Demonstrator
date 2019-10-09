@@ -33,7 +33,21 @@
 	<query name="FEEDBACK_S05">
 		<content delimiterParsingDisabled="true">
 			INSERT INTO feedback (id, measureDate, courseId, userId, feedbackDate, status, content, type, efficacy, actionId)
-			VALUES (DEFAULT, ? , ? , ? , null , 0 , null , ? , DEFAULT, null )
+			VALUES (DEFAULT, ? , ? , ? , null , 0 , null , ? , DEFAULT, null)
+		</content>
+	</query>
+	<query name="FEEDBACK_S06">
+		<content delimiterParsingDisabled="true">
+			UPDATE feedback 
+			SET feedbackDate=?, status=1, content=?, actionType=?, actionId=?
+			WHERE courseId = ? and userId = ? and measureDate=?
+		</content>
+	</query>
+	<query name="FEEDBACK_S07">
+		<content delimiterParsingDisabled="true">
+			UPDATE feedback 
+			SET efficacy = ?
+			WHERE courseId = ? and userId = ? and measureDate=?
 		</content>
 	</query>
 	<query name="LOGIN_S01">
@@ -160,7 +174,7 @@
 		<content delimiterParsingDisabled="true">
 			SELECT * 
 			FROM first_level_feedback_association 
-			WHERE eng= ? AND mot= ?
+			WHERE mot= ? AND eng= ?
 		</content>
 	</query>
 	<query name="GROUPS_ASSOCIATION_S01">

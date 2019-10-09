@@ -4,14 +4,14 @@ public class MeasurementsAssociationDto {
 
 	private String mot;
 	private String eng;
-	private String feedbackType;
+	private int feedbackType;
 	private String statusType;
 	
 	public MeasurementsAssociationDto() {
 		
 	}
 	
-	public MeasurementsAssociationDto(String mot, String eng, String feedbackType, String statusType) {
+	public MeasurementsAssociationDto(String mot, String eng, int feedbackType, String statusType) {
 		super();
 		this.mot = mot;
 		this.eng = eng;
@@ -35,11 +35,11 @@ public class MeasurementsAssociationDto {
 		this.eng = eng;
 	}
 
-	public String getFeedbackType() {
+	public int getFeedbackType() {
 		return feedbackType;
 	}
 
-	public void setFeedbackType(String feedbackType) {
+	public void setFeedbackType(int feedbackType) {
 		this.feedbackType = feedbackType;
 	}
 

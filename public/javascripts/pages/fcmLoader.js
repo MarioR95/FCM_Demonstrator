@@ -132,21 +132,21 @@ function prevDataset(){
 
 
 function executeMap(weekNumber){
+	//FCM MAP EXEC 
+	$.get("/executeMap?courseId="+$.urlParam('courseId')+"&userId="+$.urlParam('userId')+"&weekNumber="+(weekNumber+1), function(res){
+		if(res == "200"){
+			if(weekNumber == 0)
+				location.reload();
+			else{	
+				//CHECK PREVIOUS FEEDBACK EFFICACY	
+				var prev_row= $("tr[data-row="+weekNumber+"]");
+				var prev_date= prev_row.find('td[data-field=start]').text();
+				$.get("/checkEfficacy?courseId="+$.urlParam('courseId')+"&userId="+$.urlParam('userId')+"&prevDate="+prev_date+"&prevWeek="+weekNumber, function(data) {
+					location.reload();
+				});		
+			}
+		}
 	
-	var jqxhr=$.ajax({
-			type: "GET",
-			url : "/executeMap",
-			data : "courseId="+$.urlParam('courseId')+"&userId="+$.urlParam('userId')+"&weekNumber="+weekNumber,
-			contentType: "application/json; charset=utf-8",
-			dataType: "text",
-	});
-	
-	jqxhr.done(function(response){
-		location.reload();
-	});
-	
-	jqxhr.fail(function(response){
-		console.log(response);
 	});
 	
 }
