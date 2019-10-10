@@ -198,14 +198,14 @@ public class Application extends Controller {
 		return ok(node);
 	}
 	
-	public Result sendFeedback(Http.Request request, String courseId, String userId, int actionId, String actionType, String description, String date) throws ParseException {
+	public Result sendFeedback(Http.Request request, String courseId, String userId, int actionId, String actionType, String name, String description, String date) throws ParseException {
 		
 		Calendar calendar = Calendar.getInstance();
 		String currentDate = DateUtil.format((GregorianCalendar) calendar);
 		
 		try {
 			
-			FeedbackDao.updateFeedback(currentDate, actionId, actionType, description, courseId, userId, date);
+			FeedbackDao.updateFeedback(currentDate, actionId, actionType, name, description, courseId, userId, date);
 			//TODO notification system: send a notification both user and teacher.
 		} catch (Exception e) {
 			e.printStackTrace();

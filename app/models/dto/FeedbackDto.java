@@ -3,7 +3,7 @@ package models.dto;
 public class FeedbackDto {
 
 	private int id,status,type,efficacy;
-	private String measureDate,feedbackDate,courseId,userId,actionType, content;
+	private String measureDate,feedbackDate,courseId,userId,actionType,name, content;
 	private int actionId;
 	
 	public FeedbackDto() {
@@ -82,6 +82,14 @@ public class FeedbackDto {
 		return actionType;
 	}
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+		
 	public String getContent() {
 		return content;
 	}

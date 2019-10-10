@@ -40,7 +40,7 @@ public class SurveyDao {
 			}
 			
 			else {
-				SurveyDto survey = qRunner.query(conn, FileQueryReader.getQuery("SURVEY_S01"),new TrimmedBeanHandler<SurveyDto>(SurveyDto.class),new Object[]{avg});
+				SurveyDto survey = qRunner.query(conn, FileQueryReader.getQuery("SURVEY_S01"),new TrimmedBeanHandler<SurveyDto>(SurveyDto.class),new Object[]{avg, avg});
 			
 				return survey.getNormalized_value();
 			}

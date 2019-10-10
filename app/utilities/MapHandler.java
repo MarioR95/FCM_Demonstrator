@@ -62,7 +62,7 @@ public class MapHandler {
 
 
 	/**
-	 * Initialize the leaf concepts output using values from the established user
+	 * Initialise the leaf concepts output using values from the established user
 	 * data.
 	 * @throws Exception 
 	 * @throws ConfigurationException 
@@ -157,9 +157,9 @@ public class MapHandler {
 		//SimpleFcmRunner runner = new SimpleFcmRunner(map, -MAX_DELTA, MAX_EPOCHS);
 		//runner.converge();
 		
-		//GregorianCalendar currentDate= new GregorianCalendar(2019,4-1,7);
-		Calendar calendar = Calendar.getInstance();
-		GregorianCalendar currentDate =  (GregorianCalendar) calendar;
+		GregorianCalendar currentDate = new GregorianCalendar(2019, 4-1, 19);
+		//Calendar calendar = Calendar.getInstance();
+		//GregorianCalendar currentDate =  (GregorianCalendar) calendar;
 		
 		for(int i = 0; i < MAX_EPOCHS; i++) {
 			map.execute();
@@ -200,8 +200,8 @@ public class MapHandler {
 	
 	public static Measures executeOnTheFly(CognitiveMap map, UserHistoryDto user, int weekNumber) throws ConfigurationException, Exception {
 		
-		Calendar calendar = Calendar.getInstance();
-		GregorianCalendar currentDate =  (GregorianCalendar) calendar;
+		//Calendar calendar = Calendar.getInstance();
+		//GregorianCalendar currentDate =  (GregorianCalendar) calendar;
 		
 		//iterate until convergence
 		for(int i = 0; i < MAX_EPOCHS; i++) {
@@ -266,7 +266,6 @@ public class MapHandler {
 	}
 
 	private static double computeMapDatesValue(GregorianCalendar date) {
-
 		int diff = DateUtil.datesDifference(date);
 		return ((Math.pow(Math.E, (4.8 - (0.2 * diff)))) / 100);
 

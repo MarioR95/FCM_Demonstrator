@@ -57,7 +57,7 @@ public class FeedbackDao {
 		}
 	}
 	
-	public static void updateFeedback(String feedbackDate, int actionId, String actionType, String content, String courseId, String userId, String measureDate) throws ConfigurationException, Exception {
+	public static void updateFeedback(String feedbackDate, int actionId, String actionType, String name, String content, String courseId, String userId, String measureDate) throws ConfigurationException, Exception {
 		
 		Connection conn = null;
 		
@@ -65,7 +65,7 @@ public class FeedbackDao {
 			conn = ConnectionPool.getSingleton(IConstants.DB_KEY);
 			QueryRunner qRunner = new QueryRunner();
 			
-			qRunner.update(conn, FileQueryReader.getQuery("FEEDBACK_S06"),new Object[]{feedbackDate, content, actionType, actionId, courseId, userId, measureDate});
+			qRunner.update(conn, FileQueryReader.getQuery("FEEDBACK_S06"),new Object[]{feedbackDate, name, content, actionType, actionId, courseId, userId, measureDate});
 
 			
 		} finally {

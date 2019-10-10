@@ -39,7 +39,7 @@
 	<query name="FEEDBACK_S06">
 		<content delimiterParsingDisabled="true">
 			UPDATE feedback 
-			SET feedbackDate=?, status=1, content=?, actionType=?, actionId=?
+			SET feedbackDate=?, status=1, name=?, content=?, actionType=?, actionId=?
 			WHERE courseId = ? and userId = ? and measureDate=?
 		</content>
 	</query>
@@ -167,7 +167,7 @@
 		<content delimiterParsingDisabled="true">
 			SELECT normalized_value 
 			FROM survey_association 
-			WHERE ? BETWEEN survey_association.min AND survey_association.max
+			WHERE ? >= survey_association.min AND ? &gt;= survey_association.max
 		</content>
 	</query>
 	<query name="FIRST_LEVEL_FEEDBACK_S01">
