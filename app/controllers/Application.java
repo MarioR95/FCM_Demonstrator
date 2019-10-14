@@ -199,12 +199,10 @@ public class Application extends Controller {
 	}
 	
 	public Result sendFeedback(Http.Request request, String courseId, String userId, int actionId, String actionType, String name, String description, String date) throws ParseException {
-		
 		Calendar calendar = Calendar.getInstance();
 		String currentDate = DateUtil.format((GregorianCalendar) calendar);
 		
 		try {
-			
 			FeedbackDao.updateFeedback(currentDate, actionId, actionType, name, description, courseId, userId, date);
 			//TODO notification system: send a notification both user and teacher.
 		} catch (Exception e) {
@@ -220,6 +218,8 @@ public class Application extends Controller {
 			CognitiveMap map = MapHandler.loadFromXML();
 			UserHistoryDto user = UserHistoryDao.retrieveStudentHistoryById(userId);
 			MapHandler.setConceptsValues(map, user, weekNumber);
+			//System.out.println("LastLesson: "+map.getConcept("c14").getOutput());
+			
 			MapHandler.execute(map, user,weekNumber);
 			FeedbackDao.createBaseFeedback(courseId, userId, weekNumber);
 			

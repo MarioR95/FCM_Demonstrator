@@ -167,7 +167,7 @@
 		<content delimiterParsingDisabled="true">
 			SELECT normalized_value 
 			FROM survey_association 
-			WHERE ? >= survey_association.min AND ? &gt;= survey_association.max
+			WHERE ? &gt;= survey_association.min AND ? &lt;= survey_association.max
 		</content>
 	</query>
 	<query name="FIRST_LEVEL_FEEDBACK_S01">

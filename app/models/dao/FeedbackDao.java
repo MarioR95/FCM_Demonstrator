@@ -58,7 +58,6 @@ public class FeedbackDao {
 	}
 	
 	public static void updateFeedback(String feedbackDate, int actionId, String actionType, String name, String content, String courseId, String userId, String measureDate) throws ConfigurationException, Exception {
-		
 		Connection conn = null;
 		
 		try {

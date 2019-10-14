@@ -4,6 +4,7 @@ var Datatable = function(){
 	var jsonArray;
 	
 	var subTable = function(e){
+		console.log(e.data);
 		var status,statusColor;
 		var actionType
 		var type,typeColor;
@@ -352,7 +353,6 @@ var Datatable = function(){
 							 
 							    // bind to the form's submit event 
 							    $('.btn-success[data-ktwizard-type=action-submit]').click(function() { 
-							    	
 							    	if($('#action_input').attr('placeholder') != "" && $('#feedback_input').attr('placeholder') != ""){
 							    		$.ajax({
 							    			type: "GET",

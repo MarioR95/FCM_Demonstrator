@@ -157,10 +157,9 @@ public class MapHandler {
 		//SimpleFcmRunner runner = new SimpleFcmRunner(map, -MAX_DELTA, MAX_EPOCHS);
 		//runner.converge();
 		
-		GregorianCalendar currentDate = new GregorianCalendar(2019, 4-1, 19);
+		GregorianCalendar currentDate = new GregorianCalendar(2019, 4-1, 26);
 		//Calendar calendar = Calendar.getInstance();
 		//GregorianCalendar currentDate =  (GregorianCalendar) calendar;
-		
 		for(int i = 0; i < MAX_EPOCHS; i++) {
 			map.execute();
 			UserMeasureDao.doSaveMapIteration(user.getCourseId(), user.getUserId(), weekNumber, i+1, map, DateUtil.format(currentDate));
@@ -203,7 +202,7 @@ public class MapHandler {
 		//Calendar calendar = Calendar.getInstance();
 		//GregorianCalendar currentDate =  (GregorianCalendar) calendar;
 		
-		//iterate until convergence
+		//Iterate until convergence
 		for(int i = 0; i < MAX_EPOCHS; i++) {
 			map.execute();
 		}
@@ -266,6 +265,7 @@ public class MapHandler {
 	}
 
 	private static double computeMapDatesValue(GregorianCalendar date) {
+
 		int diff = DateUtil.datesDifference(date);
 		return ((Math.pow(Math.E, (4.8 - (0.2 * diff)))) / 100);
 
