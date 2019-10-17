@@ -62,7 +62,7 @@ public class MapHandler {
 
 
 	/**
-	 * Initialize the leaf concepts output using values from the established user
+	 * Initialise the leaf concepts output using values from the established user
 	 * data.
 	 * @throws Exception 
 	 * @throws ConfigurationException 
@@ -157,10 +157,9 @@ public class MapHandler {
 		//SimpleFcmRunner runner = new SimpleFcmRunner(map, -MAX_DELTA, MAX_EPOCHS);
 		//runner.converge();
 		
-		//GregorianCalendar currentDate= new GregorianCalendar(2019,4-1,7);
-		Calendar calendar = Calendar.getInstance();
-		GregorianCalendar currentDate =  (GregorianCalendar) calendar;
-		
+		GregorianCalendar currentDate = new GregorianCalendar(2019, 5-1, 03);
+		//Calendar calendar = Calendar.getInstance();
+		//GregorianCalendar currentDate =  (GregorianCalendar) calendar;
 		for(int i = 0; i < MAX_EPOCHS; i++) {
 			map.execute();
 			UserMeasureDao.doSaveMapIteration(user.getCourseId(), user.getUserId(), weekNumber, i+1, map, DateUtil.format(currentDate));
@@ -200,10 +199,10 @@ public class MapHandler {
 	
 	public static Measures executeOnTheFly(CognitiveMap map, UserHistoryDto user, int weekNumber) throws ConfigurationException, Exception {
 		
-		Calendar calendar = Calendar.getInstance();
-		GregorianCalendar currentDate =  (GregorianCalendar) calendar;
+		//Calendar calendar = Calendar.getInstance();
+		//GregorianCalendar currentDate =  (GregorianCalendar) calendar;
 		
-		//iterate until convergence
+		//Iterate until convergence
 		for(int i = 0; i < MAX_EPOCHS; i++) {
 			map.execute();
 		}

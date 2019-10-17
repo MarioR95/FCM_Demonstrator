@@ -227,8 +227,8 @@ var KTFlotcharts = function() {
 
 				for(var i=0; i<n_samples; i++){
 					dates[i]= data[0][i].date;
-					eng_data[i]= data[0][i].c2;
-					mot_data[i]= data[0][i].c3;
+					eng_data[i]= data[0][i].c3;
+					mot_data[i]= data[0][i].c2;
 					//console.log("eng: "+eng_data[i]+", mot: "+mot_data[i]+", date: "+dates[i]);
 				}
 				

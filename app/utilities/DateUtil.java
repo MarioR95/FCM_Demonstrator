@@ -29,12 +29,11 @@ public class DateUtil {
     
     public static int datesDifference(GregorianCalendar lastEvent) {
 		//Calendar currentDate= Calendar.getInstance();
-		Calendar currentDate= new GregorianCalendar(2019,4-1,12);
-		
+		GregorianCalendar currentDate= new GregorianCalendar(2019,4-1,12);
 		//Last activity day
-		Calendar lastDate= new GregorianCalendar(lastEvent.get(Calendar.YEAR), lastEvent.get(Calendar.MONTH)-1, lastEvent.get(Calendar.DAY_OF_MONTH));
-	
-	return ( currentDate.get(Calendar.DAY_OF_YEAR) - lastDate.get(Calendar.DAY_OF_YEAR) );
+		GregorianCalendar lastDate= new GregorianCalendar(lastEvent.get(Calendar.YEAR), lastEvent.get(Calendar.MONTH), lastEvent.get(Calendar.DAY_OF_MONTH));
+
+		return ( currentDate.get(Calendar.DAY_OF_YEAR) - lastDate.get(Calendar.DAY_OF_YEAR) );
 	}
 	
 	

@@ -4,7 +4,7 @@ var Datatable = function(){
 	var jsonArray;
 	
 	var subTable = function(e){
-		console.log(e.data)
+		console.log(e.data);
 		var status,statusColor;
 		var actionType
 		var type,typeColor;
@@ -35,10 +35,10 @@ var Datatable = function(){
 		
 		switch(e.data.actionType){
 		  case "null": 
-			  actionType= "-";
+			  actionType= " - ";
 			  break;
 		  default:
-			  actionType= e.data.actionType;
+			  actionType= e.data.actionType+" - "+e.data.name;
 		  	  break;
 		}
 		
@@ -75,7 +75,7 @@ var Datatable = function(){
 			$(e.subTable).html(
 					"<table class='table' style='width: 40%;'>" +
 						"<tr>" +
-							"<td><b>Action Type</b></td>" +
+							"<td><b>Action</b></td>" +
 							"<td>"+actionType+"</td>" +
 						"</tr>" +
 						"<tr>" +
@@ -106,12 +106,13 @@ var Datatable = function(){
 						'"weekOfMeasure":'+(i+1)+','+
 						'"start":"'+(i == 0 ? startDate : dates[i-1])+'",'+
 						'"end":"'+dates[i]+'",'+
-						'"motivation":'+Number(mot[i]).toFixed(2)+','+
-						'"engagement":'+Number(eng[i]).toFixed(2)+','+
+						'"engagement":'+Number(mot[i]).toFixed(2)+','+
+						'"motivation":'+Number(eng[i]).toFixed(2)+','+
 						'"type":'+feedback[i].type+','+
 						'"actionType":"'+feedback[i].actionType+'",'+
 						'"status":'+feedback[i].status+','+
-						'"efficacy":'+feedback[i].efficacy+''+
+						'"efficacy":'+feedback[i].efficacy+','+
+						'"name":"'+feedback[i].name+'"'+
 						'}'+(i != (courseLife-1) ? "," : "")+'';
 			toJson+=x;
 			
@@ -123,12 +124,13 @@ var Datatable = function(){
 				'"weekOfMeasure":'+(n_samples+1)+','+
 				'"start":"'+(i== 0 ? startDate : dates[n_samples-1])+'",'+
 				'"end": "-",'+
-				'"motivation": 0 ,'+
 				'"engagement": 0 ,'+
+				'"motivation": 0 ,'+
 				'"type": -1 ,'+
 				'"actionType": "-",'+
 				'"status": 0 ,'+
-				'"efficacy": -1'+
+				'"efficacy": -1,'+
+				'"name":" "'+
 				'}';
 			
 			toJson+=x;
@@ -141,7 +143,6 @@ var Datatable = function(){
 	}
 	
 	var fill_datatable = function(eng, mot, startDate, dates, n_samples,courseLife,feedback){
-		console.log(feedback);
 		jsonArray = createJson(eng, mot, startDate, dates, n_samples,courseLife,feedback);
 		
 		var datatable = $('#feedbackDatatable').KTDatatable({
@@ -185,8 +186,7 @@ var Datatable = function(){
 					row.find("#measure"+(index+1)).click(function(){
 						//GET NEW MEASUREMENTS
 						executeMap(index);
-						
-	
+
 					});
 					
 					row.find("#view"+(index+1)).click(function(){
@@ -274,7 +274,7 @@ var Datatable = function(){
 										$(this).css("background-color", "#F4F6F9");
 										var label_name= $(this).find('.kt-notification-v2__item-title').html();
 										var label_desc= $(this).find('.kt-notification-v2__item-desc').html();
-										FEEDBACK_PARAM = "&feedback="+label_name;
+										FEEDBACK_PARAM = "&name="+label_name;
 										FEEDBACK_DESC = "&description="+label_desc;
 										$('#feedback_input').attr('placeholder', label_name);
 									})
@@ -353,16 +353,14 @@ var Datatable = function(){
 							 
 							    // bind to the form's submit event 
 							    $('.btn-success[data-ktwizard-type=action-submit]').click(function() { 
-							    	
 							    	if($('#action_input').attr('placeholder') != "" && $('#feedback_input').attr('placeholder') != ""){
 							    		$.ajax({
 							    			type: "GET",
 							    			url: "/sendFeedback",
-							    			data : "courseId="+$.urlParam('courseId')+"&userId="+$.urlParam('userId')+ACTION_PARAM+ACTION_TYPE_PARAM+FEEDBACK_DESC+"&date="+endDate,
+							    			data : "courseId="+$.urlParam('courseId')+"&userId="+$.urlParam('userId')+ACTION_PARAM+ACTION_TYPE_PARAM+FEEDBACK_PARAM+FEEDBACK_DESC+"&date="+endDate,
 							    	        contentType: "application/json; charset=utf-8",
 							    			dataType: "json",
 							    			success: function(data){
-							    				console.log("ajaxFeedback",data);
 							    				location.reload();
 							    			},
 							    			error: function(err){
@@ -403,12 +401,12 @@ var Datatable = function(){
 					title: 'End',
 					textAlign: "center",
 				}, {
-					field: 'motivation',
-					title: 'Motivation',
-					textAlign: "center",
-				}, {
 					field: 'engagement',
 					title: 'Engagement',
+					textAlign: "center",
+				}, {
+					field: 'motivation',
+					title: 'Motivation',
 					textAlign: "center",
 				},{
 					field: 'Actions',

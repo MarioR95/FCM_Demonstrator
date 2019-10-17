@@ -1,6 +1,6 @@
 function retention_1(){
-	$("#kt-retention-chart").remove();
-	$("#kt-retention-container").append("<canvas id='kt-retention-plot' width='485' height='200' class='chartjs-render-monitor' style='display: block; height: 200px; width: 500px; margin: 0 auto;'></canvas>");   	
+	$("#kt-retention-plot").remove();
+	$("#kt-retention-container").append("<canvas id='kt-retention-plot' width='485' height='180' class='chartjs-render-monitor' style='display: block; height: 200px; width: 500px; margin: 0 auto;'></canvas>");   	
 	var ctx= $('#kt-retention-plot');
 
 	var data = {
@@ -36,8 +36,8 @@ function retention_1(){
 
 
 function retention_2(){	
-	$("#kt-retention-chart").remove();
-	$("#kt-retention-container").append("<canvas id='kt-retention-plot' width='485' height='200' class='chartjs-render-monitor' style='display: block; height: 200px; width: 500px; margin: 0 auto;'></canvas>");
+	$("#kt-retention-plot").remove();
+	$("#kt-retention-container").append("<canvas id='kt-retention-plot' width='485' height='180' class='chartjs-render-monitor' style='display: block; height: 200px; width: 500px; margin: 0 auto;'></canvas>");
 	var ctx= $('#kt-retention-plot');
 
 	var data = {
@@ -73,8 +73,8 @@ function retention_2(){
 
 
 function retention_3(){	
-	$("#kt-retention-chart").remove();
-	$("#kt-retention-container").append("<canvas id='kt-retention-plot' width='485' height='200' class='chartjs-render-monitor' style='display: block; height: 200px; width: 500px; margin: 0 auto;'></canvas>");
+	$("#kt-retention-plot").remove();
+	$("#kt-retention-container").append("<canvas id='kt-retention-plot' width='485' height='180' class='chartjs-render-monitor' style='display: block; height: 200px; width: 500px; margin: 0 auto;'></canvas>");
 	var ctx= $('#kt-retention-plot');
 
 	var data = {
