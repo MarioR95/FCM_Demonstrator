@@ -157,7 +157,7 @@ public class MapHandler {
 		//SimpleFcmRunner runner = new SimpleFcmRunner(map, -MAX_DELTA, MAX_EPOCHS);
 		//runner.converge();
 		
-		GregorianCalendar currentDate = new GregorianCalendar(2019, 5-1, 03);
+		GregorianCalendar currentDate = new GregorianCalendar(2019, 4-1, 19);
 		//Calendar calendar = Calendar.getInstance();
 		//GregorianCalendar currentDate =  (GregorianCalendar) calendar;
 		for(int i = 0; i < MAX_EPOCHS; i++) {

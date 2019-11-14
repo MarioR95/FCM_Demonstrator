@@ -1,0 +1,20 @@
+@(user: models.dto.UserDto)
+<!--begin: Head -->
+<div class="kt-head kt-head--skin-dark kt-head--fit-x kt-head--fit-b" style="background-image: url(assets/images/misc/bg-1.jpg)">
+    <h3 class="kt-head__title">
+        @user.getName()
+    </h3>
+    <h6 style="text-align: center; color: #efefef">
+    	You don't have messages
+    </h6>
+    <ul class="nav nav-tabs nav-tabs-line nav-tabs-bold nav-tabs-line-3x nav-tabs-line-success kt-notification-item-padding-x" role="tablist">
+        <li class="nav-item"> <a class="nav-link active show" data-toggle="tab" href="#topbar_feedback" role="tab" aria-selected="true">Feedback</a> </li>
+        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#topbar_notification" role="tab" aria-selected="false">Notification</a> </li>
+    </ul>
+</div>
+<!--end: Head -->
+<div class="tab-content">
+    <div class="tab-pane active show" id="topbar_feedback" role="tabpanel">
+       
+    </div>
+</div>

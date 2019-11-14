@@ -1,45 +1,9 @@
-2019-10-15 09:51:34,709 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-7 - Configuration not found for database: No configuration setting found for key 'db'
-2019-10-15 09:51:37,047 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-7 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-11-14 11:57:55,932 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-6 - Configuration not found for database: No configuration setting found for key 'db'
+2019-11-14 11:57:56,935 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-6 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     play.filters.csrf.CSRFFilter
 
-2019-10-15 09:51:37,138 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-7 - Application started (Dev) (no global state)
-2019-10-15 09:55:38,714 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-8 - Configuration not found for database: No configuration setting found for key 'db'
-2019-10-15 09:55:38,934 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-8 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-    play.filters.csrf.CSRFFilter
-
-2019-10-15 09:55:38,948 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-8 - Application started (Dev) (no global state)
-2019-10-15 10:14:04,100 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-63 - Configuration not found for database: No configuration setting found for key 'db'
-2019-10-15 10:14:04,449 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-63 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-    play.filters.csrf.CSRFFilter
-
-2019-10-15 10:14:04,467 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-63 - Application started (Dev) (no global state)
-2019-10-15 10:15:06,946 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-53 - Configuration not found for database: No configuration setting found for key 'db'
-2019-10-15 10:15:07,240 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-53 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-    play.filters.csrf.CSRFFilter
-
-2019-10-15 10:15:07,254 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-53 - Application started (Dev) (no global state)
-2019-10-15 10:37:49,948 [WARN] from play.db.DBModule in play-dev-mode-akka.actor.default-dispatcher-82 - Configuration not found for database: No configuration setting found for key 'db'
-2019-10-15 10:37:50,241 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-82 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-    play.filters.csrf.CSRFFilter
-
-2019-10-15 10:37:50,257 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-82 - Application started (Dev) (no global state)
+2019-11-14 11:57:56,981 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-6 - Application started (Dev) (no global state)

@@ -199,9 +199,9 @@ public class Application extends Controller {
 	}
 	
 	public Result sendFeedback(Http.Request request, String courseId, String userId, int actionId, String actionType, String name, String description, String date) throws ParseException {
-		Calendar calendar = Calendar.getInstance();
-		String currentDate = DateUtil.format((GregorianCalendar) calendar);
-		
+		//Calendar calendar = Calendar.getInstance();
+		//String currentDate = DateUtil.format((GregorianCalendar) calendar);
+		String currentDate= DateUtil.format(new GregorianCalendar(2019, 4-1, 19));
 		try {
 			FeedbackDao.updateFeedback(currentDate, actionId, actionType, name, description, courseId, userId, date);
 			//TODO notification system: send a notification both user and teacher.
@@ -363,6 +363,15 @@ public class Application extends Controller {
 		return ok(Json.toJson(200));
 	}
 	
+	public Result showARcontents(Http.Request request) {
+		JsonNode node= null;
+		UserDto user= null;
+		if(request.session().getOptional("connected").isPresent()) {	
+    		node = Json.parse(request.session().getOptional("connected").get());
+    		user = Json.fromJson(node, UserDto.class);
+		}
+		return ok(views.html.ar_contents_container.render(user));
+	}
 	
 	public Result logout(Http.Request request) {
 		return ok(views.html.index.render()).removingFromSession(request,"connected");
