@@ -20,8 +20,18 @@
 		case "studentStats" => {
 			@views.html.studentStats()
 		}
-		case "ARContents" => {
+		
+		case "functions_sev_var" => {
+			@views.html.learning_content("Functions of two variables")
+		}
+		case "critical_points" => {
+			@views.html.learning_content("Critical Points")
+		}	
+		case "AR" => {
 			@views.html.ar_learning_contents()
+		}
+		case "Quiz" => {
+			@views.html.quiz_content()
 		}
 		case _ => {}
 	}

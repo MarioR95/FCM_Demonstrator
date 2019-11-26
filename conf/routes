@@ -43,11 +43,12 @@ GET 	/checkEfficacy				controllers.Application.checkEfficacy(request: Request, c
 +anyhost
 GET		/sendFeedback				controllers.Application.sendFeedback(request: Request, courseId: String, userId: String, actionId: Integer, actionType: String, name: String, description: String, date: String)
 +anyhost
-GET		/loadARresource				controllers.Application.showARcontents(request: Request)
+GET		/loadContents				controllers.Application.loadContents(request: Request, contentType: String)
 
 # Map static resources from the /public folder to the /assets URL path
 +anyhost
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
 
 
 

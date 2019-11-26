@@ -363,14 +363,14 @@ public class Application extends Controller {
 		return ok(Json.toJson(200));
 	}
 	
-	public Result showARcontents(Http.Request request) {
+	public Result loadContents(Http.Request request,String contentType) {
 		JsonNode node= null;
 		UserDto user= null;
 		if(request.session().getOptional("connected").isPresent()) {	
     		node = Json.parse(request.session().getOptional("connected").get());
     		user = Json.fromJson(node, UserDto.class);
 		}
-		return ok(views.html.ar_contents_container.render(user));
+		return ok(views.html.contents_container.render(user, contentType));
 	}
 	
 	public Result logout(Http.Request request) {
