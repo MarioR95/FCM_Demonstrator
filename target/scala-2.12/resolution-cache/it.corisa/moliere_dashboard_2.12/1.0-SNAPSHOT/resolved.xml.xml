@@ -4,7 +4,7 @@
 		module="moliere_dashboard_2.12"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20191127111201"
+		publication="20191127122553"
 	>
 		<description>
 		Moliere_dashboard

@@ -9,6 +9,9 @@ GET		/dashboard					controllers.HomeController.buildDashboard(request: Request)
 
 #Begin ARSupport calls
 
++anyhost
++nocsrf
+POST	/doLogin					controllers.ARSupport.doLogin(email: String, password: String)
  
 
 #End ARSupport calls
@@ -50,9 +53,11 @@ GET 	/checkEfficacy				controllers.Application.checkEfficacy(request: Request, c
 +anyhost
 GET		/sendFeedback				controllers.Application.sendFeedback(request: Request, courseId: String, userId: String, actionId: Integer, actionType: String, name: String, description: String, date: String)
 
+
 # Map static resources from the /public folder to the /assets URL path
 +anyhost
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
 
 
 

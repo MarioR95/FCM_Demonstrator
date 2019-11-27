@@ -7,7 +7,7 @@ var KTWizard3 = function () {
 	var formEl;
 	var validator;
 	var wizard;
-	var url="sendFeedback?";
+
 	// Private functions
 	var initWizard = function () {
 		// Initialize form wizard

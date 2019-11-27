@@ -267,7 +267,7 @@ Seq[Any](format.raw/*2.1*/("""<!-- begin: Content -->
 
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 27 11:23:37 CET 2019
+                  DATE: Wed Nov 27 12:26:17 CET 2019
                   SOURCE: C:/Users/Arufonso/Desktop/MoliereDashboard/app/views/studentStats.scala.html
                   HASH: 2c18bce2973f23dd8555d1d8fe0f51afc0e10135
                   MATRIX: 1037->2

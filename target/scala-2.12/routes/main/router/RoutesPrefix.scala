@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Arufonso/Desktop/MoliereDashboard/conf/routes
-// @DATE:Wed Nov 27 11:23:37 CET 2019
+// @DATE:Wed Nov 27 12:27:42 CET 2019
 
 
 package router {

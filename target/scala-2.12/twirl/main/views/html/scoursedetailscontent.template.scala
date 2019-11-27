@@ -75,11 +75,13 @@ Seq[Any](format.raw/*1.28*/("""
 						  	<tbody>
 						    	<tr>
 							      	<th scope="row"><span class="fa fa-graduation-cap" aria-hidden="true"></span></th>
-							      	<td>ALGORITHMS DESIGN</td>
+							      	<!--<td>ALGORITHMS DESIGN</td>-->
+							      	<td>Mathematical Analysis II</td>
 						    	</tr>
 						    	<tr>
 						      		<th scope="row"><span class="fa fa-star" aria-hidden="true"></span></th>
-						      		<td>COMPUTER SCIENCE</td>
+<!-- 						      		<td>COMPUTER SCIENCE</td> -->
+										<td>MATHEMATICS SCIENCE</td>
 						    	</tr>
 						    	<tr>
 						      		<th scope="row"><span class="fa fa-calendar" aria-hidden="true"></span></th>
@@ -93,9 +95,14 @@ Seq[Any](format.raw/*1.28*/("""
 						</table>
 						Course goals: 
 						<ul>
-							<li>Give students methods and knowledges to allow them to develop efficient algorithms</li>
+							<li>Study about Differential Equations</li>
+							<li>Sequences and Series of functions</li>
+							<li>Two variables function</li>
+							<li>Double integrals</li>
+							<!--  <li>Give students methods and knowledges to allow them to develop efficient algorithms</li>
 							<li>Give methods for the resource analysis (space and time) used by algorithms</li>
 							<li>Give a list of the most noted and efficient algorithms for the basic computational problems (sort, search, resources optimization, ...)</li>
+							-->
 						</ul>
 	                    </div>
 	                    <div class="tab-pane" id="kt_tabs_1_2" role="tabpanel">
@@ -230,8 +237,8 @@ Seq[Any](format.raw/*1.28*/("""
 						                </div>
 						            </div>
 						            <div class="kt-portlet__body">
-						                <div id="kt_amcharts_1" style="height: 500px; overflow: visible; text-align: left;"><div class="amcharts-main-div" style="position: relative;"><div class="amcharts-chart-div" style="overflow: hidden; position: relative; text-align: left; width: 990px; height: 500px; padding: 0px; cursor: default; touch-action: auto;"><svg version="1.1" style="position: absolute; width: 990px; height: 500px; top: -0.5px; left: 0px;"><desc>JavaScript chart by amCharts 3.21.15</desc><g><path cs="100,100" d="M0.5,0.5 L989.5,0.5 L989.5,499.5 L0.5,499.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0" class="amcharts-bg"></path><path cs="100,100" d="M0.5,0.5 L910.5,0.5 L910.5,449.5 L0.5,449.5 L0.5,0.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0" class="amcharts-plot-area" transform="translate(59,20)"></path></g><g transform="translate(59,20)" clip-path="url(#AmChartsEl-139)"><g visibility="hidden"></g></g><g></g><g></g><g></g><g><g transform="translate(59,20)" class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275"><g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(7,449)" aria-label=" USA 2,025"><path cs="100,100" d="M0.5,0.5 L0.5,-409.5 L56.5,-409.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(77,449)" aria-label=" China 1,882"><path cs="100,100" d="M0.5,0.5 L0.5,-377.5 L56.5,-377.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(147,449)" aria-label=" Japan 1,809"><path cs="100,100" d="M0.5,0.5 L0.5,-360.5 L56.5,-360.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(217,449)" aria-label=" Germany 1,322"><path cs="100,100" d="M0.5,0.5 L0.5,-251.5 L56.5,-251.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(287,449)" aria-label=" UK 1,122"><path cs="100,100" d="M0.5,0.5 L0.5,-206.5 L56.5,-206.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(357,449)" aria-label=" France 1,114"><path cs="100,100" d="M0.5,0.5 L0.5,-204.5 L56.5,-204.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(427,449)" aria-label=" India 984"><path cs="100,100" d="M0.5,0.5 L0.5,-175.5 L56.5,-175.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(497,449)" aria-label=" Spain 711"><path cs="100,100" d="M0.5,0.5 L0.5,-114.5 L56.5,-114.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(567,449)" aria-label=" Netherlands 665"><path cs="100,100" d="M0.5,0.5 L0.5,-103.5 L56.5,-103.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(637,449)" aria-label=" Russia 580"><path cs="100,100" d="M0.5,0.5 L0.5,-84.5 L56.5,-84.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(707,449)" aria-label=" South Korea 443"><path cs="100,100" d="M0.5,0.5 L0.5,-54.5 L56.5,-54.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(777,449)" aria-label=" Canada 441"><path cs="100,100" d="M0.5,0.5 L0.5,-53.5 L56.5,-53.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(847,449)" aria-label=" Brazil 395"><path cs="100,100" d="M0.5,0.5 L0.5,-43.5 L56.5,-43.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g></g></g></g><g></g><g><g class="amcharts-category-axis"><path cs="100,100" d="M0.5,0.5 L910.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(59,469)" class="amcharts-axis-line"></path></g><g class="amcharts-value-axis value-axis-valueAxisAuto0_1559302311274"><path cs="100,100" d="M0.5,0.5 L0.5,449.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(59,20)" class="amcharts-axis-line" visibility="visible"></path></g></g><g><g transform="translate(59,20)" clip-path="url(#AmChartsEl-140)" style="pointer-events: none;"><path cs="100,100" d="M0.5,0.5 L0.5,0.5 L0.5,449.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#000000" class="amcharts-cursor-line amcharts-cursor-line-vertical" visibility="hidden" transform="translate(757,0)"></path><path cs="100,100" d="M0.5,0.5 L910.5,0.5 L910.5,0.5" fill="none" stroke-width="1" stroke="#000000" class="amcharts-cursor-line amcharts-cursor-line-horizontal" visibility="hidden" transform="translate(0,441)"></path></g><clipPath id="AmChartsEl-140"><rect x="0" y="0" width="910" height="449" rx="0" ry="0" stroke-width="0"></rect></clipPath></g><g></g><g><g></g></g><g><g class="amcharts-category-axis" transform="translate(59,20)" visibility="visible"><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(35,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">USA</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(105,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">China</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(175,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">Japan</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(245,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">Germany</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(315,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">UK</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(385,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">France</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(455,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">India</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(525,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">Spain</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(595,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">Netherlands</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(665,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">Russia</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(735,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">South Korea</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(805,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">Canada</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(875,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">Brazil</tspan></text></g><g class="amcharts-value-axis value-axis-valueAxisAuto0_1559302311274" transform="translate(59,20)" visibility="visible"><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,448)" class="amcharts-axis-label"><tspan y="6" x="0">200</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,403)" class="amcharts-axis-label"><tspan y="6" x="0">400</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,358)" class="amcharts-axis-label"><tspan y="6" x="0">600</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,313)" class="amcharts-axis-label"><tspan y="6" x="0">800</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,268)" class="amcharts-axis-label"><tspan y="6" x="0">1,000</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,224)" class="amcharts-axis-label"><tspan y="6" x="0">1,200</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,179)" class="amcharts-axis-label"><tspan y="6" x="0">1,400</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,134)" class="amcharts-axis-label"><tspan y="6" x="0">1,600</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,89)" class="amcharts-axis-label"><tspan y="6" x="0">1,800</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,44)" class="amcharts-axis-label"><tspan y="6" x="0">2,000</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,-1)" class="amcharts-axis-label"><tspan y="6" x="0">2,200</tspan></text></g></g><g transform="translate(59,20)"></g><g></g><g></g><g><g class="amcharts-category-axis" transform="translate(59,20)"><g><path cs="100,100" d="M0.5,0.5 L0.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,44"""),
-format.raw("""9)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M70.5,0.5 L70.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M140.5,0.5 L140.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M210.5,0.5 L210.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M280.5,0.5 L280.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M350.5,0.5 L350.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M420.5,0.5 L420.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M490.5,0.5 L490.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M560.5,0.5 L560.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M630.5,0.5 L630.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M700.5,0.5 L700.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M770.5,0.5 L770.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M840.5,0.5 L840.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M910.5,0.5 L910.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g></g><g class="amcharts-value-axis value-axis-valueAxisAuto0_1559302311274" transform="translate(59,20)" visibility="visible"><g><path cs="100,100" d="M0.5,449.5 L6.5,449.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(-6,0)" class="amcharts-axis-tick"></path><path cs="100,100" d="M0.5,449.5 L0.5,449.5 L910.5,449.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#FFFFFF" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,404.5 L6.5,404.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(-6,0)" class="amcharts-axis-tick"></path><path cs="100,100" d="M0.5,404.5 L0.5,404.5 L910.5,404.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#FFFFFF" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,359.5 L6.5,359.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(-6,0)" class="amcharts-axis-tick"></path><path cs="100,100" d="M0.5,359.5 L0.5,359.5 L910.5,359.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#FFFFFF" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,314.5 L6.5,314.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(-6,0)" class="amcharts-axis-tick"></path><path cs="100,100" d="M0.5,314.5 L0.5,314.5 L910.5,314.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#FFFFFF" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,269.5 L6.5,269.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(-6,0)" class="amcharts-axis-tick"></path><path cs="100,100" d="M0.5,269.5 L0.5,269.5 L910.5,269.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#FFFFFF" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,225.5 L6.5,225.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(-6,0)" class="amcharts-axis-tick"></path><path cs="100,100" d="M0.5,225.5 L0.5,225.5 L910.5,225.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#FFFFFF" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,180.5 L6.5,180.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(-6,0)" class="amcharts-axis-tick"></path><path cs="100,100" d="M0.5,180.5 L0.5,180.5 L910.5,180.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#FFFFFF" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,135.5 L6.5,135.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(-6,0)" class="amcharts-axis-tick"></path><path cs="100,100" d="M0.5,135.5 L0.5,135.5 L910.5,135.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#FFFFFF" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,90.5 L6.5,90.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(-6,0)" class="amcharts-axis-tick"></path><path cs="100,100" d="M0.5,90.5 L0.5,90.5 L910.5,90.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#FFFFFF" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,45.5 L6.5,45.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(-6,0)" class="amcharts-axis-tick"></path><path cs="100,100" d="M0.5,45.5 L0.5,45.5 L910.5,45.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#FFFFFF" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,0.5 L6.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(-6,0)" class="amcharts-axis-tick"></path><path cs="100,100" d="M0.5,0.5 L0.5,0.5 L910.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#FFFFFF" class="amcharts-axis-grid"></path></g></g></g><g><g transform="translate(59,20)" class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275"></g></g><g></g><clipPath id="AmChartsEl-139"><rect x="-1" y="-1" width="912" height="451" rx="0" ry="0" stroke-width="0"></rect></clipPath></svg><a href="http://www.amcharts.com" title="JavaScript charts" style="position: absolute; text-decoration: none; color: rgb(0, 0, 0); font-family: Verdana; font-size: 11px; opacity: 0.7; display: block; left: 64px; top: 25px;">JS chart by amCharts</a></div></div></div>
+						                <div id="kt_amcharts_1" style="height: 500px; overflow: visible; text-align: left;"><div class="amcharts-main-div" style="position: relative;"><div class="amcharts-chart-div" style="overflow: hidden; position: relative; text-align: left; width: 990px; height: 500px; padding: 0px; cursor: default; touch-action: auto;"><svg version="1.1" style="position: absolute; width: 990px; height: 500px; top: -0.5px; left: 0px;"><desc>JavaScript chart by amCharts 3.21.15</desc><g><path cs="100,100" d="M0.5,0.5 L989.5,0.5 L989.5,499.5 L0.5,499.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0" class="amcharts-bg"></path><path cs="100,100" d="M0.5,0.5 L910.5,0.5 L910.5,449.5 L0.5,449.5 L0.5,0.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0" class="amcharts-plot-area" transform="translate(59,20)"></path></g><g transform="translate(59,20)" clip-path="url(#AmChartsEl-139)"><g visibility="hidden"></g></g><g></g><g></g><g></g><g><g transform="translate(59,20)" class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275"><g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(7,449)" aria-label=" USA 2,025"><path cs="100,100" d="M0.5,0.5 L0.5,-409.5 L56.5,-409.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(77,449)" aria-label=" China 1,882"><path cs="100,100" d="M0.5,0.5 L0.5,-377.5 L56.5,-377.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(147,449)" aria-label=" Japan 1,809"><path cs="100,100" d="M0.5,0.5 L0.5,-360.5 L56.5,-360.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(217,449)" aria-label=" Germany 1,322"><path cs="100,100" d="M0.5,0.5 L0.5,-251.5 L56.5,-251.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(287,449)" aria-label=" UK 1,122"><path cs="100,100" d="M0.5,0.5 L0.5,-206.5 L56.5,-206.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(357,449)" aria-label=" France 1,114"><path cs="100,100" d="M0.5,0.5 L0.5,-204.5 L56.5,-204.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(427,449)" aria-label=" India 984"><path cs="100,100" d="M0.5,0.5 L0.5,-175.5 L56.5,-175.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(497,449)" aria-label=" Spain 711"><path cs="100,100" d="M0.5,0.5 L0.5,-114.5 L56.5,-114.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(567,449)" aria-label=" Netherlands 665"><path cs="100,100" d="M0.5,0.5 L0.5,-103.5 L56.5,-103.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(637,449)" aria-label=" Russia 580"><path cs="100,100" d="M0.5,0.5 L0.5,-84.5 L56.5,-84.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(707,449)" aria-label=" South Korea 443"><path cs="100,100" d="M0.5,0.5 L0.5,-54.5 L56.5,-54.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(777,449)" aria-label=" Canada 441"><path cs="100,100" d="M0.5,0.5 L0.5,-53.5 L56.5,-53.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275" transform="translate(847,449)" aria-label=" Brazil 395"><path cs="100,100" d="M0.5,0.5 L0.5,-43.5 L56.5,-43.5 L56.5,0.5 L0.5,0.5 Z" fill="#67b7dc" stroke="#67b7dc" fill-opacity="0.8" stroke-width="1" stroke-opacity="0.2" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g></g></g></g><g></g><g><g class="amcharts-category-axis"><path cs="100,100" d="M0.5,0.5 L910.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(59,469)" class="amcharts-axis-line"></path></g><g class="amcharts-value-axis value-axis-valueAxisAuto0_1559302311274"><path cs="100,100" d="M0.5,0.5 L0.5,449.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(59,20)" class="amcharts-axis-line" visibility="visible"></path></g></g><g><g transform="translate(59,20)" clip-path="url(#AmChartsEl-140)" style="pointer-events: none;"><path cs="100,100" d="M0.5,0.5 L0.5,0.5 L0.5,449.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#000000" class="amcharts-cursor-line amcharts-cursor-line-vertical" visibility="hidden" transform="translate(757,0)"></path><path cs="100,100" d="M0.5,0.5 L910.5,0.5 L910.5,0.5" fill="none" stroke-width="1" stroke="#000000" class="amcharts-cursor-line amcharts-cursor-line-horizontal" visibility="hidden" transform="translate(0,441)"></path></g><clipPath id="AmChartsEl-140"><rect x="0" y="0" width="910" height="449" rx="0" ry="0" stroke-width="0"></rect></clipPath></g><g></g><g><g></g></g><g><g class="amcharts-category-axis" transform="translate(59,20)" visibility="visible"><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(35,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">USA</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(105,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">China</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(175,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">Japan</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(245,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">Germany</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(315,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">UK</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(385,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">France</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(455,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">India</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(525,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">Spain</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(595,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">Netherlands</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(665,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">Russia</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(735,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">South Korea</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(805,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">Canada</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(875,461.5)" class="amcharts-axis-label"><tspan y="6" x="0">Brazil</tspan></text></g><g class="amcharts-value-axis value-axis-valueAxisAuto0_1559302311274" transform="translate(59,20)" visibility="visible"><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,448)" class="amcharts-axis-label"><tspan y="6" x="0">200</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,403)" class="amcharts-axis-label"><tspan y="6" x="0">400</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,358)" class="amcharts-axis-label"><tspan y="6" x="0">600</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,313)" class="amcharts-axis-label"><tspan y="6" x="0">800</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,268)" class="amcharts-axis-label"><tspan y="6" x="0">1,000</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,224)" class="amcharts-axis-label"><tspan y="6" x="0">1,200</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,179)" class="amcharts-axis-label"><tspan y="6" x="0">1,400</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,134)" class="amcharts-axis-label"><tspan y="6" x="0">1,600</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,89)" class="amcharts-axis-label"><tspan y="6" x="0">1,800</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,44)" class="amcharts-axis-label"><tspan y="6" x="0">2,000</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,-1)" class="amcharts-axis-label">"""),
+format.raw("""<tspan y="6" x="0">2,200</tspan></text></g></g><g transform="translate(59,20)"></g><g></g><g></g><g><g class="amcharts-category-axis" transform="translate(59,20)"><g><path cs="100,100" d="M0.5,0.5 L0.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M70.5,0.5 L70.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M140.5,0.5 L140.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M210.5,0.5 L210.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M280.5,0.5 L280.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M350.5,0.5 L350.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M420.5,0.5 L420.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M490.5,0.5 L490.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M560.5,0.5 L560.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M630.5,0.5 L630.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M700.5,0.5 L700.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M770.5,0.5 L770.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M840.5,0.5 L840.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d="M910.5,0.5 L910.5,20.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,449)" class="amcharts-axis-tick"></path></g></g><g class="amcharts-value-axis value-axis-valueAxisAuto0_1559302311274" transform="translate(59,20)" visibility="visible"><g><path cs="100,100" d="M0.5,449.5 L6.5,449.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(-6,0)" class="amcharts-axis-tick"></path><path cs="100,100" d="M0.5,449.5 L0.5,449.5 L910.5,449.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#FFFFFF" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,404.5 L6.5,404.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(-6,0)" class="amcharts-axis-tick"></path><path cs="100,100" d="M0.5,404.5 L0.5,404.5 L910.5,404.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#FFFFFF" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,359.5 L6.5,359.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(-6,0)" class="amcharts-axis-tick"></path><path cs="100,100" d="M0.5,359.5 L0.5,359.5 L910.5,359.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#FFFFFF" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,314.5 L6.5,314.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(-6,0)" class="amcharts-axis-tick"></path><path cs="100,100" d="M0.5,314.5 L0.5,314.5 L910.5,314.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#FFFFFF" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,269.5 L6.5,269.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(-6,0)" class="amcharts-axis-tick"></path><path cs="100,100" d="M0.5,269.5 L0.5,269.5 L910.5,269.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#FFFFFF" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,225.5 L6.5,225.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(-6,0)" class="amcharts-axis-tick"></path><path cs="100,100" d="M0.5,225.5 L0.5,225.5 L910.5,225.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#FFFFFF" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,180.5 L6.5,180.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(-6,0)" class="amcharts-axis-tick"></path><path cs="100,100" d="M0.5,180.5 L0.5,180.5 L910.5,180.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#FFFFFF" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,135.5 L6.5,135.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(-6,0)" class="amcharts-axis-tick"></path><path cs="100,100" d="M0.5,135.5 L0.5,135.5 L910.5,135.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#FFFFFF" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,90.5 L6.5,90.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(-6,0)" class="amcharts-axis-tick"></path><path cs="100,100" d="M0.5,90.5 L0.5,90.5 L910.5,90.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#FFFFFF" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,45.5 L6.5,45.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(-6,0)" class="amcharts-axis-tick"></path><path cs="100,100" d="M0.5,45.5 L0.5,45.5 L910.5,45.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#FFFFFF" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,0.5 L6.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(-6,0)" class="amcharts-axis-tick"></path><path cs="100,100" d="M0.5,0.5 L0.5,0.5 L910.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#FFFFFF" class="amcharts-axis-grid"></path></g></g></g><g><g transform="translate(59,20)" class="amcharts-graph-column amcharts-graph-graphAuto0_1559302311275"></g></g><g></g><clipPath id="AmChartsEl-139"><rect x="-1" y="-1" width="912" height="451" rx="0" ry="0" stroke-width="0"></rect></clipPath></svg><a href="http://www.amcharts.com" title="JavaScript charts" style="position: absolute; text-decoration: none; color: rgb(0, 0, 0); font-family: Verdana; font-size: 11px; opacity: 0.7; display: block; left: 64px; top: 25px;">JS chart by amCharts</a></div></div></div>
 						            </div>
 						        </div>
 	                    </div>
@@ -252,33 +259,33 @@ format.raw("""9)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d=
 											<div class="kt-portlet__body">
 												<div class="tab-content">
 									                <div class="kt-notification">
-									                    <a data-toggle="tab" href="#kt_widget11_tab1_content" class="kt-notification__item">
+									                    <a href="#" class="kt-notification__item">
 									                        <div class="kt-notification__item-icon">
 										                        <i class="fas fa-book kt-font-success"></i>
 									                        </div>
 									                        <div class="kt-notification__item-details">
 									                            <div class="kt-notification__item-title">
-									                                Chapter 1: Complexity and annotations
-									                            </div>
-									                        </div>
-									                    </a>
-									                    <a data-toggle="tab" href="#kt_widget11_tab2_content" class="kt-notification__item">
-									                        <div class="kt-notification__item-icon">
-										                        <i class="fas fa-book kt-font-success"></i>
-									                        </div>
-									                        <div class="kt-notification__item-details">
-									                            <div class="kt-notification__item-title">
-									                                Chapter 2: Divide et impera
+									                                Chapter 1: Differential Equations
 									                            </div>
 									                        </div>
 									                    </a>
 									                    <a href="#" class="kt-notification__item">
+									                        <div class="kt-notification__item-icon">
+										                        <i class="fas fa-book kt-font-success"></i>
+									                        </div>
+									                        <div class="kt-notification__item-details">
+									                            <div class="kt-notification__item-title">
+									                                Chapter 2: Sequences and Series of Functions
+									                            </div>
+									                        </div>
+									                    </a>
+									                    <a data-toggle="tab" href="#kt_widget11_tab3_content" class="kt-notification__item">
 									                        <div class="kt-notification__item-icon">
 										                         <i class="fas fa-book kt-font-success"></i>
 									                        </div>
 									                        <div class="kt-notification__item-details">
 									                            <div class="kt-notification__item-title">
-									                                Chapter 3: Dynamic programming
+									                                Chapter 3: Functions of two variables
 									                            </div>
 									                        </div>
 									                    </a>
@@ -288,17 +295,7 @@ format.raw("""9)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d=
 									                        </div>
 									                        <div class="kt-notification__item-details">
 									                            <div class="kt-notification__item-title">
-									                                Chapter 4: Greedy technique
-									                            </div>
-									                        </div>
-									                    </a>
-									                    <a href="#" class="kt-notification__item">
-									                        <div class="kt-notification__item-icon">
-										                       <i class="fas fa-book kt-font-success"></i>
-									                        </div>
-									                        <div class="kt-notification__item-details">
-									                            <div class="kt-notification__item-title">
-									                                Chapter 5: Graph
+									                                Chapter 4: Double Integrals
 									                            </div>
 									                        </div>
 									                    </a>
@@ -322,8 +319,8 @@ format.raw("""9)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d=
 												<!--Begin::Tab Content-->
 												<div class="tab-content">
 													
-													<!--begin::tab 1 content-->
-													<div class="tab-pane" id="kt_widget11_tab1_content">
+													<!--begin::tab 3 content-->
+													<div class="tab-pane" id="kt_widget11_tab3_content">
 														<!--begin::Widget 11--> 
 														<div class="kt-widget11">
 															<div class="table-responsive">					 
@@ -343,8 +340,8 @@ format.raw("""9)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d=
 																				</div>
 																			</td>
 																			<td>
-																				<span class="kt-widget11__title">Computational Complexity</span>
-																				<span class="kt-widget11__sub">Learn the basic concept of computational complexity</span>
+																				<span class="kt-widget11__title">Functions of two variables</span>
+																				<span class="kt-widget11__sub">Learn how to calculate domain, level curves and limits.</span>
 																			</td>
 																			<td>
 																				<div class='dropdown dropright'>
@@ -352,116 +349,7 @@ format.raw("""9)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d=
 																						<i class='flaticon-more-1'></i>
 																					</button>
 																					<div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>
-																						<a class='dropdown-item' href='#'><i class="fas fa-book-reader"></i> Read</a>
-																						<a class='dropdown-item' href='#'><i class="fas fa-question"></i> Go to Quiz</a>
-																					</div>
-																				</div>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td>
-																				<div class="kt-widget4__pic kt-widget4__pic--icon">
-																					<img src="assets/images/files/mp4.svg" alt="" style="height: 45px; width: 45px">
-																				</div>
-																			</td>
-																			<td>
-																				<span class="kt-widget11__title">Asintotic Annotation</span>
-																				<span class="kt-widget11__sub">Watch how we compute the complexity of an algorithm and wich is its annotation syntax</span>
-																			</td>
-																			<td>
-																				<div class='dropdown dropright'>
-																					<button type='button' class='btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-																						<i class='flaticon-more-1'></i>
-																					</button>
-																					<div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>
-																						<a class='dropdown-item' href='#'><i class="fas fa-play"></i> Watch</a>
-																					</div>
-																				</div>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td>
-																				<div class="kt-widget4__pic kt-widget4__pic--icon">
-																					<img src="assets/images/files/mp4.svg" alt="" style="height: 45px; width: 45px">
-																				</div>
-																			</td>
-																			<td>
-																				<span class="kt-widget11__title">Sorting Algorithms</span>
-																				<span class="kt-widget11__sub">Learn the most famous sorting algorithms</span>
-																			</td>
-																			<td>
-																				<div class='dropdown dropright'>
-																					<button type='button' class='btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-																						<i class='flaticon-more-1'></i>
-																					</button>
-																					<div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>
-																						<a class='dropdown-item' href='#'><i class="fas fa-play"></i> Watch</a>
-																					</div>
-																				</div>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td>
-																				<div class="kt-widget4__pic kt-widget4__pic--icon">
-																					<img src="assets/images/files/zip.svg" alt="" style="height: 45px; width: 45px">
-																				</div>
-																			</td>
-																			<td>
-																				<span class="kt-widget11__title">Materials: sorting algorithms</span>
-																				<span class="kt-widget11__sub">Downaload and study how the sorting algorithms are made</span>
-																			</td>
-																			<td>
-																				<div class='dropdown dropright'>
-																					<button type='button' class='btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-																						<i class='flaticon-more-1'></i>
-																					</button>
-																					<div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>
-																						<a class='dropdown-item' href='#'><i class="fas fa-download"></i> Download</a>
-																					</div>
-																				</div>
-																			</td>
-																		</tr>
-																	</tbody>									     
-																</table>
-															</div>
-															
-														</div>
-														<!--end::Widget 11--> 						             
-													</div>
-
-													
-													<!--begin::tab 1 content-->
-													<div class="tab-pane" id="kt_widget11_tab2_content">
-														<!--begin::Widget 11--> 
-														<div class="kt-widget11">
-															<div class="table-responsive">					 
-																<table class="table">
-																	<thead>
-																		<tr>
-																			<td style="width:15%">Type</td>
-																			<td style="width:70%">Activity</td>
-																			<td style="width:15%">Actions</td>
-																		</tr>
-																	</thead>
-																	<tbody>
-																		<tr>
-																			<td>
-																				<div class="kt-widget4__pic kt-widget4__pic--icon">
-																					<img src="assets/images/files/pdf.svg" alt="" style="height: 45px; width: 45px">
-																				</div>
-																			</td>
-																			<td>
-																				<span class="kt-widget11__title">Divide et impera</span>
-																				<span class="kt-widget11__sub">Learn what is divide et impera</span>
-																			</td>
-																			<td>
-																				<div class='dropdown dropright'>
-																					<button type='button' class='btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-																						<i class='flaticon-more-1'></i>
-																					</button>
-																					<div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>
-																						<a class='dropdown-item' href='#'><i class="fas fa-book-reader"></i> Read</a>
-																						<a class='dropdown-item' href='#'><i class="fas fa-question"></i> Go to Quiz</a>
+																						<a class='dropdown-item' href='/loadContents?contentType=functions_sev_var'><i class="fas fa-book-reader"></i>Learn</a>
 																					</div>
 																				</div>
 																			</td>
@@ -473,9 +361,8 @@ format.raw("""9)" class="amcharts-axis-tick"></path></g><g><path cs="100,100" d=
 																				</div>
 																			</td>
 																			<td>
-																				<span class="kt-widget11__title">Recursion</span>
-																	"""),
-format.raw("""			<span class="kt-widget11__sub">Learn how to use the recursion technique</span>
+																				<span class="kt-widget11__title">Critial Points</span>
+																				<span class="kt-widget11__sub">Learn how to min, max, seal points of a given function.</span>
 																			</td>
 																			<td>
 																				<div class='dropdown dropright'>
@@ -483,20 +370,21 @@ format.raw("""			<span class="kt-widget11__sub">Learn how to use the recursion t
 																						<i class='flaticon-more-1'></i>
 																					</button>
 																					<div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>
-																						<a class='dropdown-item' href='#'><i class="fas fa-book-reader"></i> Read</a>
+																						<a class='dropdown-item' href='/loadContents?contentType=critical_points'><i class="fas fa-book-reader"></i> Read</a>
 																					</div>
 																				</div>
 																			</td>
 																		</tr>
+																		
 																		<tr>
 																			<td>
 																				<div class="kt-widget4__pic kt-widget4__pic--icon">
-																					<img src="assets/images/files/mp4.svg" alt="" style="height: 45px; width: 45px">
+																					<img src="assets/images/files/ar.svg" alt="" style="height: 45px; width: 45px">
 																				</div>
 																			</td>
 																			<td>
-																				<span class="kt-widget11__title">Practice</span>
-																				<span class="kt-widget11__sub">Learn something practice with our help</span>
+																				<span class="kt-widget11__title">Learn with AR</span>
+																				<span class="kt-widget11__sub">Try to learn this topic using AR device.</span>
 																			</td>
 																			<td>
 																				<div class='dropdown dropright'>
@@ -504,7 +392,7 @@ format.raw("""			<span class="kt-widget11__sub">Learn how to use the recursion t
 																						<i class='flaticon-more-1'></i>
 																					</button>
 																					<div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>
-																						<a class='dropdown-item' href='#' data-toggle="modal" data-target="#kt_modal_6"><i class="fas fa-play"></i> Watch</a>
+																						<a class='dropdown-item' href="/loadContents?contentType=AR"><i class="fas fa-qrcode"></i>Learn</a>
 																					</div>
 																				</div>
 																			</td>
@@ -564,8 +452,8 @@ format.raw("""			<span class="kt-widget11__sub">Learn how to use the recursion t
 											<div class="kt-portlet__body">
 												<div class="tab-content">
 									                <div class="kt-notification">
-									                    <a href="#" class="kt-notification__item">
-									                        <div class="kt-notification__item-icon">
+									                    <a data-toggle="tab">
+									                        <span class="kt-notification__item-icon">
 										                        <svg class="kt-svg-icon kt-svg-icon--success" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
 																    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																        <mask id="mask-2" fill="white">
@@ -575,66 +463,71 @@ format.raw("""			<span class="kt-widget11__sub">Learn how to use the recursion t
 																        <path d="M15.6274517,4.55882251 L14.4693753,6.2959371 C13.9280401,5.51296885 13.0239252,5 12,5 C10.3431458,5 9,6.34314575 9,8 L9,10 L14,10 L17,10 L18,10 C19.1045695,10 20,10.8954305 20,12 L20,18 C20,19.1045695 19.1045695,20 18,20 L6,20 C4.8954305,20 4,19.1045695 4,18 L4,12 C4,10.8954305 4.8954305,10 6,10 L7,10 L7,8 C7,5.23857625 9.23857625,3 12,3 C13.4280904,3 14.7163444,3.59871093 15.6274517,4.55882251 Z" id="Combined-Shape" fill="#000000"/>
 																    </g>
 																</svg>
-									                        </div>
-									                        <div class="kt-notification__item-details">
-									                            <div class="kt-notification__item-title">
-									                                Chapter 1: Complexity and annotations
-									                            </div>
+									                        </span>
+									                        <span class="kt-notification__item-details">
+									                            <span class="kt-notification__item-title">
+									                                Chapter 1: Differential Equations
+									                            </span>
 									                            <div class="kt-notification__item-time">
 									                                <div class="progress">
-																	  	<div class="progress-bar bg-warning" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+																	  	<div class="progress-bar bg-succe"""),
+format.raw("""ss" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
 																	</div>
 									                            </div>
-									                        </div>
+									                        </span>
 									                    </a>
-									                    <a href="#" class="kt-notification__item">
-									                        <div class="kt-notification__item-icon">
-										                        <svg class="kt-svg-icon kt-svg-icon--danger" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-															    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-															        <mask id="mask-2" fill="white">
-															            <use xlink:href="#path-1"/>
-															        </mask>
-															        <g id="bound"/>
-															        <path d="M7,10 L7,8 C7,5.23857625 9.23857625,3 12,3 C14.7614237,3 17,5.23857625 17,8 L17,10 L18,10 C19.1045695,10 20,10.8954305 20,12 L20,18 C20,19.1045695 19.1045695,20 18,20 L6,20 C4.8954305,20 4,19.1045695 4,18 L4,12 C4,10.8954305 4.8954305,10 6,10 L7,10 Z M12,5 C10.3431458,5 9,6.34314575 9,8 L9,10 L15,10 L15,8 C15,6.34314575 13.6568542,5 12,5 Z" id="Mask" fill="#000000"/>
-															    </g>
-															</svg>
-									                        </div>
-									                        <div class="kt-notification__item-details">
-									                            <div class="kt-notification__item-title">
-									                                Chapter 2: Divide et impera
-									                            </div>
+									                    <hr>
+									                    <a data-toggle="tab">
+									                        <span class="kt-notification__item-icon">
+										                        <svg class="kt-svg-icon kt-svg-icon--success" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+																    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																        <mask id="mask-2" fill="white">
+																            <use xlink:href="#path-1"/>
+																        </mask>
+																        <g id="bound"/>
+																        <path d="M15.6274517,4.55882251 L14.4693753,6.2959371 C13.9280401,5.51296885 13.0239252,5 12,5 C10.3431458,5 9,6.34314575 9,8 L9,10 L14,10 L17,10 L18,10 C19.1045695,10 20,10.8954305 20,12 L20,18 C20,19.1045695 19.1045695,20 18,20 L6,20 C4.8954305,20 4,19.1045695 4,18 L4,12 C4,10.8954305 4.8954305,10 6,10 L7,10 L7,8 C7,5.23857625 9.23857625,3 12,3 C13.4280904,3 14.7163444,3.59871093 15.6274517,4.55882251 Z" id="Combined-Shape" fill="#000000"/>
+																    </g>
+																</svg>
+									                        </span>
+									                        <span class="kt-notification__item-details">
+									                            <span class="kt-notification__item-title">
+									                                Chapter 2: Sequences and Series of Functions
+									                            </span>
 									                            <div class="kt-notification__item-time">
 									                                <div class="progress">
-																	  	<div class="progress-bar bg-warning" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+																	  	<div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
 																	</div>
 									                            </div>
-									                        </div>
+									                        </span>
 									                    </a>
-									                    <a href="#" class="kt-notification__item">
-									                        <div class="kt-notification__item-icon">
-										                         <svg class="kt-svg-icon kt-svg-icon--danger" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-															    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-															        <mask id="mask-2" fill="white">
-															            <use xlink:href="#path-1"/>
-															        </mask>
-															        <g id="bound"/>
-															        <path d="M7,10 L7,8 C7,5.23857625 9.23857625,3 12,3 C14.7614237,3 17,5.23857625 17,8 L17,10 L18,10 C19.1045695,10 20,10.8954305 20,12 L20,18 C20,19.1045695 19.1045695,20 18,20 L6,20 C4.8954305,20 4,19.1045695 4,18 L4,12 C4,10.8954305 4.8954305,10 6,10 L7,10 Z M12,5 C10.3431458,5 9,6.34314575 9,8 L9,10 L15,10 L15,8 C15,6.34314575 13.6568542,5 12,5 Z" id="Mask" fill="#000000"/>
-															    </g>
-															</svg>
-									                        </div>
-									                        <div class="kt-notification__item-details">
-									                            <div class="kt-notification__item-title">
-									                                Chapter 3: Dynamic programming
-									                            </div>
+									                    <hr>
+									                    <a data-toggle="tab" href="#kt_widget11_tab1_content" id="chap3">
+									                        <span class="kt-notification__item-icon">
+										                         <svg class="kt-svg-icon kt-svg-icon--success" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+																    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																        <mask id="mask-2" fill="white">
+																            <use xlink:href="#path-1"/>
+																        </mask>
+																        <g id="bound"/>
+																        <path d="M15.6274517,4.55882251 L14.4693753,6.2959371 C13.9280401,5.51296885 13.0239252,5 12,5 C10.3431458,5 9,6.34314575 9,8 L9,10 L14,10 L17,10 L18,10 C19.1045695,10 20,10.8954305 20,12 L20,18 C20,19.1045695 19.1045695,20 18,20 L6,20 C4.8954305,20 4,19.1045695 4,18 L4,12 C4,10.8954305 4.8954305,10 6,10 L7,10 L7,8 C7,5.23857625 9.23857625,3 12,3 C13.4280904,3 14.7163444,3.59871093 15.6274517,4.55882251 Z" id="Combined-Shape" fill="#000000"/>
+																    </g>
+																</svg>
+									                        </span>
+									                        <span class="kt-notification__item-details">
+									                            <span class="kt-notification__item-title">
+									                                Chapter 3: Functions of two variables
+									                            </span>
 									                            <div class="kt-notification__item-time">
-									                                <div class="progress">
-																	  	<div class="progress-bar bg-warning" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+									                                <div class="progress" id="chap3-progresses">
+																	  	<div class="progress-bar bg-warning" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+																		0%
 																	</div>
 									                            </div>
-									                        </div>
+									                        </span>
 									                    </a>
-									                    <a href="#" class="kt-notification__item">
-									                        <div class="kt-notification__item-icon">
+									                    <hr>
+									                    <a data-toggle="tab">
+									                        <span class="kt-notification__item-icon">
 										                       <svg class="kt-svg-icon kt-svg-icon--danger" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
 															    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 															        <mask id="mask-2" fill="white">
@@ -644,17 +537,18 @@ format.raw("""			<span class="kt-widget11__sub">Learn how to use the recursion t
 															        <path d="M7,10 L7,8 C7,5.23857625 9.23857625,3 12,3 C14.7614237,3 17,5.23857625 17,8 L17,10 L18,10 C19.1045695,10 20,10.8954305 20,12 L20,18 C20,19.1045695 19.1045695,20 18,20 L6,20 C4.8954305,20 4,19.1045695 4,18 L4,12 C4,10.8954305 4.8954305,10 6,10 L7,10 Z M12,5 C10.3431458,5 9,6.34314575 9,8 L9,10 L15,10 L15,8 C15,6.34314575 13.6568542,5 12,5 Z" id="Mask" fill="#000000"/>
 															    </g>
 															</svg>
-									                        </div>
-									                        <div class="kt-notification__item-details">
-									                            <div class="kt-notification__item-title">
-									                                Chapter 4: Greedy technique
-									                            </div>
+									                        </span>
+									                        <span class="kt-notification__item-details">
+									                            <span class="kt-notification__item-title">
+									                                Chapter 4: Double Integrals
+									                            </span>
 									                            <div class="kt-notification__item-time">
 									                                <div class="progress">
-																	  	<div class="progress-bar bg-warning" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+																	  	<div class="progress-bar bg-warning" role="progressbar" style="width: 0%; text-align: center;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+																		0%
 																	</div>
 									                            </div>
-									                        </div>
+									                        </span>
 									                    </a>
 									                </div>
 												</div>
@@ -676,7 +570,7 @@ format.raw("""			<span class="kt-widget11__sub">Learn how to use the recursion t
 												<!--Begin::Tab Content-->
 												<div class="tab-content">
 													<!--begin::tab 1 content-->
-													<div class="tab-pane active" id="kt_widget11_tab1_content">
+													<div class="tab-pane" id="kt_widget11_tab1_content">
 														<!--begin::Widget 11--> 
 														<div class="kt-widget11">
 															<div class="table-responsive">					 
@@ -692,31 +586,11 @@ format.raw("""			<span class="kt-widget11__sub">Learn how to use the recursion t
 																	<tbody>
 																		<tr>
 																			<td>
-																				<span class="kt-badge kt-badge--inline kt-badge--success">Completed</span>
-																			</td>
-																			<td>
-																				<span class="kt-widget11__title">Quiz</span>
-																				<span class="kt-widget11__sub">Complexity and annotations : Basic</span>
-																			</td>
-																			<td>28</td>
-																			<td>
-																				<div class='dropdown dropright'>
-																					<button type='button' class='btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-																						<i class='flaticon-more-1'></i>
-																					</button>
-																					<div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>
-																						<a class='dropdown-item' href='#'><i class="fas fa-search"></i> View</a>
-																					</div>
-																				</div>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td>
-																				<span class="kt-badge kt-badge--inline kt-badge--warning">Processing</span>
+																				<span id="status-topic1" class="kt-badge kt-badge--inline kt-badge--info">Completed</span>
 																			</td>
 																			<td>
 																				<span class="kt-widget11__title">Delivery</span>
-																				<span class="kt-widget11__sub">Deliver the solution for the given problem</span>
+																				<span class="kt-widget11__sub">Quiz - Function of two variables</span>
 																			</td>
 																			<td>-</td>
 																			<td>
@@ -725,41 +599,18 @@ format.raw("""			<span class="kt-widget11__sub">Learn how to use the recursion t
 																						<i class='flaticon-more-1'></i>
 																					</button>
 																					<div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>
-																						<a class='dropdown-item' href='#'><i class="fas fa-search"></i> View</a>
-																						<a class='dropdown-item' href='#'><i class="fas fa-file-download"></i> Download Task</a>
-																						<a class='dropdown-item' href='#'><i class="fas fa-file-upload"></i> Upload File</a>
+																						<a class='dropdown-item' href='#'><i class="fas fa-question"></i> Do quiz!</a>
 																					</div>
 																				</div>
 																			</td>
 																		</tr>
 																		<tr>
 																			<td>
-																				<span class="kt-badge kt-badge--inline kt-badge--info">Incompleted</span>
-																			</td>
-																			<td>
-																				<span class="kt-widget11__title">Quiz</span>
-																				<span class="kt-widget11__sub">Complexity and annotations: Advanded</span>
-																			</td>
-																			<td>-</td>
-																			<td>
-																				<div class='dropdown dropright'>
-																					<button type='button' class='btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-																						<i class='flaticon-more-1'></i>
-																					</button>
-																					<div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>
-																						<a class='dropdown-item' href='#'><i class="fas fa-search"></i> View</a>
-																						<a class='dropdown-item' href='#' ><i class="fas fa-question"></i> Do QUIZ!</a>
-																					</div>
-																				</div>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td>
-																				<span class="kt-badge kt-badge--inline kt-badge--info">Incompleted</span>
+																				<span id="status-topic2" class="kt-badge kt-badge--inline kt-badge--info">Uncompleted</span>
 																			</td>
 																			<td>
 																				<span class="kt-widget11__title">Delivery</span>
-																				<span class="kt-widget11__sub">Show in details the complexity analysis of a studied algorithm</span>
+																				<span class="kt-widget11__sub">Quiz - Critical Points</span>
 																			</td>
 																			<td>-</td>
 																			<td>
@@ -768,12 +619,32 @@ format.raw("""			<span class="kt-widget11__sub">Learn how to use the recursion t
 																						<i class='flaticon-more-1'></i>
 																					</button>
 																					<div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>
-																						<a class='dropdown-item' href='#'><i class="fas fa-search"></i> View</a>
-																						<a class='dropdown-item' href='#'><i class="fas fa-file-upload"></i> Upload File</a>
+																						<a class='dropdown-item' href='#'><i class="fas fa-question"></i> Do Quiz!</a>
 																					</div>
 																				</div>
 																			</td>
 																		</tr>
+																		<tr>
+																			<td>
+																				<span id="status-quiz" class="kt-badge kt-badge--inline kt-badge--danger">Blocked</span>
+																			</td>
+																			<td>
+																				<span class="kt-widget11__title">Quiz</span>
+																				<span class="kt-widget11__sub">Test your knowledges</span>
+																			</td>
+																			<td>-</td>
+																			<td>
+																				<div class='dropdown dropright'>
+																					<button id="quiz-btn" type='button' class='btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' disabled>
+																						<i class='flaticon-more-1'></i>
+																					</button>
+																					<div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>
+																						<a class='dropdown-item' href='/loadContents?contentType=Quiz' ><i class="fas fa-question"></i> Do Quiz!</a>
+																					</div>
+																				</div>
+																			</td>
+																		</tr>
+																		
 																	</tbody>									     
 																</table>
 															</div>
@@ -809,6 +680,45 @@ format.raw("""			<span class="kt-widget11__sub">Learn how to use the recursion t
 
 	</div>	
 	
+	
+	<script>
+		
+		$(document).ready(function()"""),format.raw/*652.31*/("""{"""),format.raw/*652.32*/("""
+			"""),format.raw/*653.4*/("""//Update the completation perc. of the chapter
+			var percentage= 0;
+			var classColor= "";
+			var topic1, topic2, quiz;
+			topic1= $("#status-topic1").text();
+			topic2= $("#status-topic2").text();
+			quiz= $("#status-quiz").text();
+			
+			if(topic1 == "Uncompleted" && topic2 == "Completed" || topic1 == "Completed" && topic2 == "Uncompleted")"""),format.raw/*661.108*/("""{"""),format.raw/*661.109*/("""
+				"""),format.raw/*662.5*/("""percentage = 35;
+				classColor="bg-danger";
+			"""),format.raw/*664.4*/("""}"""),format.raw/*664.5*/("""
+			"""),format.raw/*665.4*/("""else if(topic1 == "Completed" && topic2 == "Completed")"""),format.raw/*665.59*/("""{"""),format.raw/*665.60*/("""
+				"""),format.raw/*666.5*/("""percentage = 70;
+				classColor="bg-warning";
+				$("#status-quiz").html("Uncompleted");
+				$("#quiz-btn").removeAttr("disabled");
+				
+				$("#status-quiz").removeClass("kt-badge--danger");
+				$("#status-quiz").addClass("kt-badge--info");
+				//DO A REQUEST CALL TO STORE THIS CHANGE INTO DB
+				
+			"""),format.raw/*675.4*/("""}"""),format.raw/*675.5*/("""else if(topic1 == "Completed" && topic2 == "Completed" && quiz == "Completed")"""),format.raw/*675.83*/("""{"""),format.raw/*675.84*/("""
+				"""),format.raw/*676.5*/("""classColor="bg-success";
+				percentage == 100;
+			"""),format.raw/*678.4*/("""}"""),format.raw/*678.5*/("""
+			
+			"""),format.raw/*680.4*/("""$("#chap3-progresses").empty();
+			
+			$("#chap3-progresses").html(
+				"<div class='progress-bar "+classColor+"' role='progressbar' style='width: "+percentage+"%;' aria-valuenow='"+percentage+"' aria-valuemin='0' aria-valuemax='100'>"+percentage+"%</div>"
+			);
+		"""),format.raw/*685.3*/("""}"""),format.raw/*685.4*/(""");
+					
+	</script>	
 """))
       }
     }
@@ -825,11 +735,11 @@ format.raw("""			<span class="kt-widget11__sub">Learn how to use the recursion t
 
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 27 11:23:37 CET 2019
+                  DATE: Wed Nov 27 12:26:17 CET 2019
                   SOURCE: C:/Users/Arufonso/Desktop/MoliereDashboard/app/views/scoursedetailscontent.scala.html
-                  HASH: 025749ade62501a28cca46a17304d8ac55bcd4d2
-                  MATRIX: 976->1|1097->27|1125->29|2896->1773|2909->1777|2942->1789
-                  LINES: 28->1|33->1|34->2|66->34|66->34|66->34
+                  HASH: ea5c581d52ea945d903aac9fec7c5ee116162d0c
+                  MATRIX: 976->1|1097->27|1125->29|2896->1773|2909->1777|2942->1789|55382->54160|55412->54161|55445->54166|55828->54519|55859->54520|55893->54526|55971->54576|56000->54577|56033->54582|56117->54637|56147->54638|56181->54644|56521->54956|56550->54957|56657->55035|56687->55036|56721->55042|56802->55095|56831->55096|56869->55106|57167->55376|57196->55377
+                  LINES: 28->1|33->1|34->2|66->34|66->34|66->34|686->652|686->652|687->653|695->661|695->661|696->662|698->664|698->664|699->665|699->665|699->665|700->666|709->675|709->675|709->675|709->675|710->676|712->678|712->678|714->680|719->685|719->685
                   -- GENERATED --
               */
           

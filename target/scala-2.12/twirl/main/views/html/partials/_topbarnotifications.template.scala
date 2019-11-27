@@ -42,17 +42,25 @@ Seq[Any](format.raw/*1.28*/("""
                     <path d="M8.56066017,16.6819805 L10.6819805,14.5606602 C11.267767,13.9748737 12.2175144,13.9748737 12.8033009,14.5606602 L14.9246212,16.6819805 C15.5104076,17.267767 15.5104076,18.2175144 14.9246212,18.8033009 L12.8033009,20.9246212 C12.2175144,21.5104076 11.267767,21.5104076 10.6819805,20.9246212 L8.56066017,18.8033009 C7.97487373,18.2175144 7.97487373,17.267767 8.56066017,16.6819805 Z M8.56066017,4.68198052 L10.6819805,2.56066017 C11.267767,1.97487373 12.2175144,1.97487373 12.8033009,2.56066017 L14.9246212,4.68198052 C15.5104076,5.26776695 15.5104076,6.21751442 14.9246212,6.80330086 L12.8033009,8.9246212 C12.2175144,9.51040764 11.267767,9.51040764 10.6819805,8.9246212 L8.56066017,6.80330086 C7.97487373,6.21751442 7.97487373,5.26776695 8.56066017,4.68198052 Z" id="Combined-Shape" fill="#000000"/>
                 </g>
             </svg>
-            <span class="kt-pulse__ring"></span> 
-        </span>
+            """),_display_(/*13.14*/{ if (user.getRole() ==  0)
+            	<span class="kt-pulse__ring"></span> 
+			}),format.raw/*15.5*/("""
+        """),format.raw/*16.9*/("""</span>
         <!--                Use dot badge instead of animated pulse effect:                 <span class="kt-badge kt-badge--dot kt-badge--notify kt-badge--sm kt-badge--brand"></span>            -->
     </div>
     <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
         <form>
-            """),_display_(/*19.14*/views/*19.19*/.html.partials._dropdownnotifications(user)),format.raw/*19.62*/("""
-        """),format.raw/*20.9*/("""</form>
+        	"""),_display_(/*21.11*/{ if (user.getRole() ==  1)
+				views.html.partials._tdropdownnotifications(user)
+			else
+				views.html.partials._sdropdownnotifications(user)
+			}),format.raw/*25.5*/("""
+        """),format.raw/*26.9*/("""</form>
     </div>
 </div>
-<!--end: Notifications -->"""))
+<!--end: Notifications -->
+
+"""))
       }
     }
   }
@@ -68,11 +76,11 @@ Seq[Any](format.raw/*1.28*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 27 11:23:37 CET 2019
+                  DATE: Wed Nov 27 12:26:17 CET 2019
                   SOURCE: C:/Users/Arufonso/Desktop/MoliereDashboard/app/views/partials/_topbarnotifications.scala.html
-                  HASH: 5ea33a6495372f0d11113c454252c3cc5370fff1
-                  MATRIX: 984->1|1105->27|1133->29|3915->2784|3929->2789|3993->2832|4030->2842
-                  LINES: 28->1|33->1|34->2|51->19|51->19|51->19|52->20
+                  HASH: f2e313b2feac2fd5d8246617b371b8f75880a87a
+                  MATRIX: 984->1|1105->27|1133->29|3487->2356|3592->2441|3629->2451|4035->2830|4207->2982|4244->2992
+                  LINES: 28->1|33->1|34->2|45->13|47->15|48->16|53->21|57->25|58->26
                   -- GENERATED --
               */
           

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Arufonso/Desktop/MoliereDashboard/conf/routes
-// @DATE:Wed Nov 27 11:23:37 CET 2019
+// @DATE:Wed Nov 27 12:27:42 CET 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -10,6 +10,26 @@ import _root_.play.libs.F
 
 // @LINE:5
 package controllers.javascript {
+
+  // @LINE:14
+  class ReverseARSupport(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:14
+    def doLogin: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ARSupport.doLogin",
+      """
+        function(email0,password1) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "doLogin" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("email", email0), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("password", password1)])})
+        }
+      """
+    )
+  
+  }
 
   // @LINE:5
   class ReverseHomeController(_prefix: => String) {
@@ -41,7 +61,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:55
+  // @LINE:59
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -49,7 +69,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:55
+    // @LINE:59
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -61,7 +81,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:19
+  // @LINE:22
   class ReverseApplication(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -69,7 +89,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:47
+    // @LINE:50
     def retrieveStudentsStatus: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.retrieveStudentsStatus",
       """
@@ -79,7 +99,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:25
+    // @LINE:28
     def studentStats: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.studentStats",
       """
@@ -89,7 +109,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:37
+    // @LINE:40
     def fetchStudentMeasurements: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.fetchStudentMeasurements",
       """
@@ -99,7 +119,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:39
+    // @LINE:42
     def executeMap: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.executeMap",
       """
@@ -109,7 +129,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:45
+    // @LINE:48
     def retrieveFeedbackImprovements: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.retrieveFeedbackImprovements",
       """
@@ -119,7 +139,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:43
+    // @LINE:46
     def feedbackChoice: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.feedbackChoice",
       """
@@ -129,7 +149,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:49
+    // @LINE:52
     def checkEfficacy: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.checkEfficacy",
       """
@@ -139,7 +159,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:31
+    // @LINE:34
     def courseMembers: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.courseMembers",
       """
@@ -149,7 +169,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:35
+    // @LINE:38
     def fetchStudentRecords: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.fetchStudentRecords",
       """
@@ -159,7 +179,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:19
+    // @LINE:22
     def authenticate: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.authenticate",
       """
@@ -169,7 +189,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:41
+    // @LINE:44
     def fetchFeedback: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.fetchFeedback",
       """
@@ -179,7 +199,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:27
+    // @LINE:30
     def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.logout",
       """
@@ -189,7 +209,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:22
+    // @LINE:25
     def courseDetails: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.courseDetails",
       """
@@ -199,7 +219,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:51
+    // @LINE:54
     def sendFeedback: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.sendFeedback",
       """
@@ -209,7 +229,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:33
+    // @LINE:36
     def fetchStudentStats: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.fetchStudentStats",
       """

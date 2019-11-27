@@ -1,5 +1,11 @@
 package controllers;
 
+import java.util.ArrayList;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+
 import models.dao.UserDao;
 import models.dto.UserDto;
 import play.libs.Json;
@@ -18,18 +24,14 @@ public class ARSupport extends Controller {
 	    catch (Exception e){
 	        e.printStackTrace();
 	    }
-
-	    String response;
-
-	    if (user.getRole() == 1){
-	        response = "y";
-	    }
-
-	    else{
-	        response = user.getName() == null ? "n" : "y";
-	    }
-
-	    return ok(response);
+	    
+	    ObjectMapper mapper = new ObjectMapper();
+	    ObjectNode node = mapper.createObjectNode();
+	    
+	    node.set("access", mapper.convertValue(user.getName() == null ? "n" : "y", JsonNode.class));
+	    node.set("user", mapper.convertValue(user, JsonNode.class));
+	    
+	    return ok(node);
 	}
 	
 	

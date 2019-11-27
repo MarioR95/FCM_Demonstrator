@@ -33,7 +33,7 @@ object tdashwidgetcontent extends _root_.play.twirl.api.BaseScalaTemplate[play.t
 Seq[Any](format.raw/*1.1*/("""<!-- begin: Chart1 -->
 <div
 	class="kt-portlet kt-portlet--fit kt-portlet--head-noborder kt-portlet--height-fluid-half"
-	style="width: 58%; padding: 2%; height: 350px; margin: 0.5%; margin-bottom: 1.5%; float: left;">
+	style="width: 58%; padding: 2%; height: 380px; margin: 0.5%; margin-bottom: 1.5%; float: left;">
 	<div class="kt-portlet__head " style="padding: 0;">
 		<div class="kt-widget14__header">
 			<h4 class="kt-widget14__title">USERS RETENTION MONITORING</h4>
@@ -68,7 +68,7 @@ Seq[Any](format.raw/*1.1*/("""<!-- begin: Chart1 -->
 	<div class="kt-portlet__body kt-portlet__body--fluid">
 		<div class="kt-widget20">
 			<div id="kt-retention-container" style="height:130px;"><div class="kt-widget20__chart chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-				<canvas id="kt-retention-plot" width="485" height="180" class="chartjs-render-monitor" style="display: block; height: 200px; width: 500px; margin: 0 auto;"></canvas>
+				<canvas id="kt-retention-plot" width="485" height="180" class="chartjs-render-monitor" style="display: block; height: 180px; width: 500px; margin: 0 auto;"></canvas>
 			</div>
 		</div>			 
 	</div>
@@ -77,37 +77,11 @@ Seq[Any](format.raw/*1.1*/("""<!-- begin: Chart1 -->
 <!-- begin: Chart2 -->
 <div
 	class="kt-portlet kt-portlet--fit kt-portlet--head-noborder kt-portlet--height-fluid-half"
-	style="width: 40%; padding: 2%; height: 350px; margin:.5%; float: left;">
+	style="width: 40%; padding: 2%; height: 380px; margin:.5%; float: left;">
 	<div class="kt-portlet__head " style="padding: 0;">
 		<div class="kt-widget14__header">
 			<h4 class="kt-widget14__title">DROP-OUT MONITORING</h4>
 		</div>
-
-		<!--  <a href="#"
-			class="btn btn-label-success btn-sm btn-bold dropdown-toggle"
-			data-toggle="dropdown" aria-expanded="false" style="height: 30px">
-			WEEK </a>
-		<div class="dropdown-menu dropdown-menu-fit dropdown-menu-right"
-			x-placement="bottom-end"
-			style="width: 230px; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(362px, 46px, 0px);">
-			<ul class="kt-nav">
-				<li class="kt-nav__item"><a onclick="interaction_plot_1()"
-					class="kt-nav__link"> <i
-						class="kt-nav__link-icon flaticon2-line-chart"></i> <span
-						class="kt-nav__link-text">05 Apr 2019 - 11 Apr 2019</span>
-				</a></li>
-				<li class="kt-nav__item"><a onclick="interaction_plot_2()"
-					class="kt-nav__link"> <i
-						class="kt-nav__link-icon flaticon2-line-chart"></i> <span
-						class="kt-nav__link-text">12 Apr 2019 - 18 Apr 2019</span>
-				</a></li>
-				<li class="kt-nav__item"><a onclick="interaction_plot_3()"
-					class="kt-nav__link"> <i
-						class="kt-nav__link-icon flaticon2-line-chart"></i> <span
-						class="kt-nav__link-text">19 Apr 2019 - 25 Apr 2019</span>
-				</a></li>
-			</ul>
-		</div>-->
 	</div>
 	<div class="kt-portlet__body kt-portlet__body--fluid">
 		<div class="kt-widget20">
@@ -242,7 +216,7 @@ Seq[Any](format.raw/*1.1*/("""<!-- begin: Chart1 -->
 <!-- begin: Chart7 -->
 <div
 	class="kt-portlet kt-portlet--fit kt-portlet--head-noborder kt-portlet--height-fluid-half"
-	style="width: 54%; height: 620px; padding: 2%; margin: 0.5% 0.5%; display: inline; float: left;">
+	style="width: 54%; height: 700px; padding: 2%; margin: 0.5% 0.5%; display: inline; float: left;">
 	<div class="kt-portlet__head">
 		<div class="kt-portlet__head-label">
 			<span class="kt-portlet__head-icon"> <i
@@ -267,7 +241,7 @@ Seq[Any](format.raw/*1.1*/("""<!-- begin: Chart1 -->
 <!-- begin: Chart8 -->
 <div
 	class="kt-portlet kt-portlet--fit kt-portlet--head-noborder kt-portlet--height-fluid-half"
-	style="width: 44%; height:620px; padding: 2%; margin: 0.5% 0.5%; float: left;">
+	style="width: 44%; height:700px; padding: 2%; margin: 0.5% 0.5%; float: left;">
 	<div class="kt-portlet__head kt-portlet__space-x">
 		<div class="kt-widget14__header">
 			<h4 class="kt-widget14__title">LAST FORUM ACTIVITY</h4>
@@ -290,7 +264,7 @@ Seq[Any](format.raw/*1.1*/("""<!-- begin: Chart1 -->
 		
 		    <div class="tab-content" >
 		        <div class="tab-pane active" id="kt_tabs_1_1" role="tabpanel">
-		        	<div class="kt-notes" style="padding:5%; height: 400px; width: 400px; overflow-y:auto">
+		        	<div class="kt-notes" style="padding:5%; height: 500px; width: 400px; overflow-y:auto">
 	                    <div class="kt-notes__items">
 	                        <div class="kt-notes__item"> 
 	                            <div class="kt-notes__media">
@@ -391,9 +365,9 @@ Seq[Any](format.raw/*1.1*/("""<!-- begin: Chart1 -->
 
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 27 11:23:37 CET 2019
+                  DATE: Wed Nov 27 12:26:17 CET 2019
                   SOURCE: C:/Users/Arufonso/Desktop/MoliereDashboard/app/views/tdashwidgetcontent.scala.html
-                  HASH: b2c64d18fbcf4ce5a1d86d057f3651dfc3462c0f
+                  HASH: 4366f486caa3fadc83ec5b8cea7cae415776ea03
                   MATRIX: 1043->0
                   LINES: 33->1
                   -- GENERATED --

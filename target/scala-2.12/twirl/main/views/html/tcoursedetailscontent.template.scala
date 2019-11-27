@@ -434,7 +434,7 @@ Seq[Any](format.raw/*1.1*/("""<div class="kt-content kt-grid__item kt-grid__item
 
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 27 11:23:37 CET 2019
+                  DATE: Wed Nov 27 12:26:17 CET 2019
                   SOURCE: C:/Users/Arufonso/Desktop/MoliereDashboard/app/views/tcoursedetailscontent.scala.html
                   HASH: d52a782ae1a5782a32f25875d4dc8885b15ca44f
                   MATRIX: 1046->0

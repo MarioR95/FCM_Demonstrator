@@ -10,13 +10,13 @@ var KTDashboard = function() {
         }
 
         var chartData = {
-            labels: ["Algorithm", "Data Structures","OO Programming","C programming"],
+            labels: ["Algorithm", "Data Structures","M. Analysis II"],
             datasets: [{
                 data: [
-                    40, 25, 55, 90
+                    40, 25, 65,
                 ],
                 backgroundColor : [
-                	KTApp.getStateColor('warning'), KTApp.getStateColor('danger'), KTApp.getStateColor('warning'), KTApp.getStateColor('success')
+                	KTApp.getStateColor('warning'), KTApp.getStateColor('danger'), KTApp.getStateColor('success')
                   ]
             }]
         }; 
@@ -76,12 +76,12 @@ var KTDashboard = function() {
         }
 
         var chartData = {
-            labels: ["Algorithm", "Data Structures","OO Programming","C programming"],
+            labels: ["Algorithm", "Data Structures","M. Analysis II"],
             datasets: [{
                 //label: 'Dataset 1',
                 backgroundColor: KTApp.getStateColor('brand'),
                 data: [
-                    28, 22, 24, 30
+                    28, 22, 24
                 ]
             }]
         };

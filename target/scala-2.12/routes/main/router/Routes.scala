@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Arufonso/Desktop/MoliereDashboard/conf/routes
-// @DATE:Wed Nov 27 11:23:37 CET 2019
+// @DATE:Wed Nov 27 12:27:42 CET 2019
 
 package router
 
@@ -15,28 +15,32 @@ import _root_.play.libs.F
 class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:5
-  HomeController_2: controllers.HomeController,
-  // @LINE:19
+  HomeController_3: controllers.HomeController,
+  // @LINE:14
+  ARSupport_1: controllers.ARSupport,
+  // @LINE:22
   Application_0: controllers.Application,
-  // @LINE:55
-  Assets_1: controllers.Assets,
+  // @LINE:59
+  Assets_2: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
 
    @javax.inject.Inject()
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:5
-    HomeController_2: controllers.HomeController,
-    // @LINE:19
+    HomeController_3: controllers.HomeController,
+    // @LINE:14
+    ARSupport_1: controllers.ARSupport,
+    // @LINE:22
     Application_0: controllers.Application,
-    // @LINE:55
-    Assets_1: controllers.Assets
-  ) = this(errorHandler, HomeController_2, Application_0, Assets_1, "/")
+    // @LINE:59
+    Assets_2: controllers.Assets
+  ) = this(errorHandler, HomeController_3, ARSupport_1, Application_0, Assets_2, "/")
 
   def withPrefix(addPrefix: String): Routes = {
     val prefix = play.api.routing.Router.concatPrefix(addPrefix, this.prefix)
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, HomeController_2, Application_0, Assets_1, prefix)
+    new Routes(errorHandler, HomeController_3, ARSupport_1, Application_0, Assets_2, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -46,6 +50,7 @@ class Routes(
   def documentation = List(
     ("""GET""", this.prefix, """controllers.HomeController.index"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """dashboard""", """controllers.HomeController.buildDashboard(request:Request)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """doLogin""", """controllers.ARSupport.doLogin(email:String, password:String)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """authenticate""", """controllers.Application.authenticate(request:Request, email:String, password:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """course""", """controllers.Application.courseDetails(request:Request, courseId:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """studentStats""", """controllers.Application.studentStats(request:Request)"""),
@@ -74,7 +79,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix)))
   )
   private[this] lazy val controllers_HomeController_index0_invoker = createInvoker(
-    HomeController_2.index,
+    HomeController_3.index,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
@@ -96,7 +101,7 @@ class Routes(
   private[this] lazy val controllers_HomeController_buildDashboard1_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
-      HomeController_2.buildDashboard(fakeValue[play.mvc.Http.Request]),
+      HomeController_3.buildDashboard(fakeValue[play.mvc.Http.Request]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
@@ -109,11 +114,29 @@ class Routes(
     )
   )
 
-  // @LINE:19
-  private[this] lazy val controllers_Application_authenticate2_route = Route("POST",
+  // @LINE:14
+  private[this] lazy val controllers_ARSupport_doLogin2_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("doLogin")))
+  )
+  private[this] lazy val controllers_ARSupport_doLogin2_invoker = createInvoker(
+    ARSupport_1.doLogin(fakeValue[String], fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ARSupport",
+      "doLogin",
+      Seq(classOf[String], classOf[String]),
+      "POST",
+      this.prefix + """doLogin""",
+      """""",
+      Seq("""anyhost""", """nocsrf""")
+    )
+  )
+
+  // @LINE:22
+  private[this] lazy val controllers_Application_authenticate3_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("authenticate")))
   )
-  private[this] lazy val controllers_Application_authenticate2_invoker = createInvoker(
+  private[this] lazy val controllers_Application_authenticate3_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.authenticate(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String]),
@@ -129,11 +152,11 @@ class Routes(
     )
   )
 
-  // @LINE:22
-  private[this] lazy val controllers_Application_courseDetails3_route = Route("GET",
+  // @LINE:25
+  private[this] lazy val controllers_Application_courseDetails4_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("course")))
   )
-  private[this] lazy val controllers_Application_courseDetails3_invoker = createInvoker(
+  private[this] lazy val controllers_Application_courseDetails4_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.courseDetails(fakeValue[play.mvc.Http.Request], fakeValue[String]),
@@ -149,11 +172,11 @@ class Routes(
     )
   )
 
-  // @LINE:25
-  private[this] lazy val controllers_Application_studentStats4_route = Route("GET",
+  // @LINE:28
+  private[this] lazy val controllers_Application_studentStats5_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("studentStats")))
   )
-  private[this] lazy val controllers_Application_studentStats4_invoker = createInvoker(
+  private[this] lazy val controllers_Application_studentStats5_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.studentStats(fakeValue[play.mvc.Http.Request]),
@@ -169,11 +192,11 @@ class Routes(
     )
   )
 
-  // @LINE:27
-  private[this] lazy val controllers_Application_logout5_route = Route("GET",
+  // @LINE:30
+  private[this] lazy val controllers_Application_logout6_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("logout")))
   )
-  private[this] lazy val controllers_Application_logout5_invoker = createInvoker(
+  private[this] lazy val controllers_Application_logout6_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.logout(fakeValue[play.mvc.Http.Request]),
@@ -189,11 +212,11 @@ class Routes(
     )
   )
 
-  // @LINE:31
-  private[this] lazy val controllers_Application_courseMembers6_route = Route("GET",
+  // @LINE:34
+  private[this] lazy val controllers_Application_courseMembers7_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("courseMembers")))
   )
-  private[this] lazy val controllers_Application_courseMembers6_invoker = createInvoker(
+  private[this] lazy val controllers_Application_courseMembers7_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.courseMembers(fakeValue[play.mvc.Http.Request], fakeValue[String]),
@@ -209,11 +232,11 @@ class Routes(
     )
   )
 
-  // @LINE:33
-  private[this] lazy val controllers_Application_fetchStudentStats7_route = Route("GET",
+  // @LINE:36
+  private[this] lazy val controllers_Application_fetchStudentStats8_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("fetchStudentStats")))
   )
-  private[this] lazy val controllers_Application_fetchStudentStats7_invoker = createInvoker(
+  private[this] lazy val controllers_Application_fetchStudentStats8_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.fetchStudentStats(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String]),
@@ -229,11 +252,11 @@ class Routes(
     )
   )
 
-  // @LINE:35
-  private[this] lazy val controllers_Application_fetchStudentRecords8_route = Route("GET",
+  // @LINE:38
+  private[this] lazy val controllers_Application_fetchStudentRecords9_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("fetchStudentRecords")))
   )
-  private[this] lazy val controllers_Application_fetchStudentRecords8_invoker = createInvoker(
+  private[this] lazy val controllers_Application_fetchStudentRecords9_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.fetchStudentRecords(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String]),
@@ -249,11 +272,11 @@ class Routes(
     )
   )
 
-  // @LINE:37
-  private[this] lazy val controllers_Application_fetchStudentMeasurements9_route = Route("GET",
+  // @LINE:40
+  private[this] lazy val controllers_Application_fetchStudentMeasurements10_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("fetchStudentMeasurements")))
   )
-  private[this] lazy val controllers_Application_fetchStudentMeasurements9_invoker = createInvoker(
+  private[this] lazy val controllers_Application_fetchStudentMeasurements10_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.fetchStudentMeasurements(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String], fakeValue[Integer]),
@@ -269,11 +292,11 @@ class Routes(
     )
   )
 
-  // @LINE:39
-  private[this] lazy val controllers_Application_executeMap10_route = Route("GET",
+  // @LINE:42
+  private[this] lazy val controllers_Application_executeMap11_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("executeMap")))
   )
-  private[this] lazy val controllers_Application_executeMap10_invoker = createInvoker(
+  private[this] lazy val controllers_Application_executeMap11_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.executeMap(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String], fakeValue[Integer]),
@@ -289,11 +312,11 @@ class Routes(
     )
   )
 
-  // @LINE:41
-  private[this] lazy val controllers_Application_fetchFeedback11_route = Route("GET",
+  // @LINE:44
+  private[this] lazy val controllers_Application_fetchFeedback12_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("fetchFeedback")))
   )
-  private[this] lazy val controllers_Application_fetchFeedback11_invoker = createInvoker(
+  private[this] lazy val controllers_Application_fetchFeedback12_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.fetchFeedback(fakeValue[play.mvc.Http.Request], fakeValue[String]),
@@ -309,11 +332,11 @@ class Routes(
     )
   )
 
-  // @LINE:43
-  private[this] lazy val controllers_Application_feedbackChoice12_route = Route("GET",
+  // @LINE:46
+  private[this] lazy val controllers_Application_feedbackChoice13_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("feedbackChoice")))
   )
-  private[this] lazy val controllers_Application_feedbackChoice12_invoker = createInvoker(
+  private[this] lazy val controllers_Application_feedbackChoice13_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.feedbackChoice(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String], fakeValue[Integer], fakeValue[Double], fakeValue[Double]),
@@ -329,11 +352,11 @@ class Routes(
     )
   )
 
-  // @LINE:45
-  private[this] lazy val controllers_Application_retrieveFeedbackImprovements13_route = Route("GET",
+  // @LINE:48
+  private[this] lazy val controllers_Application_retrieveFeedbackImprovements14_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("feedbackPrediction")))
   )
-  private[this] lazy val controllers_Application_retrieveFeedbackImprovements13_invoker = createInvoker(
+  private[this] lazy val controllers_Application_retrieveFeedbackImprovements14_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.retrieveFeedbackImprovements(fakeValue[play.mvc.Http.Request], fakeValue[Integer]),
@@ -349,11 +372,11 @@ class Routes(
     )
   )
 
-  // @LINE:47
-  private[this] lazy val controllers_Application_retrieveStudentsStatus14_route = Route("GET",
+  // @LINE:50
+  private[this] lazy val controllers_Application_retrieveStudentsStatus15_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("retrieveStudentsStatus")))
   )
-  private[this] lazy val controllers_Application_retrieveStudentsStatus14_invoker = createInvoker(
+  private[this] lazy val controllers_Application_retrieveStudentsStatus15_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.retrieveStudentsStatus(fakeValue[play.mvc.Http.Request], fakeValue[String]),
@@ -369,11 +392,11 @@ class Routes(
     )
   )
 
-  // @LINE:49
-  private[this] lazy val controllers_Application_checkEfficacy15_route = Route("GET",
+  // @LINE:52
+  private[this] lazy val controllers_Application_checkEfficacy16_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("checkEfficacy")))
   )
-  private[this] lazy val controllers_Application_checkEfficacy15_invoker = createInvoker(
+  private[this] lazy val controllers_Application_checkEfficacy16_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.checkEfficacy(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String], fakeValue[String], fakeValue[Integer]),
@@ -389,11 +412,11 @@ class Routes(
     )
   )
 
-  // @LINE:51
-  private[this] lazy val controllers_Application_sendFeedback16_route = Route("GET",
+  // @LINE:54
+  private[this] lazy val controllers_Application_sendFeedback17_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("sendFeedback")))
   )
-  private[this] lazy val controllers_Application_sendFeedback16_invoker = createInvoker(
+  private[this] lazy val controllers_Application_sendFeedback17_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.sendFeedback(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String], fakeValue[Integer], fakeValue[String], fakeValue[String], fakeValue[String], fakeValue[String]),
@@ -409,12 +432,12 @@ class Routes(
     )
   )
 
-  // @LINE:55
-  private[this] lazy val controllers_Assets_versioned17_route = Route("GET",
+  // @LINE:59
+  private[this] lazy val controllers_Assets_versioned18_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned17_invoker = createInvoker(
-    Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
+  private[this] lazy val controllers_Assets_versioned18_invoker = createInvoker(
+    Assets_2.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Assets",
@@ -433,125 +456,131 @@ class Routes(
     // @LINE:5
     case controllers_HomeController_index0_route(params@_) =>
       call { 
-        controllers_HomeController_index0_invoker.call(HomeController_2.index)
+        controllers_HomeController_index0_invoker.call(HomeController_3.index)
       }
   
     // @LINE:8
     case controllers_HomeController_buildDashboard1_route(params@_) =>
       call { 
         controllers_HomeController_buildDashboard1_invoker.call(
-          req => HomeController_2.buildDashboard(req))
+          req => HomeController_3.buildDashboard(req))
       }
   
-    // @LINE:19
-    case controllers_Application_authenticate2_route(params@_) =>
+    // @LINE:14
+    case controllers_ARSupport_doLogin2_route(params@_) =>
       call(params.fromQuery[String]("email", None), params.fromQuery[String]("password", None)) { (email, password) =>
-        controllers_Application_authenticate2_invoker.call(
-          req => Application_0.authenticate(req, email, password))
+        controllers_ARSupport_doLogin2_invoker.call(ARSupport_1.doLogin(email, password))
       }
   
     // @LINE:22
-    case controllers_Application_courseDetails3_route(params@_) =>
-      call(params.fromQuery[String]("courseId", None)) { (courseId) =>
-        controllers_Application_courseDetails3_invoker.call(
-          req => Application_0.courseDetails(req, courseId))
+    case controllers_Application_authenticate3_route(params@_) =>
+      call(params.fromQuery[String]("email", None), params.fromQuery[String]("password", None)) { (email, password) =>
+        controllers_Application_authenticate3_invoker.call(
+          req => Application_0.authenticate(req, email, password))
       }
   
     // @LINE:25
-    case controllers_Application_studentStats4_route(params@_) =>
+    case controllers_Application_courseDetails4_route(params@_) =>
+      call(params.fromQuery[String]("courseId", None)) { (courseId) =>
+        controllers_Application_courseDetails4_invoker.call(
+          req => Application_0.courseDetails(req, courseId))
+      }
+  
+    // @LINE:28
+    case controllers_Application_studentStats5_route(params@_) =>
       call { 
-        controllers_Application_studentStats4_invoker.call(
+        controllers_Application_studentStats5_invoker.call(
           req => Application_0.studentStats(req))
       }
   
-    // @LINE:27
-    case controllers_Application_logout5_route(params@_) =>
+    // @LINE:30
+    case controllers_Application_logout6_route(params@_) =>
       call { 
-        controllers_Application_logout5_invoker.call(
+        controllers_Application_logout6_invoker.call(
           req => Application_0.logout(req))
       }
   
-    // @LINE:31
-    case controllers_Application_courseMembers6_route(params@_) =>
+    // @LINE:34
+    case controllers_Application_courseMembers7_route(params@_) =>
       call(params.fromQuery[String]("courseId", None)) { (courseId) =>
-        controllers_Application_courseMembers6_invoker.call(
+        controllers_Application_courseMembers7_invoker.call(
           req => Application_0.courseMembers(req, courseId))
       }
   
-    // @LINE:33
-    case controllers_Application_fetchStudentStats7_route(params@_) =>
+    // @LINE:36
+    case controllers_Application_fetchStudentStats8_route(params@_) =>
       call(params.fromQuery[String]("courseId", None), params.fromQuery[String]("userId", None)) { (courseId, userId) =>
-        controllers_Application_fetchStudentStats7_invoker.call(
+        controllers_Application_fetchStudentStats8_invoker.call(
           req => Application_0.fetchStudentStats(req, courseId, userId))
       }
   
-    // @LINE:35
-    case controllers_Application_fetchStudentRecords8_route(params@_) =>
+    // @LINE:38
+    case controllers_Application_fetchStudentRecords9_route(params@_) =>
       call(params.fromQuery[String]("courseId", None), params.fromQuery[String]("userId", None)) { (courseId, userId) =>
-        controllers_Application_fetchStudentRecords8_invoker.call(
+        controllers_Application_fetchStudentRecords9_invoker.call(
           req => Application_0.fetchStudentRecords(req, courseId, userId))
       }
   
-    // @LINE:37
-    case controllers_Application_fetchStudentMeasurements9_route(params@_) =>
+    // @LINE:40
+    case controllers_Application_fetchStudentMeasurements10_route(params@_) =>
       call(params.fromQuery[String]("courseId", None), params.fromQuery[String]("userId", None), params.fromQuery[Integer]("weekNumber", None)) { (courseId, userId, weekNumber) =>
-        controllers_Application_fetchStudentMeasurements9_invoker.call(
+        controllers_Application_fetchStudentMeasurements10_invoker.call(
           req => Application_0.fetchStudentMeasurements(req, courseId, userId, weekNumber))
       }
   
-    // @LINE:39
-    case controllers_Application_executeMap10_route(params@_) =>
+    // @LINE:42
+    case controllers_Application_executeMap11_route(params@_) =>
       call(params.fromQuery[String]("courseId", None), params.fromQuery[String]("userId", None), params.fromQuery[Integer]("weekNumber", None)) { (courseId, userId, weekNumber) =>
-        controllers_Application_executeMap10_invoker.call(
+        controllers_Application_executeMap11_invoker.call(
           req => Application_0.executeMap(req, courseId, userId, weekNumber))
       }
   
-    // @LINE:41
-    case controllers_Application_fetchFeedback11_route(params@_) =>
+    // @LINE:44
+    case controllers_Application_fetchFeedback12_route(params@_) =>
       call(params.fromQuery[String]("userId", None)) { (userId) =>
-        controllers_Application_fetchFeedback11_invoker.call(
+        controllers_Application_fetchFeedback12_invoker.call(
           req => Application_0.fetchFeedback(req, userId))
       }
   
-    // @LINE:43
-    case controllers_Application_feedbackChoice12_route(params@_) =>
+    // @LINE:46
+    case controllers_Application_feedbackChoice13_route(params@_) =>
       call(params.fromQuery[String]("courseId", None), params.fromQuery[String]("userId", None), params.fromQuery[Integer]("weekNumber", None), params.fromQuery[Double]("mot", None), params.fromQuery[Double]("eng", None)) { (courseId, userId, weekNumber, mot, eng) =>
-        controllers_Application_feedbackChoice12_invoker.call(
+        controllers_Application_feedbackChoice13_invoker.call(
           req => Application_0.feedbackChoice(req, courseId, userId, weekNumber, mot, eng))
       }
   
-    // @LINE:45
-    case controllers_Application_retrieveFeedbackImprovements13_route(params@_) =>
+    // @LINE:48
+    case controllers_Application_retrieveFeedbackImprovements14_route(params@_) =>
       call(params.fromQuery[Integer]("actionId", None)) { (actionId) =>
-        controllers_Application_retrieveFeedbackImprovements13_invoker.call(
+        controllers_Application_retrieveFeedbackImprovements14_invoker.call(
           req => Application_0.retrieveFeedbackImprovements(req, actionId))
       }
   
-    // @LINE:47
-    case controllers_Application_retrieveStudentsStatus14_route(params@_) =>
+    // @LINE:50
+    case controllers_Application_retrieveStudentsStatus15_route(params@_) =>
       call(params.fromQuery[String]("courseId", None)) { (courseId) =>
-        controllers_Application_retrieveStudentsStatus14_invoker.call(
+        controllers_Application_retrieveStudentsStatus15_invoker.call(
           req => Application_0.retrieveStudentsStatus(req, courseId))
       }
   
-    // @LINE:49
-    case controllers_Application_checkEfficacy15_route(params@_) =>
+    // @LINE:52
+    case controllers_Application_checkEfficacy16_route(params@_) =>
       call(params.fromQuery[String]("courseId", None), params.fromQuery[String]("userId", None), params.fromQuery[String]("prevDate", None), params.fromQuery[Integer]("prevWeek", None)) { (courseId, userId, prevDate, prevWeek) =>
-        controllers_Application_checkEfficacy15_invoker.call(
+        controllers_Application_checkEfficacy16_invoker.call(
           req => Application_0.checkEfficacy(req, courseId, userId, prevDate, prevWeek))
       }
   
-    // @LINE:51
-    case controllers_Application_sendFeedback16_route(params@_) =>
+    // @LINE:54
+    case controllers_Application_sendFeedback17_route(params@_) =>
       call(params.fromQuery[String]("courseId", None), params.fromQuery[String]("userId", None), params.fromQuery[Integer]("actionId", None), params.fromQuery[String]("actionType", None), params.fromQuery[String]("name", None), params.fromQuery[String]("description", None), params.fromQuery[String]("date", None)) { (courseId, userId, actionId, actionType, name, description, date) =>
-        controllers_Application_sendFeedback16_invoker.call(
+        controllers_Application_sendFeedback17_invoker.call(
           req => Application_0.sendFeedback(req, courseId, userId, actionId, actionType, name, description, date))
       }
   
-    // @LINE:55
-    case controllers_Assets_versioned17_route(params@_) =>
+    // @LINE:59
+    case controllers_Assets_versioned18_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned17_invoker.call(Assets_1.versioned(path, file))
+        controllers_Assets_versioned18_invoker.call(Assets_2.versioned(path, file))
       }
   }
 }

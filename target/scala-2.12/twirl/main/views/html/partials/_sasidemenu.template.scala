@@ -56,7 +56,12 @@ Seq[Any](format.raw/*1.1*/("""<li class="kt-menu__item kt-menu__item--submenu" a
                <span class="kt-menu__arrow"></span>
                <ul class="kt-menu__subnav">
                   <li class="kt-menu__item kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                     <a href="/course?courseId=HarvardX/CB22x/2013_Spring" id="algo" class="kt-menu__link kt-menu__toggle"> <i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i>
+                     <a href="/course?courseId=HarvardX/CB22x/2013_Spring" id="mathII" class="kt-menu__link kt-menu__toggle"> <i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i>
+                     <span class="kt-menu__link-text">Mathematical Analysis II</span><i class="kt-menu__ver-arrow la la-angle-right"></i>
+                     </a>
+                  </li>
+                  <li class="kt-menu__item kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                     <a href="#" id="algo" class="kt-menu__link kt-menu__toggle"> <i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i>
                      <span class="kt-menu__link-text">Algororithms</span><i class="kt-menu__ver-arrow la la-angle-right"></i>
                      </a>
                   </li>
@@ -97,9 +102,9 @@ Seq[Any](format.raw/*1.1*/("""<li class="kt-menu__item kt-menu__item--submenu" a
 
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 27 11:23:37 CET 2019
+                  DATE: Wed Nov 27 12:26:17 CET 2019
                   SOURCE: C:/Users/Arufonso/Desktop/MoliereDashboard/app/views/partials/_sasidemenu.scala.html
-                  HASH: de9384828f6cdf21c20534f6f385d6b6c2ee72cf
+                  HASH: ed34b3c3895e81c6050652df39e8d1ec06e1e8b9
                   MATRIX: 1045->0
                   LINES: 33->1
                   -- GENERATED --

@@ -62,11 +62,6 @@ Seq[Any](format.raw/*1.28*/("""
 									</div>
 
 									<div class="kt-widget__info">
-										<div class="kt-widget__desc">
-											I distinguish three main text objektive could be merely to
-											inform people. <br> A second could be persuade
-											people.You want people to bay objective
-										</div>
 										<div class="kt-widget__progress">
 											<div class="kt-widget__text">Progress</div>
 											<div class="progress" style="height: 5px; width: 100%;">
@@ -198,7 +193,7 @@ Seq[Any](format.raw/*1.28*/("""
 									<div class="kt-widget14__header kt-margin-b-30">
 										<h3 class="kt-widget14__title">Courses Average Score</h3>
 									</div>
-									<div class="kt-widget14__chart" style="height: 120px;">
+									<div class="kt-widget14__chart" style="height: 150px;">
 									
 										<canvas id="kt_courses_score"
 											style="display: block; width: 485px; height: 120px;"
@@ -552,13 +547,13 @@ Seq[Any](format.raw/*1.28*/("""
 										<div class="kt-widget31__content">
 											<div class="kt-widget31__progress">
 												<a href="#" class="kt-widget31__stats"> <span>0%</span>
-												<"""),
-format.raw("""/a>
+												</a>
 												<div class="progress progress-sm">
 													<div class="progress-bar bg-light" role="progressbar"
 														style="width: 0%" aria-valuenow="55" aria-valuemin="0"
 														aria-valuemax="100"></div>
-												</div>
+								"""),
+format.raw("""				</div>
 											</div>
 										</div>
 									</div>
@@ -687,9 +682,9 @@ format.raw("""/a>
 
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 27 11:23:37 CET 2019
+                  DATE: Wed Nov 27 12:26:17 CET 2019
                   SOURCE: C:/Users/Arufonso/Desktop/MoliereDashboard/app/views/sdashwidgetcontent.scala.html
-                  HASH: 705256533cf20d0c334fdb9aaf068731abbfcbf8
+                  HASH: 71be16c7d0d36b75175441586679103ff927a029
                   MATRIX: 973->1|1094->27|1122->29|1193->74|1205->78|1237->90|2182->1008|2195->1012|2226->1022|2267->1036|2280->1040|2314->1053|2343->1054|2541->1225|2554->1229|2586->1240
                   LINES: 28->1|33->1|34->2|34->2|34->2|34->2|55->23|55->23|55->23|56->24|56->24|56->24|56->24|61->29|61->29|61->29
                   -- GENERATED --
