@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<root>
+	<query name="FEEDBACK_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT *
+			FROM feedback
+			WHERE courseId = ? and userId = ?
+			order by measureDate ASC
+		</content>
+	</query>
+	<query name="FEEDBACK_S02">
+		<content delimiterParsingDisabled="true">
+			SELECT *
+			FROM feedback
+			WHERE courseId = ?
+		</content>
+	</query>
+	<query name="FEEDBACK_S03">
+		<content delimiterParsingDisabled="true">
+			SELECT *
+			FROM feedback
+			WHERE userId = ?
+			ORDER BY feedbackDate DESC
+		</content>
+	</query>
+	<query name="FEEDBACK_S04">
+		<content delimiterParsingDisabled="true">
+			SELECT *
+			FROM feedback
+			WHERE courseId = ? and userId = ? and measureDate = ?
+		</content>
+	</query>
+	<query name="FEEDBACK_S05">
+		<content delimiterParsingDisabled="true">
+			INSERT INTO feedback (id, measureDate, courseId, userId, feedbackDate, status, content, type, efficacy, actionId)
+			VALUES (DEFAULT, ? , ? , ? , null , 0 , null , ? , DEFAULT, null)
+		</content>
+	</query>
+	<query name="FEEDBACK_S06">
+		<content delimiterParsingDisabled="true">
+			UPDATE feedback 
+			SET feedbackDate=?, status=1, name=?, content=?, actionType=?, actionId=?
+			WHERE courseId = ? and userId = ? and measureDate=?
+		</content>
+	</query>
+	<query name="FEEDBACK_S07">
+		<content delimiterParsingDisabled="true">
+			UPDATE feedback 
+			SET efficacy = ?
+			WHERE courseId = ? and userId = ? and measureDate=?
+		</content>
+	</query>
+	<query name="LOGIN_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT *
+			FROM users
+			WHERE email = ? and password = ?
+		</content>
+	</query>
+	<query name="USERS_S02">
+		<content delimiterParsingDisabled="true">
+			SELECT users.email, users.userId, users.name, users.surname
+			FROM users
+			WHERE role = 0
+		</content>
+	</query>
+	<query name="COURSE_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT * 
+			FROM courses 
+			WHERE courseId = ?
+		</content>
+	</query>
+	<query name="COURSE_WEEK_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT * 
+			FROM courses_weeks 
+			WHERE courseId = ? and week_number = ?
+		</content>
+	</query>
+	<query name="USER_HISTORY_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT * 
+			FROM users_history 
+			WHERE courseId = ?
+		</content>
+	</query>
+	<query name="USER_HISTORY_S02">
+		<content delimiterParsingDisabled="true">
+			SELECT *
+			FROM users_history 
+			WHERE userId = ? 
+		</content>
+	</query>
+	<query name="USER_HISTORY_S03">
+		<content delimiterParsingDisabled="true">
+			UPDATE users_history 
+			SET curiosity=0, enjoyment=0, generalInterest=0, certificate=0, credential=0, academic=0, job=0, connection=0, friendship=0 
+			WHERE courseId = ? and userId = ?
+		</content>
+	</query>
+	<query name="USER_HISTORY_S04">
+		<content delimiterParsingDisabled="true">
+			SELECT nPosts 
+			FROM users_history 
+			WHERE courseId = ?
+		</content>
+	</query>
+	<query name="USER_HISTORY_S05">
+		<content delimiterParsingDisabled="true">
+			SELECT * 
+			FROM users_history 
+			WHERE courseId = ? and userId = ?
+		</content>
+	</query>
+	<query name="USER_MEASURE_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT * 
+			FROM measurements 
+			WHERE courseId = ? and userId = ? and weekNumber = ? and iterationNumber = 4
+		</content>
+	</query>
+	<query name="USER_MEASURE_S02">
+		<content delimiterParsingDisabled="true">
+			UPDATE measurements 
+			SET c2 = ? , c3 = ? 
+			WHERE courseId = ? and userId = ? and weekNumber = ? and iterationNumber = 4
+		</content>
+	</query>
+	<query name="USER_MEASURE_S03">
+		<content delimiterParsingDisabled="true">
+			INSERT INTO measurements 
+			VALUES ( ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? )
+		</content>
+	</query>
+	<query name="USER_MEASURE_S04">
+		<content delimiterParsingDisabled="true">
+			SELECT * 
+			FROM measurements 
+			WHERE courseId = ? and userId = ? and iterationNumber = 4
+		</content>
+	</query>
+	<query name="USER_MEASURE_S05">
+		<content delimiterParsingDisabled="true">
+			SELECT *
+			FROM measurements
+			WHERE courseId=? and userId=? and weekNumber=?
+		</content>
+	</query>
+	<query name="USER_MEASURE_S06">
+		<content delimiterParsingDisabled="true">
+			SELECT *
+			FROM measurements
+			WHERE courseId=? and userId=? and weekNumber=? and iterationNumber = 4 
+		</content>
+	</query>
+	<query name="USER_MEASURE_S07">
+		<content delimiterParsingDisabled="true">
+			SELECT *
+			FROM measurements
+			WHERE courseId=? and userId=? and iterationNumber = 4
+			ORDER BY weekNumber DESC
+			LIMIT 1 
+		</content>
+	</query>
+	<query name="SURVEY_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT normalized_value 
+			FROM survey_association 
+			WHERE ? &gt;= survey_association.min AND ? &lt;= survey_association.max
+		</content>
+	</query>
+	<query name="FIRST_LEVEL_FEEDBACK_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT * 
+			FROM first_level_feedback_association 
+			WHERE mot= ? AND eng= ?
+		</content>
+	</query>
+	<query name="GROUPS_ASSOCIATION_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT *
+			FROM groups_association 
+			WHERE groupId= ?
+		</content>
+	</query>
+	<query name="SECOND_LEVEL_FEEDBACK_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT * 
+			FROM second_level_feedback_association 
+			WHERE actionGroupId= ? 
+		</content>
+	</query>
+	<query name="FEEDBACK_PREDICTION_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT * 
+			FROM feedback_prediction
+			WHERE actionId= ? 
+		</content>
+	</query>	
+	<query name="MEASUREMENTS_ASSOCIATION_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT * 
+			FROM measurements_association
+			WHERE mot= ? AND eng= ? 
+		</content>
+	</query>	
+</root>
