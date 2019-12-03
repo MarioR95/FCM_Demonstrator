@@ -205,4 +205,36 @@
 			WHERE mot= ? AND eng= ? 
 		</content>
 	</query>	
+	<query name="QUESTIONS_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT * 
+			FROM questions
+			WHERE contentType= ? AND topic= ? 
+		</content>
+	</query>	
+	<query name="ANSWERS_FEEDBACK_S01">
+		<content delimiterParsingDisabled="true">
+			SELECT * 
+			FROM answers_feedback
+			WHERE questionId = ?
+		</content>
+	</query>	
+	<query name="CONTENTS_RESULTS_S01">
+		<content delimiterParsingDisabled="true">
+			INSERT INTO contents_results (courseId,userId,contentType,topic,elapsedTime,achievedScore,maxScore) VALUES (?,?,?,?,?,?,?)
+		</content>
+	</query>	
+	<query name="LEARNING_CONTENT_S01">
+		<content delimiterParsingDisabled="true">
+			INSERT INTO learning_content (courseId,userId,contentType,topic,elapsedTime,completed) VALUES (?,?,?,?,?,?)
+			ON DUPLICATE KEY UPDATE elapsedTime= elapsedTime+?, completed=?
+		</content>
+	</query>
+	<query name="LEARNING_CONTENT_S02">
+		<content delimiterParsingDisabled="true">
+			SELECT elapsedTime
+			FROM learning_content
+			WHERE courseId=? AND userId=? AND topic=?
+		</content>
+	</query>		
 </root>

@@ -1,4 +1,4 @@
-@(user: models.dto.UserDto, contentType: String)
+@(user: models.dto.UserDto, contentType: String, topic: String)
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,8 +26,10 @@
 </script>
 
 
+
+
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@@3/es5/tex-mml-chtml.js"></script>
+
 
 <!--end::Fonts -->
 <!--begin::Page Vendors Styles(used by this page) -->
@@ -63,16 +65,32 @@
 	        <div class="kt-subheader__main"> 
 	            <h3 class="kt-subheader__title">
 		            @contentType match {
-						case "functions_sev_var" =>{
-							Functions of two variables
+						case "pdf" => {
+							@topic match {	
+								case "functions_sev_var" =>{
+									Functions of two variables
+								}
+								case "critical_points" =>{
+									Critical Points
+								}
+								case _ => {}
+							}
 						}
-						case "critical_points" =>{
-							Critical Points
+						case "assignment" => {
+							@topic match{
+								case "functions_sev_var" => {
+									Functions of two variables assignment 
+								}
+								case "critical_points" => {
+									Critical points assignment
+								}
+								case _ => {}
+							}
 						}
-						case "AR" => {
+						case "ar" => {
 							AR Learning
 						}
-						case "Quiz" => {
+						case "quiz" => {
 							Quiz
 						}	
 						case _ => {}
@@ -80,22 +98,38 @@
 	            </h3>
 	            <span class="kt-subheader__separator kt-hidden"></span>
 	            <div class="kt-subheader__breadcrumbs">
-	                <a href="/dashboard?username="+@user.getEmail() class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>                   
+	                <a href="/dashboard?username=@user.getEmail()" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>                   
 	            </div>    
 	            <span class="kt-subheader__separator kt-hidden"></span>
 	            <div class="kt-subheader__breadcrumbs">
 	            	<a href="/course?courseId=HarvardX/CB22x/2013_Spring"> Mathematical Analysis II -</a>
 					@contentType match {
-						case "functions_sev_var" =>{
-							Functions of two variables
+						case "pdf" => {
+							@topic match {	
+								case "functions_sev_var" =>{
+									Functions of two variables
+								}
+								case "critical_points" =>{
+									Critical Points
+								}
+								case _ => {}
+							}
 						}
-						case "critical_points" =>{
-							Critical Points
+						case "assignment" => {
+							@topic match{
+								case "functions_sev_var" => {
+									Functions of two variables assignment 
+								}
+								case "critical_points" => {
+									Critical points assignment
+								}
+								case _ => {}
+							}
 						}
-						case "AR" => {
+						case "ar" => {
 							AR Learning
 						}
-						case "Quiz" => {
+						case "quiz" => {
 							Quiz
 						}	
 						case _ => {}
@@ -105,17 +139,34 @@
     	</div>
 	</div>    
 	@contentType match {
-		case "AR" => {
-			@views.html._layout(user, "AR")
+		case "ar" => {
+			@views.html._layout(user, "ar")
 		}
-		case "functions_sev_var" => {
-			@views.html._layout(user, "functions_sev_var")
+		case "pdf" => {
+			@topic match {
+				case "functions_sev_var" => {
+					@views.html._layout(user, "functions_sev_var_pdf")
+				}
+				case "critical_points" =>{
+					@views.html._layout(user, "critical_points_pdf")
+				}
+				case _ => {}
+			}
+		
 		}
-		case "critical_points" =>{
-			@views.html._layout(user, "critical_points")
+		case "assignment" => {
+			@topic match {
+				case "functions_sev_var" => {
+					@views.html._layout(user, "functions_sev_var_assignment")
+				}
+				case "critical_points" =>{
+					@views.html._layout(user, "critical_points_assignment")
+				}
+				case _ => {}
+			}
 		}
-		case "Quiz" => {
-			@views.html._layout(user, "Quiz")
+		case "quiz" => {
+			@views.html._layout(user, "quiz")
 		}
 		case _ => {}
 		
@@ -123,6 +174,7 @@
 	
 	 
 	<!-- begin::Global Config(global config for global JS sciprts) -->
+	
 	<script>
 		var KTAppOptions = {
 			"colors" : {
@@ -144,6 +196,9 @@
 		};
 	</script>
 	<!-- end::Global Config -->
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	
 	<!--begin::Global Theme Bundle(used by all pages) -->
 	<script src="assets/vendors/global/vendors.bundle.js" type="text/javascript"></script>
 	<script src="assets/javascripts/scripts.bundle.js" type="text/javascript"></script>
@@ -162,57 +217,167 @@
 	<script src="assets/vendors/custom/flot/flot.bundle.js" type="text/javascript"></script>
 		
 	<script src="assets/javascripts/pages/wizard/wizard-3.js" type="text/javascript"></script>
-	
-	<script src="assets/javascripts/pages/quiz-handler.js"></script>
+	@contentType match {
+		case "quiz" | "assignment" => {
+			<script src="assets/javascripts/pages/quiz-handler.js"></script>
+		}
+		case _ => {}
+	}
 	
 	<script>
 		$(document).ready(function(){
-			var timeStamp = Math.floor(Date.now() / 1000);
-			$("mjx-container").css("display", "inline");
-			
+			var startTime = Math.floor(Date.now()/1000);
+								
+			//Function that return the time elapsed on a page
+			function getElapsedTime(){
+				var currentTime= Math.floor(Date.now()/1000);
+				return currentTime - startTime;
+			}
 			
 			@contentType match {
-				case "functions_sev_var" => {
-					
+				case "pdf" => {
+					$('a[href="/course?courseId=HarvardX/CB22x/2013_Spring"], a[href="/dashboard?username=@user.getEmail()"]').click(function(){
+						$.ajax({
+							url: "/updateLearningResult",
+							data: "courseId=HarvardX/CB22x/2013_Spring&userId=@user.getUserId&contentType=@contentType&topic=@topic&elapsedTime="+getElapsedTime(),
+							contentType: "application/json; charset=utf-8",
+							dataType: "json",
+							success: function(data){
+								window.location.replace("/course?courseId=HarvardX/CB22x/2013_Spring");
+							},
+							error: function(err){
+								console.log(err)		
+							}
+						});				
+					});	
 				}
-				
-				case "critical_points" => {
+	
+				case "quiz" | "assignment" => {
 					
-				}
-				
-				case "Quiz" => {
-					var questions = 5;
-					var n_question = 1;
-					var current_question= n_question;
-					$('button[data-ktwizard-type="action-next"]').prop("disabled",true);	
-					checkScore(n_question);
-					
-					$('button[data-ktwizard-type="action-prev"]').click(function(){
-						current_question --;
-						if(isAnswered(current_question)){
-							$('button[data-ktwizard-type="action-next"]').prop("disabled",false);
-						}
-					});
-					
-					$('button[data-ktwizard-type="action-next"]').click(function(){
-						current_question++;
-						if(!isAnswered(current_question)){
-							$(this).prop("disabled", true);
-						}else{
-							$(this).prop("disabled", false);
-						}
-						n_question++;
-						checkScore(n_question, questions);
-					});
+					//RETRIEVE QUESTIONS
+					$.ajax({
+							url: "/retrieveQuestions",
+							data:"contentType=@contentType&topic=@topic",
+							contentType: "application/json; charset=utf-8",
+							dataType: "json",
+							success: function(data){
+								console.log(data)
+								var n_questions = data["questions"].length;
+								var n_answers;
+								if("@contentType" == "quiz"){
+									n_answers= data["answers"].length;	
+								}
+								var n_question = 1;
+								var current_question= 1;
+								var questions_list= shuffle(data["questions"]);
+								var answers_list = data["answers"];
+								var answersFeedback
+
+								//INIT QUESTIONS
+								for(var i=0 ; i< n_questions; i++){
+									initFormQuestions(questions_list[i], (i+1),"@contentType");
+								}
+								
+								if("@contentType" == "assignment"){
+									$(".feedback_container").remove();
+								}
+								appendFormActions();
+								
+								//RETRIEVE ANSWERS
+								if("@contentType" == "quiz"){
+									for(var j=0; j<n_answers; j++ ){
+										if(questions_list[current_question-1].questionId == answers_list[j].questionId){
+											answersFeedback= answers_list[j];
+											console.log(answersFeedback);
+										}
+									}
+								}
+								
+									
+								$('button[data-ktwizard-type="action-next"]').prop("disabled",true);
+								if("@contentType"=="quiz")
+									checkQuizScore(n_question, n_questions, questions_list[current_question-1].rightAnswer, answersFeedback);
+								else 
+									checkAssignmentScore(n_question, n_questions, questions_list[current_question-1].rightAnswer);
+								$('button[data-ktwizard-type="action-prev"]').click(function(event){
+									event.preventDefault();
+									$("#question_"+current_question).removeAttr("data-ktwizard-state");
+									$("#nav_"+current_question).removeAttr("data-ktwizard-state");
+									current_question --;
+									$("#question_"+current_question).attr("data-ktwizard-state", "current");
+									$("#nav_"+current_question).attr("data-ktwizard-state", "current");
+									if(isAnswered(current_question)){
+										$('button[data-ktwizard-type="action-next"]').prop("disabled",false);
+									}
+								});
+								
+								$('button[data-ktwizard-type="action-next"]').click(function(event){
+									event.preventDefault();
+									
+									$('button[data-ktwizard-type="action-prev"]').show();
+									$("#nav_"+current_question).removeAttr("data-ktwizard-state");
+									$("#question_"+current_question).removeAttr("data-ktwizard-state");
+									
+									current_question++;
+									$("#question_"+current_question).attr("data-ktwizard-state", "current");
+									$("#nav_"+current_question).attr("data-ktwizard-state", "current");
+									
+									
+									//RETRIEVE ANSWERS
+									for(var j=0; j<n_answers; j++ ){
+										if(questions_list[current_question-1].questionId == answers_list[j].questionId){
+											answersFeedback= answers_list[j];
+											console.log(answersFeedback);
+										}
+									}
+														
+									if(!isAnswered(current_question)){
+										$(this).prop("disabled", true);
+									}else{
+										$(this).prop("disabled", false);
+									}
+									
+									n_question++;
+									if("@contentType"=="quiz")
+										checkQuizScore(n_question, n_questions, questions_list[current_question-1].rightAnswer, answersFeedback);
+									else 
+										checkAssignmentScore(n_question, n_questions, questions_list[current_question-1].rightAnswer);
+									
+									if(current_question == n_questions)
+										$("#kt_wizard_v3").attr("data-ktwizard-state", "last");
+																
+								});
+								
+								$('#submit-btn').click(function(){
+									$.ajax({
+										url: "/courseQuizResult",
+										data: "courseId=HarvardX/CB22x/2013_Spring&userId=@user.getUserId&contentType=@contentType&topic=@topic&elapsedTime="+getElapsedTime()+"&achievedScore="+getResult()+"&totalScore="+n_questions,
+										contentType: "application/json; charset=utf-8",
+										dataType: "json",
+										success: function(data){
+											window.location.replace("/course?courseId=HarvardX/CB22x/2013_Spring");
+										},
+										error: function(err){
+											console.log(err)		
+										}
+									});
+								})
+								
+							},
+							error: function(err){
+								console.log(err)		
+							}
+						});
 
 				}
 				
 				case _ => {}
 						
 			}
-			
+			$(".mjx-chtml").removeClass("MJXc-display");
+
 		});
-		
+				
 	</script>
 </body>
 <!-- end::Body -->
