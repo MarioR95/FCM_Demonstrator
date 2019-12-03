@@ -34,5 +34,15 @@ public class ARSupport extends Controller {
 	    return ok(node);
 	}
 	
+	public Result isQuizUnlocked(String courseId, String userId) {
+		
+		return ok();
+	}
 	
+	public Result retrieveLessons(String courseId, String userId) {
+		
+		 
+		
+		return ok();
+	}
 }
