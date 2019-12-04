@@ -14,11 +14,28 @@
 				views.html.tcoursedetailscontent()
 			else
 				views.html.scoursedetailscontent(user)
-	
 			}
 		}
 		case "studentStats" => {
 			@views.html.studentStats()
+		}	
+		case "functions_sev_var_pdf" => {
+			@views.html.learning_content("Functions of two variables")
+		}
+		case "critical_points_pdf" => {
+			@views.html.learning_content("Critical Points")
+		}	
+		case "functions_sev_var_assignment" => {
+			@views.html.quiz_content()
+		}
+		case "critical_points_assignment" => {
+			@views.html.quiz_content()
+		}	
+		case "ar" => {
+			@views.html.ar_learning_contents()
+		}
+		case "quiz" => {
+			@views.html.quiz_content()
 		}
 		case _ => {}
 	}
