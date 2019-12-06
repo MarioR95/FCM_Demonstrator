@@ -477,16 +477,16 @@
 																	<tbody>
 																		<tr>
 																			<td>
-																				<span id="status-topic1" class="kt-badge kt-badge--inline kt-badge--success">Completed</span>
+																				<span id="status-topic1" class="kt-badge kt-badge--inline kt-badge--info">Uncompleted</span>
 																			</td>
 																			<td>
 																				<span class="kt-widget11__title">Assignment</span>
 																				<span class="kt-widget11__sub">Quiz - Function of two variables</span>
 																			</td>
-																			<td>-</td>
+																			<td id="score-topic1">-</td>
 																			<td>
 																				<div class='dropdown dropright'>
-																					<button type='button' class='btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+																					<button id="topic-btn-1" type='button' class='btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
 																						<i class='flaticon-more-1'></i>
 																					</button>
 																					<div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>
@@ -497,16 +497,16 @@
 																		</tr>
 																		<tr>
 																			<td>
-																				<span id="status-topic2" class="kt-badge kt-badge--inline kt-badge--success">Completed</span>
+																				<span id="status-topic2" class="kt-badge kt-badge--inline kt-badge--info">Uncompleted</span>
 																			</td>
 																			<td>
 																				<span class="kt-widget11__title">Assignment</span>
 																				<span class="kt-widget11__sub">Quiz - Critical Points</span>
 																			</td>
-																			<td>-</td>
+																			<td id="score-topic2">-</td>
 																			<td>
 																				<div class='dropdown dropright'>
-																					<button type='button' class='btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+																					<button id="topic-btn-2" type='button' class='btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
 																						<i class='flaticon-more-1'></i>
 																					</button>
 																					<div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>
@@ -517,13 +517,13 @@
 																		</tr>
 																		<tr>
 																			<td>
-																				<span id="status-quiz" class="kt-badge kt-badge--inline kt-badge--info">Uncompleted</span>
+																				<span id="status-quiz" class="kt-badge kt-badge--inline kt-badge--danger">Blocked</span>
 																			</td>
 																			<td>
 																				<span class="kt-widget11__title">Quiz</span>
 																				<span class="kt-widget11__sub">Test your knowledges about this chapter</span>
 																			</td>
-																			<td>-</td>
+																			<td id="score-quiz">-</td>
 																			<td>
 																				<div class='dropdown dropright'>
 																					<button id="quiz-btn" type='button' class='btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' disabled>
@@ -579,35 +579,83 @@
 			var percentage= 0;
 			var classColor= "";
 			var topic1, topic2, quiz;
-			topic1= $("#status-topic1").text();
-			topic2= $("#status-topic2").text();
-			quiz= $("#status-quiz").text();
+			
+			$.ajax({
+				url: "/retrieveAssignmentsDone",
+				data: "courseId=HarvardX/CB22x/2013_Spring&userId=@user.getUserId",
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				success: function(data){
+					if(data != "empty"){
+						console.log(data);
+						var assignmentsDone= data["assignments"];
+						var length= assignmentsDone.length;
+						
+						for(var i=0; i<length; i++){						
+							if(assignmentsDone[i].topic == "functions_sev_var"){
+								$("#status-topic1").html("Completed");
+								$("#status-topic1").removeClass("kt-badge--info");
+								$("#status-topic1").addClass("kt-badge--success");
+								$("#topic-btn-1").prop("disabled",true);
+								$("#score-topic1").html(((assignmentsDone[i].achievedScore*30)/assignmentsDone[i].maxScore));
+							}else if(assignmentsDone[i].topic == "critical_points"){
+								$("#status-topic2").html("Completed");
+								$("#status-topic2").removeClass("kt-badge--info");
+								$("#status-topic2").addClass("kt-badge--success");
+								$("#topic-btn-2").prop("disabled", true);
+								$("#score-topic2").html(((assignmentsDone[i].achievedScore*30)/assignmentsDone[i].maxScore));
+							}
+							else if(assignmentsDone[i].topic == "chapter3"){
+								$("#status-quiz").html("Completed");
+								$("#status-quiz").removeClass("kt-badge--danger");
+								$("#status-quiz").removeClass("kt-badge--info");
+								$("#status-quiz").addClass("kt-badge--success");
+								$("#score-quiz").html(((assignmentsDone[i].achievedScore*30)/assignmentsDone[i].maxScore));
+								$("#quiz-btn").prop("disabled", true);
+							}
+									
+						}	
+						
+						
+						topic1= $("#status-topic1").text();
+						topic2= $("#status-topic2").text();
+						quiz= $("#status-quiz").text();
+
+						if(quiz == "Blocked" || quiz == "Uncompleted"){
+							if(topic1 == "Uncompleted" && topic2 == "Completed" || topic1 == "Completed" && topic2 == "Uncompleted"){
+								percentage = 35;
+								classColor="bg-danger";
+							}
+							else if(topic1 == "Completed" && topic2 == "Completed"){
+								percentage = 70;
+								classColor="bg-warning";
+								$("#status-quiz").html("Uncompleted");
+								$("#quiz-btn").removeAttr("disabled");
+								
+								$("#status-quiz").removeClass("kt-badge--danger");
+								$("#status-quiz").addClass("kt-badge--info");
+								
+							}
+						}
+						else{
+							classColor="bg-success";
+							percentage = 100;
+						}
+						
+						$("#chap3-progresses").empty();
+						
+						$("#chap3-progresses").html(
+							"<div class='progress-bar "+classColor+"' role='progressbar' style='width: "+percentage+"%;' aria-valuenow='"+percentage+"' aria-valuemin='0' aria-valuemax='100'>"+percentage+"%</div>"
+						);
+					}
+					
+				},
+				error: function(err){
+					console.log(err)		
+				}
+			});
 			
 			
-			if(topic1 == "Uncompleted" && topic2 == "Completed" || topic1 == "Completed" && topic2 == "Uncompleted"){
-				percentage = 35;
-				classColor="bg-danger";
-			}
-			else if(topic1 == "Completed" && topic2 == "Completed"){
-				percentage = 70;
-				classColor="bg-warning";
-				$("#status-quiz").html("Uncompleted");
-				$("#quiz-btn").removeAttr("disabled");
-				
-				$("#status-quiz").removeClass("kt-badge--danger");
-				$("#status-quiz").addClass("kt-badge--info");
-				//DO A REQUEST CALL TO STORE THIS CHANGE INTO DB
-				
-			}else if(topic1 == "Completed" && topic2 == "Completed" && quiz == "Completed"){
-				classColor="bg-success";
-				percentage == 100;
-			}
-			
-			$("#chap3-progresses").empty();
-			
-			$("#chap3-progresses").html(
-				"<div class='progress-bar "+classColor+"' role='progressbar' style='width: "+percentage+"%;' aria-valuenow='"+percentage+"' aria-valuemin='0' aria-valuemax='100'>"+percentage+"%</div>"
-			);
 		});
 					
 	</script>	

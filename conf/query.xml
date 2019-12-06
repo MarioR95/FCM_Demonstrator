@@ -224,6 +224,13 @@
 			INSERT INTO contents_results (courseId,userId,contentType,topic,elapsedTime,achievedScore,maxScore) VALUES (?,?,?,?,?,?,?)
 		</content>
 	</query>	
+	<query name="CONTENTS_RESULTS_S02">
+		<content delimiterParsingDisabled="true">
+			SELECT *
+			FROM contents_results
+			WHERE courseId=? AND userId=?
+		</content>
+	</query>	
 	<query name="LEARNING_CONTENT_S01">
 		<content delimiterParsingDisabled="true">
 			INSERT INTO learning_content (courseId,userId,contentType,topic,elapsedTime,completed) VALUES (?,?,?,?,?,?)
