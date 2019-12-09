@@ -37,14 +37,18 @@ public class LearningContentDao {
 			conn = ConnectionPool.getSingleton(IConstants.DB_KEY);
 			QueryRunner qRunner = new QueryRunner();
 			
-			int elapsedTime = qRunner.query(conn, FileQueryReader.getQuery("LEARNING_CONTENT_S02"),new TrimmedBeanHandler<LearningContentDto>(LearningContentDto.class),new Object[]{courseId,userId, topic}).getElapsedTime();
-			
-            return elapsedTime;
+			LearningContentDto dto = qRunner.query(conn, FileQueryReader.getQuery("LEARNING_CONTENT_S02"),new TrimmedBeanHandler<LearningContentDto>(LearningContentDto.class),new Object[]{courseId,userId, topic});
+			if(dto != null) {
+				return dto.getElapsedTime();
+			}
+		      
 		}
 		
 		finally {
 			ConnectionPool.close(conn);
 		}
+		
+		return -1;
 	}
 	
 	

@@ -422,10 +422,15 @@ public class Application extends Controller {
 	
 	public Result updateLearingResult(Http.Request request, String courseId, String userId, String contentType, String topic, int elapsedTime) {
 		try {
+			int completed= 0;
 			int timeSpent= LearningContentDao.retrieveElapsedTimeByTopic(courseId, userId, topic);
-			
-			int completed= (((timeSpent+elapsedTime)/60) >= 2) ? 1 : 0;
-
+			if(timeSpent != -1) {
+				System.out.println(timeSpent);
+				completed= (((timeSpent+elapsedTime)/60) >= 2) ? 1 : 0;
+			}else {
+				completed= ((elapsedTime/60) >= 2) ? 1 : 0;
+			}
+			System.out.println(completed);
 			LearningContentDao.doUpdateRecord(courseId, userId, contentType, topic, elapsedTime, completed);
 			return ok(Json.toJson(200));
 		} catch (Exception e) {
