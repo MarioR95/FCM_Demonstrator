@@ -75,7 +75,7 @@ Seq[Any](format.raw/*1.23*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 27 12:26:17 CET 2019
+                  DATE: Wed Dec 04 12:04:38 CET 2019
                   SOURCE: C:/Users/Arufonso/Desktop/MoliereDashboard/app/views/learning_content.scala.html
                   HASH: 7eb059a3c6d37118b34123778e5653e8c7dc7b89
                   MATRIX: 959->1|1075->22|1103->24|1380->276|1411->287|1444->294|1631->455|1651->466|1666->472|1676->478|1721->514|1761->516|1793->521|1845->559|1879->584|1919->586|1951->591|2000->627|2018->636|2042->643|2072->646

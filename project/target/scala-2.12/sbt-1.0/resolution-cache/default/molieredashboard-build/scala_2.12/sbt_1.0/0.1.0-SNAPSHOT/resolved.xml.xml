@@ -4,7 +4,7 @@
 		module="molieredashboard-build"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20191127111114"
+		publication="20191204120411"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>

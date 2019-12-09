@@ -12,7 +12,16 @@ GET		/dashboard					controllers.HomeController.buildDashboard(request: Request)
 +anyhost
 +nocsrf
 POST	/doLogin					controllers.ARSupport.doLogin(email: String, password: String)
- 
+
++anyhost
+GET		/isQuizCompleted			controllers.ARSupport.isQuizCompleted(courseId: String, userId: String, contentType: String, topic: String)
+
++anyhost
+GET		/saveQuizResult				controllers.ARSupport.saveQuizResult(courseId: String, userId: String, contentType: String, topic: String, elapsedTime: Integer, achievedScore: Integer, totalScore: Integer)
+
++anyhost
+GET		/updateLessonTimer			controllers.ARSupport.updateLessonTimer(courseId: String, userId: String, contentType: String, topic: String, elapsedTime: Integer)
+
 
 #End ARSupport calls
 
@@ -52,6 +61,17 @@ GET 	/retrieveStudentsStatus		controllers.Application.retrieveStudentsStatus(req
 GET 	/checkEfficacy				controllers.Application.checkEfficacy(request: Request, courseId: String, userId: String, prevDate: String, prevWeek: Integer)
 +anyhost
 GET		/sendFeedback				controllers.Application.sendFeedback(request: Request, courseId: String, userId: String, actionId: Integer, actionType: String, name: String, description: String, date: String)
+
++anyhost
+GET		/loadContents				controllers.Application.loadContents(request: Request, contentType: String, topic: String)
++anyhost
+GET 	/retrieveQuestions			controllers.Application.retrieveQuestions(request: Request, contentType: String, topic: String)
+
++anyhost
+GET 	/updateLearningResult		controllers.Application.updateLearingResult(request: Request, courseId: String, userId: String, contentType: String, topic: String, elapsedTime: Integer)
+
++anyhost					
+GET 	/courseQuizResult			controllers.Application.fetchQuizResult(request: Request, courseId: String, userId: String, contentType: String, topic: String, elapsedTime: Integer, achievedScore: Integer, totalScore: Integer) 		
 
 
 # Map static resources from the /public folder to the /assets URL path

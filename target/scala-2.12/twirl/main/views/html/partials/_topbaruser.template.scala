@@ -62,7 +62,7 @@ Seq[Any](format.raw/*1.28*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 27 12:26:17 CET 2019
+                  DATE: Wed Dec 04 12:04:39 CET 2019
                   SOURCE: C:/Users/Arufonso/Desktop/MoliereDashboard/app/views/partials/_topbaruser.scala.html
                   HASH: 4920cabb7b9b467e226aa8aec18c4a7f52835b15
                   MATRIX: 975->1|1096->27|1124->29|1518->396|1531->400|1562->410|1954->775|1967->779|2008->799|2215->979|2229->984|2284->1018|2317->1024

@@ -142,7 +142,7 @@ Seq[Any](format.raw/*1.1*/("""<li class="kt-menu__item kt-menu__item--submenu" a
 
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 27 12:26:17 CET 2019
+                  DATE: Wed Dec 04 12:04:39 CET 2019
                   SOURCE: C:/Users/Arufonso/Desktop/MoliereDashboard/app/views/partials/_tasidemenu.scala.html
                   HASH: 59d7472730bf4f7f4253c4fb5df2c87b86019b86
                   MATRIX: 1045->0

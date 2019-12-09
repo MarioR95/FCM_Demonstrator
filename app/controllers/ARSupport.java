@@ -6,6 +6,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
+import models.dao.ContentsResultsDao;
+import models.dao.LearningContentDao;
 import models.dao.UserDao;
 import models.dto.UserDto;
 import play.libs.Json;
@@ -34,15 +36,47 @@ public class ARSupport extends Controller {
 	    return ok(node);
 	}
 	
-	public Result isQuizUnlocked(String courseId, String userId) {
+	public Result isQuizCompleted(String courseId, String userId, String contentType, String topic) {
+		System.out.println("Controllo quiz");
+		ObjectMapper mapper = new ObjectMapper();
+	    ObjectNode node = mapper.createObjectNode();
+	    
+	    try {
+			boolean quiz = ContentsResultsDao.isQuizCompleted(courseId, userId, contentType, topic);
+			
+			node.set("isQuizCompleted", mapper.convertValue((quiz ? 1 : 0), JsonNode.class));
+			
+			return ok(node);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ok();
+	    
 		
+	}
+	
+	public Result saveQuizResult(String courseId, String userId, String contentType, String topic, int elapsedTime, int achievedScore, int totalScore) {
+		System.out.println("Salvo il quiz");
+		try {
+			ContentsResultsDao.doSaveContentResult(courseId, userId, contentType, topic, elapsedTime, achievedScore, totalScore);
+			return ok();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return ok();
 	}
 	
-	public Result retrieveLessons(String courseId, String userId) {
-		
-		 
-		
+	public Result updateLessonTimer(String courseId, String userId, String contentType, String topic, int elapsedTime) {
+		try {
+
+			LearningContentDao.doUpdateRecord(courseId, userId, contentType, topic, elapsedTime, 1);
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return ok();
 	}
+
 }

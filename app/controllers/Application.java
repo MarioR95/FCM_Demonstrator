@@ -18,21 +18,27 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.mysql.cj.xdevapi.JsonNumber;
 
 import flexjson.JSON;
+import models.dao.AnswersFeedbackDao;
+import models.dao.ContentsResultsDao;
 import models.dao.CourseDao;
 import models.dao.FeedbackDao;
 import models.dao.FeedbackPredictionDao;
 import models.dao.FirstLevelFeedbackAssociationDao;
 import models.dao.GroupsAssociationDao;
+import models.dao.LearningContentDao;
 import models.dao.MeasurementsAssociationDao;
+import models.dao.QuestionsDao;
 import models.dao.SecondLevelFeedbackAssociationDao;
 import models.dao.UserDao;
 import models.dao.UserHistoryDao;
 import models.dao.UserMeasureDao;
+import models.dto.AnswersFeedbackDto;
 import models.dto.FeedbackDto;
 import models.dto.FeedbackPredictionDto;
 import models.dto.FirstLevelFeedbackAssociationDto;
 import models.dto.GroupsAssociationDto;
 import models.dto.MeasurementsAssociationDto;
+import models.dto.QuestionsDto;
 import models.dto.SecondLevelFeedbackAssociationDto;
 import models.dto.UserDto;
 import models.dto.UserHistoryDto;
@@ -56,7 +62,7 @@ public class Application extends Controller {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		//System.out.println(Json.toJson(user).toString());
 	    return ok(Json.toJson(user).toString()).addingToSession(request, "connected",Json.toJson(user).toString());
 	
@@ -362,6 +368,68 @@ public class Application extends Controller {
 		
 		return ok(Json.toJson(200));
 	}
+
+	public Result loadContents(Http.Request request,String contentType, String topic) {
+		JsonNode node= null;
+		UserDto user= null;
+		if(request.session().getOptional("connected").isPresent()) {	
+    		node = Json.parse(request.session().getOptional("connected").get());
+    		user = Json.fromJson(node, UserDto.class);
+		}
+		return ok(views.html.contents_container.render(user, contentType, topic));
+	}
+	
+	
+	public Result retrieveQuestions (Http.Request request, String contentType, String topic ) {
+		ObjectMapper mapper = new ObjectMapper();
+		ObjectNode node = mapper.createObjectNode();
+		try {
+			List<QuestionsDto> questions= QuestionsDao.retrieveQuestionsList(contentType, topic);
+			ArrayNode questionsList= mapper.valueToTree(questions);
+			node.putArray("questions").addAll(questionsList);
+			System.out.println("CHAIOO");
+			if(contentType.equals("quiz")) {
+				System.out.println("hello");
+				List<AnswersFeedbackDto> answers = new ArrayList<AnswersFeedbackDto>();
+				for(QuestionsDto q: questions) {
+					AnswersFeedbackDto dto= AnswersFeedbackDao.retrieveAnswersFeedbackByQuestionId(q.getQuestionId());
+					answers.add(dto);
+				}
+				ArrayNode answersList= mapper.valueToTree(answers);
+				node.putArray("answers").addAll(answersList);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ok(node);
+	}
+	
+	public Result updateLearingResult(Http.Request request, String courseId, String userId, String contentType, String topic, int elapsedTime) {
+		try {
+			int timeSpent= LearningContentDao.retrieveElapsedTimeByTopic(courseId, userId, topic);
+			
+			int completed= (((timeSpent+elapsedTime)/60) >= 2) ? 1 : 0;
+
+			LearningContentDao.doUpdateRecord(courseId, userId, contentType, topic, elapsedTime, completed);
+			return ok(Json.toJson(200));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ok(Json.toJson(400));
+	}
+	
+	public Result fetchQuizResult(Http.Request request, String courseId, String userId, String contentType, String topic, int elapsedTime, int achievedScore, int totalScore) {
+		try {
+			ContentsResultsDao.doSaveContentResult(courseId, userId, contentType, topic, elapsedTime, achievedScore, totalScore);
+			return ok(Json.toJson(200));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ok(Json.toJson(500));
+		
+	}
+	
 	
 	
 	public Result logout(Http.Request request) {

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Arufonso/Desktop/MoliereDashboard/conf/routes
-// @DATE:Wed Nov 27 12:27:42 CET 2019
+// @DATE:Wed Dec 04 16:01:19 CET 2019
 
 package router
 
@@ -18,9 +18,9 @@ class Routes(
   HomeController_3: controllers.HomeController,
   // @LINE:14
   ARSupport_1: controllers.ARSupport,
-  // @LINE:22
+  // @LINE:31
   Application_0: controllers.Application,
-  // @LINE:59
+  // @LINE:79
   Assets_2: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -31,9 +31,9 @@ class Routes(
     HomeController_3: controllers.HomeController,
     // @LINE:14
     ARSupport_1: controllers.ARSupport,
-    // @LINE:22
+    // @LINE:31
     Application_0: controllers.Application,
-    // @LINE:59
+    // @LINE:79
     Assets_2: controllers.Assets
   ) = this(errorHandler, HomeController_3, ARSupport_1, Application_0, Assets_2, "/")
 
@@ -51,6 +51,9 @@ class Routes(
     ("""GET""", this.prefix, """controllers.HomeController.index"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """dashboard""", """controllers.HomeController.buildDashboard(request:Request)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """doLogin""", """controllers.ARSupport.doLogin(email:String, password:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """isQuizCompleted""", """controllers.ARSupport.isQuizCompleted(courseId:String, userId:String, contentType:String, topic:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """saveQuizResult""", """controllers.ARSupport.saveQuizResult(courseId:String, userId:String, contentType:String, topic:String, elapsedTime:Integer, achievedScore:Integer, totalScore:Integer)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """updateLessonTimer""", """controllers.ARSupport.updateLessonTimer(courseId:String, userId:String, contentType:String, topic:String, elapsedTime:Integer)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """authenticate""", """controllers.Application.authenticate(request:Request, email:String, password:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """course""", """controllers.Application.courseDetails(request:Request, courseId:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """studentStats""", """controllers.Application.studentStats(request:Request)"""),
@@ -66,6 +69,10 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """retrieveStudentsStatus""", """controllers.Application.retrieveStudentsStatus(request:Request, courseId:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """checkEfficacy""", """controllers.Application.checkEfficacy(request:Request, courseId:String, userId:String, prevDate:String, prevWeek:Integer)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """sendFeedback""", """controllers.Application.sendFeedback(request:Request, courseId:String, userId:String, actionId:Integer, actionType:String, name:String, description:String, date:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """loadContents""", """controllers.Application.loadContents(request:Request, contentType:String, topic:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """retrieveQuestions""", """controllers.Application.retrieveQuestions(request:Request, contentType:String, topic:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """updateLearningResult""", """controllers.Application.updateLearingResult(request:Request, courseId:String, userId:String, contentType:String, topic:String, elapsedTime:Integer)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """courseQuizResult""", """controllers.Application.fetchQuizResult(request:Request, courseId:String, userId:String, contentType:String, topic:String, elapsedTime:Integer, achievedScore:Integer, totalScore:Integer)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -132,11 +139,65 @@ class Routes(
     )
   )
 
-  // @LINE:22
-  private[this] lazy val controllers_Application_authenticate3_route = Route("POST",
+  // @LINE:17
+  private[this] lazy val controllers_ARSupport_isQuizCompleted3_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("isQuizCompleted")))
+  )
+  private[this] lazy val controllers_ARSupport_isQuizCompleted3_invoker = createInvoker(
+    ARSupport_1.isQuizCompleted(fakeValue[String], fakeValue[String], fakeValue[String], fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ARSupport",
+      "isQuizCompleted",
+      Seq(classOf[String], classOf[String], classOf[String], classOf[String]),
+      "GET",
+      this.prefix + """isQuizCompleted""",
+      """""",
+      Seq("""anyhost""")
+    )
+  )
+
+  // @LINE:20
+  private[this] lazy val controllers_ARSupport_saveQuizResult4_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("saveQuizResult")))
+  )
+  private[this] lazy val controllers_ARSupport_saveQuizResult4_invoker = createInvoker(
+    ARSupport_1.saveQuizResult(fakeValue[String], fakeValue[String], fakeValue[String], fakeValue[String], fakeValue[Integer], fakeValue[Integer], fakeValue[Integer]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ARSupport",
+      "saveQuizResult",
+      Seq(classOf[String], classOf[String], classOf[String], classOf[String], classOf[Integer], classOf[Integer], classOf[Integer]),
+      "GET",
+      this.prefix + """saveQuizResult""",
+      """""",
+      Seq("""anyhost""")
+    )
+  )
+
+  // @LINE:23
+  private[this] lazy val controllers_ARSupport_updateLessonTimer5_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updateLessonTimer")))
+  )
+  private[this] lazy val controllers_ARSupport_updateLessonTimer5_invoker = createInvoker(
+    ARSupport_1.updateLessonTimer(fakeValue[String], fakeValue[String], fakeValue[String], fakeValue[String], fakeValue[Integer]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ARSupport",
+      "updateLessonTimer",
+      Seq(classOf[String], classOf[String], classOf[String], classOf[String], classOf[Integer]),
+      "GET",
+      this.prefix + """updateLessonTimer""",
+      """""",
+      Seq("""anyhost""")
+    )
+  )
+
+  // @LINE:31
+  private[this] lazy val controllers_Application_authenticate6_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("authenticate")))
   )
-  private[this] lazy val controllers_Application_authenticate3_invoker = createInvoker(
+  private[this] lazy val controllers_Application_authenticate6_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.authenticate(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String]),
@@ -152,11 +213,11 @@ class Routes(
     )
   )
 
-  // @LINE:25
-  private[this] lazy val controllers_Application_courseDetails4_route = Route("GET",
+  // @LINE:34
+  private[this] lazy val controllers_Application_courseDetails7_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("course")))
   )
-  private[this] lazy val controllers_Application_courseDetails4_invoker = createInvoker(
+  private[this] lazy val controllers_Application_courseDetails7_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.courseDetails(fakeValue[play.mvc.Http.Request], fakeValue[String]),
@@ -172,11 +233,11 @@ class Routes(
     )
   )
 
-  // @LINE:28
-  private[this] lazy val controllers_Application_studentStats5_route = Route("GET",
+  // @LINE:37
+  private[this] lazy val controllers_Application_studentStats8_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("studentStats")))
   )
-  private[this] lazy val controllers_Application_studentStats5_invoker = createInvoker(
+  private[this] lazy val controllers_Application_studentStats8_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.studentStats(fakeValue[play.mvc.Http.Request]),
@@ -192,11 +253,11 @@ class Routes(
     )
   )
 
-  // @LINE:30
-  private[this] lazy val controllers_Application_logout6_route = Route("GET",
+  // @LINE:39
+  private[this] lazy val controllers_Application_logout9_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("logout")))
   )
-  private[this] lazy val controllers_Application_logout6_invoker = createInvoker(
+  private[this] lazy val controllers_Application_logout9_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.logout(fakeValue[play.mvc.Http.Request]),
@@ -212,11 +273,11 @@ class Routes(
     )
   )
 
-  // @LINE:34
-  private[this] lazy val controllers_Application_courseMembers7_route = Route("GET",
+  // @LINE:43
+  private[this] lazy val controllers_Application_courseMembers10_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("courseMembers")))
   )
-  private[this] lazy val controllers_Application_courseMembers7_invoker = createInvoker(
+  private[this] lazy val controllers_Application_courseMembers10_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.courseMembers(fakeValue[play.mvc.Http.Request], fakeValue[String]),
@@ -232,11 +293,11 @@ class Routes(
     )
   )
 
-  // @LINE:36
-  private[this] lazy val controllers_Application_fetchStudentStats8_route = Route("GET",
+  // @LINE:45
+  private[this] lazy val controllers_Application_fetchStudentStats11_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("fetchStudentStats")))
   )
-  private[this] lazy val controllers_Application_fetchStudentStats8_invoker = createInvoker(
+  private[this] lazy val controllers_Application_fetchStudentStats11_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.fetchStudentStats(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String]),
@@ -252,11 +313,11 @@ class Routes(
     )
   )
 
-  // @LINE:38
-  private[this] lazy val controllers_Application_fetchStudentRecords9_route = Route("GET",
+  // @LINE:47
+  private[this] lazy val controllers_Application_fetchStudentRecords12_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("fetchStudentRecords")))
   )
-  private[this] lazy val controllers_Application_fetchStudentRecords9_invoker = createInvoker(
+  private[this] lazy val controllers_Application_fetchStudentRecords12_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.fetchStudentRecords(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String]),
@@ -272,11 +333,11 @@ class Routes(
     )
   )
 
-  // @LINE:40
-  private[this] lazy val controllers_Application_fetchStudentMeasurements10_route = Route("GET",
+  // @LINE:49
+  private[this] lazy val controllers_Application_fetchStudentMeasurements13_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("fetchStudentMeasurements")))
   )
-  private[this] lazy val controllers_Application_fetchStudentMeasurements10_invoker = createInvoker(
+  private[this] lazy val controllers_Application_fetchStudentMeasurements13_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.fetchStudentMeasurements(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String], fakeValue[Integer]),
@@ -292,11 +353,11 @@ class Routes(
     )
   )
 
-  // @LINE:42
-  private[this] lazy val controllers_Application_executeMap11_route = Route("GET",
+  // @LINE:51
+  private[this] lazy val controllers_Application_executeMap14_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("executeMap")))
   )
-  private[this] lazy val controllers_Application_executeMap11_invoker = createInvoker(
+  private[this] lazy val controllers_Application_executeMap14_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.executeMap(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String], fakeValue[Integer]),
@@ -312,11 +373,11 @@ class Routes(
     )
   )
 
-  // @LINE:44
-  private[this] lazy val controllers_Application_fetchFeedback12_route = Route("GET",
+  // @LINE:53
+  private[this] lazy val controllers_Application_fetchFeedback15_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("fetchFeedback")))
   )
-  private[this] lazy val controllers_Application_fetchFeedback12_invoker = createInvoker(
+  private[this] lazy val controllers_Application_fetchFeedback15_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.fetchFeedback(fakeValue[play.mvc.Http.Request], fakeValue[String]),
@@ -332,11 +393,11 @@ class Routes(
     )
   )
 
-  // @LINE:46
-  private[this] lazy val controllers_Application_feedbackChoice13_route = Route("GET",
+  // @LINE:55
+  private[this] lazy val controllers_Application_feedbackChoice16_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("feedbackChoice")))
   )
-  private[this] lazy val controllers_Application_feedbackChoice13_invoker = createInvoker(
+  private[this] lazy val controllers_Application_feedbackChoice16_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.feedbackChoice(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String], fakeValue[Integer], fakeValue[Double], fakeValue[Double]),
@@ -352,11 +413,11 @@ class Routes(
     )
   )
 
-  // @LINE:48
-  private[this] lazy val controllers_Application_retrieveFeedbackImprovements14_route = Route("GET",
+  // @LINE:57
+  private[this] lazy val controllers_Application_retrieveFeedbackImprovements17_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("feedbackPrediction")))
   )
-  private[this] lazy val controllers_Application_retrieveFeedbackImprovements14_invoker = createInvoker(
+  private[this] lazy val controllers_Application_retrieveFeedbackImprovements17_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.retrieveFeedbackImprovements(fakeValue[play.mvc.Http.Request], fakeValue[Integer]),
@@ -372,11 +433,11 @@ class Routes(
     )
   )
 
-  // @LINE:50
-  private[this] lazy val controllers_Application_retrieveStudentsStatus15_route = Route("GET",
+  // @LINE:59
+  private[this] lazy val controllers_Application_retrieveStudentsStatus18_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("retrieveStudentsStatus")))
   )
-  private[this] lazy val controllers_Application_retrieveStudentsStatus15_invoker = createInvoker(
+  private[this] lazy val controllers_Application_retrieveStudentsStatus18_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.retrieveStudentsStatus(fakeValue[play.mvc.Http.Request], fakeValue[String]),
@@ -392,11 +453,11 @@ class Routes(
     )
   )
 
-  // @LINE:52
-  private[this] lazy val controllers_Application_checkEfficacy16_route = Route("GET",
+  // @LINE:61
+  private[this] lazy val controllers_Application_checkEfficacy19_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("checkEfficacy")))
   )
-  private[this] lazy val controllers_Application_checkEfficacy16_invoker = createInvoker(
+  private[this] lazy val controllers_Application_checkEfficacy19_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.checkEfficacy(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String], fakeValue[String], fakeValue[Integer]),
@@ -412,11 +473,11 @@ class Routes(
     )
   )
 
-  // @LINE:54
-  private[this] lazy val controllers_Application_sendFeedback17_route = Route("GET",
+  // @LINE:63
+  private[this] lazy val controllers_Application_sendFeedback20_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("sendFeedback")))
   )
-  private[this] lazy val controllers_Application_sendFeedback17_invoker = createInvoker(
+  private[this] lazy val controllers_Application_sendFeedback20_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.sendFeedback(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String], fakeValue[Integer], fakeValue[String], fakeValue[String], fakeValue[String], fakeValue[String]),
@@ -432,11 +493,91 @@ class Routes(
     )
   )
 
-  // @LINE:59
-  private[this] lazy val controllers_Assets_versioned18_route = Route("GET",
+  // @LINE:66
+  private[this] lazy val controllers_Application_loadContents21_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("loadContents")))
+  )
+  private[this] lazy val controllers_Application_loadContents21_invoker = createInvoker(
+    
+    (req:play.mvc.Http.Request) =>
+      Application_0.loadContents(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "loadContents",
+      Seq(classOf[play.mvc.Http.Request], classOf[String], classOf[String]),
+      "GET",
+      this.prefix + """loadContents""",
+      """""",
+      Seq("""anyhost""")
+    )
+  )
+
+  // @LINE:68
+  private[this] lazy val controllers_Application_retrieveQuestions22_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("retrieveQuestions")))
+  )
+  private[this] lazy val controllers_Application_retrieveQuestions22_invoker = createInvoker(
+    
+    (req:play.mvc.Http.Request) =>
+      Application_0.retrieveQuestions(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "retrieveQuestions",
+      Seq(classOf[play.mvc.Http.Request], classOf[String], classOf[String]),
+      "GET",
+      this.prefix + """retrieveQuestions""",
+      """""",
+      Seq("""anyhost""")
+    )
+  )
+
+  // @LINE:71
+  private[this] lazy val controllers_Application_updateLearingResult23_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updateLearningResult")))
+  )
+  private[this] lazy val controllers_Application_updateLearingResult23_invoker = createInvoker(
+    
+    (req:play.mvc.Http.Request) =>
+      Application_0.updateLearingResult(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String], fakeValue[String], fakeValue[String], fakeValue[Integer]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "updateLearingResult",
+      Seq(classOf[play.mvc.Http.Request], classOf[String], classOf[String], classOf[String], classOf[String], classOf[Integer]),
+      "GET",
+      this.prefix + """updateLearningResult""",
+      """""",
+      Seq("""anyhost""")
+    )
+  )
+
+  // @LINE:74
+  private[this] lazy val controllers_Application_fetchQuizResult24_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("courseQuizResult")))
+  )
+  private[this] lazy val controllers_Application_fetchQuizResult24_invoker = createInvoker(
+    
+    (req:play.mvc.Http.Request) =>
+      Application_0.fetchQuizResult(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String], fakeValue[String], fakeValue[String], fakeValue[Integer], fakeValue[Integer], fakeValue[Integer]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "fetchQuizResult",
+      Seq(classOf[play.mvc.Http.Request], classOf[String], classOf[String], classOf[String], classOf[String], classOf[Integer], classOf[Integer], classOf[Integer]),
+      "GET",
+      this.prefix + """courseQuizResult""",
+      """""",
+      Seq("""anyhost""")
+    )
+  )
+
+  // @LINE:79
+  private[this] lazy val controllers_Assets_versioned25_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned18_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned25_invoker = createInvoker(
     Assets_2.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -472,115 +613,161 @@ class Routes(
         controllers_ARSupport_doLogin2_invoker.call(ARSupport_1.doLogin(email, password))
       }
   
-    // @LINE:22
-    case controllers_Application_authenticate3_route(params@_) =>
+    // @LINE:17
+    case controllers_ARSupport_isQuizCompleted3_route(params@_) =>
+      call(params.fromQuery[String]("courseId", None), params.fromQuery[String]("userId", None), params.fromQuery[String]("contentType", None), params.fromQuery[String]("topic", None)) { (courseId, userId, contentType, topic) =>
+        controllers_ARSupport_isQuizCompleted3_invoker.call(ARSupport_1.isQuizCompleted(courseId, userId, contentType, topic))
+      }
+  
+    // @LINE:20
+    case controllers_ARSupport_saveQuizResult4_route(params@_) =>
+      call(params.fromQuery[String]("courseId", None), params.fromQuery[String]("userId", None), params.fromQuery[String]("contentType", None), params.fromQuery[String]("topic", None), params.fromQuery[Integer]("elapsedTime", None), params.fromQuery[Integer]("achievedScore", None), params.fromQuery[Integer]("totalScore", None)) { (courseId, userId, contentType, topic, elapsedTime, achievedScore, totalScore) =>
+        controllers_ARSupport_saveQuizResult4_invoker.call(ARSupport_1.saveQuizResult(courseId, userId, contentType, topic, elapsedTime, achievedScore, totalScore))
+      }
+  
+    // @LINE:23
+    case controllers_ARSupport_updateLessonTimer5_route(params@_) =>
+      call(params.fromQuery[String]("courseId", None), params.fromQuery[String]("userId", None), params.fromQuery[String]("contentType", None), params.fromQuery[String]("topic", None), params.fromQuery[Integer]("elapsedTime", None)) { (courseId, userId, contentType, topic, elapsedTime) =>
+        controllers_ARSupport_updateLessonTimer5_invoker.call(ARSupport_1.updateLessonTimer(courseId, userId, contentType, topic, elapsedTime))
+      }
+  
+    // @LINE:31
+    case controllers_Application_authenticate6_route(params@_) =>
       call(params.fromQuery[String]("email", None), params.fromQuery[String]("password", None)) { (email, password) =>
-        controllers_Application_authenticate3_invoker.call(
+        controllers_Application_authenticate6_invoker.call(
           req => Application_0.authenticate(req, email, password))
       }
   
-    // @LINE:25
-    case controllers_Application_courseDetails4_route(params@_) =>
+    // @LINE:34
+    case controllers_Application_courseDetails7_route(params@_) =>
       call(params.fromQuery[String]("courseId", None)) { (courseId) =>
-        controllers_Application_courseDetails4_invoker.call(
+        controllers_Application_courseDetails7_invoker.call(
           req => Application_0.courseDetails(req, courseId))
       }
   
-    // @LINE:28
-    case controllers_Application_studentStats5_route(params@_) =>
+    // @LINE:37
+    case controllers_Application_studentStats8_route(params@_) =>
       call { 
-        controllers_Application_studentStats5_invoker.call(
+        controllers_Application_studentStats8_invoker.call(
           req => Application_0.studentStats(req))
       }
   
-    // @LINE:30
-    case controllers_Application_logout6_route(params@_) =>
+    // @LINE:39
+    case controllers_Application_logout9_route(params@_) =>
       call { 
-        controllers_Application_logout6_invoker.call(
+        controllers_Application_logout9_invoker.call(
           req => Application_0.logout(req))
       }
   
-    // @LINE:34
-    case controllers_Application_courseMembers7_route(params@_) =>
+    // @LINE:43
+    case controllers_Application_courseMembers10_route(params@_) =>
       call(params.fromQuery[String]("courseId", None)) { (courseId) =>
-        controllers_Application_courseMembers7_invoker.call(
+        controllers_Application_courseMembers10_invoker.call(
           req => Application_0.courseMembers(req, courseId))
       }
   
-    // @LINE:36
-    case controllers_Application_fetchStudentStats8_route(params@_) =>
+    // @LINE:45
+    case controllers_Application_fetchStudentStats11_route(params@_) =>
       call(params.fromQuery[String]("courseId", None), params.fromQuery[String]("userId", None)) { (courseId, userId) =>
-        controllers_Application_fetchStudentStats8_invoker.call(
+        controllers_Application_fetchStudentStats11_invoker.call(
           req => Application_0.fetchStudentStats(req, courseId, userId))
       }
   
-    // @LINE:38
-    case controllers_Application_fetchStudentRecords9_route(params@_) =>
+    // @LINE:47
+    case controllers_Application_fetchStudentRecords12_route(params@_) =>
       call(params.fromQuery[String]("courseId", None), params.fromQuery[String]("userId", None)) { (courseId, userId) =>
-        controllers_Application_fetchStudentRecords9_invoker.call(
+        controllers_Application_fetchStudentRecords12_invoker.call(
           req => Application_0.fetchStudentRecords(req, courseId, userId))
       }
   
-    // @LINE:40
-    case controllers_Application_fetchStudentMeasurements10_route(params@_) =>
+    // @LINE:49
+    case controllers_Application_fetchStudentMeasurements13_route(params@_) =>
       call(params.fromQuery[String]("courseId", None), params.fromQuery[String]("userId", None), params.fromQuery[Integer]("weekNumber", None)) { (courseId, userId, weekNumber) =>
-        controllers_Application_fetchStudentMeasurements10_invoker.call(
+        controllers_Application_fetchStudentMeasurements13_invoker.call(
           req => Application_0.fetchStudentMeasurements(req, courseId, userId, weekNumber))
       }
   
-    // @LINE:42
-    case controllers_Application_executeMap11_route(params@_) =>
+    // @LINE:51
+    case controllers_Application_executeMap14_route(params@_) =>
       call(params.fromQuery[String]("courseId", None), params.fromQuery[String]("userId", None), params.fromQuery[Integer]("weekNumber", None)) { (courseId, userId, weekNumber) =>
-        controllers_Application_executeMap11_invoker.call(
+        controllers_Application_executeMap14_invoker.call(
           req => Application_0.executeMap(req, courseId, userId, weekNumber))
       }
   
-    // @LINE:44
-    case controllers_Application_fetchFeedback12_route(params@_) =>
+    // @LINE:53
+    case controllers_Application_fetchFeedback15_route(params@_) =>
       call(params.fromQuery[String]("userId", None)) { (userId) =>
-        controllers_Application_fetchFeedback12_invoker.call(
+        controllers_Application_fetchFeedback15_invoker.call(
           req => Application_0.fetchFeedback(req, userId))
       }
   
-    // @LINE:46
-    case controllers_Application_feedbackChoice13_route(params@_) =>
+    // @LINE:55
+    case controllers_Application_feedbackChoice16_route(params@_) =>
       call(params.fromQuery[String]("courseId", None), params.fromQuery[String]("userId", None), params.fromQuery[Integer]("weekNumber", None), params.fromQuery[Double]("mot", None), params.fromQuery[Double]("eng", None)) { (courseId, userId, weekNumber, mot, eng) =>
-        controllers_Application_feedbackChoice13_invoker.call(
+        controllers_Application_feedbackChoice16_invoker.call(
           req => Application_0.feedbackChoice(req, courseId, userId, weekNumber, mot, eng))
       }
   
-    // @LINE:48
-    case controllers_Application_retrieveFeedbackImprovements14_route(params@_) =>
+    // @LINE:57
+    case controllers_Application_retrieveFeedbackImprovements17_route(params@_) =>
       call(params.fromQuery[Integer]("actionId", None)) { (actionId) =>
-        controllers_Application_retrieveFeedbackImprovements14_invoker.call(
+        controllers_Application_retrieveFeedbackImprovements17_invoker.call(
           req => Application_0.retrieveFeedbackImprovements(req, actionId))
       }
   
-    // @LINE:50
-    case controllers_Application_retrieveStudentsStatus15_route(params@_) =>
+    // @LINE:59
+    case controllers_Application_retrieveStudentsStatus18_route(params@_) =>
       call(params.fromQuery[String]("courseId", None)) { (courseId) =>
-        controllers_Application_retrieveStudentsStatus15_invoker.call(
+        controllers_Application_retrieveStudentsStatus18_invoker.call(
           req => Application_0.retrieveStudentsStatus(req, courseId))
       }
   
-    // @LINE:52
-    case controllers_Application_checkEfficacy16_route(params@_) =>
+    // @LINE:61
+    case controllers_Application_checkEfficacy19_route(params@_) =>
       call(params.fromQuery[String]("courseId", None), params.fromQuery[String]("userId", None), params.fromQuery[String]("prevDate", None), params.fromQuery[Integer]("prevWeek", None)) { (courseId, userId, prevDate, prevWeek) =>
-        controllers_Application_checkEfficacy16_invoker.call(
+        controllers_Application_checkEfficacy19_invoker.call(
           req => Application_0.checkEfficacy(req, courseId, userId, prevDate, prevWeek))
       }
   
-    // @LINE:54
-    case controllers_Application_sendFeedback17_route(params@_) =>
+    // @LINE:63
+    case controllers_Application_sendFeedback20_route(params@_) =>
       call(params.fromQuery[String]("courseId", None), params.fromQuery[String]("userId", None), params.fromQuery[Integer]("actionId", None), params.fromQuery[String]("actionType", None), params.fromQuery[String]("name", None), params.fromQuery[String]("description", None), params.fromQuery[String]("date", None)) { (courseId, userId, actionId, actionType, name, description, date) =>
-        controllers_Application_sendFeedback17_invoker.call(
+        controllers_Application_sendFeedback20_invoker.call(
           req => Application_0.sendFeedback(req, courseId, userId, actionId, actionType, name, description, date))
       }
   
-    // @LINE:59
-    case controllers_Assets_versioned18_route(params@_) =>
+    // @LINE:66
+    case controllers_Application_loadContents21_route(params@_) =>
+      call(params.fromQuery[String]("contentType", None), params.fromQuery[String]("topic", None)) { (contentType, topic) =>
+        controllers_Application_loadContents21_invoker.call(
+          req => Application_0.loadContents(req, contentType, topic))
+      }
+  
+    // @LINE:68
+    case controllers_Application_retrieveQuestions22_route(params@_) =>
+      call(params.fromQuery[String]("contentType", None), params.fromQuery[String]("topic", None)) { (contentType, topic) =>
+        controllers_Application_retrieveQuestions22_invoker.call(
+          req => Application_0.retrieveQuestions(req, contentType, topic))
+      }
+  
+    // @LINE:71
+    case controllers_Application_updateLearingResult23_route(params@_) =>
+      call(params.fromQuery[String]("courseId", None), params.fromQuery[String]("userId", None), params.fromQuery[String]("contentType", None), params.fromQuery[String]("topic", None), params.fromQuery[Integer]("elapsedTime", None)) { (courseId, userId, contentType, topic, elapsedTime) =>
+        controllers_Application_updateLearingResult23_invoker.call(
+          req => Application_0.updateLearingResult(req, courseId, userId, contentType, topic, elapsedTime))
+      }
+  
+    // @LINE:74
+    case controllers_Application_fetchQuizResult24_route(params@_) =>
+      call(params.fromQuery[String]("courseId", None), params.fromQuery[String]("userId", None), params.fromQuery[String]("contentType", None), params.fromQuery[String]("topic", None), params.fromQuery[Integer]("elapsedTime", None), params.fromQuery[Integer]("achievedScore", None), params.fromQuery[Integer]("totalScore", None)) { (courseId, userId, contentType, topic, elapsedTime, achievedScore, totalScore) =>
+        controllers_Application_fetchQuizResult24_invoker.call(
+          req => Application_0.fetchQuizResult(req, courseId, userId, contentType, topic, elapsedTime, achievedScore, totalScore))
+      }
+  
+    // @LINE:79
+    case controllers_Assets_versioned25_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned18_invoker.call(Assets_2.versioned(path, file))
+        controllers_Assets_versioned25_invoker.call(Assets_2.versioned(path, file))
       }
   }
 }

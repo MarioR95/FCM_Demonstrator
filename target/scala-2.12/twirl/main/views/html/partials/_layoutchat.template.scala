@@ -249,7 +249,7 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 27 12:26:17 CET 2019
+                  DATE: Wed Dec 04 12:04:39 CET 2019
                   SOURCE: C:/Users/Arufonso/Desktop/MoliereDashboard/app/views/partials/_layoutchat.scala.html
                   HASH: 2ac9e310199b516f35f3c757d8bfa52e2f987d10
                   MATRIX: 956->1|1052->3|1080->5

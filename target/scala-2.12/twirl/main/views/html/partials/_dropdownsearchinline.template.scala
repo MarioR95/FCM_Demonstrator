@@ -60,7 +60,7 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 27 12:26:17 CET 2019
+                  DATE: Wed Dec 04 12:04:39 CET 2019
                   SOURCE: C:/Users/Arufonso/Desktop/MoliereDashboard/app/views/partials/_dropdownsearchinline.scala.html
                   HASH: aecb24debe0589902420b74b2e0d75a1a764a21a
                   MATRIX: 966->1|1062->3|1090->5

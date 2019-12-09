@@ -682,7 +682,7 @@ format.raw("""				</div>
 
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 27 12:26:17 CET 2019
+                  DATE: Wed Dec 04 12:04:39 CET 2019
                   SOURCE: C:/Users/Arufonso/Desktop/MoliereDashboard/app/views/sdashwidgetcontent.scala.html
                   HASH: 71be16c7d0d36b75175441586679103ff927a029
                   MATRIX: 973->1|1094->27|1122->29|1193->74|1205->78|1237->90|2182->1008|2195->1012|2226->1022|2267->1036|2280->1040|2314->1053|2343->1054|2541->1225|2554->1229|2586->1240

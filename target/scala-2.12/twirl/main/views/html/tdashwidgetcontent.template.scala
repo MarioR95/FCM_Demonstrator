@@ -365,7 +365,7 @@ Seq[Any](format.raw/*1.1*/("""<!-- begin: Chart1 -->
 
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 27 12:26:17 CET 2019
+                  DATE: Wed Dec 04 12:04:39 CET 2019
                   SOURCE: C:/Users/Arufonso/Desktop/MoliereDashboard/app/views/tdashwidgetcontent.scala.html
                   HASH: 4366f486caa3fadc83ec5b8cea7cae415776ea03
                   MATRIX: 1043->0

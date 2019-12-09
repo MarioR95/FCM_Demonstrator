@@ -65,7 +65,7 @@ Seq[Any](format.raw/*1.28*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 27 12:26:17 CET 2019
+                  DATE: Wed Dec 04 12:04:39 CET 2019
                   SOURCE: C:/Users/Arufonso/Desktop/MoliereDashboard/app/views/partials/_tdropdownnotifications.scala.html
                   HASH: 9ebd090592d767e38ea36e28c791858f636ae534
                   MATRIX: 987->1|1108->27|1136->29|1356->223|1368->227|1398->237|1430->243

@@ -53,7 +53,7 @@ Seq[Any](format.raw/*1.28*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 27 12:26:17 CET 2019
+                  DATE: Wed Dec 04 12:04:39 CET 2019
                   SOURCE: C:/Users/Arufonso/Desktop/MoliereDashboard/app/views/partials/_topbarbase.scala.html
                   HASH: 9a7ef55ec66cbaba29d9417bfe304de5761fdea0
                   MATRIX: 975->1|1096->27|1124->29|1256->136|1269->141|1319->171|1351->178|1364->183|1425->224|1457->231|1470->236|1522->268|1550->270
