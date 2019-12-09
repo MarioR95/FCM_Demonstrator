@@ -33,6 +33,7 @@ import models.dao.UserDao;
 import models.dao.UserHistoryDao;
 import models.dao.UserMeasureDao;
 import models.dto.AnswersFeedbackDto;
+import models.dto.ContentsResultsDto;
 import models.dto.FeedbackDto;
 import models.dto.FeedbackPredictionDto;
 import models.dto.FirstLevelFeedbackAssociationDto;
@@ -379,6 +380,22 @@ public class Application extends Controller {
 		return ok(views.html.contents_container.render(user, contentType, topic));
 	}
 	
+	public Result retrieveAssignmentsDone(Http.Request request,String courseId, String userId) {
+		ObjectMapper mapper = new ObjectMapper();
+		ObjectNode node = mapper.createObjectNode();
+		try {
+			List<ContentsResultsDto> assignmentsDone= ContentsResultsDao.retieveQuizzesByUserId(courseId, userId);
+			if(assignmentsDone.isEmpty()){
+				return ok(Json.toJson("empty"));
+			}else {
+				ArrayNode assignmentsList= mapper.valueToTree(assignmentsDone);
+				node.putArray("assignments").addAll(assignmentsList);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ok(node);
+	}
 	
 	public Result retrieveQuestions (Http.Request request, String contentType, String topic ) {
 		ObjectMapper mapper = new ObjectMapper();
@@ -387,9 +404,7 @@ public class Application extends Controller {
 			List<QuestionsDto> questions= QuestionsDao.retrieveQuestionsList(contentType, topic);
 			ArrayNode questionsList= mapper.valueToTree(questions);
 			node.putArray("questions").addAll(questionsList);
-			System.out.println("CHAIOO");
 			if(contentType.equals("quiz")) {
-				System.out.println("hello");
 				List<AnswersFeedbackDto> answers = new ArrayList<AnswersFeedbackDto>();
 				for(QuestionsDto q: questions) {
 					AnswersFeedbackDto dto= AnswersFeedbackDao.retrieveAnswersFeedbackByQuestionId(q.getQuestionId());
@@ -407,10 +422,15 @@ public class Application extends Controller {
 	
 	public Result updateLearingResult(Http.Request request, String courseId, String userId, String contentType, String topic, int elapsedTime) {
 		try {
+			int completed= 0;
 			int timeSpent= LearningContentDao.retrieveElapsedTimeByTopic(courseId, userId, topic);
-			
-			int completed= (((timeSpent+elapsedTime)/60) >= 2) ? 1 : 0;
-
+			if(timeSpent != -1) {
+				System.out.println(timeSpent);
+				completed= (((timeSpent+elapsedTime)/60) >= 2) ? 1 : 0;
+			}else {
+				completed= ((elapsedTime/60) >= 2) ? 1 : 0;
+			}
+			System.out.println(completed);
 			LearningContentDao.doUpdateRecord(courseId, userId, contentType, topic, elapsedTime, completed);
 			return ok(Json.toJson(200));
 		} catch (Exception e) {

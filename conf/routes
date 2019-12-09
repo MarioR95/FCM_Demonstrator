@@ -45,14 +45,13 @@ GET		/sendFeedback				controllers.Application.sendFeedback(request: Request, cou
 +anyhost
 GET		/loadContents				controllers.Application.loadContents(request: Request, contentType: String, topic: String)
 +anyhost
+GET 	/retrieveAssignmentsDone	controllers.Application.retrieveAssignmentsDone(request: Request, courseId: String, userId: String)
++anyhost
 GET 	/retrieveQuestions			controllers.Application.retrieveQuestions(request: Request, contentType: String, topic: String)
-
 +anyhost
 GET 	/updateLearningResult		controllers.Application.updateLearingResult(request: Request, courseId: String, userId: String, contentType: String, topic: String, elapsedTime: Integer)
-
 +anyhost					
 GET 	/courseQuizResult			controllers.Application.fetchQuizResult(request: Request, courseId: String, userId: String, contentType: String, topic: String, elapsedTime: Integer, achievedScore: Integer, totalScore: Integer) 		
-
 # Map static resources from the /public folder to the /assets URL path
 +anyhost
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
