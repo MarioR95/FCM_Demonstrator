@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Arufonso/Desktop/MoliereDashboard/conf/routes
-// @DATE:Wed Dec 04 16:01:19 CET 2019
+// @DATE:Mon Dec 09 10:34:04 CET 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -91,7 +91,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:79
+  // @LINE:78
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -99,7 +99,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:79
+    // @LINE:78
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -118,6 +118,16 @@ package controllers.javascript {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:68
+    def retrieveAssignmentsDone: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Application.retrieveAssignmentsDone",
+      """
+        function(courseId0,userId1) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "retrieveAssignmentsDone" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("courseId", courseId0), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("userId", userId1)])})
+        }
+      """
+    )
   
     // @LINE:59
     def retrieveStudentsStatus: JavaScriptReverseRoute = JavaScriptReverseRoute(
@@ -219,7 +229,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:68
+    // @LINE:70
     def retrieveQuestions: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.retrieveQuestions",
       """
@@ -249,7 +259,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:71
+    // @LINE:72
     def updateLearingResult: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.updateLearingResult",
       """

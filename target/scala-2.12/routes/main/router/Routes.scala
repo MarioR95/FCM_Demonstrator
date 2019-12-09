@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Arufonso/Desktop/MoliereDashboard/conf/routes
-// @DATE:Wed Dec 04 16:01:19 CET 2019
+// @DATE:Mon Dec 09 10:34:04 CET 2019
 
 package router
 
@@ -20,7 +20,7 @@ class Routes(
   ARSupport_1: controllers.ARSupport,
   // @LINE:31
   Application_0: controllers.Application,
-  // @LINE:79
+  // @LINE:78
   Assets_2: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -33,7 +33,7 @@ class Routes(
     ARSupport_1: controllers.ARSupport,
     // @LINE:31
     Application_0: controllers.Application,
-    // @LINE:79
+    // @LINE:78
     Assets_2: controllers.Assets
   ) = this(errorHandler, HomeController_3, ARSupport_1, Application_0, Assets_2, "/")
 
@@ -70,6 +70,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """checkEfficacy""", """controllers.Application.checkEfficacy(request:Request, courseId:String, userId:String, prevDate:String, prevWeek:Integer)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """sendFeedback""", """controllers.Application.sendFeedback(request:Request, courseId:String, userId:String, actionId:Integer, actionType:String, name:String, description:String, date:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """loadContents""", """controllers.Application.loadContents(request:Request, contentType:String, topic:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """retrieveAssignmentsDone""", """controllers.Application.retrieveAssignmentsDone(request:Request, courseId:String, userId:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """retrieveQuestions""", """controllers.Application.retrieveQuestions(request:Request, contentType:String, topic:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """updateLearningResult""", """controllers.Application.updateLearingResult(request:Request, courseId:String, userId:String, contentType:String, topic:String, elapsedTime:Integer)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """courseQuizResult""", """controllers.Application.fetchQuizResult(request:Request, courseId:String, userId:String, contentType:String, topic:String, elapsedTime:Integer, achievedScore:Integer, totalScore:Integer)"""),
@@ -514,10 +515,30 @@ class Routes(
   )
 
   // @LINE:68
-  private[this] lazy val controllers_Application_retrieveQuestions22_route = Route("GET",
+  private[this] lazy val controllers_Application_retrieveAssignmentsDone22_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("retrieveAssignmentsDone")))
+  )
+  private[this] lazy val controllers_Application_retrieveAssignmentsDone22_invoker = createInvoker(
+    
+    (req:play.mvc.Http.Request) =>
+      Application_0.retrieveAssignmentsDone(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "retrieveAssignmentsDone",
+      Seq(classOf[play.mvc.Http.Request], classOf[String], classOf[String]),
+      "GET",
+      this.prefix + """retrieveAssignmentsDone""",
+      """""",
+      Seq("""anyhost""")
+    )
+  )
+
+  // @LINE:70
+  private[this] lazy val controllers_Application_retrieveQuestions23_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("retrieveQuestions")))
   )
-  private[this] lazy val controllers_Application_retrieveQuestions22_invoker = createInvoker(
+  private[this] lazy val controllers_Application_retrieveQuestions23_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.retrieveQuestions(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String]),
@@ -533,11 +554,11 @@ class Routes(
     )
   )
 
-  // @LINE:71
-  private[this] lazy val controllers_Application_updateLearingResult23_route = Route("GET",
+  // @LINE:72
+  private[this] lazy val controllers_Application_updateLearingResult24_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updateLearningResult")))
   )
-  private[this] lazy val controllers_Application_updateLearingResult23_invoker = createInvoker(
+  private[this] lazy val controllers_Application_updateLearingResult24_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.updateLearingResult(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String], fakeValue[String], fakeValue[String], fakeValue[Integer]),
@@ -554,10 +575,10 @@ class Routes(
   )
 
   // @LINE:74
-  private[this] lazy val controllers_Application_fetchQuizResult24_route = Route("GET",
+  private[this] lazy val controllers_Application_fetchQuizResult25_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("courseQuizResult")))
   )
-  private[this] lazy val controllers_Application_fetchQuizResult24_invoker = createInvoker(
+  private[this] lazy val controllers_Application_fetchQuizResult25_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       Application_0.fetchQuizResult(fakeValue[play.mvc.Http.Request], fakeValue[String], fakeValue[String], fakeValue[String], fakeValue[String], fakeValue[Integer], fakeValue[Integer], fakeValue[Integer]),
@@ -573,11 +594,11 @@ class Routes(
     )
   )
 
-  // @LINE:79
-  private[this] lazy val controllers_Assets_versioned25_route = Route("GET",
+  // @LINE:78
+  private[this] lazy val controllers_Assets_versioned26_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned25_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned26_invoker = createInvoker(
     Assets_2.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -744,30 +765,37 @@ class Routes(
       }
   
     // @LINE:68
-    case controllers_Application_retrieveQuestions22_route(params@_) =>
+    case controllers_Application_retrieveAssignmentsDone22_route(params@_) =>
+      call(params.fromQuery[String]("courseId", None), params.fromQuery[String]("userId", None)) { (courseId, userId) =>
+        controllers_Application_retrieveAssignmentsDone22_invoker.call(
+          req => Application_0.retrieveAssignmentsDone(req, courseId, userId))
+      }
+  
+    // @LINE:70
+    case controllers_Application_retrieveQuestions23_route(params@_) =>
       call(params.fromQuery[String]("contentType", None), params.fromQuery[String]("topic", None)) { (contentType, topic) =>
-        controllers_Application_retrieveQuestions22_invoker.call(
+        controllers_Application_retrieveQuestions23_invoker.call(
           req => Application_0.retrieveQuestions(req, contentType, topic))
       }
   
-    // @LINE:71
-    case controllers_Application_updateLearingResult23_route(params@_) =>
+    // @LINE:72
+    case controllers_Application_updateLearingResult24_route(params@_) =>
       call(params.fromQuery[String]("courseId", None), params.fromQuery[String]("userId", None), params.fromQuery[String]("contentType", None), params.fromQuery[String]("topic", None), params.fromQuery[Integer]("elapsedTime", None)) { (courseId, userId, contentType, topic, elapsedTime) =>
-        controllers_Application_updateLearingResult23_invoker.call(
+        controllers_Application_updateLearingResult24_invoker.call(
           req => Application_0.updateLearingResult(req, courseId, userId, contentType, topic, elapsedTime))
       }
   
     // @LINE:74
-    case controllers_Application_fetchQuizResult24_route(params@_) =>
+    case controllers_Application_fetchQuizResult25_route(params@_) =>
       call(params.fromQuery[String]("courseId", None), params.fromQuery[String]("userId", None), params.fromQuery[String]("contentType", None), params.fromQuery[String]("topic", None), params.fromQuery[Integer]("elapsedTime", None), params.fromQuery[Integer]("achievedScore", None), params.fromQuery[Integer]("totalScore", None)) { (courseId, userId, contentType, topic, elapsedTime, achievedScore, totalScore) =>
-        controllers_Application_fetchQuizResult24_invoker.call(
+        controllers_Application_fetchQuizResult25_invoker.call(
           req => Application_0.fetchQuizResult(req, courseId, userId, contentType, topic, elapsedTime, achievedScore, totalScore))
       }
   
-    // @LINE:79
-    case controllers_Assets_versioned25_route(params@_) =>
+    // @LINE:78
+    case controllers_Assets_versioned26_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned25_invoker.call(Assets_2.versioned(path, file))
+        controllers_Assets_versioned26_invoker.call(Assets_2.versioned(path, file))
       }
   }
 }

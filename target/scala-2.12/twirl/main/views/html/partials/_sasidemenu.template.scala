@@ -61,7 +61,7 @@ Seq[Any](format.raw/*1.1*/("""<li class="kt-menu__item kt-menu__item--submenu" a
                      </a>
                   </li>
                   <li class="kt-menu__item kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                     <a href="#" id="algo" class="kt-menu__link kt-menu__toggle"> <i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i>
+                     <a href="javascript:;" id="algo" class="kt-menu__link kt-menu__toggle"> <i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i>
                      <span class="kt-menu__link-text">Algororithms</span><i class="kt-menu__ver-arrow la la-angle-right"></i>
                      </a>
                   </li>
@@ -102,9 +102,9 @@ Seq[Any](format.raw/*1.1*/("""<li class="kt-menu__item kt-menu__item--submenu" a
 
               /*
                   -- GENERATED --
-                  DATE: Wed Dec 04 12:04:39 CET 2019
+                  DATE: Mon Dec 09 10:34:05 CET 2019
                   SOURCE: C:/Users/Arufonso/Desktop/MoliereDashboard/app/views/partials/_sasidemenu.scala.html
-                  HASH: ed34b3c3895e81c6050652df39e8d1ec06e1e8b9
+                  HASH: ec6f47c319eaa342179b9bd5fb4af868638a36a3
                   MATRIX: 1045->0
                   LINES: 33->1
                   -- GENERATED --

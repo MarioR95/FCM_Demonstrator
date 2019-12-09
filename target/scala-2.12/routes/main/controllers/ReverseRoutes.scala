@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Arufonso/Desktop/MoliereDashboard/conf/routes
-// @DATE:Wed Dec 04 16:01:19 CET 2019
+// @DATE:Mon Dec 09 10:34:04 CET 2019
 
 import play.api.mvc.Call
 
@@ -65,14 +65,14 @@ package controllers {
   
   }
 
-  // @LINE:79
+  // @LINE:78
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:79
+    // @LINE:78
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))
@@ -86,6 +86,12 @@ package controllers {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:68
+    def retrieveAssignmentsDone(courseId:String, userId:String): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "retrieveAssignmentsDone" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("courseId", courseId)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("userId", userId)))))
+    }
   
     // @LINE:59
     def retrieveStudentsStatus(courseId:String): Call = {
@@ -147,7 +153,7 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "fetchStudentRecords" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("courseId", courseId)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("userId", userId)))))
     }
   
-    // @LINE:68
+    // @LINE:70
     def retrieveQuestions(contentType:String, topic:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "retrieveQuestions" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("contentType", contentType)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("topic", topic)))))
@@ -165,7 +171,7 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "fetchFeedback" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("userId", userId)))))
     }
   
-    // @LINE:71
+    // @LINE:72
     def updateLearingResult(courseId:String, userId:String, contentType:String, topic:String, elapsedTime:Integer): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "updateLearningResult" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("courseId", courseId)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("userId", userId)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("contentType", contentType)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("topic", topic)), Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("elapsedTime", elapsedTime)))))

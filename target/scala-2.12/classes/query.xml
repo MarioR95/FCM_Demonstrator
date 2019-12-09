@@ -228,6 +228,13 @@
 		<content delimiterParsingDisabled="true">
 			SELECT *
 			FROM contents_results
+			WHERE courseId=? AND userId=?
+		</content>
+	</query>
+	<query name="CONTENTS_RESULTS_S03">
+		<content delimiterParsingDisabled="true">
+			SELECT *
+			FROM contents_results
 			WHERE courseId= ? AND userId= ? AND contentType = ? AND topic = ? 
 		</content>
 	</query>

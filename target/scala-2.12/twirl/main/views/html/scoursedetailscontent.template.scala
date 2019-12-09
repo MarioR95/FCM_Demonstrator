@@ -108,25 +108,6 @@ Seq[Any](format.raw/*1.28*/("""
 	                    <div class="tab-pane" id="kt_tabs_1_2" role="tabpanel">
 	                    	<div class="kt-notes">
 								<div class="kt-notes__items">
-									<div class="kt-notes__item">
-										<div class="kt-notes__media">
-											<span class="kt-notes__circle"></span>
-										</div>
-										<div class="kt-notes__content">
-											<div class="kt-notes__section">
-												<div class="kt-notes__info">
-													<a href="#" class="kt-notes__title"> TODO </a> 
-													<span class="kt-notes__desc"> 9:30AM 16 June, 2015 </span>
-													<span class="kt-badge kt-badge--brand kt-badge--inline">important</span>
-												</div>
-											</div>
-											<span class="kt-notes__body"> Sed ut perspiciatis unde
-												omnis iste natus error sit voluptatem accusantium doloremque
-												laudantium, totam rem aperiam, eaque ipsa quae ab illo
-												inventore veritatis et quasi architecto. 
-											</span>
-										</div>
-									</div>
 									<div class="kt-notes__item">		
 										<div class="kt-notes__media">
 											<span class="kt-notes__circle"></span>
@@ -135,12 +116,10 @@ Seq[Any](format.raw/*1.28*/("""
 											<div class="kt-notes__section">
 												<div class="kt-notes__info">
 													<a href="#" class="kt-notes__title"> Upload materials</a> 
-													<span class="kt-notes__desc"> 7:10AM 21 February, 2016 </span>
+													<span class="kt-notes__desc"> 7:10AM 21 May, 2019 </span>
 												</div>
 											</div>
-											<span class="kt-notes__body"> Sed ut perspiciatis unde
-												omnis iste natus error sit voluptatem accusantium aque ipsa
-												quae ab illo inventore veritatis et quasi architecto. 
+											<span class="kt-notes__body"> First three chapters added.  
 											</span>
 										</div>
 									</div>
@@ -427,8 +406,7 @@ Seq[Any](format.raw/*1.28*/("""
 									                    <a data-toggle="tab" href="#kt_widget11_tab1_content" id="chap3">
 									                        <span class="kt-notification__item-icon">
 										                         <svg class="kt-svg-icon kt-svg-icon--success" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-				"""),
-format.raw("""												    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																        <mask id="mask-2" fill="white">
 																            <use xlink:href="#path-1"/>
 																        </mask>
@@ -439,7 +417,8 @@ format.raw("""												    <g stroke="none" stroke-width="1" fill="none" fill
 									                        </span>
 									                        <span class="kt-notification__item-details">
 									                            <span class="kt-notification__item-title">
-									                                Chapter 3: Functions of two variables
+			"""),
+format.raw("""						                                Chapter 3: Functions of two variables
 									                            </span>
 									                            <div class="kt-notification__item-time">
 									                                <div class="progress" id="chap3-progresses">
@@ -510,16 +489,16 @@ format.raw("""												    <g stroke="none" stroke-width="1" fill="none" fill
 																	<tbody>
 																		<tr>
 																			<td>
-																				<span id="status-topic1" class="kt-badge kt-badge--inline kt-badge--success">Completed</span>
+																				<span id="status-topic1" class="kt-badge kt-badge--inline kt-badge--info">Uncompleted</span>
 																			</td>
 																			<td>
 																				<span class="kt-widget11__title">Assignment</span>
 																				<span class="kt-widget11__sub">Quiz - Function of two variables</span>
 																			</td>
-																			<td>-</td>
+																			<td id="score-topic1">-</td>
 																			<td>
 																				<div class='dropdown dropright'>
-																					<button type='button' class='btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+																					<button id="topic-btn-1" type='button' class='btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
 																						<i class='flaticon-more-1'></i>
 																					</button>
 																					<div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>
@@ -530,16 +509,16 @@ format.raw("""												    <g stroke="none" stroke-width="1" fill="none" fill
 																		</tr>
 																		<tr>
 																			<td>
-																				<span id="status-topic2" class="kt-badge kt-badge--inline kt-badge--success">Completed</span>
+																				<span id="status-topic2" class="kt-badge kt-badge--inline kt-badge--info">Uncompleted</span>
 																			</td>
 																			<td>
 																				<span class="kt-widget11__title">Assignment</span>
 																				<span class="kt-widget11__sub">Quiz - Critical Points</span>
 																			</td>
-																			<td>-</td>
+																			<td id="score-topic2">-</td>
 																			<td>
 																				<div class='dropdown dropright'>
-																					<button type='button' class='btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+																					<button id="topic-btn-2" type='button' class='btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
 																						<i class='flaticon-more-1'></i>
 																					</button>
 																					<div class='dropdown-menu dropdown-menu-left' x-placement='top-start' style='position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);'>
@@ -550,13 +529,13 @@ format.raw("""												    <g stroke="none" stroke-width="1" fill="none" fill
 																		</tr>
 																		<tr>
 																			<td>
-																				<span id="status-quiz" class="kt-badge kt-badge--inline kt-badge--info">Uncompleted</span>
+																				<span id="status-quiz" class="kt-badge kt-badge--inline kt-badge--danger">Blocked</span>
 																			</td>
 																			<td>
 																				<span class="kt-widget11__title">Quiz</span>
 																				<span class="kt-widget11__sub">Test your knowledges about this chapter</span>
 																			</td>
-																			<td>-</td>
+																			<td id="score-quiz">-</td>
 																			<td>
 																				<div class='dropdown dropright'>
 																					<button id="quiz-btn" type='button' class='btn btn-hover-info btn-elevate-hover btn-icon btn-sm btn-icon-md' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' disabled>
@@ -607,41 +586,89 @@ format.raw("""												    <g stroke="none" stroke-width="1" fill="none" fill
 	
 	<script>
 		
-		$(document).ready(function()"""),format.raw/*577.31*/("""{"""),format.raw/*577.32*/("""
-			"""),format.raw/*578.4*/("""//Update the completation perc. of the chapter
+		$(document).ready(function()"""),format.raw/*556.31*/("""{"""),format.raw/*556.32*/("""
+			"""),format.raw/*557.4*/("""//Update the completation perc. of the chapter
 			var percentage= 0;
 			var classColor= "";
 			var topic1, topic2, quiz;
-			topic1= $("#status-topic1").text();
-			topic2= $("#status-topic2").text();
-			quiz= $("#status-quiz").text();
+			
+			$.ajax("""),format.raw/*562.11*/("""{"""),format.raw/*562.12*/("""
+				"""),format.raw/*563.5*/("""url: "/retrieveAssignmentsDone",
+				data: "courseId=HarvardX/CB22x/2013_Spring&userId="""),_display_(/*564.56*/user/*564.60*/.getUserId),format.raw/*564.70*/("""",
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				success: function(data)"""),format.raw/*567.28*/("""{"""),format.raw/*567.29*/("""
+					"""),format.raw/*568.6*/("""if(data != "empty")"""),format.raw/*568.25*/("""{"""),format.raw/*568.26*/("""
+						"""),format.raw/*569.7*/("""console.log(data);
+						var assignmentsDone= data["assignments"];
+						var length= assignmentsDone.length;
+						
+						for(var i=0; i<length; i++)"""),format.raw/*573.34*/("""{"""),format.raw/*573.35*/("""						
+							"""),format.raw/*574.8*/("""if(assignmentsDone[i].topic == "functions_sev_var")"""),format.raw/*574.59*/("""{"""),format.raw/*574.60*/("""
+								"""),format.raw/*575.9*/("""$("#status-topic1").html("Completed");
+								$("#status-topic1").removeClass("kt-badge--info");
+								$("#status-topic1").addClass("kt-badge--success");
+								$("#topic-btn-1").prop("disabled",true);
+								$("#score-topic1").html(((assignmentsDone[i].achievedScore*30)/assignmentsDone[i].maxScore));
+							"""),format.raw/*580.8*/("""}"""),format.raw/*580.9*/("""else if(assignmentsDone[i].topic == "critical_points")"""),format.raw/*580.63*/("""{"""),format.raw/*580.64*/("""
+								"""),format.raw/*581.9*/("""$("#status-topic2").html("Completed");
+								$("#status-topic2").removeClass("kt-badge--info");
+								$("#status-topic2").addClass("kt-badge--success");
+								$("#topic-btn-2").prop("disabled", true);
+								$("#score-topic2").html(((assignmentsDone[i].achievedScore*30)/assignmentsDone[i].maxScore));
+							"""),format.raw/*586.8*/("""}"""),format.raw/*586.9*/("""
+							"""),format.raw/*587.8*/("""else if(assignmentsDone[i].topic == "chapter3")"""),format.raw/*587.55*/("""{"""),format.raw/*587.56*/("""
+								"""),format.raw/*588.9*/("""$("#status-quiz").html("Completed");
+								$("#status-quiz").removeClass("kt-badge--danger");
+								$("#status-quiz").removeClass("kt-badge--info");
+								$("#status-quiz").addClass("kt-badge--success");
+								$("#score-quiz").html(((assignmentsDone[i].achievedScore*30)/assignmentsDone[i].maxScore));
+								$("#quiz-btn").prop("disabled", true);
+							"""),format.raw/*594.8*/("""}"""),format.raw/*594.9*/("""
+									
+						"""),format.raw/*596.7*/("""}"""),format.raw/*596.8*/("""	
+						
+						
+						"""),format.raw/*599.7*/("""topic1= $("#status-topic1").text();
+						topic2= $("#status-topic2").text();
+						quiz= $("#status-quiz").text();
+
+						if(quiz == "Blocked" || quiz == "Uncompleted")"""),format.raw/*603.53*/("""{"""),format.raw/*603.54*/("""
+							"""),format.raw/*604.8*/("""if(topic1 == "Uncompleted" && topic2 == "Completed" || topic1 == "Completed" && topic2 == "Uncompleted")"""),format.raw/*604.112*/("""{"""),format.raw/*604.113*/("""
+								"""),format.raw/*605.9*/("""percentage = 35;
+								classColor="bg-danger";
+							"""),format.raw/*607.8*/("""}"""),format.raw/*607.9*/("""
+							"""),format.raw/*608.8*/("""else if(topic1 == "Completed" && topic2 == "Completed")"""),format.raw/*608.63*/("""{"""),format.raw/*608.64*/("""
+								"""),format.raw/*609.9*/("""percentage = 70;
+								classColor="bg-warning";
+								$("#status-quiz").html("Uncompleted");
+								$("#quiz-btn").removeAttr("disabled");
+								
+								$("#status-quiz").removeClass("kt-badge--danger");
+								$("#status-quiz").addClass("kt-badge--info");
+								
+							"""),format.raw/*617.8*/("""}"""),format.raw/*617.9*/("""
+						"""),format.raw/*618.7*/("""}"""),format.raw/*618.8*/("""
+						"""),format.raw/*619.7*/("""else"""),format.raw/*619.11*/("""{"""),format.raw/*619.12*/("""
+							"""),format.raw/*620.8*/("""classColor="bg-success";
+							percentage = 100;
+						"""),format.raw/*622.7*/("""}"""),format.raw/*622.8*/("""
+						
+						"""),format.raw/*624.7*/("""$("#chap3-progresses").empty();
+						
+						$("#chap3-progresses").html(
+							"<div class='progress-bar "+classColor+"' role='progressbar' style='width: "+percentage+"%;' aria-valuenow='"+percentage+"' aria-valuemin='0' aria-valuemax='100'>"+percentage+"%</div>"
+						);
+					"""),format.raw/*629.6*/("""}"""),format.raw/*629.7*/("""
+					
+				"""),format.raw/*631.5*/("""}"""),format.raw/*631.6*/(""",
+				error: function(err)"""),format.raw/*632.25*/("""{"""),format.raw/*632.26*/("""
+					"""),format.raw/*633.6*/("""console.log(err)		
+				"""),format.raw/*634.5*/("""}"""),format.raw/*634.6*/("""
+			"""),format.raw/*635.4*/("""}"""),format.raw/*635.5*/(""");
 			
 			
-			if(topic1 == "Uncompleted" && topic2 == "Completed" || topic1 == "Completed" && topic2 == "Uncompleted")"""),format.raw/*587.108*/("""{"""),format.raw/*587.109*/("""
-				"""),format.raw/*588.5*/("""percentage = 35;
-				classColor="bg-danger";
-			"""),format.raw/*590.4*/("""}"""),format.raw/*590.5*/("""
-			"""),format.raw/*591.4*/("""else if(topic1 == "Completed" && topic2 == "Completed")"""),format.raw/*591.59*/("""{"""),format.raw/*591.60*/("""
-				"""),format.raw/*592.5*/("""percentage = 70;
-				classColor="bg-warning";
-				$("#status-quiz").html("Uncompleted");
-				$("#quiz-btn").removeAttr("disabled");
-				
-				$("#status-quiz").removeClass("kt-badge--danger");
-				$("#status-quiz").addClass("kt-badge--info");
-				//DO A REQUEST CALL TO STORE THIS CHANGE INTO DB
-				
-			"""),format.raw/*601.4*/("""}"""),format.raw/*601.5*/("""else if(topic1 == "Completed" && topic2 == "Completed" && quiz == "Completed")"""),format.raw/*601.83*/("""{"""),format.raw/*601.84*/("""
-				"""),format.raw/*602.5*/("""classColor="bg-success";
-				percentage == 100;
-			"""),format.raw/*604.4*/("""}"""),format.raw/*604.5*/("""
-			
-			"""),format.raw/*606.4*/("""$("#chap3-progresses").empty();
-			
-			$("#chap3-progresses").html(
-				"<div class='progress-bar "+classColor+"' role='progressbar' style='width: "+percentage+"%;' aria-valuenow='"+percentage+"' aria-valuemin='0' aria-valuemax='100'>"+percentage+"%</div>"
-			);
-		"""),format.raw/*611.3*/("""}"""),format.raw/*611.4*/(""");
+		"""),format.raw/*638.3*/("""}"""),format.raw/*638.4*/(""");
 					
 	</script>	
 """))
@@ -660,11 +687,11 @@ format.raw("""												    <g stroke="none" stroke-width="1" fill="none" fill
 
               /*
                   -- GENERATED --
-                  DATE: Wed Dec 04 12:04:39 CET 2019
+                  DATE: Mon Dec 09 10:34:05 CET 2019
                   SOURCE: C:/Users/Arufonso/Desktop/MoliereDashboard/app/views/scoursedetailscontent.scala.html
-                  HASH: 7b51c8febe7ebe91076d5534bc168130f2978fd6
-                  MATRIX: 976->1|1097->27|1125->29|2896->1773|2909->1777|2942->1789|32811->31609|32841->31610|32874->31615|33262->31973|33293->31974|33327->31980|33405->32030|33434->32031|33467->32036|33551->32091|33581->32092|33615->32098|33955->32410|33984->32411|34091->32489|34121->32490|34155->32496|34236->32549|34265->32550|34303->32560|34601->32830|34630->32831
-                  LINES: 28->1|33->1|34->2|66->34|66->34|66->34|610->577|610->577|611->578|620->587|620->587|621->588|623->590|623->590|624->591|624->591|624->591|625->592|634->601|634->601|634->601|634->601|635->602|637->604|637->604|639->606|644->611|644->611
+                  HASH: 539613bf0085afaab1d43b7cdc36dac15d3ab7a5
+                  MATRIX: 976->1|1097->27|1125->29|2896->1773|2909->1777|2942->1789|31894->30692|31924->30693|31957->30698|32126->30838|32156->30839|32190->30845|32307->30934|32321->30938|32353->30948|32489->31055|32519->31056|32554->31063|32602->31082|32632->31083|32668->31091|32850->31244|32880->31245|32923->31260|33003->31311|33033->31312|33071->31322|33419->31642|33448->31643|33531->31697|33561->31698|33599->31708|33948->32029|33977->32030|34014->32039|34090->32086|34120->32087|34158->32097|34556->32467|34585->32468|34632->32487|34661->32488|34714->32513|34916->32686|34946->32687|34983->32696|35117->32800|35148->32801|35186->32811|35272->32869|35301->32870|35338->32879|35422->32934|35452->32935|35490->32945|35808->33235|35837->33236|35873->33244|35902->33245|35938->33253|35971->33257|36001->33258|36038->33267|36124->33325|36153->33326|36197->33342|36510->33627|36539->33628|36580->33641|36609->33642|36665->33669|36695->33670|36730->33677|36782->33701|36811->33702|36844->33707|36873->33708|36917->33724|36946->33725
+                  LINES: 28->1|33->1|34->2|66->34|66->34|66->34|589->556|589->556|590->557|595->562|595->562|596->563|597->564|597->564|597->564|600->567|600->567|601->568|601->568|601->568|602->569|606->573|606->573|607->574|607->574|607->574|608->575|613->580|613->580|613->580|613->580|614->581|619->586|619->586|620->587|620->587|620->587|621->588|627->594|627->594|629->596|629->596|632->599|636->603|636->603|637->604|637->604|637->604|638->605|640->607|640->607|641->608|641->608|641->608|642->609|650->617|650->617|651->618|651->618|652->619|652->619|652->619|653->620|655->622|655->622|657->624|662->629|662->629|664->631|664->631|665->632|665->632|666->633|667->634|667->634|668->635|668->635|671->638|671->638
                   -- GENERATED --
               */
           

@@ -56,6 +56,23 @@ Seq[Any](format.raw/*1.1*/("""<div class="kt-container  kt-container--fluid  kt-
 			</div>
 		</div>
 	</div>
+</div>
+
+<div class="modal fade" id="kt_modal_1" tabindex="-1" role="dialog" style="padding-right: 16px;" aria-modal="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Result</h5>
+                
+            </div>
+            <div class="modal-body">
+                <p id="quiz-feedback-content" style="margin-right:3%"></p>
+            </div>
+            <div class="modal-footer">
+                <button id="quiz-feedback-btn" type="button" class="btn btn-primary">Ok</button>
+            </div>
+        </div>
+    </div>
 </div>"""))
       }
     }
@@ -72,9 +89,9 @@ Seq[Any](format.raw/*1.1*/("""<div class="kt-container  kt-container--fluid  kt-
 
               /*
                   -- GENERATED --
-                  DATE: Wed Dec 04 12:04:39 CET 2019
+                  DATE: Mon Dec 09 10:34:05 CET 2019
                   SOURCE: C:/Users/Arufonso/Desktop/MoliereDashboard/app/views/quiz_content.scala.html
-                  HASH: 356f7c7cda91c7d8319229603681b27bb7dfa943
+                  HASH: b12b0b3c1025f295933ddc7b6e8377b339993825
                   MATRIX: 1037->0
                   LINES: 33->1
                   -- GENERATED --

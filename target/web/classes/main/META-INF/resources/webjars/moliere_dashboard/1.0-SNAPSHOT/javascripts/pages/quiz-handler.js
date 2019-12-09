@@ -24,7 +24,7 @@ function initFormQuestions(question, index, contentType){
 					    "        		<div class='kt-section' style='text-align: center;'>"+
 						"					<div class='kt-section__content kt-section__content--border kt-section__content--fit'>"+
 						"						<div class='kt-portlet__body' style='padding: 2%'>"+
-						"							<h5>"+question.question+"</h5>"+
+						"							<h5>"+((question.question.indexOf("img") != -1)? question.question : katex.renderToString(question.question))+"</h5>"+
 						"						</div>"+
 						"					</div>"+
 						"				</div>"+					 						            						
@@ -41,13 +41,13 @@ function initFormQuestions(question, index, contentType){
 						"										<span class='kt-grid-nav__icon'>"+
 						"										</span>"+
 						"										<span class='kt-grid-nav__title' style='display: inline-block; float: left; padding-left: 2%'>a. </span>"+
-						"										<span class='kt-grid-nav__desc'>"+question.answer1+"</span>"+
+						"										<span class='kt-grid-nav__desc'>"+((question.answer1.indexOf("img") != -1)? question.answer1 : katex.renderToString(question.answer1))+"</span>"+
 						"									</a>"+
 						"									<a href='javascript:void(0);'  id= '"+index+"b' class='kt-grid-nav__item'>"+
 						"										<span class='kt-grid-nav__icon'>"+
 						"										</span>"+
 						"										<span class='kt-grid-nav__title' style='display: inline-block; float: left; padding-left: 2%'>b. </span>"+
-						"										<span class='kt-grid-nav__desc'>"+question.answer2+"</span>"+
+						"										<span class='kt-grid-nav__desc'>"+((question.answer2.indexOf("img") != -1)? question.answer2 : katex.renderToString(question.answer2))+"</span>"+
 						"									</a>"+
 						"								</div>"+
 						"								<div class='kt-grid-nav__row'>"+
@@ -55,13 +55,13 @@ function initFormQuestions(question, index, contentType){
 						"										<span class='kt-grid-nav__icon'>"+
 						"										</span>"+
 						"										<span class='kt-grid-nav__title' style='display: inline-block; float: left; padding-left: 2%'>c. </span>"+
-						"										<span class='kt-grid-nav__desc'>"+question.answer3+"</span>"+
+						"										<span class='kt-grid-nav__desc'>"+((question.answer3.indexOf("img")!= -1)? question.answer3 : katex.renderToString(question.answer3))+"</span>"+
 						"									</a>"+
 						"									<a href='javascript:void(0);'  id='"+index+"d' class='kt-grid-nav__item'>"+
 						"										<span class='kt-grid-nav__icon'>"+
 						"										</span>"+
 						"										<span class='kt-grid-nav__title' style='display: inline-block; float: left; padding-left: 2%'>d. </span>"+
-						"										<span class='kt-grid-nav__desc'>"+question.answer4+"</span>"+
+						"										<span class='kt-grid-nav__desc'>"+((question.answer4.indexOf("img") != -1) ? question.answer4 : katex.renderToString(question.answer4))+"</span>"+
 						"									</a>"+
 						"								</div>"+
 						"							</div>"+
@@ -88,15 +88,18 @@ function initFormQuestions(question, index, contentType){
 }
 
 
-function appendFormActions(){
+function appendFormActions(contentType){
 	$("#kt_form").append(
 			"<!--begin: Form Actions -->"+
 			"<div class='kt-form__actions m-2'>"+
 				"<button class='btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u' data-ktwizard-type='action-prev'>"+
 					"Previous"+
 				"</button>"+
-				"<button id='submit-btn' type='button' class='btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u' data-ktwizard-type='action-submit'>"+
-					"Submit"+
+				((contentType == "quiz")
+					? "<button id='submit-btn' type='button' class='btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u' data-ktwizard-type='action-submit' data-toggle='modal' data-target='#kt_modal_1'>"
+					: "<button id='submit-btn' type='button' class='btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u' data-ktwizard-type='action-submit'>"
+				)
+					+"Submit"+
 				"</button>"+ 
 				"<button class='btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u' data-ktwizard-type='action-next'>"+
 					"Next Step"+
@@ -118,14 +121,14 @@ function checkQuizScore(i, n_quests, rightAnswer, answersFeedback){
 			$(this).css("background", "#34bfa3");
 			score++;
 			//ADD FEEDBACK
-			$("#feedback_"+i).append("<p class='text-justify'>"+answersFeedback[id]+"</p>")
+			$("#feedback_"+i).append("<p class='text-justify'>"+katex.renderToString(answersFeedback[id])+"</p>")
 			
 		}
 		else{
 			$(this).css("background", "#fd3995");
 			$("#"+i+""+rightAnswer).css("border","5px solid #34bfa3");
 			//ADD FEEDBACK
-			$("#feedback_"+i).append("<p class='text-justify'>"+answersFeedback[id]+"</p>")
+			$("#feedback_"+i).append("<p class='text-justify'>"+katex.renderToString(answersFeedback[id])+"</p>")
 
 		}
 		
