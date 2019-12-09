@@ -1,0 +1,277 @@
+
+package views.html
+
+import _root_.play.twirl.api.TwirlFeatureImports._
+import _root_.play.twirl.api.TwirlHelperImports._
+import _root_.play.twirl.api.Html
+import _root_.play.twirl.api.JavaScript
+import _root_.play.twirl.api.Txt
+import _root_.play.twirl.api.Xml
+import models._
+import controllers._
+import play.api.i18n._
+import views.html._
+import play.api.templates.PlayMagic._
+import java.lang._
+import java.util._
+import scala.collection.JavaConverters._
+import play.core.j.PlayMagicForJava._
+import play.mvc._
+import play.api.data.Field
+import play.mvc.Http.Context.Implicit._
+import play.data._
+import play.core.j.PlayFormsMagicForJava._
+
+object studentStats extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
+
+  /**/
+  def apply():play.twirl.api.HtmlFormat.Appendable = {
+    _display_ {
+      {
+
+
+Seq[Any](format.raw/*2.1*/("""<!-- begin: Content -->
+<div class="row">
+	<!-- begin: first widget -->
+	<div class="col-xl-12">
+		<div class="kt-portlet">
+			<div class="kt-portlet__head">
+				<div class="kt-portlet__head-label">
+					<span class="kt-portlet__head-icon kt-hidden"> <i
+						class="la la-gear"></i>
+					</span>
+					<h3 class="kt-portlet__head-title">Temporal view of Motivation and Engagement</h3>
+				</div>
+			</div>
+			<div class="kt-portlet__body">
+				<div id="kt_flotcharts" style="height: 400px; padding: 0px; position: relative;">
+					<canvas class="flot-base" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1538px; height: 300px;" width="1538" height="300"></canvas>
+					<canvas class="flot-overlay" width="1538" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1538px; height: 300px;"></canvas>
+					<div class="legend">
+						<div style="position: absolute; width: 85px; height: 36px; top: 13px; right: 12px; background-color: rgb(255, 255, 255); opacity: 0.85;">
+						</div>
+						<table style="position: absolute; top: 13px; right: 12px;; font-size: smaller; color: #545454">
+							<tbody>
+								<tr>
+									<td class="legendColorBox">
+										<div style="border: 1px solid #ccc; padding: 1px">
+										<div style="width: 4px; height: 0; border: 5px solid rgb(93, 120, 255); overflow: hidden"></div>
+										</div>
+									</td>
+									<td class="legendLabel">Motivation</td>
+								</tr>
+								<tr>
+									<td class="legendColorBox"><div style="border: 1px solid #ccc; padding: 1px">
+										<div style="width: 4px; height: 0; border: 5px solid rgb(253, 57, 149); overflow: hidden"></div>
+										</div>
+									</td>
+									<td class="legendLabel">Engagement</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end: first widget -->
+</div>
+
+<!-- begin: Student table -->
+<div class="row">
+	<div class="modal fade" id="kt_modal_4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+	    <div class="modal-dialog modal-lg" role="document">
+	        <div class="modal-content" style="width:1024px;">
+	            <div class="modal-header">
+	                <h5 class="modal-title" id="exampleModalLabel">Feedback Choice</h5>
+	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                </button>
+	            </div>
+	            <div class="modal-body">          	
+					<div class="kt-grid kt-wizard-v3 kt-wizard-v3--white" id="kt_wizard_v3" data-ktwizard-state="first">
+						<div class="kt-grid__item">
+							<!--begin: Form Wizard Nav -->
+							<div class="kt-wizard-v3__nav">
+								<div class="kt-wizard-v3__nav-items">
+									<a class="kt-wizard-v3__nav-item" href="#" data-ktwizard-type="step" data-ktwizard-state="current">
+										<div class="kt-wizard-v3__nav-body" style="width:300px">
+											<div class="kt-wizard-v3__nav-label">
+												<span>1</span> Choose Actions Group
+											</div>
+											<div class="kt-wizard-v3__nav-bar"></div>
+										</div>							
+									</a>
+									<a class="kt-wizard-v3__nav-item" href="#" data-ktwizard-type="step" data-ktwizard-state="pending">
+										<div class="kt-wizard-v3__nav-body" style="width:300px">
+											<div class="kt-wizard-v3__nav-label">
+												<span>2</span> Choose Feedback
+											</div>
+											<div class="kt-wizard-v3__nav-bar"></div>
+										</div>
+									</a>
+									<a class="kt-wizard-v3__nav-item" href="#" data-ktwizard-type="step" data-ktwizard-state="pending">
+										<div class="kt-wizard-v3__nav-body"style="width:300px">
+											<div class="kt-wizard-v3__nav-label">
+												<span>3</span> Review and Submit
+											</div>
+											<div class="kt-wizard-v3__nav-bar"></div>
+										</div>							
+									</a>				
+								</div>
+							</div>
+							<!--end: Form Wizard Nav -->
+						</div>
+						<div class="kt-grid__item kt-grid__item--fluid kt-wizard-v3__wrapper">
+							<!--begin: Form Wizard Form-->
+							<form class="kt-form" id="kt_form" novalidate="novalidate" style="width:90%;">
+								<!--begin: Form Wizard Step 1-->
+								<div class="kt-wizard-v3__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
+									<div class="kt-portlet__body kt-portlet__body--fit">
+									<div class="kt-grid  kt-wizard-v2 kt-wizard-v2--white" id="kt_wizard_v2" data-ktwizard-state="between" >
+										<div class="kt-grid__item kt-wizard-v2__aside">
+											<!--begin: Form Wizard Nav -->
+											<div class="kt-wizard-v2__nav">
+												<div class="kt-wizard-v2__nav-items">
+													
+																		
+												</div>
+											</div>
+											<!--end: Form Wizard Nav -->	
+										</div>
+										<div class="kt-grid__item kt-grid__item--fluid kt-wizard-v2__wrapper">
+											<div class="kt-wizard-v2__content" id="kt-user-measures">
+									            <div class="kt-portlet__head">
+									                <div class="kt-portlet__head-label" style="margin:2%">
+									                    <h3 class="kt-portlet__head-title">
+									                        Student's improvements
+									                    </h3>
+									                </div>
+									            </div>
+									            <div class="kt-portlet__body">
+									                <div id="feedback_prediction_container" class="kt-notification-v2">
+									                    
+									                </div>
+									            </div>
+											</div>
+										</div>
+									</div>
+								</div>
+								</div>
+								<!--end: Form Wizard Step 1-->
+			
+								<!--begin: Form Wizard Step 2-->
+								<div class="kt-wizard-v3__content" data-ktwizard-type="step-content">
+									<div class="kt-portlet__body">
+						                <div id="actions-container" class="kt-notification-v2">
+						                    
+						
+						                    
+						                </div>						
+						            </div>
+								</div>
+								<!--end: Form Wizard Step 2-->
+			
+								<!--begin: Form Wizard Step 3-->
+								<div class="kt-wizard-v3__content" data-ktwizard-type="step-content">
+									<div class="kt-portlet__body">
+										<div class="form-group row">
+											<div class="col-lg-6">
+												<label>Action chosen</label>
+												<input id="action_input" class="form-control" placeholder="" readonly>
+												<span class="kt-input-icon__icon kt-input-icon__icon--right"></span>
+											
+												<label style="margin-top:10%;">Feedback type chosen:</label>
+												<input id="feedback_input" type="text" class="form-control" placeholder="" readonly>
+												<span class="kt-input-icon__icon kt-input-icon__icon--right"></span>
+											</div>		
+											<div class="col-lg-6">
+												<label class="">Prediction</label>
+												<div class="kt-portlet__body overflow-auto" style="height: 200px">
+									            	  <div id="prediction_content" class="kt-notification-v2">
+									            	  
+									            	  </div> 
+									            </div>							
+											</div>
+										</div>	       
+						            </div>
+								</div>
+								<!--end: Form Wizard Step 3-->
+			
+								<!--begin: Form Actions -->					
+								<div class="kt-form__actions">
+									<div class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
+										Previous
+									</div>
+									<div class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-submit">
+										Submit
+									</div>
+									<div class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next">
+										Next Step
+									</div>
+								</div>		
+								<!--end: Form Actions -->
+							</form>			
+							<!--end: Form Wizard Form-->
+						</div>
+					</div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div class="col-xl-12">
+		<div id="feedbackDatatable"></div>	
+	</div>
+</div>
+<!-- end: Student table -->
+
+<!-- begin: FCM Representation -->
+<div class="row" id="fcm_container" style="display:none">
+	<div class="col-xl-12">
+		<div class="kt-portlet">
+			<div id= "fcm-header" class="kt-portlet__head">
+				<div class="kt-portlet__head-label">
+					<span class="kt-portlet__head-icon kt-hidden"> <i
+						class="la la-gear"></i>
+					</span>
+					<h3 id="head-table-measurement"class="kt-portlet__head-title"></h3>
+				</div>
+				<div class="kt-portlet__head-toolbar">
+					<div class="kt-portlet__head-actions">
+						<button id="prev" type="button" class="btn btn-secondary" onclick="prevDataset()"><i class="fas fa-arrow-left"></i> Previous Interaction</button>
+						<button id="next" type="button" class="btn btn-secondary" onclick="nextDataset()">Next Interaction <i class="fas fa-arrow-right"></i></button>
+					</div>
+				</div>
+			</div>
+			<div class="kt-portlet__body">
+				<div id="fcm" style="height: 700px;">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: FCM Representation -->
+
+<!-- end: Content -->"""))
+      }
+    }
+  }
+
+  def render(): play.twirl.api.HtmlFormat.Appendable = apply()
+
+  def f:(() => play.twirl.api.HtmlFormat.Appendable) = () => apply()
+
+  def ref: this.type = this
+
+}
+
+
+              /*
+                  -- GENERATED --
+                  DATE: Wed Dec 04 12:04:39 CET 2019
+                  SOURCE: C:/Users/Arufonso/Desktop/MoliereDashboard/app/views/studentStats.scala.html
+                  HASH: 2c18bce2973f23dd8555d1d8fe0f51afc0e10135
+                  MATRIX: 1037->2
+                  LINES: 33->2
+                  -- GENERATED --
+              */
+          

@@ -206,9 +206,9 @@ public class Application extends Controller {
 	}
 	
 	public Result sendFeedback(Http.Request request, String courseId, String userId, int actionId, String actionType, String name, String description, String date) throws ParseException {
-		//Calendar calendar = Calendar.getInstance();
-		//String currentDate = DateUtil.format((GregorianCalendar) calendar);
-		String currentDate= DateUtil.format(new GregorianCalendar(2019, 4-1, 19));
+		Calendar calendar = Calendar.getInstance();
+		String currentDate = DateUtil.format((GregorianCalendar) calendar);
+		
 		try {
 			FeedbackDao.updateFeedback(currentDate, actionId, actionType, name, description, courseId, userId, date);
 			//TODO notification system: send a notification both user and teacher.
@@ -369,7 +369,7 @@ public class Application extends Controller {
 		
 		return ok(Json.toJson(200));
 	}
-	
+
 	public Result loadContents(Http.Request request,String contentType, String topic) {
 		JsonNode node= null;
 		UserDto user= null;
